@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- This is the HTML file for the starting page 
+that asks what room you want to go to -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>School Directions</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel='manifest' href='/manifest.webmanifest'>
+  </head>
+  <body>
+    <div style="text-align:center">
+      <button id="installButton" class="center" style="display: none;"> 
+        Install as app
+      </button>
+      <h1 > Where do you need to go? </h1>
+      <form action="directions.html" method="get">
+        <label for="fromRoom"> I'm at room: </label> 
+        <input id="fromRoom" class="roomInput" name="fromRoom" list="roomsList" />
+        <label for="toRoom"> I'm going to room: </label> 
+        <input for="toRoom" class="roomInput" name="toRoom" list="roomsList" />
+        <button type="submit" class="center"> Go </button>
+      </form>
+    </div>
+    <datalist id="roomsList"></datalist>
+    <script src="index.js" type="module"></script>
+    <script src="loadWorker.js"></script>
+    <script src="maybeInstallApp.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+/* The styling for our HTML pages */
+
+body {
+  font-size: 30px;
+}
+
+form {
+  display: block;
+}
+
+label {
+  display: block;
+}
+
+input {
+  margin-bottom: 1em;
+  font-size: 16px;
+  text-align: center;
+}
+
+button {
+  font-size: 1em;
+  display: block;
+}
+
+.center {
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+.backButton {
+  font-size: 0.5em;
+}

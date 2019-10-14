@@ -1,0 +1,17 @@
+{"dir" : "ltr",
+    "lang" : "en",
+    "name" : "School Directions",
+    "scope" : "/",
+    "display" : "standalone",
+    "start_url" : "https://progclub-start.aurelius99.repl.co/index.html",
+    "short_name" : "SchoolDirection",
+    "theme_color" : "transparent",
+    "description" : "",
+    "orientation" : "any",
+    "background_color" : "transparent",
+    "generated" : "true",
+    "icons" : [{
+    "src": "android-chrome-192x192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]}

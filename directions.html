@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- This is the page that actually shows the directions -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>School Directions</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel='manifest' href='/manifest.webmanifest'>
+  </head>
+  <body>
+    <button onClick="window.location.href = '/index.html';" class="backButton"> 
+      &laquo; Back 
+    </button>
+    <div id="directions">
+      <!-- Directions will be added here by 
+      script.js based on the query parameters -->
+    </div>
+    <script src="directions.js" type="module"></script>
+    <script src="loadWorker.js"></script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+'use strict';
+import { hallways } from './hallwayDefinition.js';
+const roomsDatalist = document.getElementById('roomsList');
+const roomsList = hallways.map(h => h.partList).flat().filter(a => a.name).map(r => r.name).sort();
+roomsList.forEach(roomName => {
+  const option = document.createElement('option');
+  option.text = roomName;
+  roomsDatalist.appendChild(option);
+});
+
+// check that you input a valid room
+const inputs = document.querySelectorAll('.roomInput');
+inputs.forEach(function(input) {
+  // When the value of the input changes...
+  input.addEventListener('change', function() {
+    // use the setCustomValidity function of the Validation API
+    // to provide an user feedback if the room doesn't exist
+    if (roomsList.map(a => a.toUpperCase()).includes(this.value.toUpperCase())) {
+      this.setCustomValidity('');
+    } else {
+      this.setCustomValidity("I can't find a room with that name.");
+    }
+  });
+});
