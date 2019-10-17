@@ -4,6 +4,14 @@ body {
   font-size: 30px;
 }
 
+p { /* Used only for ios stuff as of now */
+  font-size: 15px;
+  position: fixed; 
+  bottom: 0;
+  width:99%;
+  text-align: justify;
+}
+
 form {
   display: block;
 }
