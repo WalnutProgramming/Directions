@@ -1,7 +1,21 @@
 /* The styling for our HTML pages */
 
 body {
-  font-size: 30px;
+  font-size: 30px;  
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+#iosDownloadSuggestion {
+  /*By default, we don't display this. We can
+  unhide it if we find out it's an iOS user in index.js*/
+  display: none; 
+  font-size: 15px;
 }
 
 form {
