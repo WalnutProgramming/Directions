@@ -10,20 +10,22 @@ that asks what room you want to go to -->
     <link rel='manifest' href='/manifest.webmanifest'>
   </head>
   <body>
-    <div style="text-align:center">
-      <button id="installButton" class="center" style="display: none;"> 
-        Install as app
-      </button>
-      <h1 > Where do you need to go? </h1>
-      <form action="directions.html" method="get">
-        <label for="fromRoom"> I'm at room: </label> 
-        <input id="fromRoom" class="roomInput" name="fromRoom" list="roomsList" />
-        <label for="toRoom"> I'm going to room: </label> 
-        <input for="toRoom" class="roomInput" name="toRoom" list="roomsList" />
-        <button type="submit" class="center"> Go </button>
-      </form>
-    </div>
-    <div id="iosDownloadSuggestion">
+    <main>
+      <div style="text-align:center">
+        <button id="installButton" class="center" style="display: none;"> 
+          Install as app
+        </button>
+        <h1 > Where do you need to go? </h1>
+        <form action="directions.html" method="get">
+          <label for="fromRoom"> I'm at room: </label> 
+          <input id="fromRoom" class="roomInput" name="fromRoom" list="roomsList" />
+          <label for="toRoom"> I'm going to room: </label> 
+          <input for="toRoom" class="roomInput" name="toRoom" list="roomsList" />
+          <button type="submit" class="center"> Go </button>
+        </form>
+      </div>
+  </main>
+  <div id="iosDownloadSuggestion">
       <p>
         To install this page as an app, press
         <img src="iosDownload.png" alt="iosDownload" style="width:20px;height:20px;"> 

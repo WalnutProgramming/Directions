@@ -1,21 +1,21 @@
 /* The styling for our HTML pages */
 
 body {
-  font-size: 30px;
+  font-size: 30px;  
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 #iosDownloadSuggestion {
   /*By default, we don't display this. We can
   unhide it if we find out it's an iOS user in index.js*/
   display: none; 
-}
-
-#iosDownloadSuggestion > p {
   font-size: 15px;
-  position: fixed; 
-  bottom: 0;
-  width:99%;
-  text-align: justify;
 }
 
 form {
