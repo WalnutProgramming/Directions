@@ -1,5 +1,12 @@
 'use strict';
 import { hallways } from './hallwayDefinition.js';
+
+// If it's an iOS device, unhide the #iosDownloadSuggestion
+const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+if (iOS) {
+  document.getElementById('iosDownloadSuggestion').style.display = "block";
+}
+
 const roomsDatalist = document.getElementById('roomsList');
 const roomsList = hallways.map(h => h.partList).flat().filter(a => a.name).map(r => r.name).sort();
 roomsList.forEach(roomName => {

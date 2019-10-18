@@ -4,7 +4,13 @@ body {
   font-size: 30px;
 }
 
-p { /* Used only for ios stuff as of now */
+#iosDownloadSuggestion {
+  /*By default, we don't display this. We can
+  unhide it if we find out it's an iOS user in index.js*/
+  display: none; 
+}
+
+#iosDownloadSuggestion > p {
   font-size: 15px;
   position: fixed; 
   bottom: 0;
