@@ -3,7 +3,8 @@ import { hallways } from './hallwayDefinition.js';
 
 // If it's an iOS device, unhide the #iosDownloadSuggestion
 const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-if (iOS) {
+const isInstalledPWA = window.matchMedia('(display-mode: standalone)').matches;
+if (iOS && !isInstalledPWA) {
   document.getElementById('iosDownloadSuggestion').style.display = "block";
 }
 
