@@ -9,7 +9,6 @@ that asks what room you want to go to -->
     <link href="style.css" rel="stylesheet" type="text/css" />
 
 
-
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
@@ -23,6 +22,7 @@ that asks what room you want to go to -->
 
     <link rel='manifest' href='/manifest.webmanifest'>
   </head>
+
   <body>
     <main>
       <div style="text-align:center">
@@ -35,20 +35,24 @@ that asks what room you want to go to -->
           <input id="fromRoom" class="roomInput" name="fromRoom" list="roomsList" />
           <label for="toRoom"> I'm going to room: </label> 
           <input for="toRoom" class="roomInput" name="toRoom" list="roomsList" />
-          <button type="submit" class="center"> Go </button>
+          <br>
+          <button type="submit" class="active-button"> Go </button>
         </form>
       </div>
-  </main>
-  <div id="iosDownloadSuggestion">
+    </main>
+
+    <div id="iosDownloadSuggestion">
       <p>
         To install this page as an app, press
         <img src="iosDownload.png" alt="iosDownload" style="width:20px;height:20px;"> 
         at the bottom of the page and then press "Add to Home Screen" in the menu that appears.
       </p>
     </div>
+
     <datalist id="roomsList"></datalist>
     <script src="index.js" type="module"></script>
     <script src="loadWorker.js"></script>
     <script src="maybeInstallApp.js"></script>
   </body>
+
 </html>
