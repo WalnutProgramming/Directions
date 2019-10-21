@@ -253,7 +253,7 @@ const hallway3 = new Hallway([
   new Room('3114', LEFT),
   new Room('3115', RIGHT),
   new Room('3117', RIGHT),
-  new Stairs(LEFT, 'stair-f3', '2010')
+  new Stairs(LEFT, 'stair-f3', '2010'),
 ]);
 
 /** @type {Hallway} */
@@ -292,9 +292,10 @@ const hallway2 = new Hallway([
   new Room('2114'),
   new Room('2113', RIGHT),
   new Room('2115', RIGHT),
-  new Stairs(LEFT, 'stair-f2', '2010')
+  new Stairs(LEFT, 'stair-f2', '2010'),
 ]);
 
+/** @type {Hallway} */
 const hallway1 = new Hallway([
   new Stairs(LEFT, 'stair-a1', '2018'),
   new Room('1314'),
@@ -306,10 +307,28 @@ const hallway1 = new Hallway([
   new Room('1310', RIGHT),
   new Room('1309', RIGHT),
   new Turn(RIGHT),
+  new Fork(LEFT, '1300s to 1600s', 'the 1600s'),
   new Stairs(LEFT, 'stair-b1', '2025'),
   new Room('1305', RIGHT),
   new Room('1302', RIGHT),
-  new Room('1301', RIGHT)
+  new Room('1301', RIGHT),
+]);
+
+/** @type Hallway */
+const modernLanguagesWing1 = new Hallway([
+  new Fork(BACK, '1600s to 1300s', 'the 1300s'),
+  new Turn(LEFT),
+  new Room('1601'),
+  new Room('1602'),
+  new Turn(RIGHT),
+  new Room('1604', RIGHT),
+  new Room('1603'),
+  new Room('1605'),
+  new Room('1604', RIGHT),
+  new Room('1606'),
+  new Room('1607'),
+  new Room('1608'),
+  new Stairs(LEFT, 'stair-science-a1'),
 ]);
 
 /** @type {Hallway} */
@@ -321,11 +340,71 @@ const modernLanguagesWing2 = new Hallway([
   new Room('2602'),
   new Turn(RIGHT),
   new Room('2603'),
-  new Room('2605')
-], 'the 2600s')
+  new Room('2605'),
+  new Room('2607'),
+  new Room('2609'),
+  new Room('2611'),
+  new Fork(FRONT, '2600s to arcade'),
+]);
+
+/** @type {Hallway} */
+const arcade = new Hallway([
+  new Fork(FRONT, 'arcade to 2600s', 'the 2600s'),
+  new Fork(FRONT, 'arcade to 2700s', 'the 2700s'),
+]);
+
+const scienceWing2 = new Hallway([
+  new Fork(BACK, '2700s to arcade', 'the arcade'),
+  new Stairs(LEFT, 'stair-science-a2'),
+  new Room('2701'),
+  new Room('2702', RIGHT),
+  new Room('2703'),
+  new Room('2704', RIGHT),
+  new Room('2705'),
+  new Room('2707'),
+  new Room('2709'),
+  new Room('2740'),
+  new Room('2739'),
+  new Room('2713'),
+  new Room('2715'),
+  new Turn(RIGHT),
+  new Room('2717'),
+  new Room('2719'),
+  new Room('2714', RIGHT),
+  new Room('2716', RIGHT),
+  new Room('2723'),
+  new Room('2720', RIGHT),
+  new Room('2722', RIGHT),
+]);
+
+const scienceWing3 = new Hallway([
+  new Stairs(LEFT, 'stair-science-a3'),
+  new Room('3702', RIGHT),
+  new Room('3704', RIGHT),
+  new Room('3703'),
+  new Room('3707'),
+  new Room('3709'),
+  new Room('3711'),
+  new Turn(RIGHT),
+  new Room('3713'),
+  new Room('3714', RIGHT),
+  new Room('3715'),
+  new Room('3716', RIGHT),
+  new Room('3717'),
+  new Room('3724', RIGHT),
+  new Room('3726', RIGHT),
+]);
+
+arcade.getDirectionsFromIndices = function(from, to) {
+  if (from == 0 && to == 1) {
+    return 'Go straight and a bit to the right to get to the 2700s, the science wing\n'
+  } else {
+    return 'Go straight and a bit to the right to get to the 2600s, the modern languages wing\n'
+  }
+};
 
 /** @type {Hallway[]} */
-const hallways = [hallway1, hallway2, hallway3, modernLanguagesWing2];
+const hallways = [hallway1, hallway2, hallway3, modernLanguagesWing1, modernLanguagesWing2, arcade, scienceWing2, scienceWing3];
 
 /** @type string[][] */
 const stairConnections = [
@@ -334,10 +413,14 @@ const stairConnections = [
   ['stair-c2', 'stair-c3'],
   ['stair-d2', 'stair-d3'],
   ['stair-f2', 'stair-f3'],
+  ['stair-science-a1', 'stair-science-a2', 'stair-science-a3'],
 ];
 
 /** @type [string, string][] */
 const hallwayConnections = [
-  ['2300s to 2600s', '2600s to 2300s']
+  ['1300s to 1600s', '1600s to 1300s'],
+  ['2300s to 2600s', '2600s to 2300s'],
+  ['2600s to arcade', 'arcade to 2600s'],
+  ['2700s to arcade', 'arcade to 2700s'],
 ]
 
