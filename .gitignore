@@ -1,0 +1,4 @@
+# Parcel related files
+dist/
+.cache/
+
