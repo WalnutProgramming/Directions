@@ -362,7 +362,29 @@ const modernLanguagesWing2 = new Hallway([
 const arcade = new Hallway([
   new Fork(FRONT, 'arcade to 2600s', 'the 2600s'),
   new Fork(FRONT, 'arcade to 2700s', 'the 2700s'),
+  new Fork(FRONT, 'arcade to musicEntrance', 'the music lyceum'),
 ]);
+
+arcade.getDirectionsFromIndices = function(from, to) {
+  const LANGUAGES = 0, SCIENCE = 1, MUSIC = 2;
+  switch (from) {
+    case LANGUAGES:
+      switch (to) {
+        case SCIENCE: return 'Go straight and a bit to the right to get to the 2700s, the science wing\n'
+        case MUSIC: return 'Turn right, then walk down to the end of the arcade and turn right\nWalk down the hallway, and turn right when you get to the doors\n'
+      }
+    case SCIENCE:
+      switch (to) {
+        case LANGUAGES: return 'Go straight and a bit to the right to get to the 2600s, the modern languages wing\n'
+        case MUSIC: return 'Turn left, then walk down to the end of the arcade and turn right\nWalk down the hallway, and turn right when you get to the doors\n'
+      }
+    case MUSIC:
+      switch (to) {
+        case LANGUAGES: return 'Turn left after walking through the doors, then walk down the hallway\nWhen you get to the end of the hallway, turn left into the arcade, then walk down the arcade and turn left into the science wing\n'
+        case SCIENCE: return 'Turn left after walking through the doors, then walk down the hallway\nWhen you get to the end of the hallway, turn left into the arcade, then walk down the arcade and turn right into the modern foreign languages wing\n'
+      }
+  }
+};
 
 const scienceWing2 = new Hallway([
   new Fork(BACK, '2700s to arcade', 'the arcade'),
@@ -406,16 +428,30 @@ const scienceWing3 = new Hallway([
   new Room('3726', RIGHT),
 ]);
 
-arcade.getDirectionsFromIndices = function(from, to) {
-  if (from == 0 && to == 1) {
-    return 'Go straight and a bit to the right to get to the 2700s, the science wing\n'
-  } else {
-    return 'Go straight and a bit to the right to get to the 2600s, the modern languages wing\n'
-  }
-};
+const musicEntrance = new Hallway([
+  new Fork(RIGHT, 'musicEntrance to arcade', 'the arcade'),
+  new Stairs(FRONT, 'music-2up-entrance'),
+]);
+
+const musicLyceum2 = new Hallway([
+  new Stairs(LEFT, 'music-2up-2'),
+  new Room('2855'),
+  new Room('2853'),
+  new Room('2851'),
+  new Room('2849'),
+  new Room('2852', RIGHT),
+  new Room('2847'),
+  new Room('2857', RIGHT),
+  new Room('2848', RIGHT),
+  new Room('2846', RIGHT),
+  new Room('2844', RIGHT),
+  new Room('2842', RIGHT),
+  new Room('2843'),
+  new Room('2840', RIGHT),
+]);
 
 /** @type {Hallway[]} */
-const hallways = [hallway1, hallway1100s, hallway2, hallway3, modernLanguagesWing1, modernLanguagesWing2, arcade, scienceWing2, scienceWing3];
+const hallways = [hallway1, hallway1100s, hallway2, hallway3, modernLanguagesWing1, modernLanguagesWing2, arcade, scienceWing2, scienceWing3, musicEntrance, musicLyceum2];
 
 /** @type string[][] */
 const stairConnections = [
@@ -425,6 +461,7 @@ const stairConnections = [
   ['stair-d2', 'stair-d3'],
   ['stair-f1', 'stair-f2', 'stair-f3'],
   ['stair-science-a1', 'stair-science-a2', 'stair-science-a3'],
+  ['music-2up-entrance', 'music-2up-2'],
 ];
 
 /** @type [string, string][] */
@@ -433,5 +470,6 @@ const hallwayConnections = [
   ['2300s to 2600s', '2600s to 2300s'],
   ['2600s to arcade', 'arcade to 2600s'],
   ['2700s to arcade', 'arcade to 2700s'],
+  ['musicEntrance to arcade', 'arcade to musicEntrance'],
 ]
 
