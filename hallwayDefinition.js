@@ -380,8 +380,8 @@ arcade.getDirectionsFromIndices = function(from, to) {
       }
     case MUSIC:
       switch (to) {
-        case LANGUAGES: return 'Turn left after walking through the doors, then walk down the hallway\nWhen you get to the end of the hallway, turn left into the arcade, then walk down the arcade and turn left into the science wing\n'
-        case SCIENCE: return 'Turn left after walking through the doors, then walk down the hallway\nWhen you get to the end of the hallway, turn left into the arcade, then walk down the arcade and turn right into the modern foreign languages wing\n'
+        case SCIENCE: return 'Turn left after walking through the doors, then walk down the hallway\nWhen you get to the end of the hallway, turn left into the arcade, then walk down the arcade and turn left into the science wing\n'
+        case LANGUAGES: return 'Turn left after walking through the doors, then walk down the hallway\nWhen you get to the end of the hallway, turn left into the arcade, then walk down the arcade and turn right into the modern foreign languages wing\n'
       }
   }
 };
@@ -443,6 +443,7 @@ const musicLyceum2 = new Hallway([
   new Room('2847'),
   new Room('2857', RIGHT),
   new Room('2848', RIGHT),
+  new Turn(LEFT),
   new Room('2846', RIGHT),
   new Room('2844', RIGHT),
   new Room('2842', RIGHT),
