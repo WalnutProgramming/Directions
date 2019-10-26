@@ -12,6 +12,7 @@
   --main-text-color: #1E1E1E;
   --sine-ease: all cubic-bezier(0.47, 0, 0.745, 0.715) 0.1s;
   --back-ease: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
+  --placeholder-color: #c4e0f0;
 }
 
 body {
@@ -56,16 +57,16 @@ input {
   text-align: center;
   border-radius: 10px;
   border-width: 0px;
-  transition: background-color, linear, 1s;
+  transition: background-color, linear, 0.5s;
 }
 
 input:focus {
-  background-color: #82c6ec;
-  transition: background-color, linear, 1s;
+  background-color: var(--placeholder-color);
+  transition: background-color, linear, 0.5s;
 }
 
 input::placeholder {
-  color: #82c6ec;
+  color: var(--placeholder-color);
 }
 
 .center {
