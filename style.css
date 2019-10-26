@@ -65,7 +65,7 @@ input:focus {
 }
 
 input::placeholder {
-  color: rgb(192, 192, 192);
+  color: #82c6ec;
 }
 
 .center {
