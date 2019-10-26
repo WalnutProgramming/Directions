@@ -8,11 +8,25 @@
   line-height: 1.1em;
 }
 
+:root {
+  --main-text-color: #1E1E1E;
+  --sine-ease: all cubic-bezier(0.47, 0, 0.745, 0.715) 0.1s;
+  --back-ease: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
+  --placeholder-color: #c4e0f0;
+  --background-color: #F3F3F3;
+  --text-input-ease: background-color, linear, 0.5s;
+}
+
 body {
+  background-color: var(--background-color);
   font-size: 30px;  
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+}
+
+p {
+  color: var(--main-text-color);
 }
 
 main {
@@ -30,14 +44,37 @@ form {
   display: block;
 }
 
+h1 {
+    color: var(--main-text-color);
+}
+
 label {
   display: block;
+  color: var(--main-text-color);
 }
 
 input {
   margin-bottom: 1em;
-  font-size: 16px;
+  font-size: 25px;
   text-align: center;
+  border-radius: 10px;
+  border-width: 0px;
+  transition: var(--text-input-ease);
+}
+
+input:focus {
+  background-color: var(--placeholder-color);
+  transition: var(--text-input-ease)
+}
+
+input::placeholder {
+  color: #c0c0c0;
+  transition: var(--text-input-ease);
+}
+
+input:focus::placeholder {
+  color: var(--placeholder-color);
+  transition: var(--text-input-ease);
 }
 
 .center {
@@ -60,8 +97,7 @@ button {
   box-shadow: 0px 6px #007dc4, 0px 6px 0 6px rgb(209, 226, 228);
   /*** these 6px values need to be the same (see below with ***) */
 
-  transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
-  /* this is a back ease (for retraction) */
+  transition: var(--back-ease);
 
   -webkit-user-select: none; /* Safari 3.1+ */
   -moz-user-select: none; /* Firefox 2+ */
@@ -75,8 +111,9 @@ button:hover {
   box-shadow: 0px 0px #007dc4, 0px 0px 0 6px rgb(209, 226, 228);
   /*** these 6px values need to be the same (see above with ***) */
 
-  transition: all cubic-bezier(0.47, 0, 0.745, 0.715) 0.1s;
-  /* this is a sine ease (for compression) */
+  transition: var(--sine-ease);
+
+  cursor: pointer;
 }
 
 .backButton {
