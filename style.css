@@ -13,10 +13,12 @@
   --sine-ease: all cubic-bezier(0.47, 0, 0.745, 0.715) 0.1s;
   --back-ease: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
   --placeholder-color: #c4e0f0;
+  --background-color: #F3F3F3;
+  --text-input-ease: background-color, linear, 0.5s;
 }
 
 body {
-  background-color: #F3F3F3;
+  background-color: var(--background-color);
   font-size: 30px;  
   display: flex;
   min-height: 100vh;
@@ -57,16 +59,22 @@ input {
   text-align: center;
   border-radius: 10px;
   border-width: 0px;
-  transition: background-color, linear, 0.5s;
+  transition: var(--text-input-ease);
 }
 
 input:focus {
   background-color: var(--placeholder-color);
-  transition: background-color, linear, 0.5s;
+  transition: var(--text-input-ease)
 }
 
 input::placeholder {
+  color: #c0c0c0;
+  transition: var(--text-input-ease);
+}
+
+input:focus::placeholder {
   color: var(--placeholder-color);
+  transition: var(--text-input-ease);
 }
 
 .center {
