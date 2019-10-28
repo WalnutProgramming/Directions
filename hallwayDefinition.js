@@ -429,12 +429,41 @@ const scienceWing3 = new Hallway([
 ]);
 
 const musicEntrance = new Hallway([
+  new Stairs(BACK, 'music-entrance-to-1'),
   new Fork(RIGHT, 'musicEntrance to arcade', 'the arcade'),
-  new Stairs(FRONT, 'music-2up-entrance'),
+  new Stairs(FRONT, 'music-entrance-to-2'),
+]);
+
+const musicLyceum1 = new Hallway([
+  new Stairs(BACK, 'music-1-to-entrance'),
+  new Room('1852', RIGHT),
+  new Turn(LEFT),
+  new Turn(LEFT),
+  new Room('1853', RIGHT),
+  new Room('1852'),
+  new Room('1850', RIGHT),
+  new Room('1857', RIGHT),
+  new Room('1851', RIGHT),
+  new Room('1849', RIGHT),
+  new Fork(RIGHT, 'music1 to musicLittleCorner', 'the little corner'),
+  new Turn(LEFT),
+  new Room('1843', LEFT),
+  new Room('1840', RIGHT),
+  new Room('1841', LEFT),
+  new Room('1824', RIGHT),
+  new Room('1823', RIGHT),
+]);
+
+const musicLittleCorner = new Hallway([
+  new Fork(BACK, 'musicLittleCorner to music1', 'the music hallway'),
+  new Room('1842'),
+  new Room('1849', RIGHT),
+  new Room('1846', RIGHT),
+  new Room('1845', FRONT),
 ]);
 
 const musicLyceum2 = new Hallway([
-  new Stairs(LEFT, 'music-2up-2'),
+  new Stairs(LEFT, 'music-2-to-entrance'),
   new Room('2855'),
   new Room('2853'),
   new Room('2851'),
@@ -452,8 +481,24 @@ const musicLyceum2 = new Hallway([
 ]);
 
 /** @type {Hallway[]} */
-const hallways = [hallway1, hallway1100s, hallway2, hallway3, modernLanguagesWing1, modernLanguagesWing2, arcade, scienceWing2, scienceWing3, musicEntrance, musicLyceum2];
+const hallways = [
+  hallway1,
+  hallway1100s, 
+  hallway2, 
+  hallway3, 
+  modernLanguagesWing1, 
+  modernLanguagesWing2, 
+  arcade, 
+  scienceWing2, 
+  scienceWing3, 
+  musicEntrance, 
+  musicLyceum1, 
+  musicLyceum2, 
+  musicLittleCorner,
+];
 
+
+//When listing stairs, the furthest down entrance to the stairs goes first
 /** @type string[][] */
 const stairConnections = [
   ['stair-a1', 'stair-a2', 'stair-a3'],
@@ -462,7 +507,8 @@ const stairConnections = [
   ['stair-d2', 'stair-d3'],
   ['stair-f1', 'stair-f2', 'stair-f3'],
   ['stair-science-a1', 'stair-science-a2', 'stair-science-a3'],
-  ['music-2up-entrance', 'music-2up-2'],
+  ['music-entrance-to-2', 'music-2-to-entrance'],
+  ['music-1-to-entrance', 'music-entrance-to-1'],
 ];
 
 /** @type [string, string][] */
@@ -472,5 +518,6 @@ const hallwayConnections = [
   ['2600s to arcade', 'arcade to 2600s'],
   ['2700s to arcade', 'arcade to 2700s'],
   ['musicEntrance to arcade', 'arcade to musicEntrance'],
+  ['music1 to musicLittleCorner', 'musicLittleCorner to music1'],
 ]
 
