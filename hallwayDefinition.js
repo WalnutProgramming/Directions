@@ -69,6 +69,45 @@ class Room {
       return (this.prefix == '' ? '' : (this.prefix + ' ')) + this.name;
     }
   }
+
+  /**
+   * @param {-1 | 1} forwardOrBackward Whether we're going forward or backward through this hallway
+   * @param {Room | Turn} prevRoom The previous room
+   * @return {string} What we should say when you pass this room
+   */
+  onPass(forwardOrBackward, prevRoom) {
+    return '';
+  }
+
+  /**
+   * 
+   * @param {-1 | 1} forwardOrBackward Whether we're going forward or backward through this hallway
+   * @return {string} What we should say when we go out of this room
+   */
+  onLeave(forwardOrBackward) {
+    let ret = '';
+    if (isLeftOrRight(this.side)) {
+      ret += dirToTurnString(forwardOrBackward * this.side);
+      ret += ` out of ${this.fullName}`;
+      ret += '\n';
+    }
+    return ret;
+  }
+
+  /**
+   * 
+   * @param {-1 | 1} forwardOrBackward Whether we're going forward or backward through this hallway
+   * @return {string} What we should say when we enter this room
+   */
+  onArrive(forwardOrBackward) {
+    let ret = '';
+    ret += `Continue until you arrive at ${this.fullName}`;
+    if (isLeftOrRight(this.side)) {
+      ret += ` on your ${dirToString(this.side * forwardOrBackward)}`
+    }
+    ret += '\n'
+    return ret;
+  }
 }
 
 class Stairs extends Room {
@@ -107,6 +146,22 @@ class Turn {
    */
   constructor(direction) {
     this.direction = direction;
+  }
+
+  /**
+   * @param {-1 | 1} forwardOrBackward Whether we're going forward or backward through this hallway
+   * @param {Room | Turn} prevRoom The previous room
+   * @return {string} What we should say when you pass this turn
+   */
+  onPass(forwardOrBackward, prevRoom) {
+    let ret = '';
+    const direction = this.direction * forwardOrBackward;
+    ret += 'Continue, then ' + dirToTurnString(direction, true);
+    if (prevRoom instanceof Room && isLeftOrRight(prevRoom.side)) {
+      ret += ` (after passing ${prevRoom.fullName} on your ${dirToString(prevRoom.side * forwardOrBackward)})`;
+    }
+    ret += '\n';
+    return ret;
   }
 }
 
@@ -179,31 +234,16 @@ class Hallway {
     let ret = '';
     const forwardOrBackward = to > from ? 1 : -1;
 
-    if (isLeftOrRight(fromRoom.side)) {
-      ret += dirToTurnString(forwardOrBackward * fromRoom.side);
-      ret += ` out of ${fromRoom.fullName}`;
-      ret += '\n';
-    }
+    ret += fromRoom.onLeave(forwardOrBackward);
     
     for (let i = from; i != to; i += forwardOrBackward) {
       const current = this.partList[i];
-      if (current instanceof Turn) {
-        const direction = current.direction * forwardOrBackward;
-        const prevRoom = this.partList[i - forwardOrBackward];
-        ret += 'Continue, then ' + dirToTurnString(direction, true);
-        if (prevRoom instanceof Room && isLeftOrRight(prevRoom.side)) {
-          ret += ` (after passing ${prevRoom.fullName} on your ${dirToString(prevRoom.side * forwardOrBackward)})`;
-        }
-        ret += '\n';
-      }
+      const prevInd = i - forwardOrBackward;
+      const prevRoom = prevInd >= 0 && prevInd < this.partList.length && this.partList[i - forwardOrBackward];
+      ret += current.onPass(forwardOrBackward, prevRoom);
     }
 
-    ret += `Continue until you arrive at ${toRoom.fullName}`;
-    console.log(toRoom);
-    if (isLeftOrRight(toRoom.side)) {
-      ret += ` on your ${dirToString(toRoom.side * forwardOrBackward)}`
-    }
-    ret += '\n'
+    ret += toRoom.onArrive(forwardOrBackward);
 
     return ret;
   }
