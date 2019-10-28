@@ -371,12 +371,12 @@ arcade.getDirectionsFromIndices = function(from, to) {
     case LANGUAGES:
       switch (to) {
         case SCIENCE: return 'Go straight and a bit to the right to get to the 2700s, the science wing\n'
-        case MUSIC: return 'Turn right, then walk down to the end of the arcade and turn right\nWalk down the hallway, and turn right when you get to the doors\n'
+        case MUSIC: return 'Turn left, then walk down to the end of the arcade and turn right\nWalk down the hallway, and turn right when you get to the doors\n'
       }
     case SCIENCE:
       switch (to) {
         case LANGUAGES: return 'Go straight and a bit to the right to get to the 2600s, the modern languages wing\n'
-        case MUSIC: return 'Turn left, then walk down to the end of the arcade and turn right\nWalk down the hallway, and turn right when you get to the doors\n'
+        case MUSIC: return 'Turn right, then walk down to the end of the arcade and turn right\nWalk down the hallway, and turn right when you get to the doors\n'
       }
     case MUSIC:
       switch (to) {
