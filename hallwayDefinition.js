@@ -355,7 +355,7 @@ const modernLanguagesWing2 = new Hallway([
   new Room('2607'),
   new Room('2609'),
   new Room('2611'),
-  new Fork(FRONT, '2600s to arcade'),
+  new Fork(FRONT, '2600s to arcade', 'the arcade'),
 ]);
 
 /** @type {Hallway} */
