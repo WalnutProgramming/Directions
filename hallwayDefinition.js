@@ -427,6 +427,8 @@ arcade.getDirectionsFromIndices = function(from, to) {
         case SCIENCE: return 'Turn left after walking through the doors, then walk down the hallway\nWhen you get to the end of the hallway, turn left into the arcade, then walk down the arcade and turn left into the science wing\n'
         case LANGUAGES: return 'Turn left after walking through the doors, then walk down the hallway\nWhen you get to the end of the hallway, turn left into the arcade, then walk down the arcade and turn right into the modern foreign languages wing\n'
       }
+    case 3:
+      return 'test'
   }
 };
 
