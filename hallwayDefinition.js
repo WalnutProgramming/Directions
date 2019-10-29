@@ -400,9 +400,11 @@ const modernLanguagesWing2 = new Hallway([
 
 /** @type {Hallway} */
 const arcade = new Hallway([
-  new Fork(FRONT, 'arcade to 2600s', 'the 2600s'),
-  new Fork(FRONT, 'arcade to 2700s', 'the 2700s'),
-  new Fork(FRONT, 'arcade to musicEntrance', 'the music lyceum'),
+  new Fork(LEFT, 'arcade to 2600s', 'the 2600s'),
+  new Fork(RIGHT, 'arcade to 2700s', 'the 2700s'),
+  new Turn(RIGHT),
+  new Fork(RIGHT, 'arcade to musicEntrance', 'the music lyceum'),
+  new Turn(RIGHT),
   new Room('Senior High Gym', LEFT, null, "the"),
   // add other hallways at the end
 ]);
