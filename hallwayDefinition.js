@@ -403,6 +403,8 @@ const arcade = new Hallway([
   new Fork(FRONT, 'arcade to 2600s', 'the 2600s'),
   new Fork(FRONT, 'arcade to 2700s', 'the 2700s'),
   new Fork(FRONT, 'arcade to musicEntrance', 'the music lyceum'),
+  new Room('Senior High Gym', LEFT, null, "the"),
+  // add other hallways at the end
 ]);
 
 arcade.getDirectionsFromIndices = function(from, to) {
