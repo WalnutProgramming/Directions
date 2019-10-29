@@ -432,7 +432,7 @@ arcade.getDirectionsFromIndices = function(from, to) {
         case GYM: return 'Turn left after walking through the doors, then walk forward until you get to the gym.\n'
       }
     case GYM:
-      str = "Exit the gym and walk out via the narrow hallway on the right.\n'
+      str = 'Exit the gym and walk out via the narrow hallway on the right.\n'
       switch (to) {
         case SCIENCE: return str+'Walk until the narrow hallway empties into the Arcade.\nTurn left, walk a little bit, and turn left again to get to the science wing.\n'
         case LANGUAGES: return str+'Walk until the narrow hallway empties into the Arcade.\nGo straight and a bit to the left; walk forward into the language wing.'
