@@ -24,22 +24,27 @@ that asks what room you want to go to -->
   </head>
 
   <body>
-    <main>
-      <div style="text-align:center">
+    <div style="text-align:center">
+      <span class="btn-hover-area">
         <button id="installButton" style="display: none;"> 
           Install as app
         </button>
-        <h1 > Where do you need to go? </h1>
+      </span>
+  
+      <main>
+        <h1> Where do you need to go? </h1>
         <form action="directions.html" method="get">
           <label for="fromRoom"> I'm at room: </label> 
           <input id="fromRoom" class="roomInput" name="fromRoom" list="roomsList" placeholder="type or select"/>
           <label for="toRoom"> I'm going to room: </label> 
           <input id="toRoom" class="roomInput" name="toRoom" list="roomsList" placeholder="type or select"/>
           <br>
-          <button type="submit" class="active-button"> Go </button>
+          <span class="btn-hover-area">
+            <button type="submit" class="active-button"> Go </button>
+          </span>
         </form>
-      </div>
-    </main>
+      </main>
+    </div>
 
     <div id="iosDownloadSuggestion">
       <p>
