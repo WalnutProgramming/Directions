@@ -317,7 +317,6 @@ const hallway2 = new Hallway([
   new Room('2203', RIGHT),
   new Room('2202'),
   new Room('2207', RIGHT),
-  new Room('FAKE-ROOM-TEST-817234812384', RIGHT),
   new Room('2210'),
   new Room('2209', RIGHT),
   new Stairs(LEFT, 'stair-d2', '2015'),
