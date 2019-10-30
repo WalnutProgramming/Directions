@@ -1,25 +1,25 @@
 /* The styling for our HTML pages */
 
 /* fonts */
-@import url('https://fonts.googleapis.com/css?family=Overpass&effect=fire-animation');
+@import url("https://fonts.googleapis.com/css?family=Overpass&effect=fire-animation");
 
 * {
-  font-family: 'Overpass', sans-serif;
+  font-family: "Overpass", sans-serif;
   line-height: 1.1em;
 }
 
 :root {
-  --main-text-color: #1E1E1E;
+  --main-text-color: #1e1e1e;
   --sine-ease: all cubic-bezier(0.47, 0, 0.745, 0.715) 0.1s;
   --back-ease: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
   --placeholder-color: #c4e0f0;
-  --background-color: #F3F3F3;
+  --background-color: #f3f3f3;
   --text-input-ease: background-color, linear, 0.5s;
 }
 
 body {
   background-color: var(--background-color);
-  font-size: 30px;  
+  font-size: 30px;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -36,7 +36,7 @@ main {
 #iosDownloadSuggestion {
   /*By default, we don't display this. We can
   unhide it if we find out it's an iOS user in index.js*/
-  display: none; 
+  display: none;
   font-size: 15px;
 }
 
@@ -45,7 +45,7 @@ form {
 }
 
 h1 {
-    color: var(--main-text-color);
+  color: var(--main-text-color);
 }
 
 label {
@@ -64,7 +64,7 @@ input {
 
 input:focus {
   background-color: var(--placeholder-color);
-  transition: var(--text-input-ease)
+  transition: var(--text-input-ease);
 }
 
 input::placeholder {

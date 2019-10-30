@@ -1,13 +1,13 @@
 // @ts-check
 
-'use strict';
-import { dijkstra } from './dijkstra.js';
+"use strict";
+import { dijkstra } from "./dijkstra.js";
 export { getGraph, getShortestPath };
 
 /**
- * 
+ *
  * @param {string[][]} hallConnectors an array of each hallway's array of nodes
- * @param {string[][]} stairConnections an array of stairs, where each stair has 
+ * @param {string[][]} stairConnections an array of stairs, where each stair has
  * a list of nodes going from the top to the bottom
  * @param {[string, string][]} hallwayConnections an array of the pairs of connected hallway nodes
  * @return {*} The graph to be used by getShortestPath
@@ -57,4 +57,3 @@ function getShortestPath(graph, idFrom, idTo) {
   console.log(dijkstra.find_path(graph, idFrom, idTo));
   return dijkstra.find_path(graph, idFrom, idTo);
 }
-
