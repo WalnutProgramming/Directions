@@ -9,7 +9,7 @@ if (iOS && !isInstalledPWA) {
 }
 
 const roomsDatalist = document.getElementById('roomsList');
-const roomsList = hallways.map(h => h.partList).flat().filter(a => a.name).map(r => r.name).sort();
+const roomsList = hallways.map(h => h.partList).flat().filter(a => a.name).map(r => r.aliases.concat(r.name)).flat().sort();
 roomsList.forEach(roomName => {
   const option = document.createElement('option');
   option.text = roomName;

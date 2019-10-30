@@ -56,12 +56,14 @@ class Room {
    * @param {Direction=} side 
    * @param {?string=} nodeId 
    * @param {string=} prefix 
+   * @param {string[]=} aliases
    */
-  constructor(name, side = LEFT, nodeId = null, prefix = 'room') {
+  constructor(name, side = LEFT, nodeId = null, prefix = 'room', aliases = []) {
     this.name = name;
     this.side = side;
     this.nodeId = nodeId;
     this.prefix = prefix;
+    this.aliases = aliases;
   }
 
   get fullName() {
@@ -181,7 +183,15 @@ class Hallway {
    *  there's no room with that name
    */
   getRoomInd(name) {
-    return this.partList.findIndex(elem => 'name' in elem && elem.name != null && elem.name.toUpperCase() == name.toUpperCase());
+    return this.partList.findIndex(
+    elem => {
+      return (
+        ("name" in elem &&
+         elem.name != null &&
+         (elem.name.toUpperCase() == name.toUpperCase() || 
+         elem.aliases.map(a => a.toUpperCase()).includes(name.toUpperCase())))
+      );
+    });
   }
 
   /**
@@ -273,7 +283,7 @@ const hallway3 = new Hallway([
   new Room('3205', RIGHT),
   new Room('3208', LEFT),
   //rooms without room numbers have prefix 'the'
-  new Room('Library', RIGHT, null, 'the'), 
+  new Room('Library', RIGHT, null, 'the', ["libary", "books"]), 
   new Room('3206', LEFT),
   new Room('3204', LEFT),
   new Room('3202', LEFT),
@@ -403,7 +413,7 @@ const arcade = new Hallway([
   new Fork(0, 'arcade to 2600s', 'the 2600s'),
   new Fork(0, 'arcade to 2700s', 'the 2700s'),
   new Fork(0, 'arcade to musicEntrance', 'the music lyceum'),
-  new Room('Senior High Gym', 0, null, 'the')
+  new Room('Senior High Gym', 0, null, 'the', ['shgym', 'senior gym', 'big gym'])
 ]);
 
 arcade.getDirectionsFromIndices = function(from, to) {
