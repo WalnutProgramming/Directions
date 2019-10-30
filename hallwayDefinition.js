@@ -430,10 +430,12 @@ const modernLanguagesWing2 = new Hallway([
 
 /** @type {Hallway} */
 const arcade = new Hallway([
-  new Fork(0, "arcade to 2600s", "the 2600s"),
-  new Fork(0, "arcade to 2700s", "the 2700s"),
-  new Fork(0, "arcade to musicEntrance", "the music lyceum"),
-  new Room("Senior High Gym", 0, null, "the", [
+  // The directions that we use here (FRONT) don't matter since we
+  // override the instructions for the arcade anyway.
+  new Fork(FRONT, "arcade to 2600s", "the 2600s"),
+  new Fork(FRONT, "arcade to 2700s", "the 2700s"),
+  new Fork(FRONT, "arcade to musicEntrance", "the music lyceum"),
+  new Room("Senior High Gym", FRONT, null, "the", [
     "shgym",
     "senior gym",
     "big gym",
