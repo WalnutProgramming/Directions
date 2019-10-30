@@ -188,10 +188,8 @@ class Hallway {
       return (
         ("name" in elem &&
          elem.name != null &&
-         elem.name.toUpperCase() == name.toUpperCase()) ||
-        ("aliases" in elem &&
-         elem.aliases != null &&
-         elem.aliases.map(a => a.toUpperCase()).includes(name.toUpperCase()))
+         (elem.name.toUpperCase() == name.toUpperCase() || 
+         elem.aliases.map(a => a.toUpperCase()).includes(name.toUpperCase())))
       );
     });
   }

@@ -9,8 +9,7 @@ if (iOS && !isInstalledPWA) {
 }
 
 const roomsDatalist = document.getElementById('roomsList');
-const roomsList = hallways.map(h => h.partList).flat().filter(a => a.name).map(r => r.name).sort();
-const aliasesList = hallways.map(h => h.partList).flat().filter(a => a.aliases).map(r => r.aliases).sort();
+const roomsList = hallways.map(h => h.partList).flat().filter(a => a.name).map(r => r.aliases.concat(r.name)).flat().sort();
 roomsList.forEach(roomName => {
   const option = document.createElement('option');
   option.text = roomName;
@@ -24,7 +23,7 @@ inputs.forEach(function(input) {
   input.addEventListener('change', function() {
     // use the setCustomValidity function of the Validation API
     // to provide an user feedback if the room doesn't exist
-    if (roomsList.map(a => a.toUpperCase()).includes(this.value.toUpperCase()) || aliasesList.map(a => a.toUpperCase()).includes(this.value.toUpperCase())) {
+    if (roomsList.map(a => a.toUpperCase()).includes(this.value.toUpperCase())) {
       this.setCustomValidity('');
     } else {
       this.setCustomValidity("I can't find a room with that name.");
