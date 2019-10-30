@@ -400,12 +400,10 @@ const modernLanguagesWing2 = new Hallway([
 
 /** @type {Hallway} */
 const arcade = new Hallway([
-  new Fork(LEFT+RIGHT, 'arcade to 2600s', 'the 2600s'),
-  new Fork(2*FRONT, 'arcade to 2700s', 'the 2700s'),
-  //new Turn(RIGHT),
-  new Fork(RIGHT>>RIGHT>>(LEFT&FRONT), 'arcade to musicEntrance', 'the music lyceum'),
-  //new Turn(RIGHT),
-  new Room('Senior High Gym', 0xFDCB24DEC9, null, "the"),
+  new Fork(0, 'arcade to 2600s', 'the 2600s'),
+  new Fork(0, 'arcade to 2700s', 'the 2700s'),
+  new Fork(0, 'arcade to musicEntrance', 'the music lyceum'),
+  new Room('Senior High Gym', 0, null, "the")
   // add other hallways at the end
 ]);
 
@@ -416,27 +414,27 @@ arcade.getDirectionsFromIndices = function(from, to) {
       switch (to) {
         case SCIENCE: return 'Go straight and a bit to the right to get to the 2700s, the science wing\n'
         //case MUSIC: return 'Turn left, then walk down to the end of the arcade and turn right\nWalk down the hallway, and turn right when you get to the doors\n'
-        case MUSIC: return 'Go straight and a bit to the left through the long narrow hallway.\nTurn right when you get to the doors labeled "Music Lyceum" and enter the doors.\n'
-        case GYM: return 'Go straight and a bit to left, and go to the end of the hall.\nThe Senior High Gym is straight ahead. Walk inside.'
+        case MUSIC: return 'Go straight and a bit to the left through the long narrow hallway\nTurn right when you get to the doors labeled "Music Lyceum" and enter the doors\n'
+        case GYM: return 'Go straight and a bit to left, and go to the end of the hall\nThe Senior High Gym is straight ahead. Walk inside'
       }
     case SCIENCE:
       switch (to) {
         case LANGUAGES: return 'Go straight and a bit to the right to get to the 2600s, the modern languages wing\n'
         case MUSIC: return 'Turn right, then walk down to the end of the arcade and turn right\nWalk down the hallway, and turn right when you get to the doors\n'
-        case GYM: return 'Turn right when you leave the science wing.\nWalk forward and turn right again, then walk down to the end of the narrow hallway.\n'
+        case GYM: return 'Turn right when you leave the science wing.\nWalk forward and turn right again, then walk down to the end of the narrow hallway\n'
       }
     case MUSIC:
       switch (to) {
-        case SCIENCE: return 'Turn left after walking through the doors, then walk down the hallway\nWhen you get to the end of the hallway, turn left into the arcade, then walk down the arcade and turn left into the science wing.\n'
-        case LANGUAGES: return 'Turn left after walking through the doors, then walk down the hallway\nWhen you get to the end of the hallway, turn left into the arcade, then walk down the arcade and turn right into the modern foreign languages wing.\n'
-        case GYM: return 'Turn left after walking through the doors, then walk forward until you get to the gym.\n'
+        case SCIENCE: return 'Turn left after walking through the doors, then walk down the hallway\nWhen you get to the end of the hallway, turn left into the arcade, then walk down the arcade and turn left into the science wing\n'
+        case LANGUAGES: return 'Turn left after walking through the doors, then walk down the hallway\nWhen you get to the end of the hallway, turn left into the arcade, then walk down the arcade and turn right into the modern foreign languages wing\n'
+        case GYM: return 'Turn left after walking through the doors, then walk forward until you get to the gym\n'
       }
     case GYM:
-      const str = 'Exit the gym and walk out via the narrow hallway on the right.\n'
+      const str = 'Exit the gym and walk out via the narrow hallway on the right\n';
       switch (to) {
-        case SCIENCE: return str+'Walk until the narrow hallway empties into the Arcade.\nTurn left, walk a little bit, and turn left again to get to the science wing.\n'
-        case LANGUAGES: return str+'Walk until the narrow hallway empties into the Arcade.\nGo straight and a bit to the left; walk forward into the language wing.\n'
-        case MUSIC: return str+'After entering the narrow hallway, immediately turn left into the double doors labeled "Music Lyceum".\n'
+        case SCIENCE: return str + 'Walk until the narrow hallway empties into the Arcade\nTurn left, walk a little bit, and turn left again to get to the science wing\n'
+        case LANGUAGES: return str + 'Walk until the narrow hallway empties into the Arcade\nGo straight and a bit to the left; walk forward into the language wing\n'
+        case MUSIC: return str + 'After entering the narrow hallway, immediately turn left into the double doors labeled "Music Lyceum"\n'
       }
   }
 };
