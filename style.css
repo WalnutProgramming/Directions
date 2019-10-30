@@ -105,7 +105,12 @@ button {
   user-select: none; /* Standard syntax */
 }
 
-button:hover {
+.btn-hover-area {
+  display: inline-block;
+  border-radius: 100px;
+}
+
+.btn-hover-area:hover button {
   margin-top: 6px;
   margin-bottom: 0px;
   box-shadow: 0px 0px #007dc4, 0px 0px 0 6px rgb(209, 226, 228);
@@ -116,6 +121,6 @@ button:hover {
   cursor: pointer;
 }
 
-.backButton {
+.back-btn {
   font-size: 0.5em;
 }
