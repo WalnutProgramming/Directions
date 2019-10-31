@@ -219,7 +219,8 @@ class Hallway {
       if (
         "nodeId" in r &&
         r.nodeId &&
-        (!closestInd || Math.abs(i - ind) < closestInd)
+        (closestInd === undefined ||
+          Math.abs(i - ind) < Math.abs(i - closestInd))
       ) {
         closestInd = i;
       }
