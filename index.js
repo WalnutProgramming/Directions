@@ -16,6 +16,7 @@ const roomsList = hallways
   .map(r => r.aliases.concat(r.name))
   .flat()
   .sort();
+console.log(roomsList);
 roomsList.forEach(roomName => {
   const option = document.createElement("option");
   option.text = roomName;

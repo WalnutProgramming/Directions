@@ -346,9 +346,9 @@ const hallway2 = new Hallway([
   new Room("2204", undefined, undefined, undefined, ["Principal's Office"]),
   new Room("2203", RIGHT, undefined, undefined, ["Counseling Office"]),
   new Room("2202"),
-  new Room("2207", RIGHT, undefined, undefined, [
-    "9-12 Administration Offices",
-  ]),
+  new Room("2201", RIGHT, undefined, undefined, ["Registrar"]),
+  new Fork(LEFT, "lobby to 2240", "the entrance area"),
+  new Fork(RIGHT, "lobby to 2200s", "the 2200s"),
   new Room("2210", undefined, undefined, undefined, ["Conference Room"]),
   new Room("2209", RIGHT, undefined, undefined, ["7-8 Administration Office"]),
   new Stairs(LEFT, "stair-d2", "2015"),
@@ -369,6 +369,69 @@ const hallway2 = new Hallway([
   new Room("2113", RIGHT),
   new Room("2115", RIGHT),
   new Stairs(LEFT, "stair-f2", "2010"),
+]);
+
+/** @type Hallway */
+const entranceArea = new Hallway([
+  new Fork(BACK, "2240 to lobby", "the lobby"),
+  new Room("2200", LEFT, undefined, undefined, ["Main Office"]),
+]);
+
+/** @type Hallway */
+const administrativeCenter = new Hallway([
+  new Fork(BACK, "2200s to lobby", "the lobby"),
+  new Room("2207", RIGHT, undefined, undefined, [
+    "9-12 Administration Offices",
+  ]),
+  new Room("2229"),
+  new Room("2212", undefined, undefined, undefined, ["Medical Room", "Nurse"]),
+  new Room("2214"),
+  new Room("2211", RIGHT),
+  new Room("2216"),
+  // We handle this room specially because it's inside room 2216
+  Object.assign(new Room("2222"), {
+    onArrive(forwardOrBackward) {
+      return `Continue until you arrive at room 2218 on your ${dirToString(
+        LEFT * forwardOrBackward
+      )}. Walk inside, then enter 2222, which is inside 2218`;
+    },
+    onLeave(forwardOrBackward) {
+      return `After exiting room 2222, turn ${dirToString(
+        forwardOrBackward * RIGHT
+      )} out of room 2216\n`;
+    },
+  }),
+  new Room("2215", RIGHT, undefined, undefined, [
+    "Alumni Foundation",
+    "Alumni Office",
+  ]),
+  // We handle this room specially because it's inside room 2215
+  Object.assign(new Room("2219", RIGHT), {
+    onArrive(forwardOrBackward) {
+      return `Continue until you arrive at room 2215 on your ${dirToString(
+        RIGHT * forwardOrBackward
+      )}. Walk inside, then enter 2219, which is inside 2215`;
+    },
+    onLeave(forwardOrBackward) {
+      return `After exiting room 2219, turn ${dirToString(
+        forwardOrBackward * RIGHT
+      )} out of room 2215\n`;
+    },
+  }),
+  // We handle this room specially because it's inside room 2215
+  Object.assign(new Room("2221", RIGHT), {
+    onArrive(forwardOrBackward) {
+      return `Continue until you arrive at room 2215 on your ${dirToString(
+        RIGHT * forwardOrBackward
+      )}. Walk inside, then once inside, enter 2221 on your left`;
+    },
+    onLeave(forwardOrBackward) {
+      return `After exiting room 2221, turn ${dirToString(
+        forwardOrBackward * RIGHT
+      )} out of room 2215\n`;
+    },
+  }),
+  new Room("2218"),
 ]);
 
 /** @type {Hallway} */
@@ -603,6 +666,8 @@ const hallways = [
   hallway1,
   hallway1100s,
   hallway2,
+  administrativeCenter,
+  entranceArea,
   hallway3,
   modernLanguagesWing1,
   modernLanguagesWing2,
@@ -636,4 +701,6 @@ const hallwayConnections = [
   ["2700s to arcade", "arcade to 2700s"],
   ["musicEntrance to arcade", "arcade to musicEntrance"],
   ["music1 to musicLittleCorner", "musicLittleCorner to music1"],
+  ["lobby to 2200s", "2200s to lobby"],
+  ["lobby to 2240", "2240 to lobby"],
 ];
