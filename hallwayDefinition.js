@@ -340,6 +340,10 @@ const hallway2 = new Hallway([
   new Fork(LEFT, "2300s to 2600s", "the 2600s"),
   new Stairs(LEFT, "stair-b2", "2025"),
   new Room("2302", RIGHT),
+  new Room("Auditorium", LEFT, undefined, "the", [
+    "2500",
+    "Westheimer Auditorium",
+  ]),
   new Room("2301", RIGHT),
   new Room("2205", RIGHT),
   new Stairs(LEFT, "stair-c2", "2024"),
