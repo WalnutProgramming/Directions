@@ -360,8 +360,14 @@ const hallway2 = new Hallway([
   new Stairs(LEFT, "stair-d2", "2015"),
   new Room("2101", RIGHT),
   new Room("Junior High Gym", LEFT, undefined, "the", [
-    "2400",
+    "2402",
     "Gymnasium - Junior High",
+    "Gymnasium - Junior High School",
+    "Junior High Gymnasium",
+    "Junior Gym",
+    "Junior Gymnasium",
+    "Junior High School Gym",
+    "Junior High School Gymnasium",
   ]),
   new Room("2103", RIGHT),
   new Room("2105", RIGHT),
@@ -513,6 +519,10 @@ const arcade = new Hallway([
   new Room("Senior High Gym", FRONT, null, "the", [
     "2800",
     "Gymnasium - High School",
+    "Senior High Gym",
+    "Senior Gym",
+    "High School Gymnasium",
+    "High School Gym",
   ]),
 ]);
 
@@ -681,13 +691,16 @@ const musicLyceum1 = new Hallway([
   new Turn(LEFT),
   new Room("1853", RIGHT),
   new Room("1852"),
-  new Room("1850", RIGHT),
+  new Room("1850", RIGHT, undefined, undefined, ["Band (1850)"]),
   new Room("1857", RIGHT),
   new Room("1851", RIGHT),
   new Fork(RIGHT, "music1 to musicLittleCorner", "the little corner"),
   new Turn(LEFT),
   new Room("1843", LEFT),
-  new Room("1840", RIGHT, undefined, undefined, ["Instrumental"]),
+  new Room("1840", RIGHT, undefined, undefined, [
+    "Instrumental",
+    "Band (1840)",
+  ]),
   new Room("1841", LEFT),
   new Room("1824", RIGHT),
   new Room("1823", RIGHT),
@@ -698,7 +711,7 @@ const musicLittleCorner = new Hallway([
   new Room("1842"),
   new Room("1849", RIGHT),
   new Room("1846", RIGHT),
-  new Room("1845", FRONT),
+  new Room("1845", FRONT, undefined, undefined, ["Band (1845)"]),
 ]);
 
 const musicLyceum2 = new Hallway([
@@ -713,13 +726,13 @@ const musicLyceum2 = new Hallway([
   ]),
   new Room("2847"),
   new Room("2857", RIGHT),
-  new Room("2848", RIGHT),
+  new Room("2848", RIGHT, undefined, undefined, ["Strings"]),
   new Turn(LEFT),
   new Room("2846", RIGHT),
   new Room("2844", RIGHT),
   new Room("2842", RIGHT),
   new Room("2843"),
-  new Room("2840", RIGHT),
+  new Room("2840", RIGHT, undefined, undefined, ["Choir"]),
 ]);
 
 /** @type {Hallway[]} */
