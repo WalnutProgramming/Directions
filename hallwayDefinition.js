@@ -658,7 +658,12 @@ const alumniHall = new Hallway([
 
 const performingArtsCenter2 = new Hallway([
   new Fork(BACK, "2500s to alumni-hall", "Alumni Hall"),
-  new Room("2503", RIGHT),
+  new Room("2503", RIGHT, undefined, undefined, [
+    "Black Box Theatre",
+    "Black Box Theater",
+    "Theatre",
+    "Theater",
+  ]),
   new Room("2505", RIGHT),
   new Stairs(RIGHT, "stair-arts-a2"),
   new Room("2510", RIGHT),
