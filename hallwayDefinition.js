@@ -144,6 +144,12 @@ class Stairs extends Room {
 }
 
 class Fork extends Room {
+  /**
+   *
+   * @param {Direction} side
+   * @param {string} nodeId
+   * @param {string} destinationName
+   */
   constructor(side, nodeId, destinationName) {
     super(null, side, nodeId);
     this.destinationName = destinationName;
@@ -502,17 +508,30 @@ const modernLanguagesWing2 = new Hallway([
   new Turn(RIGHT),
   new Room("2603"),
   new Room("2605"),
+  new Fork(RIGHT, "2600s to 2600s-little-hallway", "the little hallway"),
   new Room("2607"),
   new Room("2609"),
   new Room("2611"),
   new Fork(FRONT, "2600s to arcade", "the arcade"),
 ]);
 
+const little2600sHallway = new Hallway([
+  new Fork(BACK, "2600s-little-hallway to 2600s", "the 2600s"),
+  new Room("2606", RIGHT),
+  // There are a few stairs right here
+  Object.assign(new Room(), {
+    onPass(forwardOrBackward, prevRoom) {
+      return `Go ${forwardOrBackward == FRONT ? "up" : "down"} a few stairs\n`;
+    },
+  }),
+  new Fork(LEFT, "2600s to 2500s", "the 2500s through the door"),
+]);
+
 /** @type {Hallway} */
 const arcade = new Hallway([
   // The directions that we use here (FRONT) don't matter since we
   // override the instructions for the arcade anyway.
-  new Fork(FRONT, "arcade to alumni-hall"),
+  new Fork(FRONT, "arcade to alumni-hall", "Alumni Hall"),
   new Fork(FRONT, "arcade to 2600s", "the 2600s"),
   new Fork(FRONT, "arcade to 2700s", "the 2700s"),
   new Fork(FRONT, "arcade to musicEntrance", "the music lyceum"),
@@ -633,7 +652,27 @@ arcade.getDirectionsFromIndices = function(from, to) {
 
 const alumniHall = new Hallway([
   new Fork(BACK, "alumni-hall to 2200s", "the 2200s"),
+  new Fork(LEFT, "alumni-hall to 2500s", "the narrow hallway"),
   new Fork(FRONT, "alumni-hall to arcade", "the arcade"),
+]);
+
+const performingArtsCenter2 = new Hallway([
+  new Fork(BACK, "2500s to alumni-hall", "Alumni Hall"),
+  new Room("2503", RIGHT),
+  new Room("2505", RIGHT),
+  new Stairs(RIGHT, "stair-arts-a2"),
+  new Room("2510", RIGHT),
+  new Fork(LEFT, "2500s to 2600s", "the 2600s"),
+  new Stairs(FRONT, "stairs-arts-b2"),
+]);
+
+const performingArtsCenter3 = new Hallway([
+  new Stairs(RIGHT, "stair-arts-a3"),
+  new Room("3502", RIGHT),
+  new Room("3503", RIGHT),
+  new Room("3504", RIGHT),
+  new Room("3505", RIGHT),
+  new Stairs(FRONT, "stair-arts-b3"),
 ]);
 
 const scienceWing2 = new Hallway([
@@ -745,6 +784,9 @@ const hallways = [
   hallway3,
   modernLanguagesWing1,
   modernLanguagesWing2,
+  little2600sHallway,
+  performingArtsCenter2,
+  performingArtsCenter3,
   alumniHall,
   arcade,
   scienceWing2,
@@ -766,6 +808,8 @@ const stairConnections = [
   ["stair-science-a1", "stair-science-a2", "stair-science-a3"],
   ["music-entrance-to-2", "music-2-to-entrance"],
   ["music-1-to-entrance", "music-entrance-to-1"],
+  ["stair-arts-a2", "stair-arts-a3"],
+  ["stair-arts-b2", "stair-arts-b3"],
 ];
 
 /** @type [string, string][] */
@@ -780,4 +824,7 @@ const hallwayConnections = [
   ["lobby to 2240", "2240 to lobby"],
   ["alumni-hall to 2200s", "2200s to alumni-hall"],
   ["alumni-hall to arcade", "arcade to alumni-hall"],
+  ["2500s to alumni-hall", "alumni-hall to 2500s"],
+  ["2500s to 2600s", "2600s to 2500s"],
+  ["2600s to 2600s-little-hallway", "2600s-little-hallway to 2600s"],
 ];
