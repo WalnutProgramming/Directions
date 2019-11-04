@@ -541,7 +541,6 @@ const arcade = new Hallway([
   new Room("Senior High Gym", FRONT, null, "the", [
     "2800",
     "Gymnasium - High School",
-    "Senior High Gym",
     "Senior Gym",
     "High School Gymnasium",
     "High School Gym",
