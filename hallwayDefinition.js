@@ -666,7 +666,7 @@ const performingArtsCenter2 = new Hallway([
     "Theatre",
     "Theater",
   ]),
-  new Room("2505", RIGHT),
+  new Room("2505", RIGHT, undefined, undefined, ["Scene Shop"]),
   new Stairs(RIGHT, "stair-arts-a2"),
   new Room("2510", RIGHT),
   new Fork(LEFT, "2500s to 2600s", "the 2600s"),
