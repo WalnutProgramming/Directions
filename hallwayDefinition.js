@@ -310,11 +310,14 @@ const hallway3 = new Hallway([
   new Room("3205", RIGHT),
   new Room("3208", LEFT),
   //rooms without room numbers have prefix 'the'
-  new Room("Library", RIGHT, null, "the", ["3214"]),
+  new Room("Library", RIGHT, null, "the", ["3214", "Libary (misspelled)"]),
   new Room("3206", LEFT),
   new Room("3204", LEFT),
   new Room("3202", LEFT),
-  new Room("3201", RIGHT, undefined, undefined, ["Computer Lab - Library"]),
+  new Room("3201", RIGHT, undefined, undefined, [
+    "Computer Lab - Library",
+    "Library Computer Lab",
+  ]),
   new Stairs(LEFT, "stair-d3", "2015"),
   new Room("3102", LEFT),
   new Room("3101", RIGHT),
