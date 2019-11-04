@@ -520,14 +520,13 @@ const modernLanguagesWing2 = new Hallway([
 
 const little2600sHallway = new Hallway([
   new Fork(BACK, "2600s-little-hallway to 2600s", "the 2600s"),
-  new Room("2606", RIGHT),
   // There are a few stairs right here
   Object.assign(new Room(), {
     onPass(forwardOrBackward, prevRoom) {
-      return `Go ${forwardOrBackward == FRONT ? "up" : "down"} a few stairs\n`;
+      return `Go ${forwardOrBackward == -1 ? "up" : "down"} the 3 steps\n`;
     },
   }),
-  new Fork(LEFT, "2600s to 2500s", "the 2500s through the door"),
+  new Fork(LEFT, "2600s to 2500s", "the door"),
 ]);
 
 /** @type {Hallway} */
@@ -669,7 +668,7 @@ const performingArtsCenter2 = new Hallway([
   new Room("2505", RIGHT, undefined, undefined, ["Scene Shop"]),
   new Stairs(RIGHT, "stair-arts-a2"),
   new Room("2510", RIGHT),
-  new Fork(LEFT, "2500s to 2600s", "the 2600s"),
+  new Fork(LEFT, "2500s to 2600s", "the door"),
   new Stairs(FRONT, "stairs-arts-b2"),
 ]);
 
