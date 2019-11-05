@@ -3,49 +3,92 @@
 that asks what room you want to go to -->
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>School Directions</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
 
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./icons/favicon-16x16.png"
+    />
+    <link
+      rel="mask-icon"
+      href="./icons/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="./icons/favicon.ico" />
+    <meta name="apple-mobile-web-app-title" content="School Directions" />
+    <meta name="application-name" content="School Directions" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-config" content="./icons/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
-    <link rel="mask-icon" href="./icons/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="./icons/favicon.ico">
-    <meta name="apple-mobile-web-app-title" content="School Directions">
-    <meta name="application-name" content="School Directions">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="./icons/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">    
-
-    <link rel='manifest' href='./manifest.webmanifest'>
+    <link rel="manifest" href="./manifest.webmanifest" />
   </head>
 
   <body>
-    <main>
-      <div style="text-align:center">
-        <button id="installButton" style="display: none;"> 
+    <div style="text-align:center">
+      <span
+        id="install-btn-hover-area"
+        class="btn-hover-area"
+        style="display: none;"
+      >
+        <button id="installButton">
           Install as app
         </button>
-        <h1 > Where do you need to go? </h1>
+      </span>
+
+      <main>
+        <h1>Where do you need to go?</h1>
         <form action="directions.html" method="get">
-          <label for="fromRoom"> I'm at room: </label> 
-          <input id="fromRoom" class="roomInput" name="fromRoom" list="roomsList" placeholder="type or select"/>
-          <label for="toRoom"> I'm going to room: </label> 
-          <input id="toRoom" class="roomInput" name="toRoom" list="roomsList" placeholder="type or select"/>
-          <br>
-          <button type="submit" class="active-button"> Go </button>
+          <label for="fromRoom"> I'm at room: </label>
+          <input
+            id="fromRoom"
+            class="roomInput"
+            name="fromRoom"
+            list="roomsList"
+            placeholder="type or select"
+          />
+          <label for="toRoom"> I'm going to room: </label>
+          <input
+            id="toRoom"
+            class="roomInput"
+            name="toRoom"
+            list="roomsList"
+            placeholder="type or select"
+          />
+          <br />
+          <span class="btn-hover-area">
+            <button type="submit" class="active-button">Go</button>
+          </span>
         </form>
-      </div>
-    </main>
+      </main>
+    </div>
 
     <div id="iosDownloadSuggestion">
       <p>
         To install this page as an app, press
-        <img src="iosDownload.png" alt="iosDownload" style="width:20px;height:20px;"> 
-        at the bottom of the page and then press "Add to Home Screen" in the menu that appears.
+        <img
+          src="iosDownload.png"
+          alt="iosDownload"
+          style="width:20px;height:20px;"
+        />
+        at the bottom of the page and then press "Add to Home Screen" in the
+        menu that appears.
       </p>
     </div>
 
@@ -54,5 +97,4 @@ that asks what room you want to go to -->
     <script src="loadWorker.js"></script>
     <script src="maybeInstallApp.js"></script>
   </body>
-
 </html>

@@ -1,5 +1,5 @@
 {
-  "name": "ProgClub",
+  "name": "directions",
   "version": "0.0.1",
   "main": "index.html",
   "repository": "https://github.com/WalnutProgramming/Directions.git",
@@ -12,6 +12,10 @@
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "7.2.0",
-    "parcel-bundler": "^1.6.1"
+    "parcel-bundler": "^1.6.1",
+    "prettier": "1.18.2"
+  },
+  "prettier": {
+    "trailingComma": "es5"
   }
 }

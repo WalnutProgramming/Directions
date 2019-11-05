@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 export { dijkstra };
 
 // https://github.com/tcort/dijkstrajs/blob/master/dijkstra.js
@@ -43,13 +43,14 @@ let dijkstra = {
     open.push(s, 0);
 
     let closest,
-        u, v,
-        cost_of_s_to_u,
-        adjacent_nodes,
-        cost_of_e,
-        cost_of_s_to_u_plus_cost_of_e,
-        cost_of_s_to_v,
-        first_visit;
+      u,
+      v,
+      cost_of_s_to_u,
+      adjacent_nodes,
+      cost_of_e,
+      cost_of_s_to_u_plus_cost_of_e,
+      cost_of_s_to_v,
+      first_visit;
     while (!open.empty()) {
       // In the nodes remaining in graph that have a known cost from s,
       // find the node, u, that currently has the shortest path from s.
@@ -78,7 +79,7 @@ let dijkstra = {
           // cost of u to v across e), update v's cost in the cost list and
           // update v's predecessor in the predecessor list (it's now u).
           cost_of_s_to_v = costs[v];
-          first_visit = (typeof costs[v] === 'undefined');
+          first_visit = typeof costs[v] === "undefined";
           if (first_visit || cost_of_s_to_v > cost_of_s_to_u_plus_cost_of_e) {
             costs[v] = cost_of_s_to_u_plus_cost_of_e;
             open.push(v, cost_of_s_to_u_plus_cost_of_e);
@@ -88,8 +89,8 @@ let dijkstra = {
       }
     }
 
-    if (typeof d !== 'undefined' && typeof costs[d] === 'undefined') {
-      let msg = ['Could not find a path from ', s, ' to ', d, '.'].join('');
+    if (typeof d !== "undefined" && typeof costs[d] === "undefined") {
+      let msg = ["Could not find a path from ", s, " to ", d, "."].join("");
       throw new Error(msg);
     }
 
@@ -112,17 +113,19 @@ let dijkstra = {
   find_path: function(graph, s, d) {
     let predecessors = dijkstra.single_source_shortest_paths(graph, s, d);
     return dijkstra.extract_shortest_path_from_predecessor_list(
-      predecessors, d);
+      predecessors,
+      d
+    );
   },
 
   /**
    * A very naive priority queue implementation.
    */
   PriorityQueue: {
-    make: function (opts) {
+    make: function(opts) {
       let T = dijkstra.PriorityQueue,
-          t = {},
-          key;
+        t = {},
+        key;
       opts = opts || {};
       for (key in T) {
         if (T.hasOwnProperty(key)) {
@@ -134,7 +137,7 @@ let dijkstra = {
       return t;
     },
 
-    default_sorter: function (a, b) {
+    default_sorter: function(a, b) {
       return a.cost - b.cost;
     },
 
@@ -142,8 +145,8 @@ let dijkstra = {
      * Add a new item to the queue and ensure the highest priority element
      * is at the front of the queue.
      */
-    push: function (value, cost) {
-      let item = {value: value, cost: cost};
+    push: function(value, cost) {
+      let item = { value: value, cost: cost };
       this.queue.push(item);
       this.queue.sort(this.sorter);
     },
@@ -151,16 +154,15 @@ let dijkstra = {
     /**
      * Return the highest priority element in the queue.
      */
-    pop: function () {
+    pop: function() {
       return this.queue.shift();
     },
 
-    empty: function () {
+    empty: function() {
       return this.queue.length === 0;
-    }
-  }
+    },
+  },
 };
-
 
 // // node.js module exports
 // if (typeof module !== 'undefined') {
