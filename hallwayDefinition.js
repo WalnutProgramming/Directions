@@ -102,7 +102,7 @@ class Room {
     let ret = "";
     if (isLeftOrRight(this.side)) {
       ret += dirToTurnString(forwardOrBackward * this.side);
-      ret += ` out of ${this.fullName}`;
+      if (this.fullName) ret += ` out of ${this.fullName}`;
       ret += "\n";
     }
     return ret;
@@ -666,19 +666,28 @@ const performingArtsCenter2 = new Hallway([
     "Theater",
   ]),
   new Room("2505", RIGHT, undefined, undefined, ["Scene Shop"]),
-  new Stairs(RIGHT, "stair-arts-a2"),
+  new Fork(RIGHT, "2500s to 2500s-corner", "the corner with the stairs"),
   new Room("2510", RIGHT),
   new Fork(LEFT, "2500s to 2600s", "the door"),
-  new Stairs(FRONT, "stairs-arts-b2"),
+  new Stairs(FRONT, "stair-arts-b2"),
+]);
+
+const performingArtsCenter2StairCorner = new Hallway([
+  new Fork(BACK, "2500s-corner to 2500s", "the main 2500s hallway"),
+  new Stairs(RIGHT, "stair-arts-a2"),
 ]);
 
 const performingArtsCenter3 = new Hallway([
-  new Stairs(RIGHT, "stair-arts-a3"),
-  new Room("3502", RIGHT),
-  new Room("3503", RIGHT),
-  new Room("3504", RIGHT),
+  new Fork(RIGHT, "3500s to 3500s-corner", "the corner with the stairs"),
   new Room("3505", RIGHT),
   new Stairs(FRONT, "stair-arts-b3"),
+]);
+
+const performingArtsCenter3StairCorner = new Hallway([
+  new Fork(BACK, "3500s-corner to 3500s", "the main 3500s hallway"),
+  new Stairs(RIGHT, "stair-arts-a3"),
+  new Room("3503", LEFT),
+  new Room("3504", FRONT),
 ]);
 
 const scienceWing2 = new Hallway([
@@ -792,7 +801,9 @@ const hallways = [
   modernLanguagesWing2,
   little2600sHallway,
   performingArtsCenter2,
+  performingArtsCenter2StairCorner,
   performingArtsCenter3,
+  performingArtsCenter3StairCorner,
   alumniHall,
   arcade,
   scienceWing2,
@@ -833,4 +844,6 @@ const hallwayConnections = [
   ["2500s to alumni-hall", "alumni-hall to 2500s"],
   ["2500s to 2600s", "2600s to 2500s"],
   ["2600s to 2600s-little-hallway", "2600s-little-hallway to 2600s"],
+  ["3500s-corner to 3500s", "3500s to 3500s-corner"],
+  ["2500s-corner to 2500s", "2500s to 2500s-corner"],
 ];
