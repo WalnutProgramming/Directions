@@ -303,7 +303,7 @@ const hallway3 = new Hallway([
   new Room("3305", RIGHT),
   new Room("3302", LEFT),
   new Room("3303", RIGHT),
-  new Room("3301", RIGHT),
+  new Room("3301", RIGHT, undefined, undefined, ["Writing Center"]),
   new Stairs(LEFT, "stair-c3", "2024"),
   new Room("3210", LEFT),
   new Room("3207", LEFT),
