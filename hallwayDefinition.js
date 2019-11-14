@@ -46,7 +46,7 @@ function dirToString(dir) {
  */
 function dirToTurnString(dir, lowercase) {
   if (dir == FRONT || dir == BACK) {
-    return (lowercase ? "g" : "G") + "go straight";
+    return (lowercase ? "g" : "G") + "o straight";
   } else {
     return (lowercase ? "t" : "T") + "urn " + dirToString(dir);
   }
@@ -123,13 +123,10 @@ class Room {
    * @return {string} What we should say when we enter this room
    */
   onArrive(forwardOrBackward) {
-    let ret = "";
-    ret += `Continue until you arrive at ${this.fullName}`;
-    if (isLeftOrRight(this.side)) {
-      ret += ` on your ${dirToString(this.side * forwardOrBackward)}`;
-    }
-    ret += "\n";
-    return ret;
+    return `Continue, then ${dirToTurnString(
+      this.side * forwardOrBackward,
+      true
+    )} into ${this.fullName}\n`;
   }
 }
 
