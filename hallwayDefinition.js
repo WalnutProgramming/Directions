@@ -69,13 +69,22 @@ class Room {
    * @param {?string=} nodeId
    * @param {string=} prefix
    * @param {string[]=} aliases
+   * @param {?number=} edgeLengthFromPrevious
    */
-  constructor(name, side = LEFT, nodeId = null, prefix = "room", aliases = []) {
+  constructor(
+    name,
+    side = LEFT,
+    nodeId = null,
+    prefix = "room",
+    aliases = [],
+    edgeLengthFromPrevious = null
+  ) {
     this.name = name;
     this.side = side;
     this.nodeId = nodeId;
     this.prefix = prefix;
     this.aliases = aliases;
+    this.edgeLengthFromPrevious = edgeLengthFromPrevious;
   }
 
   get fullName() {
@@ -129,9 +138,10 @@ class Stairs extends Room {
    * @param {Direction=} side
    * @param {?string=} nodeId
    * @param {string=} stairNumber
+   * @param {number=} edgeLengthFromPrevious
    */
-  constructor(side, nodeId, stairNumber) {
-    super(null, side, nodeId);
+  constructor(side, nodeId, stairNumber, edgeLengthFromPrevious) {
+    super(null, side, nodeId, undefined, undefined, edgeLengthFromPrevious);
     this.stairNumber = stairNumber;
   }
 
@@ -149,9 +159,10 @@ class Fork extends Room {
    * @param {Direction} side
    * @param {string} nodeId
    * @param {string} destinationName
+   * @param {number=} edgeLengthFromPrevious
    */
-  constructor(side, nodeId, destinationName) {
-    super(null, side, nodeId);
+  constructor(side, nodeId, destinationName, edgeLengthFromPrevious = 1) {
+    super(null, side, nodeId, undefined, undefined, edgeLengthFromPrevious);
     this.destinationName = destinationName;
   }
 
@@ -237,12 +248,12 @@ class Hallway {
   }
 
   /**
-   * @return {string[]}
+   * @return {{nodeId: string, edgeLengthFromPrevious: number}[]}
    */
   get nodes() {
     return this.partList
       .filter(r => "nodeId" in r && r.nodeId)
-      .map(r => "nodeId" in r && r.nodeId);
+      .map(r => "nodeId" in r && r);
   }
 
   /**
@@ -299,7 +310,7 @@ const hallway3 = new Hallway([
   new Room("3310", RIGHT), // these 2 rooms sometimes give weird directions
   new Room("3309", RIGHT), //
   new Turn(RIGHT),
-  new Stairs(LEFT, "stair-b3", "2025"),
+  new Stairs(LEFT, "stair-b3", "2025", 2),
   new Room("3305", RIGHT),
   new Room("3302", LEFT),
   new Room("3303", RIGHT),
@@ -318,7 +329,7 @@ const hallway3 = new Hallway([
     "Computer Lab - Library",
     "Library Computer Lab",
   ]),
-  new Stairs(LEFT, "stair-d3", "2015"),
+  new Stairs(LEFT, "stair-d3", "2015", 3),
   new Room("3102", LEFT),
   new Room("3101", RIGHT),
   new Room("3104", LEFT),
@@ -498,7 +509,7 @@ const modernLanguagesWing1 = new Hallway([
   new Room("1606"),
   new Room("1607"),
   new Room("1608"),
-  new Stairs(LEFT, "stair-science-a1"),
+  new Stairs(LEFT, "stair-science-a1", undefined, 4),
 ]);
 
 /** @type {Hallway} */
@@ -734,7 +745,7 @@ const scienceWing3 = new Hallway([
 
 const musicEntrance = new Hallway([
   new Stairs(BACK, "music-entrance-to-1"),
-  new Fork(RIGHT, "musicEntrance to arcade", "the arcade"),
+  new Fork(RIGHT, "musicEntrance to arcade", "the long narrow hallway"),
   new Stairs(FRONT, "music-entrance-to-2"),
 ]);
 
