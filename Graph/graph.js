@@ -6,7 +6,7 @@ export { getGraph, getShortestPath };
 
 /**
  *
- * @param {{nodeId: string, edgeLengthFromPrevious: number}[][]} hallConnectors an array of each hallway's array of nodes
+ * @param {{nodeId: string, edgeLengthFromPreviousNodeInHallway: number}[][]} hallConnectors an array of each hallway's array of nodes
  * @param {string[][]} stairConnections an array of stairs, where each stair has
  * a list of nodes going from the top to the bottom
  * @param {[string, string][]} hallwayConnections an array of the pairs of connected hallway nodes
@@ -21,10 +21,12 @@ function getGraph(hallConnectors, stairConnections, hallwayConnections) {
       /** @type {{[key: string]: number}} */
       const edgesTo = {};
       if (ind != 0) {
-        edgesTo[hall[ind - 1].nodeId] = hall[ind].edgeLengthFromPrevious;
+        edgesTo[hall[ind - 1].nodeId] =
+          hall[ind].edgeLengthFromPreviousNodeInHallway;
       }
       if (ind != hall.length - 1) {
-        edgesTo[hall[ind + 1].nodeId] = hall[ind + 1].edgeLengthFromPrevious;
+        edgesTo[hall[ind + 1].nodeId] =
+          hall[ind + 1].edgeLengthFromPreviousNodeInHallway;
       }
       stairConnections.forEach(stairList => {
         const myFloorNum = stairList.indexOf(id);

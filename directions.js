@@ -43,7 +43,7 @@ function getHallwayIndexAndIndexFromNode(nodeId) {
   return [hallwayInd, inds[hallwayInd]];
 }
 
-/** @type {{nodeId: string, edgeLengthFromPrevious: number}[][]} */
+/** @type {{nodeId: string, edgeLengthFromPreviousNodeInHallway: number}[][]} */
 const hallwayNodes = hallways.map(h => {
   return h.nodes;
 });

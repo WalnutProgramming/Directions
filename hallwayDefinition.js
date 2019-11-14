@@ -69,7 +69,7 @@ class Room {
    * @param {?string=} nodeId
    * @param {string=} prefix
    * @param {string[]=} aliases
-   * @param {?number=} edgeLengthFromPrevious
+   * @param {?number=} edgeLengthFromPreviousNodeInHallway
    */
   constructor(
     name,
@@ -77,14 +77,14 @@ class Room {
     nodeId = null,
     prefix = "room",
     aliases = [],
-    edgeLengthFromPrevious = null
+    edgeLengthFromPreviousNodeInHallway = null
   ) {
     this.name = name;
     this.side = side;
     this.nodeId = nodeId;
     this.prefix = prefix;
     this.aliases = aliases;
-    this.edgeLengthFromPrevious = edgeLengthFromPrevious;
+    this.edgeLengthFromPreviousNodeInHallway = edgeLengthFromPreviousNodeInHallway;
   }
 
   get fullName() {
@@ -138,10 +138,17 @@ class Stairs extends Room {
    * @param {Direction=} side
    * @param {?string=} nodeId
    * @param {string=} stairNumber
-   * @param {number=} edgeLengthFromPrevious
+   * @param {number=} edgeLengthFromPreviousNodeInHallway
    */
-  constructor(side, nodeId, stairNumber, edgeLengthFromPrevious) {
-    super(null, side, nodeId, undefined, undefined, edgeLengthFromPrevious);
+  constructor(side, nodeId, stairNumber, edgeLengthFromPreviousNodeInHallway) {
+    super(
+      null,
+      side,
+      nodeId,
+      undefined,
+      undefined,
+      edgeLengthFromPreviousNodeInHallway
+    );
     this.stairNumber = stairNumber;
   }
 
@@ -159,10 +166,22 @@ class Fork extends Room {
    * @param {Direction} side
    * @param {string} nodeId
    * @param {string} destinationName
-   * @param {number=} edgeLengthFromPrevious
+   * @param {number=} edgeLengthFromPreviousNodeInHallway
    */
-  constructor(side, nodeId, destinationName, edgeLengthFromPrevious = 1) {
-    super(null, side, nodeId, undefined, undefined, edgeLengthFromPrevious);
+  constructor(
+    side,
+    nodeId,
+    destinationName,
+    edgeLengthFromPreviousNodeInHallway = 1
+  ) {
+    super(
+      null,
+      side,
+      nodeId,
+      undefined,
+      undefined,
+      edgeLengthFromPreviousNodeInHallway
+    );
     this.destinationName = destinationName;
   }
 
@@ -248,7 +267,7 @@ class Hallway {
   }
 
   /**
-   * @return {{nodeId: string, edgeLengthFromPrevious: number}[]}
+   * @return {{nodeId: string, edgeLengthFromPreviousNodeInHallway: number}[]}
    */
   get nodes() {
     return this.partList
