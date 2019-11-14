@@ -244,25 +244,25 @@ class Hallway {
   }
 
   /**
-   * @param {number} ind The index of the room in the hallway
+   * @param {number} roomInd The index of the room in the hallway
    * @return {string} The id of the "closest" node to the room
    * in the hallway
    */
-  idOfClosestNodeToIndex(ind) {
+  idOfClosestNodeToIndex(roomInd) {
     /** @type {number} */
-    let closestInd;
-    this.partList.forEach((r, i) => {
+    let closestNodeInd;
+    this.partList.forEach((r, currentInd) => {
       if (
         "nodeId" in r &&
         r.nodeId &&
-        (closestInd === undefined ||
-          Math.abs(i - ind) < Math.abs(i - closestInd))
+        (closestNodeInd === undefined ||
+          Math.abs(currentInd - roomInd) < Math.abs(closestNodeInd - roomInd))
       ) {
-        closestInd = i;
+        closestNodeInd = currentInd;
       }
     });
 
-    const closest = this.partList[closestInd];
+    const closest = this.partList[closestNodeInd];
     if ("nodeId" in closest) return closest.nodeId;
   }
 
