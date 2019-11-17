@@ -314,6 +314,33 @@ class Hallway {
   }
 }
 
+class SimpleHallway extends Hallway {
+  /**
+   *
+   * @param {string} nodeId
+   * @param {Room[]} partList
+   * @param {string} hallwayName
+   */
+  constructor(nodeId, partList, hallwayName) {
+    super([new Fork(FRONT, nodeId, ""), ...partList]);
+    this.hallwayName = hallwayName;
+  }
+
+  getDirectionsFromIndices(from, to) {
+    const toRoomName = /** @type {Room} */ (this.partList[to]).fullName;
+    const fromRoomName = /** @type {Room} */ (this.partList[from]).fullName;
+    if (from === 0) {
+      // We're starting from the fork and going into the room
+      return `Enter ${toRoomName}, which is in ${this.hallwayName}\n`;
+    } else if (to === 0) {
+      // We're starting at the room and going out of the fork
+      return `Exit ${fromRoomName}\n`;
+    } else {
+      return `Exit ${fromRoomName} and enter ${toRoomName} (both of which are in ${this.hallwayName})\n`;
+    }
+  }
+}
+
 /** @type {Hallway} */
 const hallway3 = new Hallway([
   new Stairs(LEFT, "stair-a3", "2018"),
@@ -435,52 +462,25 @@ const administrativeCenter = new Hallway([
   new Room("2212", undefined, undefined, undefined, ["Medical Room", "Nurse"]),
   new Room("2214"),
   new Room("2211", RIGHT),
-  new Room("2216"),
-  // We handle this room specially because it's inside room 2216
-  Object.assign(new Room("2222"), {
-    onArrive(forwardOrBackward) {
-      return `Continue until you arrive at room 2218 on your ${dirToString(
-        LEFT * forwardOrBackward
-      )}. Walk inside, then enter 2222, which is inside 2218`;
-    },
-    onLeave(forwardOrBackward) {
-      return `After exiting room 2222, turn ${dirToString(
-        forwardOrBackward * RIGHT
-      )} out of room 2216\n`;
-    },
-  }),
-  new Room("2215", RIGHT, undefined, undefined, [
+  new Room("2216", LEFT, "enter-2216"),
+  new Room("2215", RIGHT, "enter-2215", undefined, [
     "Alumni Foundation",
     "Alumni Office",
   ]),
-  // We handle this room specially because it's inside room 2215
-  Object.assign(new Room("2219", RIGHT), {
-    onArrive(forwardOrBackward) {
-      return `Continue until you arrive at room 2215 on your ${dirToString(
-        RIGHT * forwardOrBackward
-      )}. Walk inside, then enter 2219, which is inside 2215`;
-    },
-    onLeave(forwardOrBackward) {
-      return `After exiting room 2219, turn ${dirToString(
-        forwardOrBackward * RIGHT
-      )} out of room 2215\n`;
-    },
-  }),
-  // We handle this room specially because it's inside room 2215
-  Object.assign(new Room("2221", RIGHT), {
-    onArrive(forwardOrBackward) {
-      return `Continue until you arrive at room 2215 on your ${dirToString(
-        RIGHT * forwardOrBackward
-      )}. Walk inside, then once inside, enter 2221 on your left`;
-    },
-    onLeave(forwardOrBackward) {
-      return `After exiting room 2221, turn ${dirToString(
-        forwardOrBackward * RIGHT
-      )} out of room 2215\n`;
-    },
-  }),
   new Room("2218"),
 ]);
+
+const inside2216 = new SimpleHallway(
+  "exit-2216",
+  [new Room("2222")],
+  "room 2216"
+);
+
+const inside2215 = new SimpleHallway(
+  "exit-2215",
+  [new Room("2219"), new Room("2221")],
+  "room 2215"
+);
 
 /** @type {Hallway} */
 const hallway1 = new Hallway([
@@ -519,7 +519,13 @@ const modernLanguagesWing1 = new Hallway([
   new Room("1601"),
   new Room("1602"),
   new Turn(RIGHT),
-  new Room("1604", RIGHT, undefined, undefined, ["Language Lab"]),
+  new (class extends Room {
+    onLeave(forwardOrBackward) {
+      return super
+        .onLeave(forwardOrBackward)
+        .replace("\n", " through the door closest to the desk\n");
+    }
+  })("1604", RIGHT, undefined, undefined, ["Language Lab"]),
   new Room("1603"),
   new Room("1605"),
   new Room("1606"),
@@ -548,11 +554,11 @@ const modernLanguagesWing2 = new Hallway([
 const little2600sHallway = new Hallway([
   new Fork(BACK, "2600s-little-hallway to 2600s", "the 2600s"),
   // There are a few stairs right here
-  Object.assign(new Room(), {
+  new (class extends Room {
     onPass(forwardOrBackward, prevRoom) {
       return `Go ${forwardOrBackward == -1 ? "up" : "down"} the 3 steps\n`;
-    },
-  }),
+    }
+  })(),
   new Fork(LEFT, "2600s to 2500s", "the door"),
 ]);
 
@@ -839,6 +845,8 @@ const hallways = [
   musicLyceum1,
   musicLyceum2,
   musicLittleCorner,
+  inside2216,
+  inside2215,
 ];
 
 //When listing stairs, the furthest down entrance to the stairs goes first
@@ -873,4 +881,6 @@ const hallwayConnections = [
   ["2600s to 2600s-little-hallway", "2600s-little-hallway to 2600s"],
   ["3500s-corner to 3500s", "3500s to 3500s-corner"],
   ["2500s-corner to 2500s", "2500s to 2500s-corner"],
+  ["enter-2216", "exit-2216"],
+  ["enter-2215", "exit-2215"],
 ];
