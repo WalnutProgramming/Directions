@@ -44,9 +44,9 @@ function getGraph(hallConnectors, stairConnections, hallwayConnections) {
         }
       });
       hallwayConnections.forEach(([bottom, top]) => {
-        if (bottom == id) {
+        if (bottom === id) {
           edgesTo[top] = 1;
-        } else if (top == id) {
+        } else if (top === id) {
           edgesTo[bottom] = 1;
         }
       });

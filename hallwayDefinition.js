@@ -33,9 +33,9 @@ const LEFT = -1,
  * @return {string} 'left', 'right', 'front', or 'back'
  */
 function dirToString(dir) {
-  if (dir == LEFT) return "left";
-  else if (dir == RIGHT) return "right";
-  else if (dir == FRONT) return "front";
+  if (dir === LEFT) return "left";
+  else if (dir === RIGHT) return "right";
+  else if (dir === FRONT) return "front";
   else return "back";
 }
 
@@ -45,7 +45,7 @@ function dirToString(dir) {
  * @return {string} 'Go straight', 'Turn left', or 'Turn right'
  */
 function dirToTurnString(dir, lowercase) {
-  if (dir == FRONT || dir == BACK) {
+  if (dir === FRONT || dir === BACK) {
     return (lowercase ? "g" : "G") + "o straight";
   } else {
     return (lowercase ? "t" : "T") + "urn " + dirToString(dir);
@@ -58,7 +58,7 @@ function dirToTurnString(dir, lowercase) {
  * @return {boolean}
  */
 function isLeftOrRight(dir) {
-  return dir == LEFT || dir == RIGHT;
+  return dir === LEFT || dir === RIGHT;
 }
 
 class Room {
@@ -89,7 +89,7 @@ class Room {
 
   get fullName() {
     if ("name" in this && this.name) {
-      return (this.prefix == "" ? "" : this.prefix + " ") + this.name;
+      return (this.prefix === "" ? "" : this.prefix + " ") + this.name;
     }
   }
 
@@ -234,7 +234,7 @@ class Hallway {
       return (
         "name" in elem &&
         elem.name != null &&
-        (elem.name.toUpperCase() == name.toUpperCase() ||
+        (elem.name.toUpperCase() === name.toUpperCase() ||
           elem.aliases.map(a => a.toUpperCase()).includes(name.toUpperCase()))
       );
     });
@@ -289,7 +289,7 @@ class Hallway {
     /** @type Room */
     const toRoom = t instanceof Room && t;
 
-    if (from == to) {
+    if (from === to) {
       return `Bruh. You at ${fromRoom.fullName}\n`;
     }
 
@@ -298,7 +298,7 @@ class Hallway {
 
     ret += fromRoom.onLeave(forwardOrBackward);
 
-    for (let i = from; i != to; i += forwardOrBackward) {
+    for (let i = from; i !== to; i += forwardOrBackward) {
       const current = this.partList[i];
       const prevInd = i - forwardOrBackward;
       const prevRoom =
@@ -556,7 +556,7 @@ const little2600sHallway = new Hallway([
   // There are a few stairs right here
   new (class extends Room {
     onPass(forwardOrBackward, prevRoom) {
-      return `Go ${forwardOrBackward == -1 ? "up" : "down"} the 3 steps\n`;
+      return `Go ${forwardOrBackward === -1 ? "up" : "down"} the 3 steps\n`;
     }
   })(),
   new Fork(LEFT, "2600s to 2500s", "the door"),

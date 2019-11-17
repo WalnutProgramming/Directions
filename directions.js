@@ -26,7 +26,7 @@ import { getGraph, getShortestPath } from "./Graph/graph.js";
 function getHallwayIndexAndIndex(name) {
   const inds = hallways.map(h => h.getRoomInd(name));
   const hallwayInd = inds.findIndex(a => a != -1);
-  return hallwayInd == -1 ? null : [hallwayInd, inds[hallwayInd]];
+  return hallwayInd === -1 ? null : [hallwayInd, inds[hallwayInd]];
 }
 
 /**
@@ -37,7 +37,7 @@ function getHallwayIndexAndIndex(name) {
  */
 function getHallwayIndexAndIndexFromNode(nodeId) {
   const inds = hallways.map(h =>
-    h.partList.findIndex(r => "nodeId" in r && r.nodeId == nodeId)
+    h.partList.findIndex(r => "nodeId" in r && r.nodeId === nodeId)
   );
   const hallwayInd = inds.findIndex(a => a != -1);
   return [hallwayInd, inds[hallwayInd]];
