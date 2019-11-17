@@ -1,12 +1,8 @@
 // @ts-check
 
 "use strict";
-import {
-  hallways,
-  stairConnections,
-  hallwayConnections,
-  Room,
-} from "./hallwayDefinition.js";
+import { Room } from "./hallwayDefinition.js";
+import { hallways, stairConnections, hallwayConnections } from "./walnut.js";
 import { getGraph, getShortestPath } from "./Graph/graph.js";
 // This JavaScript file adds the directions to
 // the HTML file based on the query parameters
