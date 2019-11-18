@@ -196,7 +196,8 @@ const hallways = [
     new Fork(RIGHT, ConnectionNode.LOBBY_TO_2200S, "the 2200s"),
     new Room("2210", undefined, undefined, undefined, ["Conference Room"]),
     new Room("2209", RIGHT, undefined, undefined, [
-      "7-8 Administration Office",
+      "10-11 Administration Office",
+      "10th and 11th Grade Office",
     ]),
     new Stairs(LEFT, StairNode.D2, "2015"),
     new Room("2101", RIGHT),
@@ -234,7 +235,8 @@ const hallways = [
   new Hallway([
     new Fork(BACK, ConnectionNode.C2200S_TO_LOBBY, "the lobby"),
     new Room("2207", RIGHT, undefined, undefined, [
-      "9-12 Administration Offices",
+      "7-9 Administration Offices",
+      "7th, 8th, and 9th Grade Office",
     ]),
     new Room("2229"),
     new Room("2212", undefined, undefined, undefined, [
