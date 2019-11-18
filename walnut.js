@@ -382,6 +382,7 @@ const hallways = [
       ),
       new Room("Senior High Gym", FRONT, null, "the", [
         "2800",
+        "2801",
         "Gymnasium - High School",
         "Senior Gym",
         "High School Gymnasium",
