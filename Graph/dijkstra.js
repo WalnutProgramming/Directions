@@ -90,8 +90,7 @@ let dijkstra = {
     }
 
     if (typeof d !== "undefined" && typeof costs[d] === "undefined") {
-      let msg = ["Could not find a path from ", s, " to ", d, "."].join("");
-      throw new Error(msg);
+      throw new Error(`Could not find a path from "${s}" to "${d}".`);
     }
 
     return predecessors;

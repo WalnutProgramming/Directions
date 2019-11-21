@@ -1,5 +1,5 @@
 "use strict";
-import { hallways } from "./hallwayDefinition.js";
+import { hallways } from "./walnut.js";
 
 // If it's an iOS device, unhide the #iosDownloadSuggestion
 const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
@@ -10,11 +10,9 @@ if (iOS && !isInstalledPWA) {
 
 const roomsDatalist = document.getElementById("roomsList");
 const roomsList = hallways
-  .map(h => h.partList)
-  .flat()
+  .reduce((acc, h) => acc.concat(h.partList), [])
   .filter(a => a.name)
-  .map(r => r.aliases.concat(r.name))
-  .flat()
+  .reduce((acc, r) => acc.concat(r.aliases).concat(r.name), [])
   .sort();
 console.log(roomsList);
 roomsList.forEach(roomName => {

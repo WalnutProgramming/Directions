@@ -1,13 +1,10 @@
 {
   "name": "directions",
-  "version": "0.0.1",
   "main": "index.html",
   "repository": "https://github.com/WalnutProgramming/Directions.git",
-  "author": " ",
-  "license": " ",
   "scripts": {
-    "start": "parcel index.html directions.html",
-    "build": "parcel build index.html"
+    "start": "parcel *.html",
+    "build": "parcel build *.html --public-url ./"
   },
   "dependencies": {},
   "devDependencies": {

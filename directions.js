@@ -1,12 +1,8 @@
 // @ts-check
 
 "use strict";
-import {
-  hallways,
-  stairConnections,
-  hallwayConnections,
-  Room,
-} from "./hallwayDefinition.js";
+import { Room } from "./hallwayDefinition.js";
+import { hallways, stairConnections, hallwayConnections } from "./walnut.js";
 import { getGraph, getShortestPath } from "./Graph/graph.js";
 // This JavaScript file adds the directions to
 // the HTML file based on the query parameters
@@ -26,7 +22,7 @@ import { getGraph, getShortestPath } from "./Graph/graph.js";
 function getHallwayIndexAndIndex(name) {
   const inds = hallways.map(h => h.getRoomInd(name));
   const hallwayInd = inds.findIndex(a => a != -1);
-  return hallwayInd == -1 ? null : [hallwayInd, inds[hallwayInd]];
+  return hallwayInd === -1 ? null : [hallwayInd, inds[hallwayInd]];
 }
 
 /**
@@ -37,13 +33,13 @@ function getHallwayIndexAndIndex(name) {
  */
 function getHallwayIndexAndIndexFromNode(nodeId) {
   const inds = hallways.map(h =>
-    h.partList.findIndex(r => "nodeId" in r && r.nodeId == nodeId)
+    h.partList.findIndex(r => "nodeId" in r && r.nodeId === nodeId)
   );
   const hallwayInd = inds.findIndex(a => a != -1);
   return [hallwayInd, inds[hallwayInd]];
 }
 
-/** @type {string[][]} */
+/** @type {{nodeId: string, edgeLengthFromPreviousNodeInHallway: number}[][]} */
 const hallwayNodes = hallways.map(h => {
   return h.nodes;
 });

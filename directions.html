@@ -41,8 +41,9 @@
   <body>
     <div class="back-btn-container">
       <span class="btn-hover-area">
+        <!-- If the previous page was /index.html, just use the browser back button. Otherwise, go to ./index.html -->
         <button
-          onClick="window.location.href = './index.html';"
+          onClick="if (document.referrer === window.location.href.split('/').slice(0, -1).join('/') + '/index.html') {window.history.back();} else {window.location.href = './index.html';}"
           class="back-btn"
         >
           &laquo; Back
@@ -53,7 +54,7 @@
     <main>
       <div id="directions">
         <!-- Directions will be added here by 
-        script.js based on the query parameters -->
+        directions.js based on the query parameters -->
       </div>
     </main>
 
