@@ -569,7 +569,7 @@ const hallways = [
     new Room("2705"),
     new Room("2707"),
     new Room("2709"),
-    new Room("2740"),
+    new Room("Forum", RIGHT, undefined, "the", ["2740"]),
     new Room("2739"),
     new Room("2713"),
     new Room("2715"),
