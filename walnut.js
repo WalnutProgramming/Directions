@@ -621,7 +621,6 @@ const hallways = [
     new Turn(LEFT),
     new Turn(LEFT),
     new Room("1853", RIGHT),
-    new Room("1852"),
     new Room("1850", RIGHT, undefined, undefined, ["Band (1850)"]),
     new Room("1857", RIGHT),
     new Room("1851", RIGHT),
