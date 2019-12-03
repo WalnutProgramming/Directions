@@ -1,6 +1,6 @@
 <template>
   <span class="btn-hover-area" @click.stop.prevent="$emit('customclick')">
-    <button type="submit" class="active-button" :style="buttonStyle">
+    <button type="submit" class="active-button">
       <slot></slot>
     </button>
   </span>
