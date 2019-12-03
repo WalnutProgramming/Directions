@@ -1,6 +1,6 @@
 // @ts-check
+export { getHallwayIndexAndIndex, getDirections };
 
-"use strict";
 import { Room } from "./hallwayDefinition.js";
 import { hallways, stairConnections, hallwayConnections } from "./walnut.js";
 import { getGraph, getShortestPath } from "./Graph/graph.js";
@@ -146,25 +146,4 @@ function getDirections(from, to) {
     toInd
   );
   return directions;
-}
-
-const urlParams = new URLSearchParams(window.location.search);
-const directionsDiv = document.getElementById("directions");
-const fromRoom = urlParams.get("fromRoom");
-const toRoom = urlParams.get("toRoom");
-
-// Check if both rooms have valid names
-if (getHallwayIndexAndIndex(fromRoom) && getHallwayIndexAndIndex(toRoom)) {
-  // Both have valid names, so put the directions in the HTML
-  const directions = getDirections(fromRoom, toRoom);
-  console.log("d: " + directions);
-  directions.split("\n").forEach(str => {
-    const p = document.createElement("p");
-    p.textContent = str;
-    directionsDiv.appendChild(p);
-  });
-} else {
-  const p = document.createElement("p");
-  p.textContent = "Sorry, I couldn't find one of those rooms.";
-  directionsDiv.appendChild(p);
 }
