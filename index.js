@@ -3,26 +3,11 @@ import { hallways } from "./walnut.js";
 
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Index from "./IndexV.vue";
-import Directions from "./DirectionsV.vue";
+import Main from "./Main";
 
 Vue.use(VueRouter);
 
-const routes = [
-  { path: "/", component: Index },
-  {
-    path: "/directions",
-    component: Directions,
-    props: route => ({
-      fromRoom: route.query.fromRoom,
-      toRoom: route.query.toRoom,
-    }),
-  },
-];
-
-const router = new VueRouter({ routes });
-
-const app = new Vue({ router, render: h => h("router-view") }).$mount("#vue");
+new Vue(Main).$mount("#vue");
 
 // // If it's an iOS device, unhide the #iosDownloadSuggestion
 // const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;

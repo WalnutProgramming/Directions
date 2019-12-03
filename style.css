@@ -17,10 +17,16 @@
   --text-input-ease: background-color, linear, 0.5s;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
 body {
   background-color: var(--background-color);
   font-size: 30px;
-  display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
@@ -30,5 +36,5 @@ p {
 }
 
 main {
-  flex: 1;
+  margin: 0;
 }
