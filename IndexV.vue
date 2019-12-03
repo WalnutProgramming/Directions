@@ -22,6 +22,7 @@
             name="fromRoom"
             list="roomsList"
             placeholder="type or select"
+            autocomplete="off"
             v-model="fromRoom"
           />
           <label for="toRoom"> I'm going to room: </label>
@@ -31,6 +32,7 @@
             name="toRoom"
             list="roomsList"
             placeholder="type or select"
+            autocomplete="off"
             v-model="toRoom"
           />
           <br />
