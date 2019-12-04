@@ -70,7 +70,7 @@ import Vue from "vue";
 import Directions from "./DirectionsV";
 import CustomButton from "./CustomButton";
 import MaybeInstallButton from "./MaybeInstallButton";
-import { hallways } from "./walnut.js";
+import { hallways } from "./walnut";
 
 export default Vue.extend({
   data() {
@@ -103,9 +103,10 @@ export default Vue.extend({
   },
   methods: {
     submit() {
-      this.$router.push(
-        `/directions?fromRoom=${this.fromRoom}&toRoom=${this.toRoom}`
-      );
+      this.$router.push({
+        path: "/directions",
+        query: { fromRoom: this.fromRoom, toRoom: this.toRoom },
+      });
     },
   },
 });

@@ -20,7 +20,7 @@
 <script>
 import Vue from "vue";
 import CustomButton from "./CustomButton";
-import { getHallwayIndexAndIndex, getDirections } from "./directions.js";
+import { getHallwayIndexAndIndex, getDirections } from "./directions";
 
 export default Vue.extend({
   data() {
