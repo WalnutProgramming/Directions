@@ -1,20 +1,11 @@
 <template>
   <div>
     <div style="text-align:center">
-      <!-- <span
-        id="install-btn-hover-area"
-        class="btn-hover-area"
-        style="display: none;"
-      >
-        <button id="installButton">
-          Install as app
-        </button>
-      </span> -->
       <MaybeInstallButton></MaybeInstallButton>
 
       <main>
         <h1>Where do you need to go?</h1>
-        <form>
+        <form id="roomForm">
           <label for="fromRoom"> I'm at room: </label>
           <input
             id="fromRoom"
@@ -24,6 +15,7 @@
             placeholder="type or select"
             autocomplete="off"
             v-model="fromRoom"
+            @change="validateInput('fromRoom')"
           />
           <label for="toRoom"> I'm going to room: </label>
           <input
@@ -34,6 +26,7 @@
             placeholder="type or select"
             autocomplete="off"
             v-model="toRoom"
+            @change="validateInput('toRoom')"
           />
           <br />
 
@@ -71,6 +64,11 @@ import Directions from "./DirectionsV";
 import CustomButton from "./CustomButton";
 import MaybeInstallButton from "./MaybeInstallButton";
 import { hallways } from "./walnut";
+import { getHallwayIndexAndIndex } from "./directions";
+
+function isValid(name) {
+  return typeof name === "string" && getHallwayIndexAndIndex(name) != null;
+}
 
 export default Vue.extend({
   data() {
@@ -103,10 +101,24 @@ export default Vue.extend({
   },
   methods: {
     submit() {
-      this.$router.push({
-        path: "/directions",
-        query: { fromRoom: this.fromRoom, toRoom: this.toRoom },
-      });
+      this.validateInput("fromRoom", false);
+      this.validateInput("toRoom", false);
+      if (isValid(this.fromRoom) && isValid(this.toRoom)) {
+        this.$router.push({
+          path: "/directions",
+          query: { fromRoom: this.fromRoom, toRoom: this.toRoom },
+        });
+      }
+    },
+    validateInput(inputName, allowBlank = true) {
+      let message = "";
+      if (this[inputName] === "") {
+        if (!allowBlank) message = "Please type a room number";
+      } else if (!isValid(this[inputName])) {
+        message = `I can't find a room with the name "${this[inputName]}"`;
+      }
+      document.getElementById(inputName).setCustomValidity(message);
+      document.getElementById("roomForm").reportValidity();
     },
   },
 });
