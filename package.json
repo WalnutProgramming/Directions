@@ -4,7 +4,7 @@
   "repository": "https://github.com/WalnutProgramming/Directions.git",
   "scripts": {
     "start": "parcel *.html",
-    "build": "parcel build *.html --public-url ./"
+    "build": "parcel build *.html -d public/ --public-url ./"
   },
   "dependencies": {
     "vue": "^2.6.10",
