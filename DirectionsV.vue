@@ -11,7 +11,9 @@
 
     <main>
       <div id="directions">
-        <p v-for="line in directions" :key="line">{{ line }}</p>
+        <p v-for="(line, index) in directions" :key="index + ':::' + line">
+          {{ line }}
+        </p>
       </div>
     </main>
   </div>
@@ -37,11 +39,12 @@ export default Vue.extend({
         getHallwayIndexAndIndex(this.toRoom)
       ) {
         // Both have valid names, so put the directions in the HTML
-        return getDirections(this.fromRoom, this.toRoom).split("\n");
+        return getDirections(this.fromRoom, this.toRoom)
+          .trim()
+          .split("\n");
       } else {
         return ["Sorry, I couldn't find one of those rooms."];
       }
-      return "hi";
     },
   },
   methods: {
@@ -54,3 +57,16 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped>
+p {
+  padding-top: 17px;
+  padding-bottom: 15px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p:nth-child(even) {
+  background-color: lightblue;
+}
+</style>

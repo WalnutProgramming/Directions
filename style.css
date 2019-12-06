@@ -28,7 +28,6 @@ body {
   background-color: var(--background-color);
   font-size: 30px;
   min-height: 100vh;
-  flex-direction: column;
 }
 
 p {
