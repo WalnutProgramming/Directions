@@ -1,5 +1,6 @@
 # Parcel related files
 dist/
+public/
 .cache/
 
 node_modules/
