@@ -1,7 +1,3 @@
-// @ts-check
-
-"use strict";
-
 export {
   LEFT,
   RIGHT,
@@ -20,17 +16,22 @@ export {
 // A direction can be LEFT or RIGHT, or if you're
 // at the end of a hallway, it can be FRONT or BACK
 
-/** @typedef {-1 | 1 | -2 | 2} Direction */
-const LEFT = -1,
+enum Direction {
+  LEFT = -1,
   RIGHT = 1,
   BACK = -2,
-  FRONT = 2;
+  FRONT = 2,
+}
+const LEFT = Direction.LEFT,
+  RIGHT = Direction.RIGHT,
+  BACK = Direction.BACK,
+  FRONT = Direction.FRONT;
 
 /**
- * @param {number} dir A direction (LEFT,RIGHT,FRONT,BACK)
- * @return {string} 'left', 'right', 'front', or 'back'
+ * @param dir - A direction (LEFT,RIGHT,FRONT,BACK)
+ * @returns 'left', 'right', 'front', or 'back'
  */
-function dirToString(dir) {
+function dirToString(dir: Direction): string {
   if (dir === LEFT) return "left";
   else if (dir === RIGHT) return "right";
   else if (dir === FRONT) return "front";
@@ -38,11 +39,11 @@ function dirToString(dir) {
 }
 
 /**
- * @param {number} dir A direction (LEFT,RIGHT,FRONT,BACK)
- * @param {boolean=} lowercase Should the result start with a lowercase letter?
- * @return {string} 'Go straight', 'Turn left', or 'Turn right'
+ * @param dir - A direction (LEFT,RIGHT,FRONT,BACK)
+ * @param lowercase - Should the result start with a lowercase letter?
+ * @returns 'Go straight', 'Turn left', or 'Turn right'
  */
-function dirToTurnString(dir, lowercase) {
+function dirToTurnString(dir: Direction, lowercase: boolean = false): string {
   if (dir === FRONT || dir === BACK) {
     return (lowercase ? "g" : "G") + "o straight";
   } else {
@@ -50,32 +51,25 @@ function dirToTurnString(dir, lowercase) {
   }
 }
 
-/**
- *
- * @param {Direction} dir
- * @return {boolean}
- */
-function isLeftOrRight(dir) {
+function isLeftOrRight(dir: Direction): boolean {
   return dir === LEFT || dir === RIGHT;
 }
 
 class Room {
-  /**
-   *
-   * @param {?string=} name
-   * @param {Direction=} side
-   * @param {?string=} nodeId
-   * @param {string=} prefix
-   * @param {string[]=} aliases
-   * @param {?number=} edgeLengthFromPreviousNodeInHallway
-   */
+  name: (string | null) | undefined;
+  side: Direction;
+  nodeId: (string | null) | undefined = null;
+  prefix: string | undefined = "room";
+  aliases: string[] | undefined = [];
+  edgeLengthFromPreviousNodeInHallway: (number | null) | undefined = null;
+
   constructor(
-    name,
-    side = LEFT,
-    nodeId = null,
-    prefix = "room",
-    aliases = [],
-    edgeLengthFromPreviousNodeInHallway = null
+    name?: (string | null) | undefined,
+    side: Direction | undefined = LEFT,
+    nodeId: (string | null) | undefined = null,
+    prefix: string | undefined = "room",
+    aliases: string[] | undefined = [],
+    edgeLengthFromPreviousNodeInHallway: (number | null) | undefined = null
   ) {
     this.name = name;
     this.side = side;
@@ -85,27 +79,25 @@ class Room {
     this.edgeLengthFromPreviousNodeInHallway = edgeLengthFromPreviousNodeInHallway;
   }
 
-  get fullName() {
-    if ("name" in this && this.name) {
-      return (this.prefix === "" ? "" : this.prefix + " ") + this.name;
-    }
+  get fullName(): string {
+    return (this.prefix === "" ? "" : this.prefix + " ") + this.name;
   }
 
   /**
-   * @param {-1 | 1} forwardOrBackward Whether we're going forward or backward through this hallway
-   * @param {Room | Turn} prevRoom The previous room
-   * @return {string} What we should say when you pass this room
+   * @param forwardOrBackward - Whether we're going forward or backward through this hallway
+   * @param prevRoom - The previous room
+   * @returns What we should say when you pass this room
    */
-  onPass(forwardOrBackward, prevRoom) {
+  onPass(forwardOrBackward: -1 | 1, prevRoom: Room | Turn): string {
     return "";
   }
 
   /**
    *
-   * @param {-1 | 1} forwardOrBackward Whether we're going forward or backward through this hallway
-   * @return {string} What we should say when we go out of this room
+   * @param forwardOrBackward - Whether we're going forward or backward through this hallway
+   * @returns What we should say when we go out of this room
    */
-  onLeave(forwardOrBackward) {
+  onLeave(forwardOrBackward: -1 | 1): string {
     let ret = "";
     if (isLeftOrRight(this.side)) {
       ret += dirToTurnString(forwardOrBackward * this.side);
@@ -115,12 +107,7 @@ class Room {
     return ret;
   }
 
-  /**
-   *
-   * @param {-1 | 1} forwardOrBackward Whether we're going forward or backward through this hallway
-   * @return {string} What we should say when we enter this room
-   */
-  onArrive(forwardOrBackward) {
+  onArrive(forwardOrBackward: -1 | 1): string {
     return `Continue, then ${dirToTurnString(
       this.side * forwardOrBackward,
       true
@@ -129,13 +116,13 @@ class Room {
 }
 
 class Stairs extends Room {
-  /**
-   * @param {Direction=} side
-   * @param {?string=} nodeId
-   * @param {string=} stairNumber
-   * @param {number=} edgeLengthFromPreviousNodeInHallway
-   */
-  constructor(side, nodeId, stairNumber, edgeLengthFromPreviousNodeInHallway) {
+  stairNumber: string | undefined;
+  constructor(
+    side?: Direction | undefined,
+    nodeId?: (string | null) | undefined,
+    stairNumber?: string | undefined,
+    edgeLengthFromPreviousNodeInHallway?: number | undefined
+  ) {
     super(
       null,
       side,
@@ -156,18 +143,12 @@ class Stairs extends Room {
 }
 
 class Fork extends Room {
-  /**
-   *
-   * @param {Direction} side
-   * @param {string} nodeId
-   * @param {string} destinationName
-   * @param {number=} edgeLengthFromPreviousNodeInHallway
-   */
+  destinationName: string;
   constructor(
-    side,
-    nodeId,
-    destinationName,
-    edgeLengthFromPreviousNodeInHallway = 1
+    side: Direction,
+    nodeId: string,
+    destinationName: string,
+    edgeLengthFromPreviousNodeInHallway: number | undefined = 1
   ) {
     super(
       null,
@@ -186,19 +167,13 @@ class Fork extends Room {
 }
 
 class Turn {
-  /**
-   * @param {-1 | 1} direction
-   */
-  constructor(direction) {
+  direction: Direction;
+
+  constructor(direction: -1 | 1) {
     this.direction = direction;
   }
 
-  /**
-   * @param {-1 | 1} forwardOrBackward Whether we're going forward or backward through this hallway
-   * @param {Room | Turn} prevRoom The previous room
-   * @return {string} What we should say when you pass this turn
-   */
-  onPass(forwardOrBackward, prevRoom) {
+  onPass(forwardOrBackward: -1 | 1, prevRoom: Room | Turn): string {
     let ret = "";
     const direction = this.direction * forwardOrBackward;
     ret += "Continue, then " + dirToTurnString(direction, true);
@@ -213,39 +188,37 @@ class Turn {
 }
 
 class Hallway {
-  /**
-   * @param {(Room | Turn)[]} partList
-   * @param {?string=} name
-   */
-  constructor(partList, name) {
+  partList: (Room | Turn)[];
+  name: string | null | undefined;
+
+  constructor(partList: (Room | Turn)[], name?: string | null) {
     this.partList = partList;
     this.name = name;
   }
 
   /**
-   * @param {string} name The name of the room
-   * @return {number} The index of the room, or -1 if
+   * @param - name The name of the room
+   * @returns The index of the room, or -1 if
    *  there's no room with that name
    */
-  getRoomInd(name) {
+  getRoomInd(name: string): number {
     return this.partList.findIndex(elem => {
       return (
         "name" in elem &&
         elem.name != null &&
         (elem.name.toUpperCase() === name.toUpperCase() ||
-          elem.aliases.map(a => a.toUpperCase()).includes(name.toUpperCase()))
+          elem.aliases!.map(a => a.toUpperCase()).includes(name.toUpperCase()))
       );
     });
   }
 
   /**
-   * @param {number} roomInd The index of the room in the hallway
-   * @return {string} The id of the "closest" node to the room
+   * @param roomInd - The index of the room in the hallway
+   * @returns The id of the "closest" node to the room
    * in the hallway
    */
-  idOfClosestNodeToIndex(roomInd) {
-    /** @type {number} */
-    let closestNodeInd;
+  idOfClosestNodeToIndex(roomInd: number): string {
+    let closestNodeInd: number;
     this.partList.forEach((r, currentInd) => {
       if (
         "nodeId" in r &&
@@ -257,35 +230,32 @@ class Hallway {
       }
     });
 
-    const closest = this.partList[closestNodeInd];
-    if ("nodeId" in closest) return closest.nodeId;
+    const closest = this.partList[closestNodeInd!];
+    return (closest as Room).nodeId!;
   }
 
-  /**
-   * @return {{nodeId: string, edgeLengthFromPreviousNodeInHallway: number}[]}
-   */
-  get nodes() {
-    return this.partList
-      .filter(r => "nodeId" in r && r.nodeId)
-      .map(r => "nodeId" in r && r);
+  get nodes(): {
+    nodeId: string;
+    edgeLengthFromPreviousNodeInHallway: number;
+  }[] {
+    return this.partList.filter(r => "nodeId" in r && r.nodeId != null) as {
+      nodeId: string;
+      edgeLengthFromPreviousNodeInHallway: number;
+    }[];
   }
 
   /**
    * Gives the directions to get from one room to another
    * in a single hallway given the hallway and the indices
    * of the rooms in the hallway.
-   * @param {number} from The index of the starting room
-   * @param {number} to The index of the room to go to
-   * @return {string} The directions, with steps separated with newlines
+   * @param from - The index of the starting room
+   * @param to - The index of the room to go to
+   * @returns The directions, with steps separated with newlines
    */
-  getDirectionsFromIndices(from, to) {
-    const fr = this.partList[from];
-    /** @type Room */
-    const fromRoom = fr instanceof Room && fr;
+  getDirectionsFromIndices(from: number, to: number): string {
+    const fromRoom = this.partList[from] as Room;
 
-    const t = this.partList[to];
-    /** @type Room */
-    const toRoom = t instanceof Room && t;
+    const toRoom = this.partList[to] as Room;
 
     if (from === to) {
       return `Bruh. You at ${fromRoom.fullName}\n`;
@@ -303,7 +273,7 @@ class Hallway {
         prevInd >= 0 &&
         prevInd < this.partList.length &&
         this.partList[i - forwardOrBackward];
-      ret += current.onPass(forwardOrBackward, prevRoom);
+      ret += current.onPass(forwardOrBackward, prevRoom as Room);
     }
 
     ret += toRoom.onArrive(forwardOrBackward);
@@ -313,20 +283,16 @@ class Hallway {
 }
 
 class SimpleHallway extends Hallway {
-  /**
-   *
-   * @param {string} nodeId
-   * @param {Room[]} partList
-   * @param {string} hallwayName
-   */
-  constructor(nodeId, partList, hallwayName) {
+  hallwayName: string;
+
+  constructor(nodeId: string, partList: Room[], hallwayName: string) {
     super([new Fork(FRONT, nodeId, ""), ...partList]);
     this.hallwayName = hallwayName;
   }
 
-  getDirectionsFromIndices(from, to) {
-    const toRoomName = /** @type {Room} */ (this.partList[to]).fullName;
-    const fromRoomName = /** @type {Room} */ (this.partList[from]).fullName;
+  getDirectionsFromIndices(from: number, to: number) {
+    const toRoomName = (this.partList[to] as Room).fullName;
+    const fromRoomName = (this.partList[from] as Room).fullName;
     if (from === 0) {
       // We're starting from the fork and going into the room
       return `Enter ${toRoomName}, which is in ${this.hallwayName}\n`;

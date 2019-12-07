@@ -41,62 +41,9 @@ that asks what room you want to go to -->
   </head>
 
   <body>
-    <div style="text-align:center">
-      <span
-        id="install-btn-hover-area"
-        class="btn-hover-area"
-        style="display: none;"
-      >
-        <button id="installButton">
-          Install as app
-        </button>
-      </span>
+    <div id="vue"></div>
 
-      <main>
-        <h1>Where do you need to go?</h1>
-        <form action="directions.html" method="get">
-          <label for="fromRoom"> I'm at room: </label>
-          <input
-            id="fromRoom"
-            class="roomInput"
-            name="fromRoom"
-            list="roomsList"
-            placeholder="type or select"
-            autocomplete="off"
-          />
-          <label for="toRoom"> I'm going to room: </label>
-          <input
-            id="toRoom"
-            class="roomInput"
-            name="toRoom"
-            list="roomsList"
-            placeholder="type or select"
-            autocomplete="off"
-          />
-          <br />
-          <span class="btn-hover-area">
-            <button type="submit" class="active-button">Go</button>
-          </span>
-        </form>
-      </main>
-    </div>
-
-    <div id="iosDownloadSuggestion">
-      <p>
-        To install this page as an app, press
-        <img
-          src="iosDownload.png"
-          alt="iosDownload"
-          style="width:14px;height:20px;margin-left:.25em;margin-right:.25em;"
-        />
-        at the bottom of the page and then press "Add to Home Screen" in the
-        menu that appears.
-      </p>
-    </div>
-
-    <datalist id="roomsList"></datalist>
-    <script src="index.js" type="module"></script>
+    <script src="index.js"></script>
     <script src="loadWorker.js"></script>
-    <script src="maybeInstallApp.js"></script>
   </body>
 </html>
