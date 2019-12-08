@@ -1,7 +1,9 @@
-export { getHallwayIndexAndIndex, getDirections };
+export { getHallwayIndexAndIndex, getDirections, roomsList, isValidRoomName };
 
+import { Room } from "./hallwayDefinition";
 import { hallways, stairConnections, hallwayConnections } from "./walnut";
 import { getGraph, getShortestPath } from "./Graph/graph";
+
 // This JavaScript file adds the directions to
 // the HTML file based on the query parameters
 // given to directions.js
@@ -141,4 +143,14 @@ function getDirections(from: string, to: string): string {
     toInd
   );
   return directions;
+}
+
+const roomsList: string[] = hallways
+  .flatMap(h => h.partList)
+  .filter(a => "name" in a && a.name != null)
+  .flatMap(r => (r as Room).name!)
+  .sort();
+
+function isValidRoomName(name: string) {
+  return typeof name === "string" && getHallwayIndexAndIndex(name) != null;
 }

@@ -49,7 +49,11 @@ export default Vue.extend({
   },
   methods: {
     back() {
-      this.$router.push("/");
+      if (this.$route.query.scheduleInd != null) {
+        this.$router.push("/myschedule");
+      } else {
+        this.$router.push("/");
+      }
     },
   },
   components: {

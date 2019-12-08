@@ -7,27 +7,19 @@
         <h1>Where do you need to go?</h1>
         <form id="roomForm">
           <label for="fromRoom"> I'm at room: </label>
-          <input
-            id="fromRoom"
-            class="roomInput"
+          <RoomInput
             name="fromRoom"
-            list="roomsList"
             placeholder="type or select"
-            autocomplete="off"
             v-model="fromRoom"
             @change="validateInput('fromRoom')"
-          />
+          ></RoomInput>
           <label for="toRoom"> I'm going to room: </label>
-          <input
-            id="toRoom"
-            class="roomInput"
+          <RoomInput
             name="toRoom"
-            list="roomsList"
             placeholder="type or select"
-            autocomplete="off"
             v-model="toRoom"
             @change="validateInput('toRoom')"
-          />
+          ></RoomInput>
           <br />
 
           <CustomButton @customclick="submit">
@@ -49,12 +41,6 @@
         menu that appears.
       </p>
     </div>
-
-    <datalist id="roomsList">
-      <option v-for="roomName in roomsList" :key="roomName">
-        {{ roomName }}
-      </option>
-    </datalist>
   </div>
 </template>
 
@@ -63,12 +49,8 @@ import Vue from "vue";
 import Directions from "./DirectionsV";
 import CustomButton from "./CustomButton";
 import MaybeInstallButton from "./MaybeInstallButton";
-import { hallways } from "./walnut";
-import { getHallwayIndexAndIndex } from "./directions";
-
-function isValid(name) {
-  return typeof name === "string" && getHallwayIndexAndIndex(name) != null;
-}
+import RoomInput from "./RoomInput";
+import { getHallwayIndexAndIndex, isValidRoomName } from "./directions";
 
 export default Vue.extend({
   data() {
@@ -78,13 +60,6 @@ export default Vue.extend({
     };
   },
   computed: {
-    roomsList() {
-      return hallways
-        .reduce((acc, h) => acc.concat(h.partList), [])
-        .filter(a => a.name)
-        .reduce((acc, r) => acc.concat(r.aliases).concat(r.name), [])
-        .sort();
-    },
     showiOSDownloadSuggestion() {
       // If it's an iOS device and we're not already in the PWA, unhide the #iosDownloadSuggestion
       const iOS =
@@ -98,12 +73,13 @@ export default Vue.extend({
     Directions,
     CustomButton,
     MaybeInstallButton,
+    RoomInput,
   },
   methods: {
     submit() {
       this.validateInput("fromRoom", false);
       this.validateInput("toRoom", false);
-      if (isValid(this.fromRoom) && isValid(this.toRoom)) {
+      if (isValidRoomName(this.fromRoom) && isValidRoomName(this.toRoom)) {
         this.$router.push({
           path: "/directions",
           query: { fromRoom: this.fromRoom, toRoom: this.toRoom },
@@ -114,7 +90,7 @@ export default Vue.extend({
       let message = "";
       if (this[inputName] === "") {
         if (!allowBlank) message = "Please type a room number";
-      } else if (!isValid(this[inputName])) {
+      } else if (!isValidRoomName(this[inputName])) {
         message = `I can't find a room with the name "${this[inputName]}"`;
       }
       document.getElementById(inputName).setCustomValidity(message);
@@ -140,30 +116,6 @@ h1 {
 label {
   display: block;
   color: var(--main-text-color);
-}
-
-input {
-  margin-bottom: 1em;
-  font-size: 25px;
-  text-align: center;
-  border-radius: 10px;
-  border-width: 0px;
-  transition: var(--text-input-ease);
-}
-
-input:focus {
-  background-color: var(--placeholder-color);
-  transition: var(--text-input-ease);
-}
-
-input::placeholder {
-  color: #c0c0c0;
-  transition: var(--text-input-ease);
-}
-
-input:focus::placeholder {
-  color: var(--placeholder-color);
-  transition: var(--text-input-ease);
 }
 
 .center {

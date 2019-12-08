@@ -206,7 +206,7 @@ class Hallway {
       return (
         "name" in elem &&
         elem.name != null &&
-        (elem.name.toUpperCase() === name.toUpperCase() ||
+        (elem.name.toUpperCase().trim() === name.toUpperCase().trim() ||
           elem.aliases!.map(a => a.toUpperCase()).includes(name.toUpperCase()))
       );
     });
