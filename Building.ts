@@ -56,7 +56,7 @@ export default class Building {
    * is the index of the hallway where the node is located, and
    * the second element is the index of the node in the hallway
    */
-  private getHallwayIndexAndIndexFromNode(nodeId: string): [number, number] {
+  protected getHallwayIndexAndIndexFromNode(nodeId: string): [number, number] {
     const inds = this.hallways.map(h =>
       h.partList.findIndex(r => "nodeId" in r && r.nodeId === nodeId)
     );
@@ -71,7 +71,7 @@ export default class Building {
    * @return Is the connection between these two nodes
    * a Stairs connection? (as opposed to a Fork)
    */
-  private isConnectionStairs(id1: string, id2: string): boolean {
+  protected isConnectionStairs(id1: string, id2: string): boolean {
     return (
       this.stairConnections.findIndex(
         arr => arr.includes(id1) && arr.includes(id2)
@@ -79,7 +79,7 @@ export default class Building {
     );
   }
 
-  private getStairConnectionInstruction(
+  protected getStairConnectionInstruction(
     id1: string,
     id2: string,
     numFlights: number
@@ -96,7 +96,7 @@ export default class Building {
     } ${numFlights} floor${maybeS} of stairs\n`;
   }
 
-  private getHallwayConnectionInstruction(id2: string): string {
+  protected getHallwayConnectionInstruction(id2: string): string {
     const [hi2, i2] = this.getHallwayIndexAndIndexFromNode(id2);
     if (this.hallways[hi2].name) {
       return "Enter " + this.hallways[hi2].name + "\n";
