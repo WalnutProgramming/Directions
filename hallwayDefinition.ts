@@ -56,28 +56,16 @@ function isLeftOrRight(dir: Direction): boolean {
 }
 
 class Room {
-  name: (string | null) | undefined;
-  side: Direction;
-  nodeId: (string | null) | undefined = null;
-  prefix: string | undefined = "room";
-  aliases: string[] | undefined = [];
-  edgeLengthFromPreviousNodeInHallway: (number | null) | undefined = null;
-
   constructor(
-    name?: (string | null) | undefined,
-    side: Direction | undefined = LEFT,
-    nodeId: (string | null) | undefined = null,
-    prefix: string | undefined = "room",
-    aliases: string[] | undefined = [],
-    edgeLengthFromPreviousNodeInHallway: (number | null) | undefined = null
-  ) {
-    this.name = name;
-    this.side = side;
-    this.nodeId = nodeId;
-    this.prefix = prefix;
-    this.aliases = aliases;
-    this.edgeLengthFromPreviousNodeInHallway = edgeLengthFromPreviousNodeInHallway;
-  }
+    public name?: (string | null) | undefined,
+    public side: Direction = LEFT,
+    public nodeId: (string | null) | undefined = null,
+    public prefix: string | undefined = "room",
+    public aliases: string[] | undefined = [],
+    public edgeLengthFromPreviousNodeInHallway:
+      | (number | null)
+      | undefined = null
+  ) {}
 
   get fullName(): string {
     return (this.prefix === "" ? "" : this.prefix + " ") + this.name;
@@ -116,11 +104,10 @@ class Room {
 }
 
 class Stairs extends Room {
-  stairNumber: string | undefined;
   constructor(
     side?: Direction | undefined,
     nodeId?: (string | null) | undefined,
-    stairNumber?: string | undefined,
+    public stairNumber?: string | undefined,
     edgeLengthFromPreviousNodeInHallway?: number | undefined
   ) {
     super(
@@ -131,7 +118,6 @@ class Stairs extends Room {
       undefined,
       edgeLengthFromPreviousNodeInHallway
     );
-    this.stairNumber = stairNumber;
   }
 
   get fullName() {
@@ -143,11 +129,10 @@ class Stairs extends Room {
 }
 
 class Fork extends Room {
-  destinationName: string;
   constructor(
     side: Direction,
     nodeId: string,
-    destinationName: string,
+    public destinationName: string,
     edgeLengthFromPreviousNodeInHallway: number | undefined = 1
   ) {
     super(
@@ -158,7 +143,6 @@ class Fork extends Room {
       undefined,
       edgeLengthFromPreviousNodeInHallway
     );
-    this.destinationName = destinationName;
   }
 
   get fullName() {
@@ -167,11 +151,7 @@ class Fork extends Room {
 }
 
 class Turn {
-  direction: Direction;
-
-  constructor(direction: -1 | 1) {
-    this.direction = direction;
-  }
+  constructor(public direction: -1 | 1) {}
 
   onPass(forwardOrBackward: -1 | 1, prevRoom: Room | Turn): string {
     let ret = "";
@@ -188,13 +168,7 @@ class Turn {
 }
 
 class Hallway {
-  partList: (Room | Turn)[];
-  name: string | null | undefined;
-
-  constructor(partList: (Room | Turn)[], name?: string | null) {
-    this.partList = partList;
-    this.name = name;
-  }
+  constructor(public partList: (Room | Turn)[], public name?: string | null) {}
 
   /**
    * @param - name The name of the room
@@ -283,11 +257,8 @@ class Hallway {
 }
 
 class SimpleHallway extends Hallway {
-  hallwayName: string;
-
-  constructor(nodeId: string, partList: Room[], hallwayName: string) {
+  constructor(nodeId: string, partList: Room[], public hallwayName: string) {
     super([new Fork(FRONT, nodeId, ""), ...partList]);
-    this.hallwayName = hallwayName;
   }
 
   getDirectionsFromIndices(from: number, to: number) {

@@ -2,10 +2,6 @@ import { Room, Hallway } from "./hallwayDefinition";
 import { getGraph, getShortestPath } from "./Graph/graph";
 
 export default class Building {
-  readonly hallways: Hallway[];
-  readonly hallwayConnections: [string, string][];
-  readonly stairConnections: string[][];
-
   readonly hallwayNodes: {
     nodeId: string;
     edgeLengthFromPreviousNodeInHallway: number;
@@ -14,14 +10,10 @@ export default class Building {
   readonly roomsList: string[];
 
   constructor(
-    hallways: Hallway[],
-    hallwayConnections: [string, string][] = [],
-    stairConnections: string[][] = []
+    readonly hallways: Hallway[],
+    readonly hallwayConnections: [string, string][] = [],
+    readonly stairConnections: string[][] = []
   ) {
-    this.hallways = hallways;
-    this.hallwayConnections = hallwayConnections;
-    this.stairConnections = stairConnections;
-
     this.hallwayNodes = this.hallways.map(h => {
       return h.nodes;
     });
