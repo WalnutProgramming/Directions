@@ -6,7 +6,7 @@
 
 <script>
 import Vue from "vue";
-import CustomButton from "./CustomButton";
+import CustomButton from "../components/CustomButton";
 
 export default Vue.extend({
   data() {

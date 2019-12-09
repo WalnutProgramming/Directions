@@ -1,5 +1,6 @@
-import { Room, Hallway } from "./hallwayDefinition";
-import { getGraph, getShortestPath } from "./Graph/graph";
+import Hallway from "./Hallway";
+import Room from "./Room";
+import { getGraph, getShortestPath } from "./graph/graph";
 
 export default class Building {
   readonly hallwayNodes: {

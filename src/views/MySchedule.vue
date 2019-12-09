@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import CustomButton from "./CustomButton.vue";
+import CustomButton from "../components/CustomButton.vue";
 
 export default Vue.extend({
   components: { CustomButton },

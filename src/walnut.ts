@@ -1,16 +1,15 @@
 import {
-  LEFT,
-  RIGHT,
-  BACK,
-  FRONT,
+  Direction,
   Room,
   Turn,
   Hallway,
   Stairs,
   Fork,
   SimpleHallway,
-} from "./hallwayDefinition";
-import Building from "./Building";
+  Building,
+} from "./directions/index";
+
+const { LEFT, RIGHT, FRONT, BACK } = Direction;
 
 enum StairNode {
   A1 = "StairNode.A1",

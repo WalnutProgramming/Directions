@@ -1,5 +1,4 @@
 "use strict";
-export { dijkstra };
 
 // https://github.com/tcort/dijkstrajs/blob/master/dijkstra.js
 
@@ -162,6 +161,8 @@ let dijkstra = {
     },
   },
 };
+
+export default dijkstra;
 
 // // node.js module exports
 // if (typeof module !== 'undefined') {

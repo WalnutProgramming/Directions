@@ -3,8 +3,8 @@
   "main": "index.html",
   "repository": "https://github.com/WalnutProgramming/Directions.git",
   "scripts": {
-    "start": "parcel *.html",
-    "build": "parcel build *.html -d public/ --public-url ./"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html -d public/ --public-url ./"
   },
   "dependencies": {
     "vue": ">=2.2.0",

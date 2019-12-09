@@ -33,7 +33,7 @@
       <p>
         To install this page as an app, press
         <img
-          src="iosDownload.png"
+          src="../assets/iosDownload.png"
           alt="iosDownload"
           style="width:14px;height:20px;margin-left:.25em;margin-right:.25em;"
         />
@@ -47,10 +47,10 @@
 <script>
 import Vue from "vue";
 import Directions from "./DirectionsV";
-import CustomButton from "./CustomButton";
-import MaybeInstallButton from "./MaybeInstallButton";
-import RoomInput from "./RoomInput";
-import walnut from "./walnut";
+import CustomButton from "../components/CustomButton";
+import MaybeInstallButton from "../components/MaybeInstallButton";
+import RoomInput from "../components/RoomInput";
+import walnut from "../walnut";
 
 export default Vue.extend({
   data() {

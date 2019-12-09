@@ -28,39 +28,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import VueRouter from "vue-router";
-import Index from "./IndexV.vue";
-import Directions from "./DirectionsV.vue";
-import MySchedule from "./MySchedule.vue";
-import MyScheduleEdit from "./MyScheduleEdit.vue";
 import walnut from "./walnut";
-
-const routes = [
-  { path: "/", component: Index },
-  {
-    path: "/directions",
-    component: Directions,
-    props: ({ query }: { query: { fromRoom?: string; toRoom?: string } }) => ({
-      fromRoom: query.fromRoom,
-      toRoom: query.toRoom,
-    }),
-  },
-  {
-    path: "/myschedule",
-    component: MySchedule,
-  },
-  {
-    path: "/myschedule/edit",
-    component: MyScheduleEdit,
-  },
-];
-
-const router = new VueRouter({
-  routes,
-  scrollBehavior(to, from, savedPosition) {
-    return { x: 0, y: 0 };
-  },
-});
+import router from "./router/index";
 
 export default Vue.extend({
   router,
