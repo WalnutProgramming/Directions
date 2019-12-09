@@ -1,7 +1,7 @@
 // @ts-check
 
 "use strict";
-import dijkstra from "./dijkstra.js";
+import dijkstra from "dijkstrajs";
 export { getGraph, getShortestPath };
 
 /**

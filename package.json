@@ -7,6 +7,7 @@
     "build": "parcel build src/index.html -d public/ --public-url ./"
   },
   "dependencies": {
+    "dijkstrajs": "^1.0.1",
     "vue": ">=2.2.0",
     "vue-hot-reload-api": "^2.3.4",
     "vue-router": "^3.1.3",
