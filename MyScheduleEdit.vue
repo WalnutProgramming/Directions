@@ -50,7 +50,7 @@ import Vue from "vue";
 import RoomInput from "./RoomInput.vue";
 import CustomButton from "./CustomButton.vue";
 import { SlickList, SlickItem } from "vue-slicksort";
-import { isValidRoomName } from "./directions";
+import walnut from "./walnut";
 
 export default Vue.extend({
   components: { RoomInput, CustomButton, SlickList, SlickItem },
@@ -72,7 +72,7 @@ export default Vue.extend({
     save() {
       Array.from(document.getElementsByClassName("my-input")).forEach(
         (inp, index) => {
-          if (inp.value === "" || isValidRoomName(inp.value)) {
+          if (inp.value === "" || walnut.isValidRoomName(inp.value)) {
             inp.setCustomValidity("");
           } else {
             inp.setCustomValidity(
@@ -84,7 +84,7 @@ export default Vue.extend({
       document.getElementById("scheduleForm").reportValidity();
       if (
         this.rooms.every(
-          ({ value }) => value.trim() === "" || isValidRoomName(value)
+          ({ value }) => value.trim() === "" || walnut.isValidRoomName(value)
         )
       ) {
         localStorage.setItem(

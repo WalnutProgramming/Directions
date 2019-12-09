@@ -33,7 +33,7 @@ import Index from "./IndexV.vue";
 import Directions from "./DirectionsV.vue";
 import MySchedule from "./MySchedule.vue";
 import MyScheduleEdit from "./MyScheduleEdit.vue";
-import { roomsList } from "./directions";
+import walnut from "./walnut";
 
 const routes = [
   { path: "/", component: Index },
@@ -81,7 +81,7 @@ export default Vue.extend({
     },
   },
   computed: {
-    roomsList: () => roomsList,
+    roomsList: () => walnut.roomsList,
     showNav(): boolean {
       return this.$route.path !== "/myschedule/edit";
     },

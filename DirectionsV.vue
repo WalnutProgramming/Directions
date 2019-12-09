@@ -22,7 +22,7 @@
 <script>
 import Vue from "vue";
 import CustomButton from "./CustomButton";
-import { getHallwayIndexAndIndex, getDirections } from "./directions";
+import walnut from "./walnut";
 
 export default Vue.extend({
   data() {
@@ -35,11 +35,12 @@ export default Vue.extend({
   computed: {
     directions() {
       if (
-        getHallwayIndexAndIndex(this.fromRoom) &&
-        getHallwayIndexAndIndex(this.toRoom)
+        walnut.getHallwayIndexAndIndex(this.fromRoom) &&
+        walnut.getHallwayIndexAndIndex(this.toRoom)
       ) {
         // Both have valid names, so put the directions in the HTML
-        return getDirections(this.fromRoom, this.toRoom)
+        return walnut
+          .getDirections(this.fromRoom, this.toRoom)
           .trim()
           .split("\n");
       } else {

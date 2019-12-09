@@ -1,4 +1,3 @@
-export { stairConnections, hallwayConnections, hallways };
 import {
   LEFT,
   RIGHT,
@@ -11,6 +10,7 @@ import {
   Fork,
   SimpleHallway,
 } from "./hallwayDefinition";
+import Building from "./Building";
 
 enum StairNode {
   A1 = "StairNode.A1",
@@ -153,8 +153,10 @@ const hallways: Hallway[] = [
     new Fork(LEFT, ConnectionNode.C1300S_TO_1600S, "the 1600s"),
     new Stairs(LEFT, StairNode.B1, "2025"),
     new Room("1305", RIGHT),
-    new Room("1302", RIGHT),
+    new Room("1303", RIGHT),
+    new Room("1304", LEFT),
     new Room("1301", RIGHT),
+    new Room("1300"),
   ]),
 
   // 2nd floor main building (2100s, 2200s, 2300s)
@@ -667,3 +669,5 @@ const hallways: Hallway[] = [
     new Room("2840", RIGHT, undefined, undefined, ["Choir"]),
   ]),
 ];
+
+export default new Building(hallways, hallwayConnections, stairConnections);

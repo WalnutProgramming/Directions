@@ -50,7 +50,7 @@ import Directions from "./DirectionsV";
 import CustomButton from "./CustomButton";
 import MaybeInstallButton from "./MaybeInstallButton";
 import RoomInput from "./RoomInput";
-import { getHallwayIndexAndIndex, isValidRoomName } from "./directions";
+import walnut from "./walnut";
 
 export default Vue.extend({
   data() {
@@ -79,7 +79,10 @@ export default Vue.extend({
     submit() {
       this.validateInput("fromRoom", false);
       this.validateInput("toRoom", false);
-      if (isValidRoomName(this.fromRoom) && isValidRoomName(this.toRoom)) {
+      if (
+        walnut.isValidRoomName(this.fromRoom) &&
+        walnut.isValidRoomName(this.toRoom)
+      ) {
         this.$router.push({
           path: "/directions",
           query: { fromRoom: this.fromRoom, toRoom: this.toRoom },
@@ -90,7 +93,7 @@ export default Vue.extend({
       let message = "";
       if (this[inputName] === "") {
         if (!allowBlank) message = "Please type a room number";
-      } else if (!isValidRoomName(this[inputName])) {
+      } else if (!walnut.isValidRoomName(this[inputName])) {
         message = `I can't find a room with the name "${this[inputName]}"`;
       }
       document.getElementById(inputName).setCustomValidity(message);
