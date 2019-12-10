@@ -360,7 +360,7 @@ const hallways: Hallway[] = [
   ]),
 
   // arcade
-  (function() {
+  (() => {
     const theArcade = new Hallway([
       // The directions that we use here (FRONT) don't matter since we
       // override the instructions for the arcade anyway.
@@ -406,6 +406,8 @@ const hallways: Hallway[] = [
               );
             case ALUMNI:
               return "Turn right, go to the end of the arcade, walk up the ramp, turn right, and go through the doors\n";
+            default:
+              return "";
           }
         case SCIENCE:
           switch (to) {
@@ -420,6 +422,8 @@ const hallways: Hallway[] = [
               return "Turn right when you leave the science wing\nWalk forward and turn right again, then walk down to the end of the narrow hallway\n";
             case ALUMNI:
               return "Turn left, go to the end of the arcade, walk up the ramp, turn right, and go through the doors\n";
+            default:
+              return "";
           }
         case MUSIC:
           switch (to) {
@@ -440,32 +444,39 @@ const hallways: Hallway[] = [
                 "Turn left after walking through the doors, then walk down the hallway\n" +
                 "Go to the end of the arcade, walk up the ramp, turn right, and go through the doors\n"
               );
+            default:
+              return "";
           }
         case GYM:
-          const str =
-            "Exit the gym and walk out via the narrow hallway on the right\n";
-          switch (to) {
-            case SCIENCE:
-              return (
-                str +
-                "Walk until the narrow hallway empties into the Arcade\nTurn left, walk a little bit, and turn left again to get to the science wing\n"
-              );
-            case LANGUAGES:
-              return (
-                str +
-                "Walk until the narrow hallway empties into the Arcade\nGo straight and a bit to the left; walk forward into the language wing\n"
-              );
-            case MUSIC:
-              return (
-                str +
-                'After entering the narrow hallway, immediately turn left into the double doors labeled "Music Lyceum"\n'
-              );
-            case ALUMNI:
-              return (
-                str +
-                "Go to the end of the arcade, walk up the ramp, turn right, and go through the doors\n"
-              );
-          }
+          (() => {
+            const str =
+              "Exit the gym and walk out via the narrow hallway on the right\n";
+            switch (to) {
+              case SCIENCE:
+                return (
+                  str +
+                  "Walk until the narrow hallway empties into the Arcade\nTurn left, walk a little bit, and turn left again to get to the science wing\n"
+                );
+              case LANGUAGES:
+                return (
+                  str +
+                  "Walk until the narrow hallway empties into the Arcade\nGo straight and a bit to the left; walk forward into the language wing\n"
+                );
+              case MUSIC:
+                return (
+                  str +
+                  'After entering the narrow hallway, immediately turn left into the double doors labeled "Music Lyceum"\n'
+                );
+              case ALUMNI:
+                return (
+                  str +
+                  "Go to the end of the arcade, walk up the ramp, turn right, and go through the doors\n"
+                );
+              default:
+                return "";
+            }
+          })();
+          return "";
         case ALUMNI:
           switch (to) {
             case SCIENCE:
@@ -484,9 +495,12 @@ const hallways: Hallway[] = [
                 "Turn right and through the long narrow hallway\n" +
                 "The Senior High Gym is straight ahead. Walk inside\n"
               );
+            default:
+              return "";
           }
+        default:
+          return "";
       }
-      return "";
     };
     return theArcade;
   })(),

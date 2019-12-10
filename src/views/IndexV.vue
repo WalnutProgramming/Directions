@@ -70,7 +70,6 @@ export default Vue.extend({
     },
   },
   components: {
-    Directions,
     CustomButton,
     MaybeInstallButton,
     RoomInput,
