@@ -22,9 +22,13 @@
           <span style="width: 4em">
             ☰&nbsp;&nbsp;<span style="">{{ index + 1 }}.&nbsp;&nbsp;</span>
           </span>
-          <CustomButton @customclick="removeIndex(index)" class="smallerButton"
-            >-</CustomButton
+          <CustomButton
+            type="button"
+            @customclick="removeIndex(index)"
+            class="smallerButton"
           >
+            -
+          </CustomButton>
           <RoomInput
             :name="`room-${room.originalIndex}`"
             class="my-input"
@@ -33,15 +37,19 @@
           />
         </SlickItem>
         <div class="list-item">
-          <CustomButton @customclick="newRoom" class="smallerButton">
+          <CustomButton
+            type="button"
+            @customclick="newRoom"
+            class="smallerButton"
+          >
             +
           </CustomButton>
         </div>
       </SlickList>
+      <div>
+        <CustomButton @customclick="save" class="save">Save</CustomButton>
+      </div>
     </form>
-    <div>
-      <CustomButton @customclick="save" class="save">Save</CustomButton>
-    </div>
   </div>
 </template>
 
