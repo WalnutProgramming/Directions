@@ -11,5 +11,12 @@ module.exports = {
       msTileImage: "img/icons/mstile-150x150.png",
     },
     themeColor: "#03a1fc",
+
+    // configure the workbox plugin
+    workboxPluginMode: "InjectManifest",
+    workboxOptions: {
+      // swSrc is required in InjectManifest mode.
+      swSrc: "service-worker.js",
+    },
   },
 };
