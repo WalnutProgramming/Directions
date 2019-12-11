@@ -1,8 +1,8 @@
 <template>
   <input
+    :id="name"
     class="roomInput"
     :name="name"
-    :id="name"
     placeholder="type or select"
     autocomplete="off"
     :value="value"
@@ -16,10 +16,12 @@
 import Vue from "vue";
 
 export default Vue.extend({
+  props: {
+    name: { type: String, required: true },
+  },
   data() {
     return { value: "" };
   },
-  props: ["name"],
 });
 </script>
 

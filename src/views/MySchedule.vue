@@ -11,8 +11,8 @@
               room.value.trim() !== '' &&
               rooms[index + 1].value.trim() !== ''
           "
-          @customclick="go(index)"
           style="font-size: .7em; margin-left: -1.5em; margin-top: .1em; margin-bottom: .3em"
+          @customclick="go(index)"
         >
           ↓ Go from {{ rooms[index].value }} to {{ rooms[index + 1].value }} ↓
         </CustomButton>
@@ -34,6 +34,11 @@ export default Vue.extend({
       rooms: stored == null ? [] : JSON.parse(stored).rooms,
     };
   },
+  created() {
+    if (localStorage.getItem("myschedule") == null) {
+      this.$router.replace("/myschedule/edit?new=true");
+    }
+  },
   methods: {
     newRoom() {
       this.rooms.push({ value: "" });
@@ -48,11 +53,6 @@ export default Vue.extend({
         },
       });
     },
-  },
-  created() {
-    if (localStorage.getItem("myschedule") == null) {
-      this.$router.replace("/myschedule/edit?new=true");
-    }
   },
 });
 </script>

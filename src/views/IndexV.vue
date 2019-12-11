@@ -8,16 +8,16 @@
         <form id="roomForm">
           <label for="fromRoom"> I'm at room: </label>
           <RoomInput
+            v-model="fromRoom"
             name="fromRoom"
             placeholder="type or select"
-            v-model="fromRoom"
             @change="validateInput('fromRoom')"
           ></RoomInput>
           <label for="toRoom"> I'm going to room: </label>
           <RoomInput
+            v-model="toRoom"
             name="toRoom"
             placeholder="type or select"
-            v-model="toRoom"
             @change="validateInput('toRoom')"
           ></RoomInput>
           <br />
@@ -53,6 +53,11 @@ import RoomInput from "../components/RoomInput";
 import walnut from "../walnut";
 
 export default Vue.extend({
+  components: {
+    CustomButton,
+    MaybeInstallButton,
+    RoomInput,
+  },
   data() {
     return {
       fromRoom: "",
@@ -68,11 +73,6 @@ export default Vue.extend({
         .matches;
       return iOS && !isInstalledPWA;
     },
-  },
-  components: {
-    CustomButton,
-    MaybeInstallButton,
-    RoomInput,
   },
   methods: {
     submit() {

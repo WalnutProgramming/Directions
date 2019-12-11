@@ -11,11 +11,11 @@
       If you're in private/incognito mode, your schedule will not be saved.
     </p>
     <form id="scheduleForm">
-      <SlickList class="list" lockAxis="y" v-model="rooms" :pressDelay="50">
+      <SlickList v-model="rooms" class="list" lock-axis="y" :press-delay="50">
         <SlickItem
-          class="list-item"
           v-for="(room, index) in rooms"
           :key="room.originalIndex"
+          class="list-item"
           :index="index"
           :item="room"
         >
@@ -24,30 +24,30 @@
           </span>
           <CustomButton
             type="button"
-            @customclick="removeIndex(index)"
             class="smallerButton"
+            @customclick="removeIndex(index)"
           >
             -
           </CustomButton>
           <RoomInput
+            v-model="room.value"
             :name="`room-${room.originalIndex}`"
             class="my-input"
             style="background-color: #f2f7f4; max-width: 40vw"
-            v-model="room.value"
           />
         </SlickItem>
         <div class="list-item">
           <CustomButton
             type="button"
-            @customclick="newRoom"
             class="smallerButton"
+            @customclick="newRoom"
           >
             +
           </CustomButton>
         </div>
       </SlickList>
       <div>
-        <CustomButton @customclick="save" class="save">Save</CustomButton>
+        <CustomButton class="save" @customclick="save">Save</CustomButton>
       </div>
     </form>
   </div>
