@@ -1,6 +1,11 @@
 import Room from "./Room";
 import Turn from "./Turn";
 
+/**
+ * This class represents a single hallway. The hallway may have turns,
+ * but if you need a fork, you need to add another [[Hallway]] to the list
+ * and connect them with 2 [[Fork]]s.
+ */
 export default class Hallway {
   constructor(public partList: (Room | Turn)[], public name?: string | null) {}
 

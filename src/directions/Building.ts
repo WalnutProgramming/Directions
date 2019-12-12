@@ -2,6 +2,33 @@ import Hallway from "./Hallway";
 import Room from "./Room";
 import { getGraph, getShortestPath } from "./graph/graph";
 
+/**
+ * This is the class that we use to define a building. (See
+ * `src/walnut.ts` for a large example.)
+ *
+ * Here's an example with a single hallway:
+ * ```ts
+ * const myBuilding = new Building([
+ *   new Hallway([
+ *     new Room("A", Direction.LEFT),
+ *     new Room("B", Direction.RIGHT),
+ *     new Turn(Direction.RIGHT),
+ *     new Room("C", Direction.LEFT),
+ *     new Room("D", Direction.LEFT),
+ *     new Stairs(Direction.LEFT, "AFDS"),
+ *   ]),
+ * ]);
+ *
+ * console.log(myBuilding.getDirections("A", "C"));
+ * ```
+ *
+ * This outputs:
+ * ```plaintext
+ * Turn left out of room A
+ * Continue, then turn right (after passing room B on your right)
+ * Continue, then turn left into room C
+ * ```
+ */
 export default class Building {
   readonly hallwayNodes: {
     nodeId: string;
@@ -58,7 +85,6 @@ export default class Building {
   }
 
   /**
-   *
    * @param id1
    * @param id2
    * @return Is the connection between these two nodes
@@ -99,6 +125,8 @@ export default class Building {
   }
 
   /**
+   * This is the method that tells you how to get from one room
+   * to another in a building.
    * @param {string} from - The name of the starting room
    * @param {string} to - The name of the destination room
    * @return {string} The directions to get from room `from` to room `to`
@@ -168,7 +196,13 @@ export default class Building {
     return directions;
   }
 
-  public isValidRoomName(name: string) {
+  /**
+   *
+   * @param name - A possible name for a room in this building
+   * @returns `true` if there is a room with the name or alias
+   * `name`, and `false` otherwise.
+   */
+  public isValidRoomName(name: string): boolean {
     return (
       typeof name === "string" && this.getHallwayIndexAndIndex(name) != null
     );
