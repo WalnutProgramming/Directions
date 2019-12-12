@@ -2,6 +2,7 @@
 
 "use strict";
 import dijkstra from "dijkstrajs";
+
 export { getGraph, getShortestPath };
 
 /**

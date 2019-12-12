@@ -24,6 +24,7 @@
     "@vue/cli-plugin-router": "^4.1.0",
     "@vue/cli-plugin-typescript": "^4.1.0",
     "@vue/cli-service": "^4.1.0",
+    "@vue/eslint-config-airbnb": "^5.0.0",
     "@vue/eslint-config-prettier": "^5.0.0",
     "@vue/eslint-config-typescript": "^4.0.0",
     "eslint": "^5.16.0",
@@ -39,11 +40,12 @@
       "node": true
     },
     "extends": [
+      "@vue/airbnb",
       "plugin:vue/recommended",
       "@vue/prettier",
       "@vue/typescript"
     ],
-    "rules": {},
+    "parser": "vue-eslint-parser",
     "parserOptions": {
       "parser": "@typescript-eslint/parser"
     }

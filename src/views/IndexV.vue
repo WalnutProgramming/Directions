@@ -46,10 +46,10 @@
 
 <script>
 import Vue from "vue";
-import Directions from "./DirectionsV";
-import CustomButton from "../components/CustomButton";
-import MaybeInstallButton from "../components/MaybeInstallButton";
-import RoomInput from "../components/RoomInput";
+import Directions from "./DirectionsV.vue";
+import CustomButton from "../components/CustomButton.vue";
+import MaybeInstallButton from "../components/MaybeInstallButton.vue";
+import RoomInput from "../components/RoomInput.vue";
 import walnut from "../walnut";
 
 export default Vue.extend({

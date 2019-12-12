@@ -21,7 +21,7 @@
 
 <script>
 import Vue from "vue";
-import CustomButton from "../components/CustomButton";
+import CustomButton from "../components/CustomButton.vue";
 import walnut from "../walnut";
 
 export default Vue.extend({

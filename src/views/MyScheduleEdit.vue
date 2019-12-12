@@ -55,9 +55,9 @@
 
 <script>
 import Vue from "vue";
+import { SlickList, SlickItem } from "vue-slicksort";
 import RoomInput from "../components/RoomInput.vue";
 import CustomButton from "../components/CustomButton.vue";
-import { SlickList, SlickItem } from "vue-slicksort";
 import walnut from "../walnut";
 
 export default Vue.extend({

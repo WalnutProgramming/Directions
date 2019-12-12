@@ -1,6 +1,7 @@
 import Direction from "./Direction";
 import { isLeftOrRight, dirToTurnString } from "./directionHelpers";
-import Turn from "./Turn";
+
+type Turn = typeof import("./Turn");
 
 export default class Room {
   constructor(
@@ -9,9 +10,7 @@ export default class Room {
     public nodeId: (string | null) | undefined = null,
     public prefix: string | undefined = "room",
     public aliases: string[] | undefined = [],
-    public edgeLengthFromPreviousNodeInHallway:
-      | (number | null)
-      | undefined = null
+    public edgeLengthFromPreviousNodeInHallway: number | null | undefined = null
   ) {}
 
   get fullName(): string {
