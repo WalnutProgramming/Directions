@@ -13,8 +13,8 @@
 
     <transition :name="transitionName">
       <router-view
-        class="child-view"
         :id="showNav ? 'main-stuff' : ''"
+        class="child-view"
       ></router-view>
     </transition>
 
@@ -38,6 +38,12 @@ export default Vue.extend({
       transitionName: "fade",
     };
   },
+  computed: {
+    roomsList: () => walnut.roomsList,
+    showNav(): boolean {
+      return this.$route.path !== "/myschedule/edit";
+    },
+  },
   watch: {
     $route(to, from) {
       if (from.path === "/" && to.path === "/directions") {
@@ -47,12 +53,6 @@ export default Vue.extend({
       } else {
         this.transitionName = "fade";
       }
-    },
-  },
-  computed: {
-    roomsList: () => walnut.roomsList,
-    showNav(): boolean {
-      return this.$route.path !== "/myschedule/edit";
     },
   },
 });

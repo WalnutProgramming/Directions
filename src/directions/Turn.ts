@@ -5,6 +5,9 @@ import {
   isLeftOrRight,
 } from "./directionHelpers";
 
+/**
+ * This class represents a turn in a single [[Hallway]].
+ */
 export default class Turn {
   constructor(public direction: -1 | 1) {}
 

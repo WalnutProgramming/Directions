@@ -1,7 +1,12 @@
 import Direction from "./Direction";
 import { isLeftOrRight, dirToTurnString } from "./directionHelpers";
-import Turn from "./Turn";
 
+type Turn = typeof import("./Turn");
+
+/**
+ * This class represents a single element in a hallway that is not a [[Turn]].
+ * This can be a room, but it can also be a [[Fork]] or [[Stairs]].
+ */
 export default class Room {
   constructor(
     public name?: (string | null) | undefined,
@@ -9,9 +14,7 @@ export default class Room {
     public nodeId: (string | null) | undefined = null,
     public prefix: string | undefined = "room",
     public aliases: string[] | undefined = [],
-    public edgeLengthFromPreviousNodeInHallway:
-      | (number | null)
-      | undefined = null
+    public edgeLengthFromPreviousNodeInHallway: number | null | undefined = null
   ) {}
 
   get fullName(): string {

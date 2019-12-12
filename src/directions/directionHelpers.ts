@@ -1,6 +1,6 @@
-export { dirToString, dirToTurnString, isLeftOrRight };
-
 import Direction from "./Direction";
+
+export { dirToString, dirToTurnString, isLeftOrRight };
 
 const { LEFT, RIGHT, FRONT, BACK } = Direction;
 

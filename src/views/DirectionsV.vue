@@ -5,7 +5,7 @@
         &laquo; Back
       </button>
     </span> -->
-    <CustomButton @customclick="back" style="font-size: 0.5em">
+    <CustomButton style="font-size: 0.5em" @customclick="back">
       &laquo; Back
     </CustomButton>
 
@@ -21,16 +21,19 @@
 
 <script>
 import Vue from "vue";
-import CustomButton from "../components/CustomButton";
+import CustomButton from "../components/CustomButton.vue";
 import walnut from "../walnut";
 
 export default Vue.extend({
-  data() {
-    return {};
+  components: {
+    CustomButton,
   },
   props: {
     fromRoom: { type: String, default: "" },
     toRoom: { type: String, default: "" },
+  },
+  data() {
+    return {};
   },
   computed: {
     directions() {
@@ -56,9 +59,6 @@ export default Vue.extend({
         this.$router.push("/");
       }
     },
-  },
-  components: {
-    CustomButton,
   },
 });
 </script>

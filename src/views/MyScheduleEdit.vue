@@ -11,45 +11,53 @@
       If you're in private/incognito mode, your schedule will not be saved.
     </p>
     <form id="scheduleForm">
-      <SlickList class="list" lockAxis="y" v-model="rooms" :pressDelay="50">
+      <SlickList v-model="rooms" class="list" lock-axis="y" :press-delay="50">
         <SlickItem
-          class="list-item"
           v-for="(room, index) in rooms"
           :key="room.originalIndex"
+          class="list-item"
           :index="index"
           :item="room"
         >
           <span style="width: 4em">
             ☰&nbsp;&nbsp;<span style="">{{ index + 1 }}.&nbsp;&nbsp;</span>
           </span>
-          <CustomButton @customclick="removeIndex(index)" class="smallerButton"
-            >-</CustomButton
+          <CustomButton
+            type="button"
+            class="smallerButton"
+            @customclick="removeIndex(index)"
           >
+            -
+          </CustomButton>
           <RoomInput
+            v-model="room.value"
             :name="`room-${room.originalIndex}`"
             class="my-input"
             style="background-color: #f2f7f4; max-width: 40vw"
-            v-model="room.value"
           />
         </SlickItem>
         <div class="list-item">
-          <CustomButton @customclick="newRoom" class="smallerButton">
+          <CustomButton
+            type="button"
+            class="smallerButton"
+            @customclick="newRoom"
+          >
             +
           </CustomButton>
         </div>
       </SlickList>
+      <div>
+        <CustomButton class="save" @customclick="save">Save</CustomButton>
+      </div>
     </form>
-    <div>
-      <CustomButton @customclick="save" class="save">Save</CustomButton>
-    </div>
   </div>
 </template>
 
 <script>
 import Vue from "vue";
+import { SlickList, SlickItem } from "vue-slicksort";
 import RoomInput from "../components/RoomInput.vue";
 import CustomButton from "../components/CustomButton.vue";
-import { SlickList, SlickItem } from "vue-slicksort";
 import walnut from "../walnut";
 
 export default Vue.extend({

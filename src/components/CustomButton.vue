@@ -1,14 +1,19 @@
 <template>
   <span class="btn-hover-area" @click.stop.prevent="$emit('customclick')">
-    <button type="submit" class="active-button">
+    <button :type="type" class="active-button">
       <slot></slot>
     </button>
   </span>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from "vue";
-export default Vue.extend({});
+
+export default Vue.extend({
+  props: {
+    type: { type: String, default: "submit" },
+  },
+});
 </script>
 
 <style scoped>

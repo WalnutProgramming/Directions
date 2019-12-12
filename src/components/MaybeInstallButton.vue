@@ -4,31 +4,32 @@
   </CustomButton>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from "vue";
-import CustomButton from "../components/CustomButton";
+import CustomButton from "./CustomButton.vue";
+import BeforeInstallPromptEvent from "./BeforeInstallPromptEvent";
 
 export default Vue.extend({
-  data() {
-    return {
-      showButton: false,
-      deferredPrompt: undefined,
-    };
-  },
   components: {
     CustomButton,
   },
-  methods: {
-    install() {
-      this.showButton = false;
-      this.deferredPrompt.prompt();
-    },
+  data() {
+    return {
+      showButton: false,
+      deferredPrompt: undefined as BeforeInstallPromptEvent | undefined,
+    };
   },
   created() {
     window.addEventListener("beforeinstallprompt", e => {
       this.showButton = true;
-      this.deferredPrompt = e;
+      this.deferredPrompt = e as BeforeInstallPromptEvent;
     });
+  },
+  methods: {
+    install() {
+      this.showButton = false;
+      if (this.deferredPrompt != undefined) this.deferredPrompt.prompt();
+    },
   },
 });
 </script>

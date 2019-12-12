@@ -8,16 +8,16 @@
         <form id="roomForm">
           <label for="fromRoom"> I'm at room: </label>
           <RoomInput
+            v-model="fromRoom"
             name="fromRoom"
             placeholder="type or select"
-            v-model="fromRoom"
             @change="validateInput('fromRoom')"
           ></RoomInput>
           <label for="toRoom"> I'm going to room: </label>
           <RoomInput
+            v-model="toRoom"
             name="toRoom"
             placeholder="type or select"
-            v-model="toRoom"
             @change="validateInput('toRoom')"
           ></RoomInput>
           <br />
@@ -46,13 +46,18 @@
 
 <script>
 import Vue from "vue";
-import Directions from "./DirectionsV";
-import CustomButton from "../components/CustomButton";
-import MaybeInstallButton from "../components/MaybeInstallButton";
-import RoomInput from "../components/RoomInput";
+import Directions from "./DirectionsV.vue";
+import CustomButton from "../components/CustomButton.vue";
+import MaybeInstallButton from "../components/MaybeInstallButton.vue";
+import RoomInput from "../components/RoomInput.vue";
 import walnut from "../walnut";
 
 export default Vue.extend({
+  components: {
+    CustomButton,
+    MaybeInstallButton,
+    RoomInput,
+  },
   data() {
     return {
       fromRoom: "",
@@ -68,12 +73,6 @@ export default Vue.extend({
         .matches;
       return iOS && !isInstalledPWA;
     },
-  },
-  components: {
-    Directions,
-    CustomButton,
-    MaybeInstallButton,
-    RoomInput,
   },
   methods: {
     submit() {

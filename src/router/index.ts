@@ -1,8 +1,11 @@
+import Vue from "vue";
 import VueRouter from "vue-router";
-import Index from "./../views/IndexV.vue";
-import Directions from "./../views/DirectionsV.vue";
-import MySchedule from "./../views/MySchedule.vue";
-import MyScheduleEdit from "./../views/MyScheduleEdit.vue";
+import Index from "../views/IndexV.vue";
+import Directions from "../views/DirectionsV.vue";
+import MySchedule from "../views/MySchedule.vue";
+import MyScheduleEdit from "../views/MyScheduleEdit.vue";
+
+Vue.use(VueRouter);
 
 const routes = [
   { path: "/", component: Index },
