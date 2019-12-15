@@ -1,7 +1,8 @@
 // @ts-check
 
 "use strict";
-import { dijkstra } from "./dijkstra.js";
+import dijkstra from "dijkstrajs";
+
 export { getGraph, getShortestPath };
 
 /**
@@ -53,11 +54,9 @@ function getGraph(hallConnectors, stairConnections, hallwayConnections) {
       graph[id] = edgesTo;
     });
   });
-  console.log(graph);
   return graph;
 }
 
 function getShortestPath(graph, idFrom, idTo) {
-  console.log(dijkstra.find_path(graph, idFrom, idTo));
   return dijkstra.find_path(graph, idFrom, idTo);
 }
