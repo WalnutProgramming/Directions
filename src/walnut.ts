@@ -172,37 +172,39 @@ const hallways: Hallway[] = [
     new Fork(LEFT, ConnectionNode.C2300S_TO_2600S, "the 2600s"),
     new Stairs(LEFT, StairNode.B2, "2025"),
     new Room("2302", RIGHT),
-    new Room("Auditorium", LEFT, undefined, "the", [
-      "2500",
-      "Westheimer Auditorium",
-    ]),
+    new Room("Auditorium", LEFT, {
+      prefix: "the",
+      aliases: ["2500", "Westheimer Auditorium"],
+    }),
     new Room("2301", RIGHT),
     new Room("2205", RIGHT),
     new Stairs(LEFT, StairNode.C2, "2024"),
     new Fork(LEFT, ConnectionNode.C2200S_TO_ALUMNI_HALL, "the Alumni Hall"),
-    new Room("2204", undefined, undefined, undefined, ["Principal's Office"]),
-    new Room("2203", RIGHT, undefined, undefined, ["Counseling Office"]),
+    new Room("2204", LEFT, { aliases: ["Principal's Office"] }),
+    new Room("2203", RIGHT, { aliases: ["Counseling Office"] }),
     new Room("2202"),
-    new Room("2201", RIGHT, undefined, undefined, ["Registrar"]),
+    new Room("2201", RIGHT, { aliases: ["Registrar"] }),
     new Fork(LEFT, ConnectionNode.LOBBY_TO_2240, "the entrance area"),
     new Fork(RIGHT, ConnectionNode.LOBBY_TO_2200S, "the 2200s"),
-    new Room("2210", undefined, undefined, undefined, ["Conference Room"]),
-    new Room("2209", RIGHT, undefined, undefined, [
-      "10-11 Administration Office",
-      "10th and 11th Grade Office",
-    ]),
+    new Room("2210", LEFT, { aliases: ["Conference Room"] }),
+    new Room("2209", RIGHT, {
+      aliases: ["10-11 Administration Office", "10th and 11th Grade Office"],
+    }),
     new Stairs(LEFT, StairNode.D2, "2015"),
     new Room("2101", RIGHT),
-    new Room("Junior High Gym", LEFT, undefined, "the", [
-      "2402",
-      "Gymnasium - Junior High",
-      "Gymnasium - Junior High School",
-      "Junior High Gymnasium",
-      "Junior Gym",
-      "Junior Gymnasium",
-      "Junior High School Gym",
-      "Junior High School Gymnasium",
-    ]),
+    new Room("Junior High Gym", LEFT, {
+      prefix: "the",
+      aliases: [
+        "2402",
+        "Gymnasium - Junior High",
+        "Gymnasium - Junior High School",
+        "Junior High Gymnasium",
+        "Junior Gym",
+        "Junior Gymnasium",
+        "Junior High School Gym",
+        "Junior High School Gymnasium",
+      ],
+    }),
     new Room("2103", RIGHT),
     new Room("2105", RIGHT),
     new Turn(RIGHT),
@@ -220,28 +222,24 @@ const hallways: Hallway[] = [
   // entrance area
   new Hallway([
     new Fork(BACK, ConnectionNode.C2240_TO_LOBBY, "the lobby"),
-    new Room("2200", LEFT, undefined, undefined, ["Main Office"]),
+    new Room("2200", LEFT, { aliases: ["Main Office"] }),
   ]),
 
   // administrative center
   new Hallway([
     new Fork(BACK, ConnectionNode.C2200S_TO_LOBBY, "the lobby"),
-    new Room("2207", RIGHT, undefined, undefined, [
-      "7-9 Administration Offices",
-      "7th, 8th, and 9th Grade Office",
-    ]),
+    new Room("2207", RIGHT, {
+      aliases: ["7-9 Administration Offices", "7th, 8th, and 9th Grade Office"],
+    }),
     new Room("2229"),
-    new Room("2212", undefined, undefined, undefined, [
-      "Medical Room",
-      "Nurse",
-    ]),
+    new Room("2212", LEFT, { aliases: ["Medical Room", "Nurse"] }),
     new Room("2214"),
     new Room("2211", RIGHT),
-    new Room("2216", LEFT, ConnectionNode.ENTER_2216),
-    new Room("2215", RIGHT, ConnectionNode.ENTER_2215, undefined, [
-      "Alumni Foundation",
-      "Alumni Office",
-    ]),
+    new Room("2216", LEFT, { nodeId: ConnectionNode.ENTER_2216 }),
+    new Room("2215", RIGHT, {
+      nodeId: ConnectionNode.ENTER_2215,
+      aliases: ["Alumni Foundation", "Alumni Office"],
+    }),
     new Room("2218"),
   ]),
 
@@ -271,21 +269,23 @@ const hallways: Hallway[] = [
     new Room("3305", RIGHT),
     new Room("3302", LEFT),
     new Room("3303", RIGHT),
-    new Room("3301", RIGHT, undefined, undefined, ["Writing Center"]),
+    new Room("3301", RIGHT, { aliases: ["Writing Center"] }),
     new Stairs(LEFT, StairNode.C3, "2024"),
     new Room("3210", LEFT),
     new Room("3207", LEFT),
     new Room("3205", RIGHT),
     new Room("3208", LEFT),
     //rooms without room numbers have prefix 'the'
-    new Room("Library", RIGHT, null, "the", ["3214", "Libary (misspelled)"]),
+    new Room("Library", RIGHT, {
+      prefix: "the",
+      aliases: ["3214", "Libary (misspelled)"],
+    }),
     new Room("3206", LEFT),
     new Room("3204", LEFT),
     new Room("3202", LEFT),
-    new Room("3201", RIGHT, undefined, undefined, [
-      "Computer Lab - Library",
-      "Library Computer Lab",
-    ]),
+    new Room("3201", RIGHT, {
+      aliases: ["Computer Lab - Library", "Library Computer Lab"],
+    }),
     new Stairs(LEFT, StairNode.D3, "2015", 3),
     new Room("3102", LEFT),
     new Room("3101", RIGHT),
@@ -317,7 +317,7 @@ const hallways: Hallway[] = [
           .onLeave(forwardOrBackward)
           .replace("\n", " through the door closest to the desk\n");
       }
-    })("1604", RIGHT, undefined, undefined, ["Language Lab"]),
+    })("1604", RIGHT, { aliases: ["Language Lab"] }),
     new Room("1603"),
     new Room("1605"),
     new Room("1606"),
@@ -372,14 +372,17 @@ const hallways: Hallway[] = [
         ConnectionNode.ARCADE_TO_MUSIC_ENTRANCE,
         "the music lyceum"
       ),
-      new Room("Senior High Gym", FRONT, null, "the", [
-        "2800",
-        "2801",
-        "Gymnasium - High School",
-        "Senior Gym",
-        "High School Gymnasium",
-        "High School Gym",
-      ]),
+      new Room("Senior High Gym", FRONT, {
+        prefix: "the",
+        aliases: [
+          "2800",
+          "2801",
+          "Gymnasium - High School",
+          "Senior Gym",
+          "High School Gymnasium",
+          "High School Gym",
+        ],
+      }),
     ]);
 
     // custom directions for the auditorium
@@ -515,13 +518,10 @@ const hallways: Hallway[] = [
   // 2500s (2nd floor Performing Arts Center, behind the auditorium)
   new Hallway([
     new Fork(BACK, ConnectionNode.C2500S_TO_ALUMNI_HALL, "Alumni Hall"),
-    new Room("2503", RIGHT, undefined, undefined, [
-      "Black Box Theatre",
-      "Black Box Theater",
-      "Theatre",
-      "Theater",
-    ]),
-    new Room("2505", RIGHT, undefined, undefined, ["Scene Shop"]),
+    new Room("2503", RIGHT, {
+      aliases: ["Black Box Theatre", "Black Box Theater", "Theatre", "Theater"],
+    }),
+    new Room("2505", RIGHT, { aliases: ["Scene Shop"] }),
     new Fork(
       RIGHT,
       ConnectionNode.C2500S_TO_2500S_CORNER,
@@ -576,7 +576,7 @@ const hallways: Hallway[] = [
     new Room("2705"),
     new Room("2707"),
     new Room("2709"),
-    new Room("Forum", RIGHT, undefined, "the", ["2740"]),
+    new Room("Forum", RIGHT, { prefix: "the", aliases: ["2740"] }),
     new Room("2739"),
     new Room("2713"),
     new Room("2715"),
@@ -628,7 +628,7 @@ const hallways: Hallway[] = [
     new Turn(LEFT),
     new Turn(LEFT),
     new Room("1853", RIGHT),
-    new Room("1850", RIGHT, undefined, undefined, ["Band (1850)"]),
+    new Room("1850", RIGHT, { aliases: ["Band (1850)"] }),
     new Room("1857", RIGHT),
     new Room("1851", RIGHT),
     new Fork(
@@ -638,10 +638,7 @@ const hallways: Hallway[] = [
     ),
     new Turn(LEFT),
     new Room("1843", LEFT),
-    new Room("1840", RIGHT, undefined, undefined, [
-      "Instrumental",
-      "Band (1840)",
-    ]),
+    new Room("1840", RIGHT, { aliases: ["Instrumental", "Band (1840)"] }),
     new Room("1841", LEFT),
     new Room("1824", RIGHT),
     new Room("1823", RIGHT),
@@ -657,7 +654,7 @@ const hallways: Hallway[] = [
     new Room("1842"),
     new Room("1849", RIGHT),
     new Room("1846", RIGHT),
-    new Room("1845", FRONT, undefined, undefined, ["Band (1845)"]),
+    new Room("1845", FRONT, { aliases: ["Band (1845)"] }),
   ]),
 
   // 2nd floor music wing (2800s)
@@ -667,19 +664,18 @@ const hallways: Hallway[] = [
     new Room("2853"),
     new Room("2851"),
     new Room("2849"),
-    new Room("2852", RIGHT, undefined, undefined, [
-      "Schott Recital Hall",
-      "Recital Hall",
-    ]),
+    new Room("2852", RIGHT, {
+      aliases: ["Schott Recital Hall", "Recital Hall"],
+    }),
     new Room("2847"),
     new Room("2857", RIGHT),
-    new Room("2848", RIGHT, undefined, undefined, ["Strings"]),
+    new Room("2848", RIGHT, { aliases: ["Strings"] }),
     new Turn(LEFT),
     new Room("2846", RIGHT),
     new Room("2844", RIGHT),
     new Room("2842", RIGHT),
     new Room("2843"),
-    new Room("2840", RIGHT, undefined, undefined, ["Choir"]),
+    new Room("2840", RIGHT, { aliases: ["Choir"] }),
   ]),
 ];
 

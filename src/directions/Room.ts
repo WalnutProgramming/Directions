@@ -3,19 +3,38 @@ import { isLeftOrRight, dirToTurnString } from "./directionHelpers";
 
 type Turn = typeof import("./Turn");
 
+interface Options {
+  nodeId?: string | null;
+  prefix?: string;
+  aliases?: string[];
+  edgeLengthFromPreviousNodeInHallway?: number | null;
+}
+
 /**
  * This class represents a single element in a hallway that is not a [[Turn]].
  * This can be a room, but it can also be a [[Fork]] or [[Stairs]].
  */
 export default class Room {
+  public nodeId: (string | null) | undefined = null;
+  public prefix: string | undefined = "room";
+  public aliases: string[] = [];
+  public edgeLengthFromPreviousNodeInHallway: number | null | undefined = null;
+
   constructor(
     public name?: (string | null) | undefined,
     public side: Direction = Direction.LEFT,
-    public nodeId: (string | null) | undefined = null,
-    public prefix: string | undefined = "room",
-    public aliases: string[] | undefined = [],
-    public edgeLengthFromPreviousNodeInHallway: number | null | undefined = null
-  ) {}
+    {
+      nodeId,
+      edgeLengthFromPreviousNodeInHallway,
+      prefix = "room",
+      aliases = [],
+    }: Options = {}
+  ) {
+    this.nodeId = nodeId;
+    this.prefix = prefix;
+    this.aliases = aliases;
+    this.edgeLengthFromPreviousNodeInHallway = edgeLengthFromPreviousNodeInHallway;
+  }
 
   get fullName(): string {
     return (this.prefix === "" ? "" : this.prefix + " ") + this.name;

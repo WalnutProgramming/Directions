@@ -14,14 +14,7 @@ export default class Fork extends Room {
     public destinationName: string,
     edgeLengthFromPreviousNodeInHallway: number | undefined = 1
   ) {
-    super(
-      null,
-      side,
-      nodeId,
-      undefined,
-      undefined,
-      edgeLengthFromPreviousNodeInHallway
-    );
+    super(null, side, { nodeId, edgeLengthFromPreviousNodeInHallway });
   }
 
   get fullName() {

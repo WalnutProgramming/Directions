@@ -14,14 +14,7 @@ export default class Stairs extends Room {
     public stairNumber?: string | undefined,
     edgeLengthFromPreviousNodeInHallway?: number | undefined
   ) {
-    super(
-      null,
-      side,
-      nodeId,
-      undefined,
-      undefined,
-      edgeLengthFromPreviousNodeInHallway
-    );
+    super(null, side, { nodeId, edgeLengthFromPreviousNodeInHallway });
   }
 
   get fullName() {
