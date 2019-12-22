@@ -7,7 +7,7 @@ import {
   Fork,
   SimpleHallway,
   Building,
-} from "@walnutprogramming/room-finder";
+} from "room-finder";
 
 const { LEFT, RIGHT, FRONT, BACK } = Direction;
 
