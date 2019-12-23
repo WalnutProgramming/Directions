@@ -17,7 +17,7 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-button {
+.active-button {
   color: white;
   border: none;
   padding: 12px 40px;

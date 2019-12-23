@@ -1,12 +1,12 @@
 <template>
   <div>
-    <p v-if="$route.query.new">
+    <p v-if="$route.query.new" class="p">
       You don't seem to have an existing schedule. Create a new one!
     </p>
-    <p>
+    <p class="p">
       Hold and drag to reorder classes.
     </p>
-    <p>
+    <p class="p">
       Your schedule will be stored in your browser <b>on this device only</b>.
       If you're in private/incognito mode, your schedule will not be saved.
     </p>
@@ -149,7 +149,7 @@ export default Vue.extend({
   margin-top: 0.5em;
 }
 
-p {
+.p {
   font-size: 16px;
 }
 

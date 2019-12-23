@@ -11,7 +11,11 @@
 
     <main>
       <div id="directions">
-        <p v-for="(line, index) in directions" :key="index + ':::' + line">
+        <p
+          v-for="(line, index) in directions"
+          :key="index + ':::' + line"
+          class="direction-line"
+        >
           {{ line }}
         </p>
       </div>
@@ -64,14 +68,14 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-p {
+.direction-line {
   padding-top: 17px;
   padding-bottom: 15px;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-p:nth-child(even) {
+.direction-line:nth-child(even) {
   background-color: lightblue;
 }
 </style>
