@@ -19,16 +19,17 @@
           :index="index"
           :item="room"
         >
-          <span style="width: 4em">
+          <span style="width: 3em">
             ☰&nbsp;&nbsp;<span style="">{{ index + 1 }}.&nbsp;&nbsp;</span>
           </span>
-          <CustomButton
+          <DeleteButton
             type="button"
             class="smallerButton"
+            style="font-size: 20px; margin-right: 10px"
             @customclick="removeIndex(index)"
           >
             -
-          </CustomButton>
+          </DeleteButton>
           <RoomInput
             v-model="room.value"
             :name="`room-${room.originalIndex}`"
@@ -53,18 +54,30 @@
   </div>
 </template>
 
-<script>
-import Vue from "vue";
+<script lang="ts">
+import Vue, { VueConstructor } from "vue";
 import { SlickList, SlickItem } from "vue-slicksort";
 import RoomInput from "../components/RoomInput.vue";
 import CustomButton from "../components/CustomButton.vue";
+import DeleteButton from "../components/DeleteButton.vue";
 import walnut from "../walnut";
 
+interface Room {
+  value: string;
+  originalIndex: number;
+}
+
 export default Vue.extend({
-  components: { RoomInput, CustomButton, SlickList, SlickItem },
+  components: {
+    RoomInput,
+    CustomButton,
+    SlickList: SlickList as any,
+    SlickItem: SlickItem as any,
+    DeleteButton,
+  },
   data() {
     const stored = localStorage.getItem("myschedule");
-    let rooms;
+    let rooms: Room[];
     if (stored != null) {
       rooms = JSON.parse(stored).rooms;
     } else {
@@ -79,7 +92,8 @@ export default Vue.extend({
     },
     save() {
       Array.from(document.getElementsByClassName("my-input")).forEach(
-        (inp, index) => {
+        (theInput, index) => {
+          const inp = theInput as HTMLInputElement;
           if (inp.value === "" || walnut.isValidRoomName(inp.value)) {
             inp.setCustomValidity("");
           } else {
@@ -89,12 +103,15 @@ export default Vue.extend({
           }
         }
       );
-      document.getElementById("scheduleForm").reportValidity();
+      (document.getElementById(
+        "scheduleForm"
+      ) as HTMLFormElement).reportValidity();
       if (
         this.rooms.every(
           ({ value }) => value.trim() === "" || walnut.isValidRoomName(value)
         )
       ) {
+        /* */
         localStorage.setItem(
           "myschedule",
           JSON.stringify({ rooms: this.rooms })
@@ -102,7 +119,7 @@ export default Vue.extend({
         this.$router.push("/myschedule");
       }
     },
-    removeIndex(index) {
+    removeIndex(index: number) {
       this.rooms.splice(index, 1);
     },
   },
@@ -157,5 +174,9 @@ export default Vue.extend({
   margin-top: -0.2em;
   margin-bottom: -0.2em;
   font-size: 0.8em;
+}
+
+#scheduleForm {
+  font-size: 18px;
 }
 </style>
