@@ -36,9 +36,7 @@ Open the "Directions" folder in Visual Studio Code.
 1. Generating the directions
 
    - [src/walnut.ts](src/walnut.ts) is where we describe our school. This is where we list all of the rooms and hallways that are in our app and how they're connected together.
-   - [src/directions/](src/directions/) is the folder for general code that could apply to any building, not just our school.
-
-     - For example, a **Building** ([src/directions/Building.ts](src/directions/Building.ts)) is made up of many **Hallway**s ([src/directions/Hallway.ts](src/directions/Hallway.ts)), and Hallways include **Room**s ([src/directions/Room.ts](src/directions/Room.ts)), **Turn**s ([src/directions/Turn.ts](src/directions/Turn.ts)), **Stairs** ([src/directions/Stairs.ts](src/directions/Stairs.ts)), and **Fork**s ([src/directions/.ts](src/directions/Fork.ts)).
+   - The general code that could apply to any building (not just our school) is in a separate package called [room-finder](https://github.com/WalnutProgramming/room-finder).
 
 2. The website itself
    - The ([src/views](src/views)) folder is where we define each of the pages in the site. For example, the main page is in [src/views/IndexV.vue](src/views/IndexV.vue), and the page where we give the directions is [src/views/DirectionsV.vue](src/views/DirectionsV.vue).
