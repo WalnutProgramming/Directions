@@ -15,17 +15,16 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-
 .minus-button {
-  color: red;
+  color: white;
   border: none;
-  height: 6vh;
-  width: 6vh;
+  height: 4ch;
+  width: 4ch;
   font-size: 1em;
 
-  background: rgba(255, 120, 120, 0);
+  background: rgba(255, 120, 120, 1);
   display: inline-block;
-  border-radius: 50px;
+  border-radius: 15px;
 
   -webkit-user-select: none; /* Safari 3.1+ */
   -moz-user-select: none; /* Firefox 2+ */
@@ -36,11 +35,10 @@ export default Vue.extend({
 }
 
 .minus-button:hover {
-  background: rgb(255, 120, 120, 1);
-  color: white;
+  background: rgb(255, 120, 120, 0);
+  color: red;
   transition: var(--long-decay-ease);
   cursor: pointer;
   border-radius: 7.5px;
 }
-
 </style>
