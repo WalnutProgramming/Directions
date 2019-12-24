@@ -5,7 +5,7 @@
         &laquo; Back
       </button>
     </span>-->
-    <CustomButton style="font-size: 0.5em" @customclick="back">&laquo; Back</CustomButton>
+    <CustomButton style="font-size: 0.5em; padding-left: 1vw;" @customclick="back">&laquo; Back</CustomButton>
 
     <main>
       <div id="directions">
@@ -63,13 +63,13 @@ export default Vue.extend({
 p {
   padding-top: 17px;
   padding-bottom: 15px;
-  padding-left: 20px;
+  padding-left: 1vw;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 p:nth-child(even) {
-  padding-left: 20px;
+  padding-left: 1vw;
   background-color: rgb(221, 237, 241);
 }
 </style>

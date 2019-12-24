@@ -108,8 +108,9 @@ header li a:hover {
 .child-view {
   position: absolute;
   /* margin-left: 25%; */
-  width: 98vw;
-  padding: 1vw;
+  width: 100vw;
+  padding-top: 1vw;
+  /*padding: 1vw;*/
   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
 .slide-left-enter,
