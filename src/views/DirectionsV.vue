@@ -5,7 +5,7 @@
         &laquo; Back
       </button>
     </span>-->
-    <CustomButton style="font-size: 0.5em" @customclick="back">
+    <CustomButton style="font-size: 0.5em; padding-left: 1vw;" @customclick="back">
       &laquo; Back
     </CustomButton>
 
