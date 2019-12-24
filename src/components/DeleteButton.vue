@@ -20,17 +20,17 @@ export default Vue.extend({
 .active-button {
   color: white;
   border: none;
-  padding: 12px 40px;
+  padding: 5px 15px;
   font-size: 1em;
 
-  background-color: #03a1fc;
+  background-color: #fc3d03ef;
   display: inline-block;
-  border-radius: 100px;
+  border-radius: 70px;
 
   margin-top: 0;
-  margin-bottom: 6px;
-  box-shadow: 0px 6px #007dc4, 0px 6px 0 6px rgb(209, 226, 228);
-  /*** these 6px values need to be the same (see below with ***) */
+  margin-bottom: 1px;
+  box-shadow: 0px 1px #007dc4, 0px 1px 0 1px rgb(209, 226, 228);
+  /*** these 1px values need to be the same (see below with ***) */
 
   transition: var(--back-ease);
 
@@ -42,14 +42,14 @@ export default Vue.extend({
 
 .btn-hover-area {
   display: inline-block;
-  border-radius: 100px;
+  border-radius: 70px;
 }
 
 .btn-hover-area:hover button {
-  margin-top: 6px;
+  margin-top: 1px;
   margin-bottom: 0px;
-  box-shadow: 0px 0px #007dc4, 0px 0px 0 6px rgb(209, 226, 228);
-  /*** these 6px values need to be the same (see above with ***) */
+  box-shadow: 0px 0px #007dc4, 0px 0px 0 1px rgb(209, 226, 228);
+  /*** these 1px values need to be the same (see above with ***) */
 
   transition: var(--sine-ease);
 

@@ -4,16 +4,16 @@
       <MaybeInstallButton></MaybeInstallButton>
 
       <main>
-        <h1>Where do you need to go?</h1>
+        <h1 class="where-question">Where do you need to go?</h1>
         <form id="roomForm">
-          <label for="fromRoom"> I'm at room: </label>
+          <label for="fromRoom" class="label"> I'm at room: </label>
           <RoomInput
             v-model="fromRoom"
             name="fromRoom"
             placeholder="type or select"
             @change="validateInput('fromRoom')"
           ></RoomInput>
-          <label for="toRoom"> I'm going to room: </label>
+          <label for="toRoom" class="label"> I'm going to room: </label>
           <RoomInput
             v-model="toRoom"
             name="toRoom"
@@ -107,15 +107,15 @@ export default Vue.extend({
   font-size: 15px;
 }
 
-form {
+#roomForm {
   display: block;
 }
 
-h1 {
+.where-question {
   color: var(--main-text-color);
 }
 
-label {
+.label {
   display: block;
   color: var(--main-text-color);
 }

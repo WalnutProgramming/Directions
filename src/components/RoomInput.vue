@@ -26,7 +26,7 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-input {
+.roomInput {
   margin-bottom: 1em;
   font-size: 25px;
   text-align: center;
@@ -35,17 +35,17 @@ input {
   transition: var(--text-input-ease);
 }
 
-input:focus {
+.roomInput:focus {
   background-color: var(--placeholder-color);
   transition: var(--text-input-ease);
 }
 
-input::placeholder {
+.roomInput::placeholder {
   color: #c0c0c0;
   transition: var(--text-input-ease);
 }
 
-input:focus::placeholder {
+.roomInput:focus::placeholder {
   color: var(--placeholder-color);
   transition: var(--text-input-ease);
 }

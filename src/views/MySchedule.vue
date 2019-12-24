@@ -40,9 +40,6 @@ export default Vue.extend({
     }
   },
   methods: {
-    newRoom() {
-      this.rooms.push({ value: "" });
-    },
     go(index: number) {
       this.$router.push({
         path: "/directions",
