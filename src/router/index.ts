@@ -4,6 +4,7 @@ import Index from "../views/IndexV.vue";
 import Directions from "../views/DirectionsV.vue";
 import MySchedule from "../views/MySchedule.vue";
 import MyScheduleEdit from "../views/MyScheduleEdit.vue";
+import About from "../views/About.vue"
 
 Vue.use(VueRouter);
 
@@ -25,6 +26,10 @@ const routes = [
     path: "/myschedule/edit",
     component: MyScheduleEdit,
   },
+  {
+    path: "/about",
+    component: About,
+  }
 ];
 
 export default new VueRouter({
