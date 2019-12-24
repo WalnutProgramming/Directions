@@ -5,11 +5,15 @@
         &laquo; Back
       </button>
     </span>-->
-    <CustomButton style="font-size: 0.5em; padding-left: 1vw;" @customclick="back">&laquo; Back</CustomButton>
+    <CustomButton style="font-size: 0.5em" @customclick="back">
+      &laquo; Back
+    </CustomButton>
 
     <main>
       <div id="directions">
-        <p v-for="(line, index) in directions" :key="index + ':::' + line">{{ line }}</p>
+        <p v-for="(line, index) in directions" :key="index + ':::' + line">
+          {{ line }}
+        </p>
       </div>
     </main>
   </div>
