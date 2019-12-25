@@ -1,6 +1,10 @@
 <template>
-  <button :type="type" class="minus-button" @click.stop.prevent="$emit('customclick')">
-      <slot></slot>
+  <button
+    :type="type"
+    class="minus-button"
+    @click.stop.prevent="$emit('customclick')"
+  >
+    <slot></slot>
   </button>
 </template>
 
