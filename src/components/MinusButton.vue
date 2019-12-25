@@ -1,10 +1,6 @@
 <template>
-  <button
-    :type="type"
-    class="minus-button"
-    @click.stop.prevent="$emit('customclick')"
-  >
-    <slot></slot>
+  <button :type="type" class="minus-button" @click.stop.prevent="$emit('customclick')">
+      <slot></slot>
   </button>
 </template>
 
@@ -25,9 +21,6 @@ export default Vue.extend({
   height: 4.5vh;
   width: 4.5vh;
   font-size: 1em;
-
-  padding-left: 0px; /* for some reason ios has uneven button spacing by default, so that needs to be corrected */
-  padding-right: 0px;
 
   background: rgba(255, 120, 120, 1);
   display: inline-block;

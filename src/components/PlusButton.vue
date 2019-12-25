@@ -1,10 +1,6 @@
 <template>
-  <button
-    :type="type"
-    class="plus-button"
-    @click.stop.prevent="$emit('customclick')"
-  >
-    <slot></slot>
+  <button :type="type" class="plus-button" @click.stop.prevent="$emit('customclick')">
+      <slot></slot>
   </button>
 </template>
 
@@ -20,13 +16,13 @@ export default Vue.extend({
 
 <style scoped>
 .plus-button {
-  color: white;
+  color: green;
   border: none;
   height: 6vh;
   width: 6vh;
   font-size: 1em;
 
-  background: rgb(120, 200, 120);
+  background: rgba(120, 200, 120, 0);
   display: inline-block;
   border-radius: 7.5px;
 
@@ -39,7 +35,7 @@ export default Vue.extend({
 }
 
 .plus-button:hover {
-  background: rgb(93, 158, 93);
+  background: rgb(120, 200, 120, 1);
   color: white;
   transition: var(--long-decay-ease);
   cursor: pointer;
