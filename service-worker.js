@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+// eslint-disable-next-line no-restricted-globals, no-underscore-dangle
 workbox.precaching.precacheAndRoute(self.__precacheManifest || []);
 
 // https://developers.google.com/web/tools/workbox/guides/common-recipes#cache_css_and_javascript_files

@@ -46,7 +46,6 @@
 
 <script>
 import Vue from "vue";
-import Directions from "./DirectionsV.vue";
 import CustomButton from "../components/CustomButton.vue";
 import MaybeInstallButton from "../components/MaybeInstallButton.vue";
 import RoomInput from "../components/RoomInput.vue";
