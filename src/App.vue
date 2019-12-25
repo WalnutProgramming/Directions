@@ -10,18 +10,23 @@
             <a>My Schedule</a>
           </router-link>
           <router-link tag="li" to="/about">
-            <a>About</a>
+            <a>About Us</a>
           </router-link>
         </ul>
       </nav>
     </header>
 
     <transition :name="transitionName">
-      <router-view :id="showNav ? 'main-stuff' : ''" class="child-view"></router-view>
+      <router-view
+        :id="showNav ? 'main-stuff' : ''"
+        class="child-view"
+      ></router-view>
     </transition>
 
     <datalist id="roomsList">
-      <option v-for="roomName in roomsList" :key="roomName">{{ roomName }}</option>
+      <option v-for="roomName in roomsList" :key="roomName">{{
+        roomName
+      }}</option>
     </datalist>
   </div>
 </template>
