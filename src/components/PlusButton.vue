@@ -20,13 +20,16 @@ export default Vue.extend({
 
 <style scoped>
 .plus-button {
-  color: green;
+  color: white;
   border: none;
   height: 6vh;
   width: 6vh;
   font-size: 1em;
 
-  background: rgba(120, 200, 120, 0);
+  padding-left: 0px; /* for some reason ios has uneven button spacing by default, so that needs to be corrected */
+  padding-right: 0px;
+
+  background: rgb(120, 200, 120);
   display: inline-block;
   border-radius: 7.5px;
 
@@ -39,7 +42,7 @@ export default Vue.extend({
 }
 
 .plus-button:hover {
-  background: rgb(120, 200, 120, 1);
+  background: rgb(93, 158, 93);
   color: white;
   transition: var(--long-decay-ease);
   cursor: pointer;
