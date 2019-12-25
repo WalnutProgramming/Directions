@@ -26,6 +26,9 @@ export default Vue.extend({
   width: 4.5vh;
   font-size: 1em;
 
+  padding-left: 0px; /* for some reason ios has uneven button spacing by default, so that needs to be corrected */
+  padding-right: 0px;
+
   background: rgba(255, 120, 120, 1);
   display: inline-block;
   border-radius: 15px;
