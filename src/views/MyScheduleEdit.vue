@@ -65,7 +65,7 @@
 </template>
 
 <script lang="ts">
-import Vue, { VueConstructor } from "vue";
+import Vue from "vue";
 import { SlickList, SlickItem } from "vue-slicksort";
 import RoomInput from "../components/RoomInput.vue";
 import CustomButton from "../components/CustomButton.vue";
@@ -94,7 +94,9 @@ export default Vue.extend({
       rooms = JSON.parse(stored).rooms;
     } else {
       rooms = [];
-      for (let i = 0; i < 7; i++) rooms.push({ value: "", originalIndex: i });
+      for (let i = 0; i < 7; i += 1) {
+        rooms.push({ value: "", originalIndex: i });
+      }
     }
     return { rooms };
   },
@@ -104,7 +106,7 @@ export default Vue.extend({
     },
     save() {
       Array.from(document.getElementsByClassName("my-input")).forEach(
-        (theInput, index) => {
+        theInput => {
           const inp = theInput as HTMLInputElement;
           if (inp.value === "" || walnut.isValidRoomName(inp.value)) {
             inp.setCustomValidity("");

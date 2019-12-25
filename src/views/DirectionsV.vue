@@ -53,9 +53,8 @@ export default Vue.extend({
           .getDirections(this.fromRoom, this.toRoom)
           .trim()
           .split("\n");
-      } else {
-        return ["Sorry, I couldn't find one of those rooms."];
       }
+      return ["Sorry, I couldn't find one of those rooms."];
     },
   },
   methods: {

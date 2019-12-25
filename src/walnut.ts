@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 import {
   Direction,
   Room,
@@ -38,7 +39,7 @@ enum StairNode {
   ARTS_B3 = "StairNode.ARTS_B3",
 }
 
-//When listing stairs, the furthest down entrance to the stairs goes first
+// When listing stairs, the furthest down entrance to the stairs goes first
 const stairConnections: string[][] = [
   [StairNode.A1, StairNode.A2, StairNode.A3],
   [StairNode.B1, StairNode.B2, StairNode.B3],
@@ -275,7 +276,7 @@ const hallways: Hallway[] = [
     new Room("3207", LEFT),
     new Room("3205", RIGHT),
     new Room("3208", LEFT),
-    //rooms without room numbers have prefix 'the'
+    // rooms without room numbers have prefix 'the'
     new Room("Library", RIGHT, {
       prefix: "the",
       aliases: ["3214", "Libary (misspelled)"],
@@ -352,6 +353,7 @@ const hallways: Hallway[] = [
     new Fork(BACK, ConnectionNode.C2600S_LITTLE_HALLWAY_TO_2600S, "the 2600s"),
     // There are a few stairs right here
     new (class extends Room {
+      // eslint-disable-next-line class-methods-use-this
       onPass(forwardOrBackward: -1 | 1, prevRoom: Room) {
         return `Go ${forwardOrBackward === -1 ? "up" : "down"} the 3 steps\n`;
       }
@@ -386,12 +388,15 @@ const hallways: Hallway[] = [
     ]);
 
     // custom directions for the auditorium
-    theArcade.getDirectionsFromIndices = function(from, to) {
-      const LANGUAGES = 1,
-        SCIENCE = 2,
-        MUSIC = 3,
-        GYM = 4,
-        ALUMNI = 0;
+    theArcade.getDirectionsFromIndices = function getDirectionsFromIndices(
+      from,
+      to
+    ) {
+      const LANGUAGES = 1;
+      const SCIENCE = 2;
+      const MUSIC = 3;
+      const GYM = 4;
+      const ALUMNI = 0;
       switch (from) {
         case LANGUAGES:
           switch (to) {
@@ -456,25 +461,13 @@ const hallways: Hallway[] = [
               "Exit the gym and walk out via the narrow hallway on the right\n";
             switch (to) {
               case SCIENCE:
-                return (
-                  str +
-                  "Walk until the narrow hallway empties into the Arcade\nTurn left, walk a little bit, and turn left again to get to the science wing\n"
-                );
+                return `${str}Walk until the narrow hallway empties into the Arcade\nTurn left, walk a little bit, and turn left again to get to the science wing\n`;
               case LANGUAGES:
-                return (
-                  str +
-                  "Walk until the narrow hallway empties into the Arcade\nGo straight and a bit to the left; walk forward into the language wing\n"
-                );
+                return `${str}Walk until the narrow hallway empties into the Arcade\nGo straight and a bit to the left; walk forward into the language wing\n`;
               case MUSIC:
-                return (
-                  str +
-                  'After entering the narrow hallway, immediately turn left into the double doors labeled "Music Lyceum"\n'
-                );
+                return `${str}After entering the narrow hallway, immediately turn left into the double doors labeled "Music Lyceum"\n`;
               case ALUMNI:
-                return (
-                  str +
-                  "Go to the end of the arcade, walk up the ramp, turn right, and go through the doors\n"
-                );
+                return `${str}Go to the end of the arcade, walk up the ramp, turn right, and go through the doors\n`;
               default:
                 return "";
             }

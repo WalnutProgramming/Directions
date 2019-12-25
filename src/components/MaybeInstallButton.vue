@@ -7,7 +7,6 @@
 <script lang="ts">
 import Vue from "vue";
 import CustomButton from "./CustomButton.vue";
-import BeforeInstallPromptEvent from "./BeforeInstallPromptEvent";
 
 export default Vue.extend({
   components: {
@@ -16,19 +15,19 @@ export default Vue.extend({
   data() {
     return {
       showButton: false,
-      deferredPrompt: undefined as BeforeInstallPromptEvent | undefined,
+      deferredPrompt: undefined as any,
     };
   },
   created() {
     window.addEventListener("beforeinstallprompt", e => {
       this.showButton = true;
-      this.deferredPrompt = e as BeforeInstallPromptEvent;
+      this.deferredPrompt = e as any;
     });
   },
   methods: {
     install() {
       this.showButton = false;
-      if (this.deferredPrompt != undefined) this.deferredPrompt.prompt();
+      if (this.deferredPrompt !== undefined) this.deferredPrompt.prompt();
     },
   },
 });
