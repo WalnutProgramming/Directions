@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="padding: 1vw;">
     <p v-if="$route.query.new" class="p">
       You don't seem to have an existing schedule. Create a new one!
     </p>
@@ -11,40 +11,50 @@
       If you're in private/incognito mode, your schedule will not be saved.
     </p>
     <form id="scheduleForm">
-      <SlickList v-model="rooms" class="list" lock-axis="y" :press-delay="50">
+      <SlickList
+        v-model="rooms"
+        class="list"
+        lock-axis="y"
+        :press-delay="50"
+        style="border: none;"
+      >
         <SlickItem
           v-for="(room, index) in rooms"
           :key="room.originalIndex"
           class="list-item"
+          style="background-color: #fafafa; border-radius: 15px; border: none; height: 9vh;"
           :index="index"
           :item="room"
         >
-          <span style="width: 3em">
+          <span style="width: 3em; font-size: 25px; color: #6f6f6f">
             ☰&nbsp;&nbsp;<span style="">{{ index + 1 }}.&nbsp;&nbsp;</span>
           </span>
-          <DeleteButton
+          <MinusButton
             type="button"
             class="smallerButton"
-            style="font-size: 20px; margin-right: 10px"
+            style="font-size: 20px; margin-right: 10px; margin-top: 0.75vh;"
             @customclick="removeIndex(index)"
           >
-            -
-          </DeleteButton>
+            —
+          </MinusButton>
           <RoomInput
             v-model="room.value"
             :name="`room-${room.originalIndex}`"
             class="my-input"
-            style="background-color: #f2f7f4; max-width: 40vw"
+            style="max-width: 40vw"
           />
         </SlickItem>
-        <div class="list-item">
-          <CustomButton
+        <div
+          class="list-item"
+          style="background-color: #ffffff; border-radius: 15px; border: none;"
+        >
+          <PlusButton
             type="button"
             class="smallerButton"
             @customclick="newRoom"
           >
-            +
-          </CustomButton>
+            <b>+</b>
+          </PlusButton>
         </div>
       </SlickList>
       <div>
@@ -59,7 +69,8 @@ import Vue, { VueConstructor } from "vue";
 import { SlickList, SlickItem } from "vue-slicksort";
 import RoomInput from "../components/RoomInput.vue";
 import CustomButton from "../components/CustomButton.vue";
-import DeleteButton from "../components/DeleteButton.vue";
+import MinusButton from "../components/MinusButton.vue";
+import PlusButton from "../components/PlusButton.vue";
 import walnut from "../walnut";
 
 interface Room {
@@ -73,7 +84,8 @@ export default Vue.extend({
     CustomButton,
     SlickList: SlickList as any,
     SlickItem: SlickItem as any,
-    DeleteButton,
+    MinusButton,
+    PlusButton,
   },
   data() {
     const stored = localStorage.getItem("myschedule");

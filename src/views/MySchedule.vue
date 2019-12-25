@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <ol>
+  <div style="padding-left: 2vw;">
+    <ol style="margin-block-start: 0em;">
       <div v-for="(room, index) in rooms" :key="index">
-        <li>
+        <li style="padding: 0.5vh;">
           {{ room.value }}
         </li>
         <CustomButton
@@ -11,7 +11,7 @@
               room.value.trim() !== '' &&
               rooms[index + 1].value.trim() !== ''
           "
-          style="font-size: .7em; margin-left: -1.5em; margin-top: .1em; margin-bottom: .3em"
+          style="font-size: .7em; margin-left: -1.5em; margin-top: .1em; margin-bottom: .3em; padding-left: 2vw;"
           @customclick="go(index)"
         >
           ↓ Go from {{ rooms[index].value }} to {{ rooms[index + 1].value }} ↓

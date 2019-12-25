@@ -3,9 +3,14 @@
     <header v-if="showNav">
       <nav>
         <ul>
-          <router-link tag="li" to="/"><a>Home</a></router-link>
+          <router-link tag="li" to="/">
+            <a>Home</a>
+          </router-link>
           <router-link tag="li" to="/myschedule">
             <a>My Schedule</a>
+          </router-link>
+          <router-link tag="li" to="/about">
+            <a>About Us</a>
           </router-link>
         </ul>
       </nav>
@@ -19,9 +24,9 @@
     </transition>
 
     <datalist id="roomsList">
-      <option v-for="roomName in roomsList" :key="roomName">
-        {{ roomName }}
-      </option>
+      <option v-for="roomName in roomsList" :key="roomName">{{
+        roomName
+      }}</option>
     </datalist>
   </div>
 </template>
@@ -60,7 +65,7 @@ export default Vue.extend({
 
 <style scoped>
 header {
-  background-color: white;
+  background-color: #f9f9f9;
   position: fixed;
   top: 0;
   left: 0;
@@ -68,7 +73,7 @@ header {
   height: 7vh;
   display: flex;
   align-items: center;
-  box-shadow: 0 0 0.5vh 0 black;
+  box-shadow: 0 0 1vh 0 #03a1fc;
   font-size: 0.8em;
   z-index: 100;
   overflow: auto;
@@ -90,7 +95,7 @@ header li a {
 }
 
 header li a:hover {
-  color: lightskyblue;
+  color: #03a1fc;
 }
 
 #main-stuff {
@@ -111,8 +116,9 @@ header li a:hover {
 .child-view {
   position: absolute;
   /* margin-left: 25%; */
-  width: 98vw;
-  padding: 1vw;
+  width: 100vw;
+  padding-top: 1vw;
+  /*padding: 1vw;*/
   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
 .slide-left-enter,
