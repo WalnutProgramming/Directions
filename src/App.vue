@@ -65,7 +65,7 @@ export default Vue.extend({
 
 <style scoped>
 header {
-  background-color: #f3f3f3;
+  background-color: #f9f9f9;
   position: fixed;
   top: 0;
   left: 0;
