@@ -16,7 +16,7 @@
           v-for="(room, index) in rooms"
           :key="room.originalIndex"
           class="list-item"
-          style="background-color: #fafafa; border-radius: 15px; border: none;"
+          style="background-color: #fafafa; border-radius: 15px; border: none; height: 9vh;"
           :index="index"
           :item="room"
         >
@@ -26,7 +26,7 @@
           <MinusButton
             type="button"
             class="smallerButton"
-            style="font-size: 20px; margin-right: 10px"
+            style="font-size: 20px; margin-right: 10px; margin-top: 1vh;"
             @customclick="removeIndex(index)"
           >
             —

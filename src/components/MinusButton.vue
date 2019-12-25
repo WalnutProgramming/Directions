@@ -18,8 +18,8 @@ export default Vue.extend({
 .minus-button {
   color: white;
   border: none;
-  height: 4ch;
-  width: 4ch;
+  height: 4.5vh;
+  width: 4.5vh;
   font-size: 1em;
 
   background: rgba(255, 120, 120, 1);
