@@ -49,17 +49,18 @@
 
 <style scoped>
 .title {
-  font-size: 50px;
+  font-size: 6vh;
   color: rgb(0, 39, 116);
 }
 
 .subtitle {
-  font-size: 40px;
+  font-size: 5.5vh;
   color: rgb(32, 75, 160);
 }
 
 .squished-p {
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  font-size: 3vh;
 }
 </style>
