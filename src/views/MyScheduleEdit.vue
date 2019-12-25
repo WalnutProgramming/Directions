@@ -32,7 +32,7 @@
           <MinusButton
             type="button"
             class="smallerButton"
-            style="font-size: 20px; margin-right: 10px; margin-top: 1vh;"
+            style="font-size: 20px; margin-right: 10px; margin-top: 0.75vh;"
             @customclick="removeIndex(index)"
           >
             —
