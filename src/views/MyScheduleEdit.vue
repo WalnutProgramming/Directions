@@ -11,7 +11,13 @@
       If you're in private/incognito mode, your schedule will not be saved.
     </p>
     <form id="scheduleForm">
-      <SlickList v-model="rooms" class="list" lock-axis="y" :press-delay="50" style="border: none;">
+      <SlickList
+        v-model="rooms"
+        class="list"
+        lock-axis="y"
+        :press-delay="50"
+        style="border: none;"
+      >
         <SlickItem
           v-for="(room, index) in rooms"
           :key="room.originalIndex"
@@ -38,7 +44,10 @@
             style="max-width: 40vw"
           />
         </SlickItem>
-        <div class="list-item" style="background-color: #ffffff; border-radius: 15px; border: none;">
+        <div
+          class="list-item"
+          style="background-color: #ffffff; border-radius: 15px; border: none;"
+        >
           <PlusButton
             type="button"
             class="smallerButton"
@@ -61,7 +70,7 @@ import { SlickList, SlickItem } from "vue-slicksort";
 import RoomInput from "../components/RoomInput.vue";
 import CustomButton from "../components/CustomButton.vue";
 import MinusButton from "../components/MinusButton.vue";
-import PlusButton from "../components/PlusButton.vue"
+import PlusButton from "../components/PlusButton.vue";
 import walnut from "../walnut";
 
 interface Room {
