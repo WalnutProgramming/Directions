@@ -49,3 +49,10 @@ workbox.routing.registerRoute(
     ],
   })
 );
+
+// https://developers.google.com/web/tools/workbox/modules/workbox-core#skip_waiting_and_clients_claim
+// This allows the new service worker to immediately take over the page if it's updated.
+// (By default, the service worker will wait until all tabs with the site are closed before
+// taking over the page.)
+workbox.core.skipWaiting();
+workbox.core.clientsClaim();
