@@ -7192,10 +7192,10 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-room-finder@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/room-finder/-/room-finder-0.0.4.tgz#a6d76fbc659e4aba34567ac862d7630312cc9d7e"
-  integrity sha512-PnteWq8cF5AXNxxhmsutkmcV25fB1u9k64tj7QVqHAbQY8aWLIHr3vJGibtt1X3lIArZBmg8QMhr+Il6nQznLA==
+room-finder@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/room-finder/-/room-finder-0.0.5.tgz#38cf472ae54c3c7dad3ab743aac74dfd45fd5368"
+  integrity sha512-jT2M2bD/lUw7PsJgT1zO+gmjvQjCR2rRUlM7IoC4MoJenMjSUqvXlZy3NL4PZuMPV0LDsozxNHakANhnK6wUOA==
   dependencies:
     core-js "3"
     dijkstrajs "^1.0.1"
