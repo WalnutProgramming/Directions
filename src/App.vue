@@ -23,28 +23,24 @@
       ></router-view>
     </transition>
 
-    <datalist id="roomsList">
-      <option v-for="roomName in roomsList" :key="roomName">{{
-        roomName
-      }}</option>
-    </datalist>
+    <RoomsDataList />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import walnut from "./walnut";
+import RoomsDataList from "./components/RoomsDataList.vue";
 import router from "./router/index";
 
 export default Vue.extend({
   router,
+  components: { RoomsDataList },
   data() {
     return {
       transitionName: "fade",
     };
   },
   computed: {
-    roomsList: () => walnut.roomsList,
     showNav(): boolean {
       return this.$route.path !== "/myschedule/edit";
     },
