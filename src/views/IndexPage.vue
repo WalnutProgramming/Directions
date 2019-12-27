@@ -1,7 +1,7 @@
 <template>
   <div>
     <div style="text-align:center">
-      <MaybeInstallButton></MaybeInstallButton>
+      <TheMaybeInstallButton></TheMaybeInstallButton>
 
       <main>
         <h1 class="where-question">Where do you need to go?</h1>
@@ -29,24 +29,24 @@
       </main>
     </div>
 
-    <IOSDownloadSuggestion />
+    <TheIOSDownloadSuggestion />
   </div>
 </template>
 
 <script>
 import Vue from "vue";
 import CustomButton from "../components/CustomButton.vue";
-import MaybeInstallButton from "../components/MaybeInstallButton.vue";
+import TheMaybeInstallButton from "../components/TheMaybeInstallButton.vue";
 import RoomInput from "../components/RoomInput.vue";
-import IOSDownloadSuggestion from "../components/IOSDownloadSuggestion.vue";
+import TheIOSDownloadSuggestion from "../components/TheIOSDownloadSuggestion.vue";
 import walnut from "../walnut";
 
 export default Vue.extend({
   components: {
     CustomButton,
-    MaybeInstallButton,
+    TheMaybeInstallButton,
     RoomInput,
-    IOSDownloadSuggestion,
+    TheIOSDownloadSuggestion,
   },
   data() {
     return {

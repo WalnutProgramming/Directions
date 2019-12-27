@@ -23,18 +23,18 @@
       ></router-view>
     </transition>
 
-    <RoomsDataList />
+    <TheRoomsDataList />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import RoomsDataList from "./components/RoomsDataList.vue";
+import TheRoomsDataList from "./components/TheRoomsDataList.vue";
 import router from "./router/index";
 
 export default Vue.extend({
   router,
-  components: { RoomsDataList },
+  components: { TheRoomsDataList },
   data() {
     return {
       transitionName: "fade",
