@@ -18,5 +18,10 @@ module.exports = {
       // swSrc is required in InjectManifest mode.
       swSrc: "service-worker.js",
     },
+
+    name: "Walnut Hills Directions",
+    manifestOptions: {
+      short_name: "Walnut.Direct",
+    },
   },
 };
