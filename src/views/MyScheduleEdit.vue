@@ -53,7 +53,6 @@
             class="smallerButton"
             style="font-size: 25px;"
             @customclick="newRoom"
-            style="font-size: 25px;"
           >
             <b>+</b>
           </PlusButton>
