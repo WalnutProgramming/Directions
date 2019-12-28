@@ -54,6 +54,8 @@ const stairConnections: string[][] = [
 ];
 
 enum ConnectionNode {
+  C1100S_TO_1108_AND_1105 = "ConnectionNode.C1100S_TO_1108_AND_1105",
+  C1108_AND_1105_TO_1100S = "ConnectionNode.C1108_AND_1105_TO_1100S",
   C1300S_TO_1600S = "ConnectionNode.C1300S_TO_1600S",
   C1600S_TO_1300S = "ConnectionNode.C1600S_TO_1300S",
   C2300S_TO_2600S = "ConnectionNode.C2300S_TO_2600S",
@@ -91,6 +93,10 @@ enum ConnectionNode {
 }
 
 const hallwayConnections: [string, string][] = [
+  [
+    ConnectionNode.C1108_AND_1105_TO_1100S,
+    ConnectionNode.C1100S_TO_1108_AND_1105,
+  ],
   [ConnectionNode.C1300S_TO_1600S, ConnectionNode.C1600S_TO_1300S],
   [ConnectionNode.C2300S_TO_2600S, ConnectionNode.C2600S_TO_2300S],
   [ConnectionNode.C2600S_TO_ARCADE, ConnectionNode.ARCADE_TO_2600S],
@@ -128,14 +134,27 @@ const hallwayConnections: [string, string][] = [
 const hallways: Hallway[] = [
   // 1100s
   new Hallway([
-    new Room("1105", RIGHT),
-    new Room("1108"),
-    new Turn(LEFT),
+    new Room("1106", BACK),
+    new Room("1107", RIGHT),
+    new Fork(
+      LEFT,
+      ConnectionNode.C1100S_TO_1108_AND_1105,
+      "the 1108 and 1105 hallway"
+    ),
     new Room("1109", RIGHT),
     new Room("1110"),
     new Room("1111", RIGHT),
     new Room("1113", RIGHT),
     new Stairs(LEFT, StairNode.F1, "2010"),
+  ]),
+
+  // 1108 and 1105
+  new Hallway([
+    new Fork(BACK, ConnectionNode.C1108_AND_1105_TO_1100S, "the latter 1100s"),
+    new Room("1108", RIGHT),
+    new Room("1105", LEFT),
+    new Turn(LEFT),
+    // fork to the wacky confusing cafeteria part goes here
   ]),
 
   // 1300s
