@@ -1,7 +1,7 @@
 <template>
   <div>
     <div style="text-align:center">
-      <MaybeInstallButton></MaybeInstallButton>
+      <TheMaybeInstallButton></TheMaybeInstallButton>
 
       <main>
         <h1 class="where-question">Where do you need to go?</h1>
@@ -29,49 +29,30 @@
       </main>
     </div>
 
-    <div v-if="showiOSDownloadSuggestion" id="iosDownloadSuggestion">
-      <p>
-        To install this page as an app, press
-        <img
-          src="../assets/iosDownload.png"
-          alt="iosDownload"
-          style="width:14px;height:20px;margin-left:.25em;margin-right:.25em;"
-        />
-        at the bottom of the page and then press "Add to Home Screen" in the
-        menu that appears.
-      </p>
-    </div>
+    <TheIOSDownloadSuggestion />
   </div>
 </template>
 
 <script>
 import Vue from "vue";
 import CustomButton from "../components/CustomButton.vue";
-import MaybeInstallButton from "../components/MaybeInstallButton.vue";
+import TheMaybeInstallButton from "../components/TheMaybeInstallButton.vue";
 import RoomInput from "../components/RoomInput.vue";
+import TheIOSDownloadSuggestion from "../components/TheIOSDownloadSuggestion.vue";
 import walnut from "../walnut";
 
 export default Vue.extend({
   components: {
     CustomButton,
-    MaybeInstallButton,
+    TheMaybeInstallButton,
     RoomInput,
+    TheIOSDownloadSuggestion,
   },
   data() {
     return {
       fromRoom: "",
       toRoom: "",
     };
-  },
-  computed: {
-    showiOSDownloadSuggestion() {
-      // If it's an iOS device and we're not already in the PWA, unhide the #iosDownloadSuggestion
-      const iOS =
-        /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-      const isInstalledPWA = window.matchMedia("(display-mode: standalone)")
-        .matches;
-      return iOS && !isInstalledPWA;
-    },
   },
   methods: {
     submit() {
@@ -102,10 +83,6 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-#iosDownloadSuggestion {
-  font-size: 15px;
-}
-
 #roomForm {
   display: block;
 }

@@ -1,10 +1,5 @@
 <template>
   <div>
-    <!-- <span class="btn-hover-area" @click="back">
-      <button class="back-btn">
-        &laquo; Back
-      </button>
-    </span>-->
     <CustomButton
       style="font-size: 0.5em; padding-left: 1vw;"
       @customclick="back"

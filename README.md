@@ -39,7 +39,7 @@ Open the "Directions" folder in Visual Studio Code.
    - The general code that could apply to any building (not just our school) is in a separate package called [room-finder](https://github.com/WalnutProgramming/room-finder).
 
 2. The website itself
-   - The ([src/views](src/views)) folder is where we define each of the pages in the site. For example, the main page is in [src/views/IndexV.vue](src/views/IndexV.vue), and the page where we give the directions is [src/views/DirectionsV.vue](src/views/DirectionsV.vue).
+   - The ([src/views](src/views)) folder is where we define each of the pages in the site. For example, the main page is in [src/views/IndexPage.vue](src/views/IndexPage.vue), and the page where we give the directions is [src/views/DirectionsPage.vue](src/views/DirectionsPage.vue).
    - [src/components/](src/components/) is for **components** like buttons. Many of these are things that we use across multiple pages. Each component is a file in that folder.
 
 ### Making changes

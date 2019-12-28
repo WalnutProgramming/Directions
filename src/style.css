@@ -1,8 +1,5 @@
 /* The styling for our HTML pages */
 
-/* fonts */
-@import url("https://fonts.googleapis.com/css?family=Overpass&effect=fire-animation");
-
 * {
   font-family: "Overpass", sans-serif;
   line-height: 1.1em;

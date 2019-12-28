@@ -51,6 +51,7 @@
           <PlusButton
             type="button"
             class="smallerButton"
+            style="font-size: 25px;"
             @customclick="newRoom"
             style="font-size: 25px;"
           >
@@ -167,10 +168,7 @@ export default Vue.extend({
   color: #333;
   font-weight: 400;
 
-  -webkit-user-select: none; /* Safari 3.1+ */
-  -moz-user-select: none; /* Firefox 2+ */
-  -ms-user-select: none; /* IE 10+ */
-  user-select: none; /* Standard syntax */
+  user-select: none;
 }
 
 .my-input {

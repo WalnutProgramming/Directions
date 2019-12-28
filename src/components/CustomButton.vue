@@ -34,10 +34,7 @@ export default Vue.extend({
 
   transition: var(--back-ease);
 
-  -webkit-user-select: none; /* Safari 3.1+ */
-  -moz-user-select: none; /* Firefox 2+ */
-  -ms-user-select: none; /* IE 10+ */
-  user-select: none; /* Standard syntax */
+  user-select: none;
 }
 
 .btn-hover-area {

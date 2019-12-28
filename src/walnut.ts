@@ -214,16 +214,7 @@ const hallways: Hallway[] = [
     new Room("2101", RIGHT),
     new Room("Junior High Gym", LEFT, {
       prefix: "the",
-      aliases: [
-        "2402",
-        "Gymnasium - Junior High",
-        "Gymnasium - Junior High School",
-        "Junior High Gymnasium",
-        "Junior Gym",
-        "Junior Gymnasium",
-        "Junior High School Gym",
-        "Junior High School Gymnasium",
-      ],
+      aliases: ["2402", "Junior Gymnasium"],
     }),
     new Room("2103", RIGHT),
     new Room("2105", RIGHT),
@@ -296,10 +287,7 @@ const hallways: Hallway[] = [
     new Room("3205", RIGHT),
     new Room("3208", LEFT),
     // rooms without room numbers have prefix 'the'
-    new Room("Library", RIGHT, {
-      prefix: "the",
-      aliases: ["3214", "Libary (misspelled)"],
-    }),
+    new Room("Library", RIGHT, { prefix: "the", aliases: ["3214"] }),
     new Room("3206", LEFT),
     new Room("3204", LEFT),
     new Room("3202", LEFT),
@@ -395,14 +383,7 @@ const hallways: Hallway[] = [
       ),
       new Room("Senior High Gym", FRONT, {
         prefix: "the",
-        aliases: [
-          "2800",
-          "2801",
-          "Gymnasium - High School",
-          "Senior Gym",
-          "High School Gymnasium",
-          "High School Gym",
-        ],
+        aliases: ["2800", "2801", "High School Gymnasium"],
       }),
     ]);
 
@@ -531,7 +512,7 @@ const hallways: Hallway[] = [
   new Hallway([
     new Fork(BACK, ConnectionNode.C2500S_TO_ALUMNI_HALL, "Alumni Hall"),
     new Room("2503", RIGHT, {
-      aliases: ["Black Box Theatre", "Black Box Theater", "Theatre", "Theater"],
+      aliases: ["Black Box Theatre", "Black Box Theater", "Theater"],
     }),
     new Room("2505", RIGHT, { aliases: ["Scene Shop"] }),
     new Fork(

@@ -16,7 +16,12 @@ module.exports = {
     workboxPluginMode: "InjectManifest",
     workboxOptions: {
       // swSrc is required in InjectManifest mode.
-      swSrc: "service-worker.js",
+      swSrc: "src/service-worker.js",
+    },
+
+    name: "Walnut Hills Directions",
+    manifestOptions: {
+      short_name: "Walnut.Direct",
     },
   },
 };
