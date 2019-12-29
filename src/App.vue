@@ -3,7 +3,7 @@
     <header v-if="showNav">
       <nav>
         <ul>
-          <router-link tag="li" to="/">
+          <router-link tag="li" to="/" exact>
             <a>Home</a>
           </router-link>
           <router-link tag="li" to="/myschedule">
@@ -88,7 +88,7 @@ header li {
 }
 
 header li a {
-  color: var(--main-text-color);
+  color: rgb(100, 99, 99);
   text-decoration: none;
 }
 
@@ -98,6 +98,10 @@ header li a:hover {
 
 #main-stuff {
   margin-top: 7vh;
+}
+
+header li.router-link-active a {
+  color: #3a4f74;
 }
 
 /* transitions */
