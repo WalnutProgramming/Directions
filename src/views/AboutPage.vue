@@ -17,13 +17,11 @@
     </p>
     <h1 class="subtitle">Our School:</h1>
     <p class="squished-p">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
+      Walnut Hills High School is a college preparatory school for students in grades 7-12. Walnut Hills 
+      is nationally recognized as one of America's top public high schools, with 87% of graduates entering
+      college with advanced standings. Students also score well on the Ohio Tests of Scholastic
+      Acievement and the Ohio Proficiency Test. Upon completing its rigorous classical program, Walnut Hills
+      graduates are accepted by the most prestigious universities throughout the United States.
     </p>
     <h1 class="subtitle">Our Club:</h1>
     <p class="squished-p">
