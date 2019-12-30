@@ -12,6 +12,9 @@
           <router-link tag="li" to="/about">
             <a>About Us</a>
           </router-link>
+          <router-link tag="li" to="/feedback">
+            <a>Feedback</a>
+          </router-link>
         </ul>
       </nav>
     </header>

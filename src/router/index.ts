@@ -5,6 +5,7 @@ import Directions from "../views/DirectionsPage.vue";
 import MySchedule from "../views/MySchedule.vue";
 import MyScheduleEdit from "../views/MyScheduleEdit.vue";
 import About from "../views/AboutPage.vue";
+import Feedback from "../views/FeedbackPage.vue";
 
 Vue.use(VueRouter);
 
@@ -29,6 +30,10 @@ const routes = [
   {
     path: "/about",
     component: About,
+  },
+  {
+    path: "/feedback",
+    component: Feedback,
   },
 ];
 
