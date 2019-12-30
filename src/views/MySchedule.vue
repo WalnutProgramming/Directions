@@ -1,24 +1,32 @@
 <template>
   <div style="padding-left: 2vw;">
-    <ol style="margin-block-start: 0em;">
-      <div v-for="(room, index) in rooms" :key="index">
-        <li style="padding: 0.5vh;">
-          {{ room.value }}
-        </li>
-        <CustomButton
-          v-if="
-            index != rooms.length - 1 &&
-              room.value.trim() !== '' &&
-              rooms[index + 1].value.trim() !== ''
-          "
-          style="font-size: .7em; margin-left: -1.5em; margin-top: .1em; margin-bottom: .3em; padding-left: 2vw;"
-          @customclick="go(index)"
-        >
-          ↓ Go from {{ rooms[index].value }} to {{ rooms[index + 1].value }} ↓
-        </CustomButton>
-      </div>
-    </ol>
-    <router-link to="/myschedule/edit">Edit</router-link>
+    <div v-if="rooms == null">
+      You don't seem to have an existing schedule.
+      <router-link to="/myschedule/edit">
+        Tap here to create a new one.
+      </router-link>
+    </div>
+    <div v-else>
+      <ol style="margin-block-start: 0em;">
+        <div v-for="(room, index) in rooms" :key="index">
+          <li style="padding: 0.5vh;">
+            {{ room.value }}
+          </li>
+          <CustomButton
+            v-if="
+              index != rooms.length - 1 &&
+                room.value.trim() !== '' &&
+                rooms[index + 1].value.trim() !== ''
+            "
+            style="font-size: .7em; margin-left: -1.5em; margin-top: .1em; margin-bottom: .3em; padding-left: 2vw;"
+            @customclick="go(index)"
+          >
+            ↓ Go from {{ rooms[index].value }} to {{ rooms[index + 1].value }} ↓
+          </CustomButton>
+        </div>
+      </ol>
+      <router-link to="/myschedule/edit">Edit</router-link>
+    </div>
   </div>
 </template>
 
@@ -31,12 +39,12 @@ export default Vue.extend({
   data() {
     const stored = localStorage.getItem("myschedule");
     return {
-      rooms: stored == null ? [] : JSON.parse(stored).rooms,
+      rooms: stored == null ? null : JSON.parse(stored).rooms,
     };
   },
   created() {
     if (localStorage.getItem("myschedule") == null) {
-      this.$router.replace("/myschedule/edit?new=true");
+      // this.$router.replace("/myschedule/edit?new=true");
     }
   },
   methods: {
