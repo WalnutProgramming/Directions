@@ -1,5 +1,16 @@
 <template>
   <div style="padding: 1vw;">
+    <div>
+      <CustomButton
+        class="save"
+        type="button"
+        style="font-size:14px"
+        button-style="padding: 12px 20px"
+        @customclick="cancel"
+      >
+        &laquo; Cancel
+      </CustomButton>
+    </div>
     <p v-if="$route.query.new" class="p">
       You don't seem to have an existing schedule. Create a new one!
     </p>
@@ -133,6 +144,9 @@ export default Vue.extend({
         );
         this.$router.push("/myschedule");
       }
+    },
+    cancel() {
+      this.$router.push("/myschedule");
     },
     removeIndex(index: number) {
       this.rooms.splice(index, 1);

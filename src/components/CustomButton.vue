@@ -1,6 +1,6 @@
 <template>
   <span class="btn-hover-area" @click.stop.prevent="$emit('customclick')">
-    <button :type="type" class="active-button">
+    <button :type="type" class="active-button" :style="buttonStyle">
       <slot></slot>
     </button>
   </span>
@@ -12,6 +12,7 @@ import Vue from "vue";
 export default Vue.extend({
   props: {
     type: { type: String, default: "submit" },
+    buttonStyle: { type: String, default: "" },
   },
 });
 </script>
