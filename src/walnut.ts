@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 /* eslint-disable max-classes-per-file */
 import {
   Direction,
@@ -322,7 +323,7 @@ const hallways: Hallway[] = [
     new (class extends Room {
       onLeave(forwardOrBackward: -1 | 1) {
         return super
-          .onLeave(forwardOrBackward)
+          .onLeave(forwardOrBackward, true, false)
           .replace("\n", " through the door closest to the desk\n");
       }
     })("1604", RIGHT, { aliases: ["Language Lab"] }),
@@ -360,7 +361,6 @@ const hallways: Hallway[] = [
     new Fork(BACK, ConnectionNode.C2600S_LITTLE_HALLWAY_TO_2600S, "the 2600s"),
     // There are a few stairs right here
     new (class extends Room {
-      // eslint-disable-next-line class-methods-use-this
       onPass(forwardOrBackward: -1 | 1, prevRoom: Room) {
         return `Go ${forwardOrBackward === -1 ? "up" : "down"} the 3 steps\n`;
       }
@@ -369,29 +369,8 @@ const hallways: Hallway[] = [
   ]),
 
   // arcade
-  (() => {
-    const theArcade = new Hallway([
-      // The directions that we use here (FRONT) don't matter since we
-      // override the instructions for the arcade anyway.
-      new Fork(FRONT, ConnectionNode.ARCADE_TO_ALUMNI_HALL, "Alumni Hall"),
-      new Fork(FRONT, ConnectionNode.ARCADE_TO_2600S, "the 2600s"),
-      new Fork(FRONT, ConnectionNode.ARCADE_TO_2700S, "the 2700s"),
-      new Fork(
-        FRONT,
-        ConnectionNode.ARCADE_TO_MUSIC_ENTRANCE,
-        "the music lyceum"
-      ),
-      new Room("Senior High Gym", FRONT, {
-        prefix: "the",
-        aliases: ["2800", "2801", "High School Gymnasium"],
-      }),
-    ]);
-
-    // custom directions for the auditorium
-    theArcade.getDirectionsFromIndices = function getDirectionsFromIndices(
-      from,
-      to
-    ) {
+  new (class extends Hallway {
+    getDirectionsFromIndices(from: number, to: number) {
       const LANGUAGES = 1;
       const SCIENCE = 2;
       const MUSIC = 3;
@@ -401,35 +380,37 @@ const hallways: Hallway[] = [
         case LANGUAGES:
           switch (to) {
             case SCIENCE:
-              return "Go straight and a bit to the right to get to the 2700s, the science wing\n";
+              return "go straight and a bit to the right to get to the 2700s, the science wing\n";
             case MUSIC:
               return (
-                "Go straight and a bit to the left through the long narrow hallway\n" +
-                'Turn right when you get to the doors labeled "Music Lyceum" and enter the doors\n'
+                "go straight and a bit to the left through the long narrow hallway\n" +
+                'turn right when you get to the doors labeled "Music Lyceum"\n' +
+                "after going through the doors, "
               );
             case GYM:
               return (
-                "Go straight and a bit to left, and go to the end of the hall\n" +
-                "The Senior High Gym is straight ahead. Walk inside\n"
+                "go straight and a bit to left, and go to the end of the hall\n" +
+                "the Senior High Gym is straight ahead. Walk inside\n"
               );
             case ALUMNI:
-              return "Turn right, go to the end of the arcade, walk up the ramp, turn right, and go through the doors\n";
+              return "turn right, go to the end of the arcade, walk up the ramp, turn right, and go through the doors\n";
             default:
               return "";
           }
         case SCIENCE:
           switch (to) {
             case LANGUAGES:
-              return "Go straight and a bit to the right to get to the 2600s, the modern languages wing\n";
+              return "go straight and a bit to the right to get to the 2600s, the modern languages wing\n";
             case MUSIC:
               return (
-                "Turn right, then walk down to the end of the arcade and turn right\n" +
-                "Walk down the hallway, and turn right when you get to the doors\n"
+                "turn right, then walk down to the end of the arcade and turn right\n" +
+                "walk down the hallway, and turn right when you get to the doors\n" +
+                "after walking through the doors, "
               );
             case GYM:
-              return "Turn right when you leave the science wing\nWalk forward and turn right again, then walk down to the end of the narrow hallway\n";
+              return "turn right when you leave the science wing\nWalk forward and turn right again, then walk down to the end of the narrow hallway\n";
             case ALUMNI:
-              return "Turn left, go to the end of the arcade, walk up the ramp, turn right, and go through the doors\n";
+              return "turn left\ngo to the end of the arcade, walk up the ramp, turn right, and go through the doors\n";
             default:
               return "";
           }
@@ -437,20 +418,20 @@ const hallways: Hallway[] = [
           switch (to) {
             case SCIENCE:
               return (
-                "Turn left after walking through the doors, then walk down the hallway\n" +
-                "When you get to the end of the hallway, turn left into the arcade, then walk down the arcade and turn left into the science wing\n"
+                "turn left after walking through the doors, then walk down the hallway\n" +
+                "when you get to the end of the hallway, turn left into the arcade, then walk down the arcade and turn left into the science wing\n"
               );
             case LANGUAGES:
               return (
-                "Turn left after walking through the doors, then walk down the hallway\n" +
-                "When you get to the end of the hallway, turn left into the arcade, then walk down the arcade and turn right into the modern foreign languages wing\n"
+                "turn left after walking through the doors, then walk down the hallway\n" +
+                "when you get to the end of the hallway, turn left into the arcade, then walk down the arcade and turn right into the modern foreign languages wing\n"
               );
             case GYM:
-              return "Turn right after walking through the doors, then walk forward until you get to the gym\n";
+              return "turn right after walking through the doors, then walk forward until you get to the gym\n";
             case ALUMNI:
               return (
-                "Turn left after walking through the doors, then walk down the hallway\n" +
-                "Go to the end of the arcade, walk up the ramp, turn right, and go through the doors\n"
+                "turn left after walking through the doors, then walk down the hallway\n" +
+                "go to the end of the arcade, walk up the ramp, turn right, and go through the doors\n"
               );
             default:
               return "";
@@ -458,7 +439,7 @@ const hallways: Hallway[] = [
         case GYM:
           (() => {
             const str =
-              "Exit the gym and walk out via the narrow hallway on the right\n";
+              "exit the gym and walk out via the narrow hallway on the right\n";
             switch (to) {
               case SCIENCE:
                 return `${str}Walk until the narrow hallway empties into the Arcade\nTurn left, walk a little bit, and turn left again to get to the science wing\n`;
@@ -476,20 +457,20 @@ const hallways: Hallway[] = [
         case ALUMNI:
           switch (to) {
             case SCIENCE:
-              return "After walking through the doors, turn left, walk down the ramp, walk through the arcade, and turn right into the 2700s (science wing)\n";
+              return "turn left\nwalk down the ramp, walk through the arcade, and turn right into the 2700s (science wing)\n";
             case LANGUAGES:
-              return "After walking through the doors, turn left, walk down the ramp, walk through the arcade, and turn left into the 2600s (modern foreign languages wing)\n";
+              return "turn left\nwalk down the ramp, walk through the arcade, and turn left into the 2600s (modern foreign languages wing)\n";
             case MUSIC:
               return (
-                "After walking through the doors, turn left, walk down the ramp, and walk through to the end of the arcade\n" +
-                "Turn right and through the long narrow hallway\n" +
-                'Turn right when you get to the doors labeled "Music Lyceum" and enter the doors\n'
+                "turn left\nwalk down the ramp, and walk through to the end of the arcade\n" +
+                "turn right and through the long narrow hallway\n" +
+                'turn right when you get to the doors labeled "Music Lyceum" and enter the doors\n'
               );
             case GYM:
               return (
-                "After walking through the doors, turn left, walk down the ramp, and walk through to the end of the arcade\n" +
-                "Turn right and through the long narrow hallway\n" +
-                "The Senior High Gym is straight ahead. Walk inside\n"
+                "turn left\nwalk down the ramp, and walk through to the end of the arcade\n" +
+                "turn right and through the long narrow hallway\n" +
+                "the Senior High Gym is straight ahead. Walk inside\n"
               );
             default:
               return "";
@@ -497,9 +478,23 @@ const hallways: Hallway[] = [
         default:
           return "";
       }
-    };
-    return theArcade;
-  })(),
+    }
+  })([
+    // The directions that we use here don't matter since we
+    // override the instructions for the arcade anyway.
+    new Fork(FRONT, ConnectionNode.ARCADE_TO_ALUMNI_HALL, "Alumni Hall"),
+    new Fork(FRONT, ConnectionNode.ARCADE_TO_2600S, "the 2600s"),
+    new Fork(FRONT, ConnectionNode.ARCADE_TO_2700S, "the 2700s"),
+    new Fork(
+      FRONT,
+      ConnectionNode.ARCADE_TO_MUSIC_ENTRANCE,
+      "the music lyceum"
+    ),
+    new Room("Senior High Gym", FRONT, {
+      prefix: "the",
+      aliases: ["2800", "2801", "High School Gymnasium"],
+    }),
+  ]),
 
   // alumni hall
   new Hallway([
@@ -560,7 +555,11 @@ const hallways: Hallway[] = [
 
   // 2nd floor science wing (2700s)
   new Hallway([
-    new Fork(BACK, ConnectionNode.C2700S_TO_ARCADE, "the arcade"),
+    new (class extends Fork {
+      onLeave() {
+        return "";
+      }
+    })(BACK, ConnectionNode.C2700S_TO_ARCADE, "the arcade"),
     new Stairs(LEFT, StairNode.SCIENCE_A2),
     new Room("2701"),
     new Room("2702", RIGHT),
