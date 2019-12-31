@@ -98,6 +98,10 @@ header li {
   margin-right: 4vw;
 }
 
+ul {
+  padding-left: 5vw;
+}
+
 header li a {
   color: rgb(100, 99, 99);
   text-decoration: none;
