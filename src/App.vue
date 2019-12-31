@@ -59,6 +59,14 @@ export default Vue.extend({
       }
     },
   },
+  mounted() {
+    const currentRouteNavItem = document.querySelector(
+      "header li.router-link-active a"
+    );
+    if (currentRouteNavItem != null) {
+      currentRouteNavItem.scrollIntoView({ inline: "center" });
+    }
+  },
 });
 </script>
 
