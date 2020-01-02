@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header v-if="showNav">
+    <header>
       <nav>
         <ul>
           <router-link tag="li" to="/" exact>
@@ -20,10 +20,7 @@
     </header>
 
     <transition :name="transitionName">
-      <router-view
-        :id="showNav ? 'main-stuff' : ''"
-        class="child-view"
-      ></router-view>
+      <router-view id="main-stuff" class="child-view"></router-view>
     </transition>
 
     <TheRoomsDataList />
@@ -42,11 +39,6 @@ export default Vue.extend({
     return {
       transitionName: "fade",
     };
-  },
-  computed: {
-    showNav(): boolean {
-      return this.$route.path !== "/myschedule/edit";
-    },
   },
   watch: {
     $route(to, from) {

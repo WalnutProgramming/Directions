@@ -2,6 +2,7 @@
   <div style="padding: 1vw;">
     <div>
       <CustomButton
+        v-if="!$route.query.new"
         class="save"
         type="button"
         style="font-size:14px"
@@ -90,6 +91,30 @@ interface Room {
   originalIndex: number;
 }
 
+function getDefaultRooms() {
+  const ret: Room[] = [];
+  for (let i = 0; i < 7; i += 1) {
+    ret.push({ value: "", originalIndex: i });
+  }
+  return ret;
+}
+
+function getStoredRooms() {
+  return localStorage.getItem("myschedule");
+}
+
+function roomsListsEqual(a: Room[], b: Room[]) {
+  const aValues = a.map(({ value }) => value).filter(v => v !== "");
+  const bValues = b.map(({ value }) => value).filter(v => v !== "");
+  if (aValues.length !== bValues.length) {
+    return false;
+  }
+  for (let i = 0; i < aValues.length; i += 1) {
+    if (aValues[i] !== bValues[i]) return false;
+  }
+  return true;
+}
+
 export default Vue.extend({
   components: {
     RoomInput,
@@ -100,15 +125,12 @@ export default Vue.extend({
     PlusButton,
   },
   data() {
-    const stored = localStorage.getItem("myschedule");
+    const stored = getStoredRooms();
     let rooms: Room[];
     if (stored != null) {
       rooms = JSON.parse(stored).rooms;
     } else {
-      rooms = [];
-      for (let i = 0; i < 7; i += 1) {
-        rooms.push({ value: "", originalIndex: i });
-      }
+      rooms = getDefaultRooms();
     }
     return { rooms };
   },
@@ -151,6 +173,25 @@ export default Vue.extend({
     removeIndex(index: number) {
       this.rooms.splice(index, 1);
     },
+  },
+  beforeRouteLeave(to, from, next) {
+    const stored = getStoredRooms();
+    if (
+      (stored == null && roomsListsEqual(this.rooms, getDefaultRooms())) ||
+      (stored != null && roomsListsEqual(this.rooms, JSON.parse(stored).rooms))
+    ) {
+      next();
+    } else {
+      // eslint-disable-next-line no-alert
+      const answer = window.confirm(
+        "Are you sure you want to leave? Your changes to your schedule will NOT be saved."
+      );
+      if (answer) {
+        next();
+      } else {
+        next(false);
+      }
+    }
   },
 });
 </script>
