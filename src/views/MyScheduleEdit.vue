@@ -1,16 +1,24 @@
 <template>
   <div style="padding: 1vw;">
-    <div>
-      <CustomButton
-        v-if="!$route.query.new"
-        class="save"
-        type="button"
-        style="font-size:14px"
-        button-style="padding: 12px 20px"
-        @customclick="cancel"
-      >
-        &laquo; Cancel
-      </CustomButton>
+    <div
+      style="display: flex; flex-direction: row; justify-content: flex-start"
+    >
+      <div v-if="!$route.query.new">
+        <CustomButton
+          class="save"
+          type="button"
+          style="font-size:14px"
+          button-style="padding: 12px 20px; margin-right: 5vw"
+          @customclick="cancel"
+        >
+          &laquo; Cancel
+        </CustomButton>
+      </div>
+      <div>
+        <CustomButton class="save" style="font-size: 14px" @customclick="save">
+          Save
+        </CustomButton>
+      </div>
     </div>
     <p v-if="$route.query.new" class="p">
       You don't seem to have an existing schedule. Create a new one!
