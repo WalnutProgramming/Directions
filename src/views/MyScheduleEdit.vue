@@ -53,7 +53,7 @@
             v-model="room.value"
             :name="`room-${room.originalIndex}`"
             class="my-input"
-            style="max-width: 40vw"
+            style="max-width: 40vw; font-size: 20px"
           />
         </SlickItem>
         <div
