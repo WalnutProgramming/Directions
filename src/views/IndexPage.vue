@@ -79,9 +79,6 @@ export default Vue.extend({
       document.getElementById("roomForm").reportValidity();
     },
   },
-  metaInfo: {
-    title: "",
-  },
 });
 </script>
 
