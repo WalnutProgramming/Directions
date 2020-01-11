@@ -78,6 +78,7 @@ export default Vue.extend({
           title: `${fromRoom} to ${toRoom}`,
           meta: [
             {
+              vmid: "description",
               name: "description",
               content: `Directions from ${fullNameOf(fromRoom)} to ${fullNameOf(
                 toRoom

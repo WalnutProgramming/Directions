@@ -30,6 +30,7 @@ export default Vue.extend({
     title: "Feedback",
     meta: [
       {
+        vmid: "description",
         name: "description",
         content: "Report problems with Walnut.Direct or ask us a question.",
       },

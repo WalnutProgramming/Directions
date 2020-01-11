@@ -55,6 +55,7 @@ export default Vue.extend({
     title: "My Schedule",
     meta: [
       {
+        vmid: "description",
         name: "description",
         content:
           "Input your schedule into Walnut.Direct so we can give you customized directions between your classes in Walnut Hills High School.",

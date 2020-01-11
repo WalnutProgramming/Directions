@@ -67,6 +67,7 @@ export default Vue.extend({
 
     meta: [
       {
+        vmid: "description",
         name: "description",
         content:
           "Straightforward directions between rooms in Walnut Hills High School. Created by the Walnut Hills Programming Club.",
