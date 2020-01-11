@@ -22,6 +22,22 @@
   </div>
 </template>
 
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
+  metaInfo: {
+    title: "Feedback",
+    meta: [
+      {
+        name: "description",
+        content: "Report problems with Walnut.Direct or ask us a question.",
+      },
+    ],
+  },
+});
+</script>
+
 <style scoped>
 .small-p {
   margin: 0.1em;

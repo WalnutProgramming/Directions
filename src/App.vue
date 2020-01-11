@@ -59,6 +59,20 @@ export default Vue.extend({
       currentRouteNavItem.scrollIntoView({ inline: "center" });
     }
   },
+  metaInfo: {
+    // if no subcomponents specify a metaInfo.title, this title will be used
+    title: "",
+    // all titles will be injected into this template
+    titleTemplate: s => (s === "" ? "Walnut.Direct" : `Walnut.Direct - ${s}`),
+
+    meta: [
+      {
+        name: "description",
+        content:
+          "Straightforward directions between rooms in Walnut Hills High School. Created by the Walnut Hills Programming Club.",
+      },
+    ],
+  },
 });
 </script>
 

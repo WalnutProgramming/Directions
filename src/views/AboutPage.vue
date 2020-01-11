@@ -47,6 +47,14 @@
   </div>
 </template>
 
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
+  metaInfo: { title: "About" },
+});
+</script>
+
 <style scoped>
 .title {
   font-size: 6vh;

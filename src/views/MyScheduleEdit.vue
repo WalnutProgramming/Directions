@@ -201,6 +201,16 @@ export default Vue.extend({
       }
     }
   },
+  metaInfo: {
+    title: "My Schedule - Edit",
+    meta: [
+      {
+        name: "description",
+        content:
+          "Input your schedule into Walnut.Direct so we can give you directions between your classes in Walnut Hills High School.",
+      },
+    ],
+  },
 });
 </script>
 

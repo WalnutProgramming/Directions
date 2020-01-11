@@ -21,10 +21,17 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from "vue";
+// eslint-disable-next-line no-unused-vars
+import { Room } from "room-finder";
 import CustomButton from "../components/CustomButton.vue";
 import walnut from "../walnut";
+
+function fullNameOf(roomName: string) {
+  const [hallwayInd, ind] = walnut.getHallwayIndexAndIndex(roomName)!;
+  return (walnut.hallways[hallwayInd].partList[ind] as Room).fullName;
+}
 
 export default Vue.extend({
   components: {
@@ -38,11 +45,14 @@ export default Vue.extend({
     return {};
   },
   computed: {
+    isValid() {
+      return (
+        walnut.getHallwayIndexAndIndex(this.fromRoom) != null &&
+        walnut.getHallwayIndexAndIndex(this.toRoom) != null
+      );
+    },
     directions() {
-      if (
-        walnut.getHallwayIndexAndIndex(this.fromRoom) &&
-        walnut.getHallwayIndexAndIndex(this.toRoom)
-      ) {
+      if (this.isValid) {
         // Both have valid names, so put the directions in the HTML
         return walnut
           .getDirections(this.fromRoom, this.toRoom)
@@ -60,6 +70,22 @@ export default Vue.extend({
         this.$router.push("/");
       }
     },
+  },
+  metaInfo() {
+    const { fromRoom, toRoom, isValid } = this as any;
+    return isValid
+      ? {
+          title: `${fromRoom} to ${toRoom}`,
+          meta: [
+            {
+              name: "description",
+              content: `Directions from ${fullNameOf(fromRoom)} to ${fullNameOf(
+                toRoom
+              )} in Walnut Hills High School.`,
+            },
+          ],
+        }
+      : {};
   },
 });
 </script>
