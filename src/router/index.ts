@@ -35,11 +35,30 @@ const routes = [
     path: "/feedback",
     component: Feedback,
   },
+  // fallback (client-side 404)
+  {
+    path: "*",
+    redirect: "/",
+  },
 ];
 
-export default new VueRouter({
+const router = new VueRouter({
   routes,
+  mode: "history",
   scrollBehavior(to, from, savedPosition) {
     return { x: 0, y: 0 };
   },
 });
+
+// Redirect hash URLs (old) to history mode URLs (new)
+router.beforeEach((to, from, next) => {
+  // Redirect if fullPath begins with a hash (ignore hashes later in path)
+  if (to.fullPath.substr(0, 2) === "/#") {
+    const path = to.fullPath.substr(2);
+    next(path);
+    return;
+  }
+  next();
+});
+
+export default router;
