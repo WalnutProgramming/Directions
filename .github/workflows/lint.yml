@@ -12,4 +12,4 @@ jobs:
         with:
           node-version: "13.x"
       - run: yarn
-      - run: yarn lint
+      - run: yarn lint --no-fix --max-warnings 0
