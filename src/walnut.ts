@@ -585,6 +585,7 @@ const hallways: Hallway[] = [
   // 3rd floor science wing (3700s)
   new Hallway([
     new Stairs(LEFT, StairNode.SCIENCE_A3),
+    new Room("3701", LEFT, { aliases: ["Computer Lab - Engineering"] }),
     new Room("3702", RIGHT),
     new Room("3704", RIGHT),
     new Room("3703"),
