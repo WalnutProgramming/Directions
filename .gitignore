@@ -20,3 +20,7 @@ node_modules/
 yarn-error.log
 
 docs
+
+# Cypress end-to-end testing videos
+tests/e2e/videos
+tests/e2e/screenshots

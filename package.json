@@ -8,7 +8,9 @@
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
-    "test": "yarn test:unit"
+    "test": "yarn test:unit && yarn test:e2e --headless",
+    "test-ci": "yarn test:unit --ci && yarn test:e2e --headless",
+    "tests": "yarn test"
   },
   "dependencies": {
     "core-js": "^3.4.3",
