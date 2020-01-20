@@ -33,7 +33,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from "vue";
 import CustomButton from "../components/CustomButton.vue";
 import TheMaybeInstallButton from "../components/TheMaybeInstallButton.vue";
@@ -68,15 +68,22 @@ export default Vue.extend({
         });
       }
     },
-    validateInput(inputName, allowBlank = true) {
+    validateInput(inputName: string, allowBlank = true) {
       let message = "";
-      if (this[inputName] === "") {
+      const val: string = (this as any)[inputName];
+      if (val === "") {
         if (!allowBlank) message = "Please type a room number";
-      } else if (!walnut.isValidRoomName(this[inputName])) {
-        message = `I can't find a room with the name "${this[inputName]}"`;
+      } else if (!walnut.isValidRoomName(val)) {
+        message = `I can't find a room with the name "${val}"`;
       }
-      document.getElementById(inputName).setCustomValidity(message);
-      document.getElementById("roomForm").reportValidity();
+      const inp = document.getElementById(inputName);
+      if (inp != null && "setCustomValidity" in inp) {
+        (inp as any).setCustomValidity(message);
+      }
+      const form = document.getElementById("roomForm");
+      if (form != null && "reportValidity" in form) {
+        (form as any).reportValidity();
+      }
     },
   },
 });

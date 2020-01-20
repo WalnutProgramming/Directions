@@ -22,8 +22,9 @@ export default Vue.extend({
       // If it's an iOS device and we're not already in the PWA, unhide the #iosDownloadSuggestion
       const iOS =
         /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-      const isInstalledPWA = window.matchMedia("(display-mode: standalone)")
-        .matches;
+      const isInstalledPWA =
+        "matchMedia" in window &&
+        window.matchMedia("(display-mode: standalone)").matches;
       return iOS && !isInstalledPWA;
     },
   },
