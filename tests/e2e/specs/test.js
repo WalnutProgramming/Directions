@@ -158,9 +158,7 @@ describe("About Page", () => {
   it("exists", () => {
     cy.visit("/");
     cy.get("a[href='/about']").click();
-    cy.contains(
-      "Walnut Hills is a big and confusing school to navigate, especially for incoming students."
-    );
+    cy.contains("Walnut Hills Programming Club");
   });
 });
 
