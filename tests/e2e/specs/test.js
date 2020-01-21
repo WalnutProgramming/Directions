@@ -4,6 +4,15 @@
 // eslint-disable-next-line spaced-comment
 /// <reference types="cypress" />
 
+function beInvalid(/** @type string */ message) {
+  return (/** @type JQuery<HTMLElement> */ $inp) => {
+    // @ts-ignore
+    expect($inp.get(0).checkValidity()).to.equal(false);
+    // @ts-ignore
+    expect($inp.get(0).validationMessage).to.equal(message);
+  };
+}
+
 describe("Walnut.Direct Main Functionality", () => {
   it("gets correct directions from room 3104 to 3113", () => {
     cy.visit("/");
@@ -20,14 +29,10 @@ describe("Walnut.Direct Main Functionality", () => {
       .contains("Go")
       .click();
     // It should show us an error message
-    cy.get("#toRoom").should($inp => {
-      // @ts-ignore
-      expect($inp.get(0).checkValidity()).to.equal(false);
-      // @ts-ignore
-      expect($inp.get(0).validationMessage).to.equal(
-        'I can\'t find a room with the name "3113a"'
-      );
-    });
+    cy.get("#toRoom").should(
+      beInvalid(`I can't find a room with the name "3113a"`)
+    );
+
     // Shouldn't change the URL
     cy.url().should("not.contain", "/directions");
     // Fix the toRoom
@@ -134,14 +139,9 @@ describe("My Schedule page", () => {
       .first()
       .click();
     cy.url().should("contain", "/myschedule/edit");
-    nthRoomInput(7).should($inp => {
-      // @ts-ignore
-      expect($inp.get(0).checkValidity()).to.equal(false);
-      // @ts-ignore
-      expect($inp.get(0).validationMessage).to.equal(
-        "I can't find a room with the name notaroom"
-      );
-    });
+    nthRoomInput(7).should(
+      beInvalid("I can't find a room with the name notaroom")
+    );
     // Remove invalid room
     nthRoomInput(7).clear();
     cy.get("button.active-button[type='submit']")
