@@ -80,7 +80,7 @@
     "trailingComma": "es5"
   },
   "browserslist": [
-    "> 1%",
+    "> 1% in US",
     "last 2 versions"
   ]
 }
