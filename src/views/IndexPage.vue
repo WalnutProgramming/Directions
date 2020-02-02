@@ -95,12 +95,12 @@ export default Vue.extend({
 }
 
 .where-question {
-  color: var(--main-text-color);
+  color: var(--heading-text-color);
 }
 
 .label {
   display: block;
-  color: var(--main-text-color);
+  color: var(--subheading-text-color);
 }
 
 .center {
