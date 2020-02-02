@@ -35,7 +35,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import CustomButton from "@/components/CustomButton.vue";
+import CustomButton from "@/components/buttons/CustomButton.vue";
 import TheMaybeInstallButton from "@/components/TheMaybeInstallButton.vue";
 import RoomInput from "@/components/RoomInput.vue";
 import TheIOSDownloadSuggestion from "@/components/TheIOSDownloadSuggestion.vue";

@@ -28,8 +28,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import CustomButton from "@/components/CustomButton.vue";
-import EditButton from "@/components/EditButton.vue";
+import CustomButton from "@/components/buttons/CustomButton.vue";
+import EditButton from "@/components/buttons/EditButton.vue";
 
 export default Vue.extend({
   components: { CustomButton, EditButton },

@@ -90,9 +90,9 @@
 import Vue from "vue";
 import { SlickList, SlickItem } from "vue-slicksort";
 import RoomInput from "@/components/RoomInput.vue";
-import CustomButton from "@/components/CustomButton.vue";
-import MinusButton from "@/components/MinusButton.vue";
-import PlusButton from "@/components/PlusButton.vue";
+import CustomButton from "@/components/buttons/CustomButton.vue";
+import MinusButton from "@/components/buttons/MinusButton.vue";
+import PlusButton from "@/components/buttons/PlusButton.vue";
 import walnut from "@/walnut";
 
 interface Room {
