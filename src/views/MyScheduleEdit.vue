@@ -89,11 +89,11 @@
 <script lang="ts">
 import Vue from "vue";
 import { SlickList, SlickItem } from "vue-slicksort";
-import RoomInput from "../components/RoomInput.vue";
-import CustomButton from "../components/CustomButton.vue";
-import MinusButton from "../components/MinusButton.vue";
-import PlusButton from "../components/PlusButton.vue";
-import walnut from "../walnut";
+import RoomInput from "@/components/RoomInput.vue";
+import CustomButton from "@/components/CustomButton.vue";
+import MinusButton from "@/components/MinusButton.vue";
+import PlusButton from "@/components/PlusButton.vue";
+import walnut from "@/walnut";
 
 interface Room {
   value: string;

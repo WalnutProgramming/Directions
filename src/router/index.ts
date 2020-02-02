@@ -1,11 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Index from "../views/IndexPage.vue";
-import Directions from "../views/DirectionsPage.vue";
-import MySchedule from "../views/MySchedule.vue";
-import MyScheduleEdit from "../views/MyScheduleEdit.vue";
-import About from "../views/AboutPage.vue";
-import Feedback from "../views/FeedbackPage.vue";
+import Index from "@/views/IndexPage.vue";
+import Directions from "@/views/DirectionsPage.vue";
+import MySchedule from "@/views/MySchedule.vue";
+import MyScheduleEdit from "@/views/MyScheduleEdit.vue";
+import About from "@/views/AboutPage.vue";
+import Feedback from "@/views/FeedbackPage.vue";
 
 Vue.use(VueRouter);
 

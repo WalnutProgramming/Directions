@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import BasicButton from "./BasicButton.vue";
+import BasicButton from "@/components/BasicButton.vue";
 
 export default Vue.extend({
   components: { BasicButton },

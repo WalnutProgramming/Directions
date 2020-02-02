@@ -22,8 +22,8 @@
 import Vue from "vue";
 // eslint-disable-next-line no-unused-vars
 import { Room } from "room-finder";
-import CustomButton from "../components/CustomButton.vue";
-import walnut from "../walnut";
+import CustomButton from "@/components/CustomButton.vue";
+import walnut from "@/walnut";
 
 function fullNameOf(roomName: string) {
   const [hallwayInd, ind] = walnut.getHallwayIndexAndIndex(roomName)!;
