@@ -81,7 +81,7 @@ export default Vue.extend({
 
 <style scoped>
 header {
-  background-color: #f9f9f9;
+  background-color: var(--background-color);
   position: fixed;
   top: 0;
   left: 0;
@@ -110,12 +110,12 @@ ul {
 }
 
 header li a {
-  color: rgb(100, 99, 99);
+  color: var(--header-bar-text-color);
   text-decoration: none;
 }
 
 header li a:hover {
-  color: #03a1fc;
+  color: var(--header-bar-hover-text-color);
 }
 
 #main-stuff {
@@ -123,7 +123,7 @@ header li a:hover {
 }
 
 header li.router-link-active a {
-  color: #3a4f74;
+  color: var(--header-bar-selected-text-color);
 }
 
 /* transitions */

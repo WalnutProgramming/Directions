@@ -20,7 +20,7 @@ export default Vue.extend({
 
 <style scoped>
 .plus-button {
-  color: white;
+  color: var(--button-text-color);
   border: none;
   height: 6vh;
   width: 6vh;
@@ -40,7 +40,7 @@ export default Vue.extend({
 
 .plus-button:hover {
   background: rgb(93, 158, 93);
-  color: white;
+  color: var(--button-text-color);
   transition: var(--long-decay-ease);
   cursor: pointer;
   border-radius: 25px;

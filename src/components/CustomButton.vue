@@ -19,12 +19,12 @@ export default Vue.extend({
 
 <style scoped>
 .active-button {
-  color: white;
+  color: var(--button-text-color);
   border: none;
   padding: 12px 40px;
   font-size: 1em;
 
-  background-color: #03a1fc;
+  background-color: var(--button-color);
   display: inline-block;
   border-radius: 100px;
 

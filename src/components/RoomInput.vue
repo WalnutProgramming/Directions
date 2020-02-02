@@ -32,7 +32,7 @@ export default Vue.extend({
   text-align: center;
   border-radius: 10px;
   border-width: 0px;
-  background-color: #f5f8fa;
+  background-color: var(--input-background-color);
   transition: var(--text-input-ease);
 }
 
