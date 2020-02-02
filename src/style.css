@@ -24,6 +24,7 @@
   --minus-button-color-hover: #ff0000;
 
   --plus-button-color: rgb(120, 200, 120);
+  --plus-button-hover-color: rgb(93, 158, 93);
 
   --input-placeholder-text-color: #a2bace;
   --input-selection-color: #c4e0f0;
@@ -32,6 +33,7 @@
   --heading-text-color: #220d8a;
   --subheading-text-color: #204ba0;
   --par-text-color: #000000;
+  --less-important-text-color: #6f6f6f;
 
   --header-bar-text-color: #0b004b;
   --header-bar-selected-text-color: #2355b8;
@@ -52,7 +54,7 @@ body {
 }
 
 p {
-  color: var(--heading-text-color);
+  color: var(--par-text-color);
 }
 
 main {

@@ -47,11 +47,13 @@
             v-for="(room, index) in rooms"
             :key="room.originalIndex"
             class="list-item"
-            style="background-color: var(--slick-background-color); border-radius: 15px; border: none; height: 9vh;"
+            style="border-radius: 15px; height: 9vh;"
             :index="index"
             :item="room"
           >
-            <span style="width: 3em; font-size: 25px; color: #6f6f6f">
+            <span
+              style="width: 3em; font-size: 25px; color: var(--less-important-text-color)"
+            >
               ☰&nbsp;&nbsp;<span style="">{{ index + 1 }}.&nbsp;&nbsp;</span>
             </span>
             <MinusButton
@@ -69,10 +71,7 @@
               style="max-width: 40vw; font-size: 20px"
             />
           </SlickItem>
-          <div
-            class="list-item"
-            style="background-color: var(--slick-background-color); border-radius: 15px; border: none;"
-          >
+          <div class="list-item" style="border-radius: 15px; border: none;">
             <PlusButton
               type="button"
               class="smallerButton"
@@ -239,12 +238,11 @@ export default Vue.extend({
   /* align-items: center; */
   /* width: 100%; */
   padding: 10px;
-  background-color: #fff;
-  border-bottom: 1px solid #efefef;
+  background-color: var(--slick-background-color);
+  border-bottom: 5px solid var(--background-color);
   box-sizing: border-box;
   user-select: none;
 
-  color: #333;
   font-weight: 400;
 
   user-select: none;
