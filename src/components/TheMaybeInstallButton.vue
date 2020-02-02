@@ -1,5 +1,5 @@
 <template>
-  <CustomButton v-if="showButton" @customclick="install">
+  <CustomButton v-if="showButton" @click="install">
     Install as app
   </CustomButton>
 </template>

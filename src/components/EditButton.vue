@@ -1,31 +1,22 @@
 <template>
-  <span class="btn-hover-area" @click.stop.prevent="$emit('customclick')">
-    <button :type="type" class="active-button edit-button" :style="buttonStyle">
-      <slot></slot>
-    </button>
-  </span>
+  <BasicButton class="edit" @click="$emit('click')"> <slot /> </BasicButton>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import BasicButton from "./BasicButton.vue";
 
 export default Vue.extend({
-  props: {
-    type: { type: String, default: "submit" },
-    buttonStyle: { type: String, default: "" },
-  },
+  components: { BasicButton },
 });
 </script>
 
 <style scoped>
-.active-button {
+.btn-hover-area >>> .active-button {
   color: var(--button-text-color);
-  border: none;
   padding: 8px 25px;
-  font-size: 1em;
 
   background-color: var(--edit-button-color);
-  display: inline-block;
   border-radius: 100px;
 
   margin-top: 0;
@@ -35,8 +26,6 @@ export default Vue.extend({
   /*** these 6px values need to be the same (see below with ***) */
 
   transition: var(--back-ease);
-
-  user-select: none;
 }
 
 .btn-hover-area {
@@ -44,7 +33,7 @@ export default Vue.extend({
   border-radius: 100px;
 }
 
-.btn-hover-area:hover button {
+.btn-hover-area:hover >>> .active-button {
   margin-top: 6px;
   margin-bottom: 0px;
   box-shadow: 0px 0px var(--edit-button-shade-color),

@@ -22,7 +22,7 @@
           ></RoomInput>
           <br />
 
-          <CustomButton @customclick="submit">
+          <CustomButton @click="submit">
             Go
           </CustomButton>
         </form>

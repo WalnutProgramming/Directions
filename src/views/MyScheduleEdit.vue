@@ -7,20 +7,16 @@
         <div v-if="!$route.query.new">
           <CustomButton
             class="save"
-            type="button"
-            style="font-size:14px"
-            button-style="padding: 12px 20px; margin-right: 5vw"
-            @customclick="cancel"
+            :type-submit="false"
+            style="font-size:14px;  margin-right: 5vw"
+            button-style="padding: 12px 20px;"
+            @click="cancel"
           >
             &laquo; Cancel
           </CustomButton>
         </div>
         <div>
-          <CustomButton
-            class="save"
-            style="font-size: 14px"
-            @customclick="save"
-          >
+          <CustomButton class="save" style="font-size: 14px" @click="save">
             Save
           </CustomButton>
         </div>
@@ -60,7 +56,7 @@
               type="button"
               class="smallerButton"
               style="font-size: 20px; margin-right: 10px; margin-top: 0.75vh;"
-              @customclick="removeIndex(index)"
+              @click="removeIndex(index)"
             >
               —
             </MinusButton>
@@ -76,14 +72,14 @@
               type="button"
               class="smallerButton"
               style="font-size: 25px;"
-              @customclick="newRoom"
+              @click="newRoom"
             >
               <b>+</b>
             </PlusButton>
           </div>
         </SlickList>
         <div>
-          <CustomButton class="save" @customclick="save">Save</CustomButton>
+          <CustomButton class="save" @click="save">Save</CustomButton>
         </div>
       </form>
     </div>

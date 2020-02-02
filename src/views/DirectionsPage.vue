@@ -1,9 +1,6 @@
 <template>
   <div>
-    <CustomButton
-      style="font-size: 0.5em; padding-left: 1vw;"
-      @customclick="back"
-    >
+    <CustomButton style="font-size: 0.5em; padding-left: 1vw;" @click="back">
       &laquo; Back
     </CustomButton>
 

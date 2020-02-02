@@ -13,13 +13,13 @@
                 rooms[index + 1].value.trim() !== ''
             "
             style="font-size: .7em; margin-left: -1.5em; margin-top: .1em; margin-bottom: .3em; padding-left: 2vw;"
-            @customclick="go(index)"
+            @click="go(index)"
           >
             ↓ Go from {{ rooms[index].value }} to {{ rooms[index + 1].value }} ↓
           </CustomButton>
         </div>
       </ol>
-      <EditButton @customclick="edit()">
+      <EditButton @click="edit()">
         Edit
       </EditButton>
     </div>
