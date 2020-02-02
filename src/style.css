@@ -6,13 +6,20 @@
 }
 
 :root {
-  --main-text-color: #1e1e1e;
   --sine-ease: all cubic-bezier(0.47, 0, 0.745, 0.715) 0.1s;
   --back-ease: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
   --long-decay-ease: all cubic-bezier(0, 0.16, 0.59, 0.89) 0.3s;
-  --placeholder-color: #c4e0f0;
-  --background-color: #f3f3f3;
   --text-input-ease: background-color, linear, 0.5s;
+
+  --background-color: #ffffff;
+  --button-text-color: #ffffff;
+
+  --input-placeholder-text-color: #a2bace;
+  --input-selection-color: #c4e0f0;
+
+  --heading-text-color: #0b004b;
+  --subheading-text-color: #204ba0;
+  --par-text-color: #000000;
 }
 
 html,
@@ -29,7 +36,7 @@ body {
 }
 
 p {
-  color: var(--main-text-color);
+  color: var(--heading-text-color);
 }
 
 main {
