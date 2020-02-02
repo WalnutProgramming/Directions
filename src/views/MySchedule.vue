@@ -19,7 +19,9 @@
           </CustomButton>
         </div>
       </ol>
-      <router-link to="/myschedule/edit">Edit</router-link>
+      <EditButton @customclick="edit()">
+        Edit
+      </EditButton>
     </div>
   </div>
 </template>
@@ -27,9 +29,10 @@
 <script lang="ts">
 import Vue from "vue";
 import CustomButton from "../components/CustomButton.vue";
+import EditButton from "../components/EditButton.vue";
 
 export default Vue.extend({
-  components: { CustomButton },
+  components: { CustomButton, EditButton },
   data() {
     const stored = localStorage.getItem("myschedule");
     return {
@@ -50,6 +53,11 @@ export default Vue.extend({
           toRoom: this.rooms[index + 1].value,
           scheduleInd: index.toString(),
         },
+      });
+    },
+    edit() {
+      this.$router.push({
+        path: "/myschedule/edit",
       });
     },
   },

@@ -26,6 +26,10 @@
   --plus-button-color: rgb(120, 200, 120);
   --plus-button-hover-color: rgb(93, 158, 93);
 
+  --edit-button-color: #ebac00;
+  --edit-button-shade-color: #cf8f05;
+  --edit-button-hold-color: rgb(228, 231, 206);
+
   --input-placeholder-text-color: #a2bace;
   --input-selection-color: #c4e0f0;
   --input-background-color: #f5f8fa;
