@@ -127,7 +127,9 @@ describe("My Schedule page", () => {
       .should("contain", "/myschedule")
       .should("not.contain", "/myschedule/edit");
     // Edit
-    cy.get("a[href='/myschedule/edit']").click();
+    cy.get(".edit-button")
+      .should("have.length", 1)
+      .click();
     cy.url()
       .should("contain", "/myschedule/edit")
       .should("not.contain", "/myschedule/edit?new=true");

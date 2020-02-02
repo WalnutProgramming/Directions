@@ -20,7 +20,7 @@ export default Vue.extend({
 
 <style scoped>
 .minus-button {
-  color: white;
+  color: var(--button-text-color);
   border: none;
   height: 4.5vh;
   width: 4.5vh;
@@ -29,7 +29,7 @@ export default Vue.extend({
   padding-left: 0px; /* for some reason ios has uneven button spacing by default, so that needs to be corrected */
   padding-right: 0px;
 
-  background: rgba(255, 120, 120, 1);
+  background: var(--minus-button-color);
   display: inline-block;
   border-radius: 15px;
 
@@ -39,8 +39,8 @@ export default Vue.extend({
 }
 
 .minus-button:hover {
-  background: rgb(255, 120, 120, 0);
-  color: red;
+  background: rgba(0, 0, 0, 0);
+  color: var(--minus-button-color-hover);
   transition: var(--long-decay-ease);
   cursor: pointer;
   border-radius: 7.5px;
