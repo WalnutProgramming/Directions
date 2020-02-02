@@ -12,11 +12,13 @@
   --text-input-ease: background-color, linear, 0.5s;
 
   --background-color: #ffffff;
+  --alt-background-color: rgb(221, 237, 241);
+  --slick-background-color: #f5f8fa;
 
   --button-color: #03a1fc;
-  --button-shade-color: #000000;
+  --button-shade-color: #007dc4;
   --button-text-color: #ffffff;
-  --button-hold-color: #000000;
+  --button-hold-color: rgb(209, 226, 228);
 
   --minus-button-color: rgba(255, 120, 120, 1);
   --minus-button-color-hover: #ff0000;
@@ -27,7 +29,7 @@
   --input-selection-color: #c4e0f0;
   --input-background-color: #f5f8fa;
 
-  --heading-text-color: #0b004b;
+  --heading-text-color: #220d8a;
   --subheading-text-color: #204ba0;
   --par-text-color: #000000;
 

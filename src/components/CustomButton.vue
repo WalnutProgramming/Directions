@@ -30,7 +30,8 @@ export default Vue.extend({
 
   margin-top: 0;
   margin-bottom: 6px;
-  box-shadow: 0px 6px #007dc4, 0px 6px 0 6px rgb(209, 226, 228);
+  box-shadow: 0px 6px var(--button-shade-color),
+    0px 6px 0 6px var(--button-hold-color);
   /*** these 6px values need to be the same (see below with ***) */
 
   transition: var(--back-ease);
@@ -46,7 +47,8 @@ export default Vue.extend({
 .btn-hover-area:hover button {
   margin-top: 6px;
   margin-bottom: 0px;
-  box-shadow: 0px 0px #007dc4, 0px 0px 0 6px rgb(209, 226, 228);
+  box-shadow: 0px 0px var(--button-shade-color),
+    0px 0px 0 6px var(--button-hold-color);
   /*** these 6px values need to be the same (see above with ***) */
 
   transition: var(--sine-ease);

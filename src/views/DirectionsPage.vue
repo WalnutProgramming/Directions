@@ -102,6 +102,6 @@ export default Vue.extend({
 
 .direction-line:nth-child(even) {
   padding-left: 1vw;
-  background-color: rgb(221, 237, 241);
+  background-color: var(--alt-background-color);
 }
 </style>

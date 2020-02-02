@@ -47,7 +47,7 @@
             v-for="(room, index) in rooms"
             :key="room.originalIndex"
             class="list-item"
-            style="background-color: #fafafa; border-radius: 15px; border: none; height: 9vh;"
+            style="background-color: var(--slick-background-color); border-radius: 15px; border: none; height: 9vh;"
             :index="index"
             :item="room"
           >
@@ -71,7 +71,7 @@
           </SlickItem>
           <div
             class="list-item"
-            style="background-color: #ffffff; border-radius: 15px; border: none;"
+            style="background-color: var(--slick-background-color); border-radius: 15px; border: none;"
           >
             <PlusButton
               type="button"
@@ -229,7 +229,7 @@ export default Vue.extend({
   margin: 0 auto;
   padding: 0;
   overflow: auto;
-  background-color: #f3f3f3;
+  background-color: rgba(0, 0, 0, 0);
   border: 1px solid #efefef;
   border-radius: 3;
 }
