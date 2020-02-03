@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import walnut from "../walnut";
+import walnut from "@/walnut";
 
 const { roomsList } = walnut;
 

@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - 13
+before_install:
+  - npm install -g yarn
+git:
+  depth: 3
+script: yarn test-ci && yarn lint --no-fix --max-warnings 0
+cache: yarn

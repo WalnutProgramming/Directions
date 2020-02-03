@@ -31,9 +31,10 @@
 
 <script lang="ts">
 import Vue from "vue";
-import TheRoomsDataList from "./components/TheRoomsDataList.vue";
-import MoonButton from "./components/MoonButton.vue";
-import router from "./router/index";
+
+import TheRoomsDataList from "@/components/TheRoomsDataList.vue";
+import MoonButton from "@/components/MoonButton.vue";
+import router from "@/router/index";
 
 export default Vue.extend({
   router,
@@ -80,7 +81,7 @@ export default Vue.extend({
 });
 </script>
 
-<style src="./style.css"></style>
+<style src="@/style.css"></style>
 
 <style scoped>
 header {

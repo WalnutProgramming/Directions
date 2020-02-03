@@ -13,13 +13,13 @@
                 rooms[index + 1].value.trim() !== ''
             "
             style="font-size: .7em; margin-left: -1.5em; margin-top: .1em; margin-bottom: .3em; padding-left: 2vw;"
-            @customclick="go(index)"
+            @click="go(index)"
           >
             ↓ Go from {{ rooms[index].value }} to {{ rooms[index + 1].value }} ↓
           </CustomButton>
         </div>
       </ol>
-      <EditButton @customclick="edit()">
+      <EditButton @click="edit()">
         Edit
       </EditButton>
     </div>
@@ -28,8 +28,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import CustomButton from "../components/CustomButton.vue";
-import EditButton from "../components/EditButton.vue";
+import CustomButton from "@/components/buttons/CustomButton.vue";
+import EditButton from "@/components/buttons/EditButton.vue";
 
 export default Vue.extend({
   components: { CustomButton, EditButton },

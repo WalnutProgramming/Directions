@@ -3,9 +3,9 @@ import VueSnackbar from "vue-snack";
 import "vue-snack/dist/vue-snack.min.css";
 import Meta from "vue-meta";
 
-import App from "./App.vue";
-import router from "./router";
-import "./registerServiceWorker";
+import App from "@/App.vue";
+import router from "@/router";
+import "@/registerServiceWorker";
 
 Vue.use(VueSnackbar, {});
 Vue.use(Meta);
