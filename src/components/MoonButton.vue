@@ -38,6 +38,7 @@ const lightTheme = {
   "--header-bar-text-color": "#0b004b",
   "--header-bar-selected-text-color": "#2355b8",
   "--header-bar-hover-text-color": "#03a1fc",
+  "--header-bar-shadow-color": "#03a1fc",
 
   "--moon-filter": "hue-rotate(0deg) contrast(110%)",
 };
@@ -47,9 +48,9 @@ const darkTheme = {
   "--alt-background-color": "#192734",
   "--slick-background-color": "#253341",
 
-  "--button-color": "#03a1fc",
-  "--button-shade-color": "#007dc4",
-  "--button-text-color": "#ffffff",
+  "--button-color": "#f0d019",
+  "--button-shade-color": "#c2980f",
+  "--button-text-color": "#2f004e",
   "--button-hold-color": "#1c2e40",
 
   "--minus-button-color": "rgba(255, 120, 120, 1)",
@@ -60,25 +61,27 @@ const darkTheme = {
 
   "--edit-button-color": "#ebac00",
   "--edit-button-shade-color": "#cf8f05",
-  "--edit-button-hold-color": "rgb(228, 231, 206)",
+  "--edit-button-hold-color": "#1c2e40",
 
   "--input-text-color": "#ffffff",
-  "--input-placeholder-text-color": "#a2bace",
-  "--input-selection-color": "#c4e0f0",
+  "--input-placeholder-text-color": "#f7efa8",
+  "--input-selection-color": "#f7efa8",
   "--input-background-color": "#253341",
 
-  "--heading-text-color": "#9CC0F2",
-  "--subheading-text-color": "#204ba0",
+  "--heading-text-color": "#ccc9a9",
+  "--subheading-text-color": "#fffcec",
   "--par-text-color": "#ffffff",
   "--less-important-text-color": "#6f6f6f",
 
-  "--header-bar-text-color": "#0b004b",
-  "--header-bar-selected-text-color": "#2355b8",
-  "--header-bar-hover-text-color": "#03a1fc",
-  "--header-bar-shadow-color": "#03a1fc",
+  "--header-bar-text-color": "#5e560e",
+  "--header-bar-selected-text-color": "#968d3b",
+  "--header-bar-hover-text-color": "#f0d019",
+  "--header-bar-shadow-color": "#f0ac19",
 
   "--moon-filter": "hue-rotate(180deg) contrast(90%)",
 };
+
+const defaultTheme = lightTheme;
 
 const root = document.documentElement;
 
@@ -102,7 +105,7 @@ export default Vue.extend({
   },
 });
 
-setTheme(darkTheme); // initially set theme to dark theme for testing purposes
+setTheme(defaultTheme); // initially set theme to dark theme for testing purposes
 </script>
 
 <style scoped>
