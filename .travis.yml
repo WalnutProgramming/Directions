@@ -6,4 +6,8 @@ before_install:
 git:
   depth: 3
 script: yarn test-ci && yarn lint --no-fix --max-warnings 0
-cache: yarn
+cache:
+  yarn: true
+  directories:
+    # for Cypress binary
+    - ~/.cache
