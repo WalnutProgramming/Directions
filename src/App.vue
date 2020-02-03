@@ -23,7 +23,7 @@
       <router-view id="main-stuff" class="child-view"></router-view>
     </transition>
 
-    <MoonButton style="right: 1vh; bottom: 1vh; position: fixed" />
+    <TheMoonButton style="right: 1vh; bottom: 1vh; position: fixed" />
 
     <TheRoomsDataList />
   </div>
@@ -33,12 +33,12 @@
 import Vue from "vue";
 
 import TheRoomsDataList from "@/components/TheRoomsDataList.vue";
-import MoonButton from "@/components/MoonButton.vue";
+import TheMoonButton from "@/components/TheMoonButton.vue";
 import router from "@/router/index";
 
 export default Vue.extend({
   router,
-  components: { TheRoomsDataList, MoonButton },
+  components: { TheRoomsDataList, TheMoonButton },
   data() {
     return {
       transitionName: "fade",
