@@ -58,6 +58,7 @@ body {
 
 body {
   background-color: var(--background-color);
+  transition: var(--background-color-ease);
   font-size: 30px;
   min-height: 100vh;
 }
