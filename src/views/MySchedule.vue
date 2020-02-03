@@ -74,3 +74,9 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped>
+li {
+  color: var(--less-important-text-color);
+}
+</style>

@@ -85,7 +85,7 @@ export default Vue.extend({
 <style scoped>
 header {
   background-color: var(--background-color);
-  transition: var(--background-color-ease);
+  transition: background-color var(--linear-ease), color var(--linear-ease);
   position: fixed;
   top: 0;
   left: 0;
