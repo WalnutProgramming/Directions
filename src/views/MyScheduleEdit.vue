@@ -240,6 +240,8 @@ export default Vue.extend({
   padding: 10px;
   background-color: var(--slick-background-color);
   border-bottom: 5px solid var(--background-color);
+  transition: background-color var(--linear-ease),
+    border-bottom var(--linear-ease);
   box-sizing: border-box;
   user-select: none;
 

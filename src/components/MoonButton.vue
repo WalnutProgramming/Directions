@@ -44,7 +44,7 @@ const lightTheme = {
 };
 
 const darkTheme = {
-  "--background-color": "#15202B",
+  "--background-color": "#15202b",
   "--alt-background-color": "#192734",
   "--slick-background-color": "#253341",
 
