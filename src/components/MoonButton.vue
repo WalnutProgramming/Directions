@@ -1,5 +1,5 @@
 <template>
-  <button class="moon-button" v-on:click="toggleTheme"></button>
+  <button class="moon-button" @click="toggleTheme"></button>
 </template>
 
 <script lang="ts">
@@ -86,8 +86,8 @@ const defaultTheme = lightTheme;
 const root = document.documentElement;
 
 function setTheme(theme: Object) {
-  Object.entries(theme).forEach(function(entry) {
-    root.style.setProperty(entry[0], entry[1]);
+  Object.entries(theme).forEach(([key, val]) => {
+    root.style.setProperty(key, val);
   });
 }
 
