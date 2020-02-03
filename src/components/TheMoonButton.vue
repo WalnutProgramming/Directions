@@ -81,8 +81,6 @@ const darkTheme = {
   "--moon-filter": "hue-rotate(180deg) contrast(90%)",
 };
 
-const defaultTheme = lightTheme;
-
 const root = document.documentElement;
 
 function setTheme(theme: Object) {
@@ -91,21 +89,42 @@ function setTheme(theme: Object) {
   });
 }
 
+const IS_DARK_THEME_LOCALSTORAGE = "isDarkTheme";
+
 export default Vue.extend({
+  data() {
+    // If we have the user's preference stored, use that.
+    let isDarkTheme: boolean | null = JSON.parse(
+      localStorage.getItem(IS_DARK_THEME_LOCALSTORAGE) ?? "null"
+    );
+    if (isDarkTheme == null) {
+      // If the user is using dark mode on their device, use that.
+      isDarkTheme =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
+    return { isDarkTheme };
+  },
+  watch: {
+    isDarkTheme: {
+      immediate: true,
+      handler(newVal, oldVal) {
+        if (newVal !== oldVal) {
+          setTheme(newVal ? darkTheme : lightTheme);
+        }
+        localStorage.setItem(
+          IS_DARK_THEME_LOCALSTORAGE,
+          JSON.stringify(newVal)
+        );
+      },
+    },
+  },
   methods: {
     toggleTheme() {
-      const checkProp = "--background-color";
-      const currentProp = root.style.getPropertyValue(checkProp);
-      let theme = lightTheme;
-      if (currentProp === lightTheme[checkProp]) {
-        theme = darkTheme;
-      }
-      setTheme(theme);
+      this.isDarkTheme = !this.isDarkTheme;
     },
   },
 });
-
-setTheme(defaultTheme); // initially set theme to dark theme for testing purposes
 </script>
 
 <style scoped>
