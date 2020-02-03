@@ -9,39 +9,7 @@
   --sine-ease: all cubic-bezier(0.47, 0, 0.745, 0.715) 0.1s;
   --back-ease: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
   --long-decay-ease: all cubic-bezier(0, 0.16, 0.59, 0.89) 0.3s;
-  --text-input-ease: background-color, linear, 0.5s;
-
-  --background-color: #ffffff;
-  --alt-background-color: rgb(221, 237, 241);
-  --slick-background-color: #f5f8fa;
-
-  --button-color: #03a1fc;
-  --button-shade-color: #007dc4;
-  --button-text-color: #ffffff;
-  --button-hold-color: rgb(209, 226, 228);
-
-  --minus-button-color: rgba(255, 120, 120, 1);
-  --minus-button-color-hover: #ff0000;
-
-  --plus-button-color: rgb(120, 200, 120);
-  --plus-button-hover-color: rgb(93, 158, 93);
-
-  --edit-button-color: #ebac00;
-  --edit-button-shade-color: #cf8f05;
-  --edit-button-hold-color: rgb(228, 231, 206);
-
-  --input-placeholder-text-color: #a2bace;
-  --input-selection-color: #c4e0f0;
-  --input-background-color: #f5f8fa;
-
-  --heading-text-color: #220d8a;
-  --subheading-text-color: #204ba0;
-  --par-text-color: #000000;
-  --less-important-text-color: #6f6f6f;
-
-  --header-bar-text-color: #0b004b;
-  --header-bar-selected-text-color: #2355b8;
-  --header-bar-hover-text-color: #03a1fc;
+  --linear-ease: linear 0.5s;
 }
 
 html,
@@ -53,6 +21,7 @@ body {
 
 body {
   background-color: var(--background-color);
+  transition: background-color var(--linear-ease);
   font-size: 30px;
   min-height: 100vh;
 }

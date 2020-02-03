@@ -23,18 +23,22 @@
       <router-view id="main-stuff" class="child-view"></router-view>
     </transition>
 
+    <TheMoonButton style="right: 1vh; bottom: 1vh; position: fixed" />
+
     <TheRoomsDataList />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+
 import TheRoomsDataList from "@/components/TheRoomsDataList.vue";
+import TheMoonButton from "@/components/TheMoonButton.vue";
 import router from "@/router/index";
 
 export default Vue.extend({
   router,
-  components: { TheRoomsDataList },
+  components: { TheRoomsDataList, TheMoonButton },
   data() {
     return {
       transitionName: "fade",
@@ -82,6 +86,7 @@ export default Vue.extend({
 <style scoped>
 header {
   background-color: var(--background-color);
+  transition: background-color var(--linear-ease), color var(--linear-ease);
   position: fixed;
   top: 0;
   left: 0;
@@ -89,7 +94,7 @@ header {
   height: 7vh;
   display: flex;
   align-items: center;
-  box-shadow: 0 0 1vh 0 #03a1fc;
+  box-shadow: 0 0 1vh 0 var(--header-bar-shadow-color);
   font-size: 0.8em;
   z-index: 100;
   overflow: auto;
