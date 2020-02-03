@@ -28,6 +28,7 @@ const lightTheme = {
   "--input-text-color": "#000000",
   "--input-placeholder-text-color": "#a2bace",
   "--input-selection-color": "#c4e0f0",
+  "--input-selection-text-color": "#000000",
   "--input-background-color": "#f5f8fa",
 
   "--heading-text-color": "#220d8a",
@@ -66,6 +67,7 @@ const darkTheme = {
   "--input-text-color": "#ffffff",
   "--input-placeholder-text-color": "#f7efa8",
   "--input-selection-color": "#f7efa8",
+  "--input-selection-text-color": "#2f004e",
   "--input-background-color": "#253341",
 
   "--heading-text-color": "#ccc9a9",

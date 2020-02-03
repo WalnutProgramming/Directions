@@ -39,6 +39,7 @@ export default Vue.extend({
 
 .roomInput:focus {
   background-color: var(--input-selection-color);
+  color: var(--input-selection-text-color);
   transition: background-color var(--linear-ease);
 }
 
