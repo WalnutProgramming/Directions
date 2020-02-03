@@ -100,5 +100,6 @@ export default Vue.extend({
 .direction-line:nth-child(even) {
   padding-left: 1vw;
   background-color: var(--alt-background-color);
+  transition: background-color var(--linear-ease);
 }
 </style>
