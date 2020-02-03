@@ -18,8 +18,6 @@
         </ul>
       </nav>
     </header>
-    <MoonButton style="right: 1vh; bottom: 1vh; position: fixed; z-index: 100;">
-    </MoonButton>
 
     <transition :name="transitionName">
       <router-view id="main-stuff" class="child-view"></router-view>
