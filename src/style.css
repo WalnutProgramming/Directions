@@ -9,7 +9,7 @@
   --sine-ease: all cubic-bezier(0.47, 0, 0.745, 0.715) 0.1s;
   --back-ease: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
   --long-decay-ease: all cubic-bezier(0, 0.16, 0.59, 0.89) 0.3s;
-  --text-input-ease: background-color, linear, 0.5s;
+  --background-color-ease: background-color, linear, 0.5s;
 
   /* these initially color values do not change anything. see MoonButton.vue for themes */
   --background-color: #ffffff;
@@ -31,6 +31,7 @@
   --edit-button-shade-color: #cf8f05;
   --edit-button-hold-color: rgb(228, 231, 206);
 
+  --input-text-color: #000000;
   --input-placeholder-text-color: #a2bace;
   --input-selection-color: #c4e0f0;
   --input-background-color: #f5f8fa;

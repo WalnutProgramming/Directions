@@ -25,6 +25,7 @@ const lightTheme = {
   "--edit-button-shade-color": "#cf8f05",
   "--edit-button-hold-color": "rgb(228, 231, 206)",
 
+  "--input-text-color": "#000000",
   "--input-placeholder-text-color": "#a2bace",
   "--input-selection-color": "#c4e0f0",
   "--input-background-color": "#f5f8fa",
@@ -43,13 +44,13 @@ const lightTheme = {
 
 const darkTheme = {
   "--background-color": "#15202B",
-  "--alt-background-color": "rgb(221, 237, 241)",
-  "--slick-background-color": "#f5f8fa",
+  "--alt-background-color": "#192734",
+  "--slick-background-color": "#253341",
 
   "--button-color": "#03a1fc",
   "--button-shade-color": "#007dc4",
   "--button-text-color": "#ffffff",
-  "--button-hold-color": "rgb(209, 226, 228)",
+  "--button-hold-color": "#1c2e40",
 
   "--minus-button-color": "rgba(255, 120, 120, 1)",
   "--minus-button-color-hover": "#ff0000",
@@ -61,13 +62,14 @@ const darkTheme = {
   "--edit-button-shade-color": "#cf8f05",
   "--edit-button-hold-color": "rgb(228, 231, 206)",
 
+  "--input-text-color": "#ffffff",
   "--input-placeholder-text-color": "#a2bace",
   "--input-selection-color": "#c4e0f0",
-  "--input-background-color": "#f5f8fa",
+  "--input-background-color": "#253341",
 
   "--heading-text-color": "#9CC0F2",
   "--subheading-text-color": "#204ba0",
-  "--par-text-color": "#000000",
+  "--par-text-color": "#ffffff",
   "--less-important-text-color": "#6f6f6f",
 
   "--header-bar-text-color": "#0b004b",
@@ -100,7 +102,7 @@ export default Vue.extend({
   },
 });
 
-setTheme(lightTheme); // initially set theme to light theme, change this later if theme saves
+setTheme(darkTheme); // initially set theme to dark theme for testing purposes
 </script>
 
 <style scoped>
