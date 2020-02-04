@@ -1,12 +1,12 @@
 <template>
-  <CustomButton v-if="showButton" @customclick="install">
+  <CustomButton v-if="showButton" @click="install">
     Install as app
   </CustomButton>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import CustomButton from "./CustomButton.vue";
+import CustomButton from "./buttons/CustomButton.vue";
 
 export default Vue.extend({
   components: {

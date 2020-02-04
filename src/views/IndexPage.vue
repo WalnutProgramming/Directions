@@ -22,7 +22,7 @@
           ></RoomInput>
           <br />
 
-          <CustomButton @customclick="submit">
+          <CustomButton @click="submit">
             Go
           </CustomButton>
         </form>
@@ -35,11 +35,11 @@
 
 <script lang="ts">
 import Vue from "vue";
-import CustomButton from "../components/CustomButton.vue";
-import TheMaybeInstallButton from "../components/TheMaybeInstallButton.vue";
-import RoomInput from "../components/RoomInput.vue";
-import TheIOSDownloadSuggestion from "../components/TheIOSDownloadSuggestion.vue";
-import walnut from "../walnut";
+import CustomButton from "@/components/buttons/CustomButton.vue";
+import TheMaybeInstallButton from "@/components/TheMaybeInstallButton.vue";
+import RoomInput from "@/components/RoomInput.vue";
+import TheIOSDownloadSuggestion from "@/components/TheIOSDownloadSuggestion.vue";
+import walnut from "@/walnut";
 
 export default Vue.extend({
   components: {
@@ -95,12 +95,12 @@ export default Vue.extend({
 }
 
 .where-question {
-  color: var(--main-text-color);
+  color: var(--heading-text-color);
 }
 
 .label {
   display: block;
-  color: var(--main-text-color);
+  color: var(--subheading-text-color);
 }
 
 .center {

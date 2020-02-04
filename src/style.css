@@ -6,13 +6,10 @@
 }
 
 :root {
-  --main-text-color: #1e1e1e;
   --sine-ease: all cubic-bezier(0.47, 0, 0.745, 0.715) 0.1s;
   --back-ease: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s;
   --long-decay-ease: all cubic-bezier(0, 0.16, 0.59, 0.89) 0.3s;
-  --placeholder-color: #c4e0f0;
-  --background-color: #f3f3f3;
-  --text-input-ease: background-color, linear, 0.5s;
+  --linear-ease: linear 0.5s;
 }
 
 html,
@@ -24,12 +21,13 @@ body {
 
 body {
   background-color: var(--background-color);
+  transition: background-color var(--linear-ease);
   font-size: 30px;
   min-height: 100vh;
 }
 
 p {
-  color: var(--main-text-color);
+  color: var(--par-text-color);
 }
 
 main {

@@ -1,98 +1,99 @@
 <template>
-  <div style="padding: 1vw;">
-    <div
-      style="display: flex; flex-direction: row; justify-content: flex-start"
-    >
-      <div v-if="!$route.query.new">
-        <CustomButton
-          class="save"
-          type="button"
-          style="font-size:14px"
-          button-style="padding: 12px 20px; margin-right: 5vw"
-          @customclick="cancel"
-        >
-          &laquo; Cancel
-        </CustomButton>
-      </div>
-      <div>
-        <CustomButton class="save" style="font-size: 14px" @customclick="save">
-          Save
-        </CustomButton>
-      </div>
-    </div>
-    <p v-if="$route.query.new" class="p">
-      You don't seem to have an existing schedule. Create a new one!
-    </p>
-    <p class="p">
-      Hold and drag to reorder classes.
-    </p>
-    <p class="p">
-      Your schedule will be stored in your browser <b>on this device only</b>.
-      If you're in private/incognito mode, your schedule will not be saved.
-    </p>
-    <form id="scheduleForm">
-      <SlickList
-        v-model="rooms"
-        class="list"
-        lock-axis="y"
-        :press-delay="50"
-        style="border: none;"
+  <div>
+    <div style="padding-left: 1vw">
+      <div
+        style="display: flex; flex-direction: row; justify-content: flex-start"
       >
-        <SlickItem
-          v-for="(room, index) in rooms"
-          :key="room.originalIndex"
-          class="list-item"
-          style="background-color: #fafafa; border-radius: 15px; border: none; height: 9vh;"
-          :index="index"
-          :item="room"
-        >
-          <span style="width: 3em; font-size: 25px; color: #6f6f6f">
-            ☰&nbsp;&nbsp;<span style="">{{ index + 1 }}.&nbsp;&nbsp;</span>
-          </span>
-          <MinusButton
-            type="button"
-            class="smallerButton"
-            style="font-size: 20px; margin-right: 10px; margin-top: 0.75vh;"
-            @customclick="removeIndex(index)"
+        <div v-if="!$route.query.new">
+          <CustomButton
+            class="save"
+            :type-submit="false"
+            style="font-size:14px;  margin-right: 5vw"
+            button-style="padding: 12px 20px;"
+            @click="cancel"
           >
-            —
-          </MinusButton>
-          <RoomInput
-            v-model="room.value"
-            :name="`room-${room.originalIndex}`"
-            class="my-input"
-            style="max-width: 40vw; font-size: 20px"
-          />
-        </SlickItem>
-        <div
-          class="list-item"
-          style="background-color: #ffffff; border-radius: 15px; border: none;"
-        >
-          <PlusButton
-            type="button"
-            class="smallerButton"
-            style="font-size: 25px;"
-            @customclick="newRoom"
-          >
-            <b>+</b>
-          </PlusButton>
+            &laquo; Cancel
+          </CustomButton>
         </div>
-      </SlickList>
-      <div>
-        <CustomButton class="save" @customclick="save">Save</CustomButton>
+        <div>
+          <CustomButton class="save" style="font-size: 14px" @click="save">
+            Save
+          </CustomButton>
+        </div>
       </div>
-    </form>
+      <p v-if="$route.query.new" class="p">
+        You don't seem to have an existing schedule. Create a new one!
+      </p>
+      <p class="p">
+        Hold and drag to reorder classes.
+      </p>
+      <p class="p">
+        Your schedule will be stored in your browser <b>on this device only</b>.
+        If you're in private/incognito mode, your schedule will not be saved.
+      </p>
+      <form id="scheduleForm">
+        <SlickList
+          v-model="rooms"
+          class="list"
+          lock-axis="y"
+          :press-delay="50"
+          style="border: none;"
+        >
+          <SlickItem
+            v-for="(room, index) in rooms"
+            :key="room.originalIndex"
+            class="list-item"
+            style="border-radius: 15px; height: 9vh;"
+            :index="index"
+            :item="room"
+          >
+            <span
+              style="width: 3em; font-size: 25px; color: var(--less-important-text-color)"
+            >
+              ☰&nbsp;&nbsp;<span style="">{{ index + 1 }}.&nbsp;&nbsp;</span>
+            </span>
+            <MinusButton
+              type="button"
+              class="smallerButton"
+              style="font-size: 20px; margin-right: 10px; margin-top: 0.75vh;"
+              @click="removeIndex(index)"
+            >
+              —
+            </MinusButton>
+            <RoomInput
+              v-model="room.value"
+              :name="`room-${room.originalIndex}`"
+              class="my-input"
+              style="max-width: 40vw; font-size: 20px"
+            />
+          </SlickItem>
+          <div class="list-item" style="border-radius: 15px; border: none;">
+            <PlusButton
+              type="button"
+              class="smallerButton"
+              style="font-size: 25px;"
+              @click="newRoom"
+            >
+              <b>+</b>
+            </PlusButton>
+          </div>
+        </SlickList>
+        <div>
+          <CustomButton class="save" @click="save">Save</CustomButton>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import { SlickList, SlickItem } from "vue-slicksort";
-import RoomInput from "../components/RoomInput.vue";
-import CustomButton from "../components/CustomButton.vue";
-import MinusButton from "../components/MinusButton.vue";
-import PlusButton from "../components/PlusButton.vue";
-import walnut from "../walnut";
+import RoomInput from "@/components/RoomInput.vue";
+import CustomButton from "@/components/buttons/CustomButton.vue";
+import MinusButton from "@/components/buttons/MinusButton.vue";
+import PlusButton from "@/components/buttons/PlusButton.vue";
+import walnut from "@/walnut";
 
 interface Room {
   value: string;
@@ -223,7 +224,7 @@ export default Vue.extend({
   margin: 0 auto;
   padding: 0;
   overflow: auto;
-  background-color: #f3f3f3;
+  background-color: rgba(0, 0, 0, 0);
   border: 1px solid #efefef;
   border-radius: 3;
 }
@@ -233,12 +234,13 @@ export default Vue.extend({
   /* align-items: center; */
   /* width: 100%; */
   padding: 10px;
-  background-color: #fff;
-  border-bottom: 1px solid #efefef;
+  background-color: var(--slick-background-color);
+  border-bottom: 5px solid var(--background-color);
+  transition: background-color var(--linear-ease),
+    border-bottom var(--linear-ease);
   box-sizing: border-box;
   user-select: none;
 
-  color: #333;
   font-weight: 400;
 
   user-select: none;

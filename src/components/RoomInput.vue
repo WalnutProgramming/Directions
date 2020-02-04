@@ -32,21 +32,24 @@ export default Vue.extend({
   text-align: center;
   border-radius: 10px;
   border-width: 0px;
-  transition: var(--text-input-ease);
+  color: var(--input-text-color);
+  background-color: var(--input-background-color);
+  transition: background-color var(--linear-ease);
 }
 
 .roomInput:focus {
-  background-color: var(--placeholder-color);
-  transition: var(--text-input-ease);
+  background-color: var(--input-selection-color);
+  color: var(--input-selection-text-color);
+  transition: background-color var(--linear-ease);
 }
 
 .roomInput::placeholder {
-  color: #c0c0c0;
-  transition: var(--text-input-ease);
+  color: var(--input-placeholder-text-color); /*#6e7f8d;*/
+  transition: background-color var(--linear-ease);
 }
 
 .roomInput:focus::placeholder {
-  color: var(--placeholder-color);
-  transition: var(--text-input-ease);
+  color: var(--input-selection-color);
+  transition: background-color var(--linear-ease);
 }
 </style>

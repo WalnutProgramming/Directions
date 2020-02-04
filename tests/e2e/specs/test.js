@@ -25,7 +25,7 @@ describe("Walnut.Direct Main Functionality", () => {
       .type("3113a")
       .should("have.value", "3113a");
     // It shouldn't allow us to Go, since it's invalid
-    cy.get("button")
+    cy.get("button:not(.moon-button)")
       .contains("Go")
       .click();
     // It should show us an error message
@@ -40,7 +40,7 @@ describe("Walnut.Direct Main Functionality", () => {
       .type("{backspace}")
       .should("have.value", "3113");
     // Now it should work
-    cy.get("button")
+    cy.get("button:not(.moon-button)")
       .contains("Go")
       .click();
     // We're in the directions page
@@ -56,7 +56,7 @@ describe("Walnut.Direct Main Functionality", () => {
     );
     cy.contains("p:nth-child(4)", "Continue, then turn right into room 3113");
     // Back button works
-    cy.get("button")
+    cy.get("button:not(.moon-button)")
       .should("have.length", 1)
       .click();
     cy.contains("h1", "Where do you need to go?");
@@ -74,8 +74,8 @@ describe("My Schedule page", () => {
     );
     function shouldHaveNInputs(/** @type {number} */ n) {
       cy.get(".roomInput").should("have.length", n);
-      cy.get(".minus-button").should("have.length", n);
-      cy.get(".plus-button").should("have.length", 1);
+      cy.get(".minus button:not(.moon-button)").should("have.length", n);
+      cy.get(".plus button:not(.moon-button)").should("have.length", 1);
     }
     function nthRoomInput(/** @type {number} */ n) {
       return cy.get(`#scheduleForm .list-item:nth-child(${n}) input`);
@@ -91,14 +91,14 @@ describe("My Schedule page", () => {
     nthRoomInput(3).type("3113");
     shouldHaveNInputs(7);
     // Add another room to schedule
-    cy.get(".plus-button").click();
+    cy.get(".plus button").click();
     shouldHaveNInputs(8);
     // Add more rooms
     nthRoomInput(4).type("2715");
     nthRoomInput(5).type("1309");
     nthRoomInput(4).should("have.value", "2715");
     // Remove the 3rd room
-    cy.get("#scheduleForm .list-item:nth-child(4) .minus-button").click();
+    cy.get("#scheduleForm .list-item:nth-child(4) .minus button").click();
     shouldHaveNInputs(7);
     nthRoomInput(4).should("have.value", "1309");
     // Save
@@ -109,7 +109,7 @@ describe("My Schedule page", () => {
     cy.url()
       .should("contain", "/myschedule")
       .should("not.contain", "/myschedule/edit");
-    cy.get("ol button")
+    cy.get("ol button:not(.moon-button)")
       .should("have.length", 2)
       .first()
       .click();
@@ -120,14 +120,16 @@ describe("My Schedule page", () => {
     );
     cy.contains("Turn left out of room 3104");
     // Go back
-    cy.get("button")
+    cy.get("button:not(.moon-button)")
       .should("have.length", 1)
       .click();
     cy.url()
       .should("contain", "/myschedule")
       .should("not.contain", "/myschedule/edit");
     // Edit
-    cy.get("a[href='/myschedule/edit']").click();
+    cy.get(".edit button")
+      .should("have.length", 1)
+      .click();
     cy.url()
       .should("contain", "/myschedule/edit")
       .should("not.contain", "/myschedule/edit?new=true");

@@ -121,12 +121,12 @@ export default Vue.extend({
 <style scoped>
 .title {
   font-size: 6vh;
-  color: rgb(0, 39, 116);
+  color: var(--heading-text-color);
 }
 
 .subtitle {
   font-size: 5.5vh;
-  color: rgb(32, 75, 160);
+  color: var(--subheading-text-color);
 }
 
 .squished-p {

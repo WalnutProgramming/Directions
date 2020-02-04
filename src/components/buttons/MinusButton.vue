@@ -1,46 +1,36 @@
 <template>
-  <button
-    :type="type"
-    class="minus-button"
-    @click.stop.prevent="$emit('customclick')"
-  >
-    <slot></slot>
-  </button>
+  <BasicButton type="button" class="minus" @click="$emit('click')">
+    <slot />
+  </BasicButton>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import BasicButton from "./BasicButton.vue";
 
 export default Vue.extend({
-  props: {
-    type: { type: String, default: "submit" },
-  },
+  components: { BasicButton },
 });
 </script>
 
 <style scoped>
-.minus-button {
-  color: white;
-  border: none;
+.btn-hover-area >>> .active-button {
+  color: var(--button-text-color);
   height: 4.5vh;
   width: 4.5vh;
-  font-size: 1em;
 
   padding-left: 0px; /* for some reason ios has uneven button spacing by default, so that needs to be corrected */
   padding-right: 0px;
 
-  background: rgba(255, 120, 120, 1);
-  display: inline-block;
+  background: var(--minus-button-color);
   border-radius: 15px;
-
-  user-select: none;
 
   transition: var(--long-decay-ease);
 }
 
-.minus-button:hover {
-  background: rgb(255, 120, 120, 0);
-  color: red;
+.btn-hover-area >>> .active-button:hover {
+  background: rgba(0, 0, 0, 0);
+  color: var(--minus-button-color-hover);
   transition: var(--long-decay-ease);
   cursor: pointer;
   border-radius: 7.5px;

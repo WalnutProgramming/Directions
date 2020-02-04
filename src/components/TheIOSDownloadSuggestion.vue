@@ -3,7 +3,7 @@
     <p>
       To install this page as an app, press
       <img
-        src="../assets/iosDownload.png"
+        src="@/assets/iosDownload.png"
         alt="iosDownload"
         style="width:14px;height:20px;margin-left:.25em;margin-right:.25em;"
       />

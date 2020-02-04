@@ -1,33 +1,38 @@
 <template>
-  <div style="padding-left: 2vw;">
-    <ol style="margin-block-start: 0em;">
-      <div v-for="(room, index) in rooms" :key="index">
-        <li style="padding: 0.5vh;">
-          {{ room.value }}
-        </li>
-        <CustomButton
-          v-if="
-            index != rooms.length - 1 &&
-              room.value.trim() !== '' &&
-              rooms[index + 1].value.trim() !== ''
-          "
-          style="font-size: .7em; margin-left: -1.5em; margin-top: .1em; margin-bottom: .3em; padding-left: 2vw;"
-          @customclick="go(index)"
-        >
-          ↓ Go from {{ rooms[index].value }} to {{ rooms[index + 1].value }} ↓
-        </CustomButton>
-      </div>
-    </ol>
-    <router-link to="/myschedule/edit">Edit</router-link>
+  <div>
+    <div style="padding-left: 2vw;">
+      <ol style="margin-block-start: 0em;">
+        <div v-for="(room, index) in rooms" :key="index">
+          <li style="padding: 0.5vh;">
+            {{ room.value }}
+          </li>
+          <CustomButton
+            v-if="
+              index != rooms.length - 1 &&
+                room.value.trim() !== '' &&
+                rooms[index + 1].value.trim() !== ''
+            "
+            style="font-size: .7em; margin-left: -1.5em; margin-top: .1em; margin-bottom: .3em; padding-left: 2vw;"
+            @click="go(index)"
+          >
+            ↓ Go from {{ rooms[index].value }} to {{ rooms[index + 1].value }} ↓
+          </CustomButton>
+        </div>
+      </ol>
+      <EditButton @click="edit()">
+        Edit
+      </EditButton>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import CustomButton from "../components/CustomButton.vue";
+import CustomButton from "@/components/buttons/CustomButton.vue";
+import EditButton from "@/components/buttons/EditButton.vue";
 
 export default Vue.extend({
-  components: { CustomButton },
+  components: { CustomButton, EditButton },
   data() {
     const stored = localStorage.getItem("myschedule");
     return {
@@ -50,6 +55,11 @@ export default Vue.extend({
         },
       });
     },
+    edit() {
+      this.$router.push({
+        path: "/myschedule/edit",
+      });
+    },
   },
   metaInfo: {
     title: "My Schedule",
@@ -64,3 +74,9 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped>
+li {
+  color: var(--less-important-text-color);
+}
+</style>

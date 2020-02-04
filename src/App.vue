@@ -23,18 +23,22 @@
       <router-view id="main-stuff" class="child-view"></router-view>
     </transition>
 
+    <TheMoonButton style="right: 1vh; bottom: 1vh; position: fixed" />
+
     <TheRoomsDataList />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import TheRoomsDataList from "./components/TheRoomsDataList.vue";
-import router from "./router/index";
+
+import TheRoomsDataList from "@/components/TheRoomsDataList.vue";
+import TheMoonButton from "@/components/TheMoonButton.vue";
+import router from "@/router/index";
 
 export default Vue.extend({
   router,
-  components: { TheRoomsDataList },
+  components: { TheRoomsDataList, TheMoonButton },
   data() {
     return {
       transitionName: "fade",
@@ -77,11 +81,12 @@ export default Vue.extend({
 });
 </script>
 
-<style src="./style.css"></style>
+<style src="@/style.css"></style>
 
 <style scoped>
 header {
-  background-color: #f9f9f9;
+  background-color: var(--background-color);
+  transition: background-color var(--linear-ease), color var(--linear-ease);
   position: fixed;
   top: 0;
   left: 0;
@@ -89,7 +94,7 @@ header {
   height: 7vh;
   display: flex;
   align-items: center;
-  box-shadow: 0 0 1vh 0 #03a1fc;
+  box-shadow: 0 0 1vh 0 var(--header-bar-shadow-color);
   font-size: 0.8em;
   z-index: 100;
   overflow: auto;
@@ -110,12 +115,12 @@ ul {
 }
 
 header li a {
-  color: rgb(100, 99, 99);
+  color: var(--header-bar-text-color);
   text-decoration: none;
 }
 
 header li a:hover {
-  color: #03a1fc;
+  color: var(--header-bar-hover-text-color);
 }
 
 #main-stuff {
@@ -123,7 +128,7 @@ header li a:hover {
 }
 
 header li.router-link-active a {
-  color: #3a4f74;
+  color: var(--header-bar-selected-text-color);
 }
 
 /* transitions */
