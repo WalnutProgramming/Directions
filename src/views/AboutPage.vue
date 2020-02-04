@@ -93,8 +93,8 @@
       include the Arts and Science Wing, Music Lyceum, Library, Forum,
       Auditorium, and Arcade. Walnut Hills offers classes in a wide range of
       subjects, all the way from computer science to art. There is also a wide
-      variety of extracurriculars at Walnut too, such as the programming club
-      which made this web app!
+      variety of extracurriculars at Walnut too, such as the Programming Club
+      that made this web app!
       <br />
       <br />
     </p>
