@@ -64,7 +64,7 @@
               v-model="room.value"
               :name="`room-${room.originalIndex}`"
               class="my-input"
-              style="max-width: 40vw; font-size: 20px"
+              style="max-width: 40vw; font-size: 20px; transition: none;"
             />
           </SlickItem>
           <div class="list-item" style="border-radius: 15px; border: none;">
@@ -236,8 +236,6 @@ export default Vue.extend({
   padding: 10px;
   background-color: var(--slick-background-color);
   border-bottom: 5px solid var(--background-color);
-  transition: background-color var(--linear-ease),
-    border-bottom var(--linear-ease);
   box-sizing: border-box;
   user-select: none;
 
