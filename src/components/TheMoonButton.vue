@@ -41,6 +41,9 @@ const lightTheme = {
   "--header-bar-hover-text-color": "#03a1fc",
   "--header-bar-shadow-color": "#03a1fc",
 
+  "--link-color": "#0000ee",
+  "--visited-link-color": "#5a1a8b",
+
   "--moon-filter": "hue-rotate(0deg) contrast(110%)",
 };
 
@@ -79,6 +82,9 @@ const darkTheme = {
   "--header-bar-selected-text-color": "#968d3b",
   "--header-bar-hover-text-color": "#f0d019",
   "--header-bar-shadow-color": "#f0ac19",
+
+  "--link-color": "#0087e0",
+  "--visited-link-color": "#9a41ee",
 
   "--moon-filter": "hue-rotate(180deg) contrast(90%)",
 };
