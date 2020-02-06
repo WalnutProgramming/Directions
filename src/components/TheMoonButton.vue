@@ -1,5 +1,9 @@
 <template>
-  <button class="moon-button" @click="toggleTheme"></button>
+  <button
+    class="moon-button"
+    aria-label="Toggle between dark and light theme"
+    @click="toggleTheme"
+  ></button>
 </template>
 
 <script lang="ts">
