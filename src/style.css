@@ -26,6 +26,14 @@ body {
   min-height: 100vh;
 }
 
+a:link {
+  color: var(--link-color);
+}
+
+a:visited {
+  color: var(--visited-link-color);
+}
+
 p {
   color: var(--par-text-color);
 }
