@@ -21,9 +21,12 @@ body {
 
 body {
   background-color: var(--background-color);
-  transition: background-color var(--linear-ease);
   font-size: 30px;
   min-height: 100vh;
+}
+
+body.enable-transition {
+  transition: background-color var(--linear-ease);
 }
 
 a:link {

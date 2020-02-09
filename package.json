@@ -74,7 +74,11 @@
           "jest": true
         }
       }
-    ]
+    ],
+    "rules": {
+      "no-unused-expressions": "off",
+      "@typescript-eslint/no-unused-expressions": "warn"
+    }
   },
   "prettier": {
     "trailingComma": "es5"
