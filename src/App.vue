@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app" data-view>
     <header>
       <nav>
         <ul>
