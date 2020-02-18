@@ -76,7 +76,7 @@
       programming language this project is written in<br />
       <a href="https://overpassfont.org/">Overpass</a>, the open source font
       used on this site<br />
-      <a href="https://github.com/tcort/dijkstrajs">dijstrajs</a>, the
+      <a href="https://github.com/tcort/dijkstrajs">dijkstrajs</a>, the
       implementation of Dijkstra's algorithm that we used<br />
       <a
         href="https://github.com/WalnutProgramming/Directions/blob/master/package.json#L15-L51"
