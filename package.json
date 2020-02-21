@@ -15,7 +15,7 @@
   "dependencies": {
     "core-js": "^3.4.3",
     "register-service-worker": "^1.6.2",
-    "room-finder": "^0.0.9",
+    "room-finder": "^0.0.10",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-meta": "^2.3.1",
