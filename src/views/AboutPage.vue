@@ -54,7 +54,6 @@
       <a href="https://github.com/WalnutProgramming/room-finder">
         also on GitHub </a
       >. (Note that GitHub isn't accessible on the school Wi-Fi.) <br /><br />
-      TODO: expand this section
     </p>
     <h1 class="subtitle">Feedback</h1>
     <p class="squished-p">
