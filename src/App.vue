@@ -9,6 +9,9 @@
           <router-link tag="li" to="/myschedule">
             <a>My Schedule</a>
           </router-link>
+          <router-link tag="li" to="/settings">
+            <a>Settings</a>
+          </router-link>
           <router-link tag="li" to="/about">
             <a>About Us</a>
           </router-link>

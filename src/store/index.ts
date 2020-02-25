@@ -28,10 +28,8 @@ const settings = new Vuex.Store({
     toggleTheme(state) {
       state.isDarkMode = !state.isDarkMode;
     },
-  },
-  actions: {
-    toggleTheme({ commit }) {
-      commit("toggleTheme");
+    setDarkTheme(state, newVal) {
+      state.isDarkMode = newVal;
     },
   },
 });

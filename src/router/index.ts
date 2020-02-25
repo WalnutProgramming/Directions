@@ -6,6 +6,7 @@ import MySchedule from "@/views/MySchedule.vue";
 import MyScheduleEdit from "@/views/MyScheduleEdit.vue";
 import About from "@/views/AboutPage.vue";
 import Feedback from "@/views/FeedbackPage.vue";
+import Settings from "@/views/SettingsPage.vue";
 
 Vue.use(VueRouter);
 
@@ -34,6 +35,10 @@ const routes = [
   {
     path: "/feedback",
     component: Feedback,
+  },
+  {
+    path: "/settings",
+    component: Settings,
   },
   // fallback (client-side 404)
   {
