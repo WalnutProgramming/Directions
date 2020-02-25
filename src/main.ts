@@ -6,6 +6,7 @@ import Meta from "vue-meta";
 import App from "@/App.vue";
 import router from "@/router";
 import "@/registerServiceWorker";
+import store from "./store";
 
 Vue.use(VueSnackbar, {});
 Vue.use(Meta);
@@ -14,6 +15,7 @@ Vue.config.productionTip = false;
 
 const vm = new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount("#app");
 
