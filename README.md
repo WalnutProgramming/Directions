@@ -1,6 +1,6 @@
 # Directions App
 
-This is the Walnut Hills Programming Club directions app. To see the current version, go to <https://progclub.now.sh/#/>.
+This is the Walnut Hills Programming Club directions app. To see the current version, go to <https://walnut.direct/>.
 
 ## Reporting issues
 
