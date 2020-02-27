@@ -390,10 +390,10 @@ const hallways: Hallway[] = [
             case GYM:
               return (
                 "go straight and a bit to left, and go to the end of the hall\n" +
-                "the Senior High Gym is straight ahead. Walk inside\n"
+                "the Senior High Gym is straight ahead. Go inside\n"
               );
             case ALUMNI:
-              return "turn right, go to the end of the arcade, walk up the ramp, turn right, and go through the doors\n";
+              return "turn right, go to the end of the arcade, go up the ramp, turn right, and go through the doors\n";
             default:
               return "";
           }
@@ -403,14 +403,14 @@ const hallways: Hallway[] = [
               return "go straight and a bit to the right to get to the 2600s, the modern languages wing\n";
             case MUSIC:
               return (
-                "turn right, then walk down to the end of the arcade and turn right\n" +
-                "walk down the hallway, and turn right when you get to the doors\n" +
-                "after walking through the doors, "
+                "turn right, then go down to the end of the arcade and turn right\n" +
+                "go down the hallway, and turn right when you get to the doors\n" +
+                "after going through the doors, "
               );
             case GYM:
-              return "turn right when you leave the science wing\nWalk forward and turn right again, then walk down to the end of the narrow hallway\n";
+              return "turn right when you leave the science wing\nGo forward and turn right again, then go down to the end of the narrow hallway\n";
             case ALUMNI:
-              return "turn left\ngo to the end of the arcade, walk up the ramp, turn right, and go through the doors\n";
+              return "turn left\ngo to the end of the arcade, go up the ramp, turn right, and go through the doors\n";
             default:
               return "";
           }
@@ -418,20 +418,20 @@ const hallways: Hallway[] = [
           switch (to) {
             case SCIENCE:
               return (
-                "turn left after walking through the doors, then walk down the hallway\n" +
-                "when you get to the end of the hallway, turn left into the arcade, then walk down the arcade and turn left into the science wing\n"
+                "turn left after going through the doors, then go down the hallway\n" +
+                "when you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn left into the science wing\n"
               );
             case LANGUAGES:
               return (
-                "turn left after walking through the doors, then walk down the hallway\n" +
-                "when you get to the end of the hallway, turn left into the arcade, then walk down the arcade and turn right into the modern foreign languages wing\n"
+                "turn left after going through the doors, then go down the hallway\n" +
+                "when you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn right into the modern foreign languages wing\n"
               );
             case GYM:
-              return "turn right after walking through the doors, then walk forward until you get to the gym\n";
+              return "turn right after going through the doors, then go forward until you get to the gym\n";
             case ALUMNI:
               return (
-                "turn left after walking through the doors, then walk down the hallway\n" +
-                "go to the end of the arcade, walk up the ramp, turn right, and go through the doors\n"
+                "turn left after going through the doors, then go down the hallway\n" +
+                "go to the end of the arcade, go up the ramp, turn right, and go through the doors\n"
               );
             default:
               return "";
@@ -439,16 +439,16 @@ const hallways: Hallway[] = [
         case GYM:
           (() => {
             const str =
-              "exit the gym and walk out via the narrow hallway on the right\n";
+              "exit the gym and go out via the narrow hallway on the right\n";
             switch (to) {
               case SCIENCE:
-                return `${str}Walk until the narrow hallway empties into the Arcade\nTurn left, walk a little bit, and turn left again to get to the science wing\n`;
+                return `${str}go until the narrow hallway empties into the Arcade\nTurn left, go a little bit, and turn left again to get to the science wing\n`;
               case LANGUAGES:
-                return `${str}Walk until the narrow hallway empties into the Arcade\nGo straight and a bit to the left; walk forward into the language wing\n`;
+                return `${str}go until the narrow hallway empties into the Arcade\nGo straight and a bit to the left; go forward into the language wing\n`;
               case MUSIC:
                 return `${str}After entering the narrow hallway, immediately turn left into the double doors labeled "Music Lyceum"\n`;
               case ALUMNI:
-                return `${str}Go to the end of the arcade, walk up the ramp, turn right, and go through the doors\n`;
+                return `${str}Go to the end of the arcade, go up the ramp, turn right, and go through the doors\n`;
               default:
                 return "";
             }
@@ -457,20 +457,20 @@ const hallways: Hallway[] = [
         case ALUMNI:
           switch (to) {
             case SCIENCE:
-              return "turn left\nwalk down the ramp, walk through the arcade, and turn right into the 2700s (science wing)\n";
+              return "turn left\ngo down the ramp, go through the arcade, and turn right into the 2700s (science wing)\n";
             case LANGUAGES:
-              return "turn left\nwalk down the ramp, walk through the arcade, and turn left into the 2600s (modern foreign languages wing)\n";
+              return "turn left\ngo down the ramp, go through the arcade, and turn left into the 2600s (modern foreign languages wing)\n";
             case MUSIC:
               return (
-                "turn left\nwalk down the ramp, and walk through to the end of the arcade\n" +
+                "turn left\ngo down the ramp, and go through to the end of the arcade\n" +
                 "turn right and through the long narrow hallway\n" +
                 'turn right when you get to the doors labeled "Music Lyceum" and enter the doors\n'
               );
             case GYM:
               return (
-                "turn left\nwalk down the ramp, and walk through to the end of the arcade\n" +
+                "turn left\ngo down the ramp, and go through to the end of the arcade\n" +
                 "turn right and through the long narrow hallway\n" +
-                "the Senior High Gym is straight ahead. Walk inside\n"
+                "the Senior High Gym is straight ahead. Go inside\n"
               );
             default:
               return "";
