@@ -20,7 +20,7 @@ const productionPlugins = [
       // Our view component is rendered after the API
       // request has fetched all the necessary data,
       // so we create a snapshot of the page after the
-      // `data-view` attribute exists in the DOM.
+      // `[data-view]` attribute exists in the DOM.
       renderAfterElementExists: "[data-view]",
     }),
   }),
