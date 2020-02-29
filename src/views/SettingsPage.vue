@@ -16,13 +16,25 @@
     <div>
       <button @click="checkForUpdates">Check for updates</button>
     </div>
+
+    <RefreshButton /> <br />
+    <AccessibilitySlider /> <br />
+    <CheckUpdatesButton />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import AccessibilitySlider from "@/components/settings/AccessibilitySlider.vue";
+import RefreshButton from "@/components/settings/RefreshButton.vue";
+import CheckUpdatesButton from "@/components/settings/CheckUpdatesButton.vue";
 
 export default Vue.extend({
+  components: {
+    AccessibilitySlider,
+    RefreshButton,
+    CheckUpdatesButton,
+  },
   computed: {
     darkTheme: {
       get() {
