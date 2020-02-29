@@ -28,18 +28,14 @@ export default Vue.extend({
 
 /* The slider */
 .slider {
-  position: absolute;
-  cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
-  transition: var(--fast-middle-ease);
+
   background: url("../../assets/cityscape.svg");
   background-repeat: inherit;
   background-size: cover;
-  border-radius: 3.6vh;
 }
 
 /* hide default */
@@ -50,17 +46,23 @@ export default Vue.extend({
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
   height: 6vh;
   width: 6vh;
-  background: url("../../assets/sun.svg");
-  background-size: 100% 100%;
   left: 0.6vh;
   top: 0.6vh;
+
+  content: "";
+  background: url("../../assets/sun.svg");
+  background-size: 100% 100%;
   background-color: white;
+}
+
+.slider,
+.slider:before {
+  position: absolute;
+  cursor: pointer;
   transition: var(--fast-middle-ease);
-  border-radius: 50%;
+  border-radius: 3.6vh;
 }
 
 input:checked + .slider {

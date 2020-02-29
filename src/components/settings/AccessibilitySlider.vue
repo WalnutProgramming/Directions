@@ -28,15 +28,11 @@ export default Vue.extend({
 
 /* The slider */
 .slider {
-  position: absolute;
-  cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: var(--fast-middle-ease);
-  border-radius: 3.6vh;
 }
 
 /* hide default */
@@ -47,28 +43,31 @@ export default Vue.extend({
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
   height: 6vh;
   width: 6vh;
+  left: 0.6vh;
+  top: 0.6vh;
+
+  content: "";
   background: url("../../assets/accessibilityicon.svg");
   background-size: 75% 75%;
   background-position: 50%, 50%;
   background-repeat: no-repeat;
-  left: 0.6vh;
-  top: 0.6vh;
   background-color: white;
-  transition: var(--fast-middle-ease);
+
   filter: grayscale(100%) brightness(150%);
-  border-radius: 50%;
+}
+
+.slider,
+.slider:before {
+  position: absolute;
+  cursor: pointer;
+  transition: var(--fast-middle-ease);
+  border-radius: 3.6vh;
 }
 
 input:checked + .slider {
   background-color: #03a1fc;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #03a1fc;
 }
 
 input:checked + .slider:before {
