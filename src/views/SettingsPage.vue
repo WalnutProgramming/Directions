@@ -14,8 +14,8 @@
 
     <ThemeSlider /> <br /><br />
     <AccessibilitySlider /> (Currently does nothing) <br /><br />
-    <RefreshButton /> <br /><br />
-    <CheckUpdatesButton />
+    <RefreshButton @click="reloadPage" /> Refresh Page <br /><br />
+    <CheckUpdatesButton @click="checkForUpdates" /> Check For Updates
   </div>
 </template>
 
@@ -47,3 +47,9 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped>
+div {
+  color: var(--par-text-color);
+}
+</style>
