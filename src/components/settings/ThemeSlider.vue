@@ -63,7 +63,7 @@ export default Vue.extend({
 .slider:before {
   position: absolute;
   cursor: pointer;
-  transition: var(--fast-middle-ease);
+  transition: all var(--fast-middle-ease);
   border-radius: 3.6vh;
 }
 
