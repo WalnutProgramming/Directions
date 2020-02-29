@@ -28,7 +28,7 @@ export default Vue.extend({
   methods: {
     clearStorage() {
       localStorage.clear();
-      this.reloadPage();
+      window.location.reload();
     },
   },
 });
