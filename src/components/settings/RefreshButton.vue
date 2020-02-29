@@ -2,6 +2,12 @@
   <button class="refresh-button"></button>
 </template>
 
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({});
+</script>
+
 <style scoped>
 .refresh-button {
   width: 7vh;
