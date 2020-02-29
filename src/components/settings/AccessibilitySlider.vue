@@ -26,8 +26,6 @@ export default Vue.extend({
   height: 7.2vh;
 }
 
-/* Hide default HTML 1 */
-
 /* The slider */
 .slider {
   position: absolute;
