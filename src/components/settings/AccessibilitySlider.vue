@@ -35,7 +35,7 @@ export default Vue.extend({
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: 0.4s;
+  transition: var(--fast-middle-ease);
   border-radius: 3.6vh;
 }
 
@@ -58,7 +58,7 @@ export default Vue.extend({
   left: 0.6vh;
   top: 0.6vh;
   background-color: white;
-  transition: 0.4s;
+  transition: var(--fast-middle-ease);
   filter: grayscale(100%) brightness(150%);
   border-radius: 50%;
 }
