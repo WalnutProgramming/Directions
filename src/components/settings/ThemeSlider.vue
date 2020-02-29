@@ -64,7 +64,7 @@ export default Vue.extend({
 }
 
 input:checked + .slider {
-  background-position-y: 100%;
+  background-position-y: 99%;
 }
 
 input:checked + .slider:before {
