@@ -18,14 +18,16 @@
     </div>
 
     <RefreshButton /> <br />
-    <AccessibilitySlider /> <br />
-    <CheckUpdatesButton />
+    <AccessibilitySlider /><br />
+    <CheckUpdatesButton /><br />
+    <ThemeSlider />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import AccessibilitySlider from "@/components/settings/AccessibilitySlider.vue";
+import ThemeSlider from "@/components/settings/ThemeSlider.vue";
 import RefreshButton from "@/components/settings/RefreshButton.vue";
 import CheckUpdatesButton from "@/components/settings/CheckUpdatesButton.vue";
 
@@ -34,6 +36,7 @@ export default Vue.extend({
     AccessibilitySlider,
     RefreshButton,
     CheckUpdatesButton,
+    ThemeSlider,
   },
   computed: {
     darkTheme: {

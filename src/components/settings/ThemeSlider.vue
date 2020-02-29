@@ -1,7 +1,7 @@
 <template>
   <label class="switch">
     <input type="checkbox" />
-    <span class="slider round" />
+    <span class="slider" />
   </label>
 </template>
 
@@ -36,6 +36,17 @@ export default Vue.extend({
   bottom: 0;
   background-color: #ccc;
   transition: 0.4s;
+  background: url("../../assets/cityscape.svg");
+  background-repeat: inherit;
+  background-size: cover;
+  border-radius: 3.6vh;
+}
+
+/* hide default */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider:before {
@@ -43,35 +54,21 @@ export default Vue.extend({
   content: "";
   height: 6vh;
   width: 6vh;
-  background: url("../../assets/accessibilityicon.svg");
-  background-size: 75% 75%;
-  background-position: 50%, 50%;
-  background-repeat: no-repeat;
+  background: url("../../assets/sun.svg");
+  background-size: 100% 100%;
   left: 0.6vh;
   top: 0.6vh;
   background-color: white;
   transition: 0.4s;
-  filter: grayscale(100%) brightness(150%);
+  border-radius: 50%;
 }
 
 input:checked + .slider {
-  background-color: #03a1fc;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #03a1fc;
+  background-position-y: 100%;
 }
 
 input:checked + .slider:before {
   transform: translateX(16.8vh);
-  filter: grayscale(0%) brightness(100%);
-}
-
-.slider.round {
-  border-radius: 3.6vh;
-}
-
-.slider.round:before {
-  border-radius: 50%;
+  background: url("../../assets/moon.svg");
 }
 </style>
