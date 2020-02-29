@@ -34,7 +34,6 @@ export default Vue.extend({
   bottom: 0;
 
   background: url("../../assets/cityscape.svg");
-  background-repeat: inherit;
   background-size: cover;
 }
 
@@ -53,8 +52,6 @@ export default Vue.extend({
 
   content: "";
   background: url("../../assets/sun.svg");
-  background-size: 100% 100%;
-  background-color: white;
 }
 
 .slider,
@@ -70,7 +67,7 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(16.8vh);
   background: url("../../assets/moon.svg");
+  transform: translateX(16.8vh);
 }
 </style>

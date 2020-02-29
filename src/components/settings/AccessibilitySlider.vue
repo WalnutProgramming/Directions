@@ -49,13 +49,16 @@ export default Vue.extend({
   top: 0.6vh;
 
   content: "";
-  background: url("../../assets/accessibilityicon.svg");
-  background-size: 75% 75%;
-  background-position: 50%, 50%;
-  background-repeat: no-repeat;
-  background-color: white;
+  background: url("../../assets/accessibilityicongrayscale.svg");
+}
 
-  filter: grayscale(100%) brightness(150%);
+input:checked + .slider {
+  background-color: #03a1fc;
+}
+
+input:checked + .slider:before {
+  background: url("../../assets/accessibilityicon.svg");
+  transform: translateX(16.8vh);
 }
 
 .slider,
@@ -66,12 +69,11 @@ export default Vue.extend({
   border-radius: 3.6vh;
 }
 
-input:checked + .slider {
-  background-color: #03a1fc;
-}
-
+.slider:before,
 input:checked + .slider:before {
-  transform: translateX(16.8vh);
-  filter: grayscale(0%) brightness(100%);
+  background-size: 75% 75%;
+  background-position: 50%, 50%;
+  background-repeat: no-repeat;
+  background-color: white;
 }
 </style>
