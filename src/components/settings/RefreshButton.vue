@@ -14,6 +14,7 @@ export default Vue.extend({});
   height: 7vh;
   position: relative;
   display: inline-block;
+  cursor: pointer;
   border: none;
   background: url("../../assets/refresh.svg");
   background-size: 100% 100%;
