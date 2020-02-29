@@ -1,11 +1,17 @@
 <template>
-  <button class="refresh-button"></button>
+  <button class="refresh-button" @click="reloadPage"></button>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 
-export default Vue.extend({});
+export default Vue.extend({
+  methods: {
+    reloadPage() {
+      window.location.reload();
+    },
+  },
+});
 </script>
 
 <style scoped>
