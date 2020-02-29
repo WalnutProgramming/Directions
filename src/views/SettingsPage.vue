@@ -15,6 +15,7 @@
     <ThemeSlider /> <br /><br />
     <AccessibilitySlider /> (Currently does nothing) <br /><br />
     <RefreshButton @click="reloadPage" /> Refresh Page <br /><br />
+    <!-- TODO: ajai please help me i have no idea what I'm doing here -->
     <CheckUpdatesButton @click="checkForUpdates" /> Check For Updates
   </div>
 </template>
