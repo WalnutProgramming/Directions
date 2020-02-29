@@ -19,4 +19,22 @@ export default Vue.extend({});
   background: url("../../assets/refresh.svg");
   background-size: 100% 100%;
 }
+
+/*
+.refresh-button:focus {
+  animation-name: spin;
+  animation-duration: 0.75s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+*/
 </style>

@@ -4,19 +4,10 @@
       <button @click="clearStorage">Clear localStorage</button>
     </div>
 
-    <div>
-      <button @click="reloadPage">Refresh page</button>
-    </div>
-
-    <div>
-      <button @click="checkForUpdates">Check for updates</button>
-    </div>
-
     <ThemeSlider /> <br /><br />
     <AccessibilitySlider /> (Currently does nothing) <br /><br />
-    <RefreshButton @click="reloadPage" /> Refresh Page <br /><br />
-    <!-- TODO: ajai please help me i have no idea what I'm doing here -->
-    <CheckUpdatesButton @click="checkForUpdates" /> Check For Updates
+    <RefreshButton /> Refresh Page <br /><br />
+    <CheckUpdatesButton /> Check For Updates
   </div>
 </template>
 
@@ -38,12 +29,6 @@ export default Vue.extend({
     clearStorage() {
       localStorage.clear();
       this.reloadPage();
-    },
-    reloadPage() {
-      window.location.reload();
-    },
-    checkForUpdates() {
-      document.dispatchEvent(new Event("check-for-updates"));
     },
   },
 });

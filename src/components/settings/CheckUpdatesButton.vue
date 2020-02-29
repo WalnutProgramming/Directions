@@ -1,11 +1,17 @@
 <template>
-  <button class="updates-button"></button>
+  <button class="updates-button" @click="checkForUpdates"></button>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 
-export default Vue.extend({});
+export default Vue.extend({
+  methods: {
+    checkForUpdates() {
+      document.dispatchEvent(new Event("check-for-updates"));
+    },
+  },
+});
 </script>
 
 <style scoped>
