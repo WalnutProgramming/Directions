@@ -1,7 +1,7 @@
 <template>
   <label class="switch">
     <input type="checkbox" />
-    <span class="slider round" />
+    <span class="slider" />
   </label>
 </template>
 
@@ -36,6 +36,14 @@ export default Vue.extend({
   bottom: 0;
   background-color: #ccc;
   transition: 0.4s;
+  border-radius: 3.6vh;
+}
+
+/* hide default */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider:before {
@@ -52,6 +60,7 @@ export default Vue.extend({
   background-color: white;
   transition: 0.4s;
   filter: grayscale(100%) brightness(150%);
+  border-radius: 50%;
 }
 
 input:checked + .slider {
@@ -65,13 +74,5 @@ input:focus + .slider {
 input:checked + .slider:before {
   transform: translateX(16.8vh);
   filter: grayscale(0%) brightness(100%);
-}
-
-.slider.round {
-  border-radius: 3.6vh;
-}
-
-.slider.round:before {
-  border-radius: 50%;
 }
 </style>
