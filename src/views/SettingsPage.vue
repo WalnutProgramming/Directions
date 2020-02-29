@@ -17,10 +17,10 @@
       <button @click="checkForUpdates">Check for updates</button>
     </div>
 
-    <RefreshButton /> <br />
-    <AccessibilitySlider /><br />
-    <CheckUpdatesButton /><br />
-    <ThemeSlider />
+    <ThemeSlider /> <br /><br />
+    <AccessibilitySlider /> (Currently does nothing) <br /><br />
+    <RefreshButton /> <br /><br />
+    <CheckUpdatesButton />
   </div>
 </template>
 
