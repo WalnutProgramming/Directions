@@ -1,11 +1,6 @@
 <template>
   <div>
     <div>
-      <label for="dark-setting">Use Dark Mode</label>
-      <input id="dark-setting" v-model="darkTheme" type="checkbox" />
-    </div>
-
-    <div>
       <button @click="clearStorage">Clear localStorage</button>
     </div>
 
@@ -37,16 +32,6 @@ export default Vue.extend({
     RefreshButton,
     CheckUpdatesButton,
     ThemeSlider,
-  },
-  computed: {
-    darkTheme: {
-      get() {
-        return this.$store.state.isDarkMode;
-      },
-      set(newVal) {
-        this.$store.commit("setDarkTheme", newVal);
-      },
-    },
   },
   methods: {
     clearStorage() {

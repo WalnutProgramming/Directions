@@ -1,6 +1,6 @@
 <template>
   <label class="switch">
-    <input type="checkbox" />
+    <input id="dark-setting" v-model="darkTheme" type="checkbox" />
     <span class="slider" />
   </label>
 </template>
@@ -9,11 +9,16 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  /* should include:
-    getting the state of the slider
-    putting the slider in the right state when the user loads the page
-  */
-  props: {},
+  computed: {
+    darkTheme: {
+      get() {
+        return this.$store.state.isDarkMode;
+      },
+      set(newVal) {
+        this.$store.commit("setDarkTheme", newVal);
+      },
+    },
+  },
 });
 </script>
 
