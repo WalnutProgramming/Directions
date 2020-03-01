@@ -1,6 +1,5 @@
 <template>
-  <div style="text-align:center">
-    <br />
+  <div style="text-align: left; width: 50vw; left: 2vw; top: 2vw;">
     <ThemeSlider /> Toggle Theme <br /><br />
     <AccessibilitySlider /> Accessibility Mode* <br /><br />
     <RefreshButton /> Refresh App <br /><br />
