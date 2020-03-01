@@ -24,6 +24,7 @@ export default Vue.extend({
   border: none;
   background: url("../../assets/refresh.svg");
   background-size: 100% 100%;
+  vertical-align: middle;
 }
 
 /*

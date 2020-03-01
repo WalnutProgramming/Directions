@@ -1,13 +1,17 @@
 <template>
-  <div>
+  <div style="text-align:center">
+    <br />
+    <ThemeSlider /> Toggle Theme <br /><br />
+    <AccessibilitySlider /> Accessibility Mode* <br /><br />
+    <RefreshButton /> Refresh App <br /><br />
+    <CheckUpdatesButton /> Check For Updates <br /><br />
     <div>
       <button @click="clearStorage">Clear localStorage</button>
     </div>
-
-    <ThemeSlider /> <br /><br />
-    <AccessibilitySlider /> (Currently does nothing) <br /><br />
-    <RefreshButton /> Refresh Page <br /><br />
-    <CheckUpdatesButton /> Check For Updates
+    <br /><br /><br />
+    <div style="font-size: 0.5em;">
+      * does not change directions yet
+    </div>
   </div>
 </template>
 

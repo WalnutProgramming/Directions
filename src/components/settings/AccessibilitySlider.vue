@@ -24,6 +24,7 @@ export default Vue.extend({
   display: inline-block;
   width: 24vh;
   height: 7.2vh;
+  vertical-align: middle;
 }
 
 /* The slider */

@@ -24,5 +24,6 @@ export default Vue.extend({
   border: none;
   background: url("../../assets/checkupdates.svg");
   background-size: 100% 100%;
+  vertical-align: middle;
 }
 </style>

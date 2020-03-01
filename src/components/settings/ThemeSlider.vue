@@ -29,6 +29,7 @@ export default Vue.extend({
   display: inline-block;
   width: 24vh;
   height: 7.2vh;
+  vertical-align: middle;
 }
 
 /* The slider */
@@ -39,7 +40,7 @@ export default Vue.extend({
   bottom: 0;
 
   background: url("../../assets/cityscape.svg");
-  background-size: cover;
+  background-size: 100%;
 }
 
 /* hide default */
