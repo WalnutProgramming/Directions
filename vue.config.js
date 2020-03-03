@@ -17,6 +17,7 @@ module.exports = {
     workboxOptions: {
       // swSrc is required in InjectManifest mode.
       swSrc: "src/service-worker.js",
+      exclude: [/_redirects/, /robots.txt/, /google/],
     },
 
     name: "Walnut Hills Directions",
