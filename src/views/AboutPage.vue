@@ -28,7 +28,7 @@
       We've also made sure to make our work as generalizable as possible so that
       it can be extended to work in other buildings, such as hospitals. For this
       reason, we've published our
-      <a href="https://www.npmjs.com/package/room-finder">
+      <a href="https://room-finder.walnut.direct/">
         room-finder package
       </a>
       on npm so that anyone can use it for another building.
