@@ -264,7 +264,7 @@ const hallways: Hallway[] = [
   new Hallway([
     new Fork(BACK, ConnectionNode.C2401_T0_2100S, "the 2100s"),
     new Room("2401", LEFT, {
-      aliases: ["2401", "Athletic Director's Office"]
+      aliases: ["Athletic Director's Office"],
     }),
     new Room("Junior High Gym", FRONT, {
       prefix: "the",
