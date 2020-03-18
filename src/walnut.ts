@@ -266,7 +266,7 @@ const hallways: Hallway[] = [
     new Room("2401", LEFT, {
       prefix: "the",
       aliases: ["2401", "Athletic Director's Office"]
-    }), // could be althelic director office
+    }),
     new Room("Junior High Gym", FRONT, {
       prefix: "the",
       aliases: ["2402", "Junior Gymnasium"]
