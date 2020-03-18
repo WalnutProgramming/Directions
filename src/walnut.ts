@@ -220,9 +220,17 @@ const hallways: Hallway[] = [
     }),
     new Stairs(LEFT, StairNode.D2, "2015"),
     new Room("2101", RIGHT),
-    new Fork(LEFT, ConnectionNode.C2100S_TO_2401, "the tiny hallway which is across 2101"),
+    new Fork(
+      LEFT,
+      ConnectionNode.C2100S_TO_2401,
+      "the tiny hallway which is across 2101"
+    ),
     new Room("2103", RIGHT),
-    new Fork(LEFT, ConnectionNode.C2100S_TO_2404, "the tiny hallway near the elevator"),
+    new Fork(
+      LEFT,
+      ConnectionNode.C2100S_TO_2404,
+      "the tiny hallway near the elevator"
+    ),
     new Room("2105", RIGHT),
     new Turn(RIGHT),
     new Room("2109", RIGHT),
@@ -268,7 +276,7 @@ const hallways: Hallway[] = [
     }),
     new Room("Junior High Gym", FRONT, {
       prefix: "the",
-      aliases: ["2402", "Junior Gymnasium"]
+      aliases: ["2402", "Junior Gymnasium"],
     }),
   ]),
 
