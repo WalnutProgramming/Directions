@@ -91,6 +91,10 @@ enum ConnectionNode {
   EXIT_2216 = "ConnectionNode.EXIT_2216",
   ENTER_2215 = "ConnectionNode.ENTER_2215",
   EXIT_2215 = "ConnectionNode.EXIT_2215",
+  C2100S_TO_2404 = "ConnectionNode.C2100S_TO_2404",
+  C2404_T0_2100S = "ConnectionNode.C2404_TO_2100S",
+  C2100S_TO_2401 = "ConnectionNode.C2100S_TO_2401",
+  C2401_T0_2100S = "ConnectionNode.C2401_TO_2100S",
 }
 
 const hallwayConnections: [string, string][] = [
@@ -130,6 +134,9 @@ const hallwayConnections: [string, string][] = [
   ],
   [ConnectionNode.ENTER_2216, ConnectionNode.EXIT_2216],
   [ConnectionNode.ENTER_2215, ConnectionNode.EXIT_2215],
+
+  [ConnectionNode.C2100S_TO_2401, ConnectionNode.C2401_T0_2100S],
+  [ConnectionNode.C2404_T0_2100S, ConnectionNode.C2100S_TO_2404],
 ];
 
 const hallways: Hallway[] = [
@@ -213,11 +220,17 @@ const hallways: Hallway[] = [
     }),
     new Stairs(LEFT, StairNode.D2, "2015"),
     new Room("2101", RIGHT),
-    new Room("Junior High Gym", LEFT, {
-      prefix: "the",
-      aliases: ["2402", "Junior Gymnasium"],
-    }),
+    new Fork(
+      LEFT,
+      ConnectionNode.C2100S_TO_2401,
+      "the tiny hallway that's across from room 2101"
+    ),
     new Room("2103", RIGHT),
+    new Fork(
+      LEFT,
+      ConnectionNode.C2100S_TO_2404,
+      "the tiny hallway near the elevator"
+    ),
     new Room("2105", RIGHT),
     new Turn(RIGHT),
     new Room("2109", RIGHT),
@@ -253,6 +266,25 @@ const hallways: Hallway[] = [
       aliases: ["Alumni Foundation", "Alumni Office"],
     }),
     new Room("2218"),
+  ]),
+
+  // hallway 2401
+  new Hallway([
+    new Fork(BACK, ConnectionNode.C2401_T0_2100S, "the 2100s"),
+    new Room("2401", LEFT, {
+      aliases: ["Athletic Director's Office"],
+    }),
+    new Room("Junior High Gym", FRONT, {
+      prefix: "the",
+      aliases: ["2402", "Junior Gymnasium"],
+    }),
+  ]),
+
+  // 2404 hallway
+  new Hallway([
+    new Fork(BACK, ConnectionNode.C2404_T0_2100S, "the 2100s"),
+    new Room("2404", RIGHT),
+    new Room("2403", LEFT),
   ]),
 
   // inside 2216
