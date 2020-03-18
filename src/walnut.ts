@@ -223,7 +223,7 @@ const hallways: Hallway[] = [
     new Fork(
       LEFT,
       ConnectionNode.C2100S_TO_2401,
-      "the tiny hallway which is across 2101"
+      "the tiny hallway that's across from room 2101"
     ),
     new Room("2103", RIGHT),
     new Fork(
