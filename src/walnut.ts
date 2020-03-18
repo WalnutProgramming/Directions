@@ -220,9 +220,9 @@ const hallways: Hallway[] = [
     }),
     new Stairs(LEFT, StairNode.D2, "2015"),
     new Room("2101", RIGHT),
-    new Fork(LEFT, ConnectionNode.C2100S_TO_2401, "the tiny hallway"),
+    new Fork(LEFT, ConnectionNode.C2100S_TO_2401, "the tiny hallway which is across 2101"),
     new Room("2103", RIGHT),
-    new Fork(LEFT, ConnectionNode.C2100S_TO_2404, "the tiny hallway"),
+    new Fork(LEFT, ConnectionNode.C2100S_TO_2404, "the tiny hallway near the elevator"),
     new Room("2105", RIGHT),
     new Turn(RIGHT),
     new Room("2109", RIGHT),
@@ -263,10 +263,13 @@ const hallways: Hallway[] = [
   // hallway 2401
   new Hallway([
     new Fork(BACK, ConnectionNode.C2401_T0_2100S, "the 2100s"),
-    new Room("2401", LEFT), // could be althelic director office
+    new Room("2401", LEFT, {
+      prefix: "the",
+      aliases: ["2401", "Athletic Director's Office"]
+    }), // could be althelic director office
     new Room("Junior High Gym", FRONT, {
       prefix: "the",
-      aliases: ["2402", "Junior Gymnasium"],
+      aliases: ["2402", "Junior Gymnasium"]
     }),
   ]),
 
@@ -275,10 +278,6 @@ const hallways: Hallway[] = [
     new Fork(BACK, ConnectionNode.C2404_T0_2100S, "the 2100s"),
     new Room("2404", RIGHT),
     new Room("2403", LEFT),
-    new Room("Junior High Gym", FRONT, {
-      prefix: "the",
-      aliases: ["2402", "Junior Gymnasium"],
-    }),
   ]),
 
   // inside 2216
