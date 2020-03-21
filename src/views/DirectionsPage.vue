@@ -27,7 +27,7 @@ import walnut from "@/walnut";
 
 function fullNameOf(roomName: string) {
   const [hallwayInd, ind] = walnut.getHallwayIndexAndIndex(roomName)!;
-  return (walnut.hallways[hallwayInd].partList[ind] as Room).fullName;
+  return (walnut.hallways[hallwayInd].partList[ind] as Room<string>).fullName;
 }
 
 export default Vue.extend({

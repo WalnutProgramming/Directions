@@ -1,9 +1,6 @@
 import walnut from "@/walnut";
+import { assertValidBuilding } from "room-finder";
 
 test("walnut is a valid Building", () => {
-  expect(walnut.validity).toEqual(
-    expect.objectContaining({
-      valid: true,
-    })
-  );
+  assertValidBuilding(walnut);
 });
