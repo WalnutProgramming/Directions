@@ -9073,7 +9073,7 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-room-finder@^0.0.12-alpha.1:
+room-finder@^0.0.12-alpha.4:
   version "0.0.12-alpha.4"
   resolved "https://registry.yarnpkg.com/room-finder/-/room-finder-0.0.12-alpha.4.tgz#10ea73fd81a8e6bc2b0a37945a599af2c9896f64"
   integrity sha512-iGUNE+/oaEnYWSRA3LWcU8hWNg9NMce1bGbEJLNW5yXTRGqTzrz1L49qJ0m+4E/sRd9Jpm82PPsO3waaJwYHmQ==
