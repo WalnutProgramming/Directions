@@ -1,0 +1,1311 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gives correct directions from 7-9 Administration Offices to 3205 1`] = `
+"Turn left out of room 2207
+Continue, then after entering the lobby, turn left
+Continue, then turn right into the 2024 stairs
+Go up 1 floor of stairs
+Turn left out of the 2024 stairs
+Continue, then turn right into room 3205"
+`;
+
+exports[`gives correct directions from 7th, 8th, and 9th Grade Office to 2202 1`] = `
+"Turn left out of room 2207
+Continue, then after entering the lobby, turn left
+Continue, then turn right into room 2202"
+`;
+
+exports[`gives correct directions from 1106 to 2709 1`] = `
+"Go straight out of room 1106
+Continue, then turn left into the 2010 stairs
+Go up 2 floors of stairs
+Turn right out of the 2010 stairs
+Continue, then turn right (after passing room 3113 on your left)
+Continue, then turn left (after passing room 3112 on your right)
+Continue, then turn right into the 2015 stairs
+Go down 1 floor of stairs
+Turn right out of the 2015 stairs
+Continue, then turn right into the Alumni Hall
+Continue, then after entering the arcade, turn left
+Go down the ramp, go through the arcade, and turn right into the 2700s (science wing)
+Continue, then turn left into room 2709"
+`;
+
+exports[`gives correct directions from 1109 to 2203 1`] = `
+"Turn right out of room 1109
+Continue, then turn left into the 2010 stairs
+Go up 2 floors of stairs
+Turn right out of the 2010 stairs
+Continue, then turn right (after passing room 3113 on your left)
+Continue, then turn left (after passing room 3112 on your right)
+Continue, then turn right into the 2015 stairs
+Go down 1 floor of stairs
+Turn right out of the 2015 stairs
+Continue, then turn left into room 2203"
+`;
+
+exports[`gives correct directions from 1110 to 1107 1`] = `
+"Turn right out of room 1110
+Continue, then turn left into room 1107"
+`;
+
+exports[`gives correct directions from 1111 to 3713 1`] = `
+"Turn right out of room 1111
+Continue, then turn left into the 2010 stairs
+Go up 2 floors of stairs
+Turn right out of the 2010 stairs
+Continue, then turn right (after passing room 3113 on your left)
+Continue, then turn left (after passing room 3112 on your right)
+Continue, then turn right into the 2015 stairs
+Go down 1 floor of stairs
+Turn right out of the 2015 stairs
+Continue, then turn right into the Alumni Hall
+Continue, then after entering the arcade, turn left
+Go down the ramp, go through the arcade, and turn right into the 2700s (science wing)
+Continue, then turn left into the stairs
+Go up 1 floor of stairs
+Turn left out of the stairs
+Continue, then turn right (after passing room 3711 on your left)
+Continue, then turn left into room 3713"
+`;
+
+exports[`gives correct directions from 1301 to 2306 1`] = `
+"Turn left out of room 1301
+Continue, then turn right into the 2025 stairs
+Go up 1 floor of stairs
+Turn right out of the 2025 stairs
+Continue, then turn left (after passing the 2600s on your right)
+Continue, then turn left into room 2306"
+`;
+
+exports[`gives correct directions from 1309 to 10th and 11th Grade Office 1`] = `
+"Turn right out of room 1309
+Continue, then turn right (after passing room 1309 on your right)
+Continue, then turn left into the 2025 stairs
+Go up 1 floor of stairs
+Turn left out of the 2025 stairs
+Continue, then turn right into room 2209"
+`;
+
+exports[`gives correct directions from 1311 to 2701 1`] = `
+"Turn right out of room 1311
+Continue, then turn left (after passing room 1311 on your right)
+Continue, then turn right (after passing room 1309 on your right)
+Continue, then turn left into the 1600s
+Continue, then turn left
+Continue, then turn right (after passing room 1602 on your left)
+Continue, then turn left into the stairs
+Go up 1 floor of stairs
+Turn left out of the stairs
+Continue, then turn left into room 2701"
+`;
+
+exports[`gives correct directions from 1312 to 3115 1`] = `
+"Turn right out of room 1312
+Continue, then turn right into the 2018 stairs
+Go up 2 floors of stairs
+Turn left out of the 2018 stairs
+Continue, then turn left (after passing room 3311 on your right)
+Continue, then turn right (after passing room 3309 on your right)
+Continue, then turn right (after passing room 3105 on your right)
+Continue, then turn left (after passing room 3111 on your right)
+Continue, then turn right into room 3115"
+`;
+
+exports[`gives correct directions from 1313 to 3302 1`] = `
+"Turn left out of room 1313
+Continue, then turn right into the 2018 stairs
+Go up 2 floors of stairs
+Turn left out of the 2018 stairs
+Continue, then turn left (after passing room 3311 on your right)
+Continue, then turn right (after passing room 3309 on your right)
+Continue, then turn left into room 3302"
+`;
+
+exports[`gives correct directions from 1315 to 3310 1`] = `
+"Turn left out of room 1315
+Continue, then turn right into the 2018 stairs
+Go up 2 floors of stairs
+Turn left out of the 2018 stairs
+Continue, then turn left (after passing room 3311 on your right)
+Continue, then turn right into room 3310"
+`;
+
+exports[`gives correct directions from 1601 to 2221 1`] = `
+"Turn right out of room 1601
+Continue, then turn right (after passing room 1601 on your right)
+Continue, then after entering the 1300s, turn left
+Continue, then turn left into the 2025 stairs
+Go up 1 floor of stairs
+Turn left out of the 2025 stairs
+Continue, then turn right into the 2200s
+Continue, then turn right into room 2215
+Enter room 2221, which is in room 2215"
+`;
+
+exports[`gives correct directions from 1602 to 2204 1`] = `
+"Turn right out of room 1602
+Continue, then turn right (after passing room 1601 on your right)
+Continue, then after entering the 1300s, turn left
+Continue, then turn left into the 2025 stairs
+Go up 1 floor of stairs
+Turn left out of the 2025 stairs
+Continue, then turn left into room 2204"
+`;
+
+exports[`gives correct directions from 1603 to 2216 1`] = `
+"Turn right out of room 1603
+Continue, then turn left (after passing room 1604 on your left)
+Continue, then turn right (after passing room 1601 on your right)
+Continue, then after entering the 1300s, turn left
+Continue, then turn left into the 2025 stairs
+Go up 1 floor of stairs
+Turn left out of the 2025 stairs
+Continue, then turn right into the 2200s
+Continue, then turn left into room 2216"
+`;
+
+exports[`gives correct directions from 1604 to 10-11 Administration Office 1`] = `
+"Turn left out of room 1604 through the door closest to the desk
+Continue, then turn left (after passing room 1604 on your left)
+Continue, then turn right (after passing room 1601 on your right)
+Continue, then after entering the 1300s, turn left
+Continue, then turn left into the 2025 stairs
+Go up 1 floor of stairs
+Turn left out of the 2025 stairs
+Continue, then turn right into room 2209"
+`;
+
+exports[`gives correct directions from 1606 to 2311 1`] = `
+"Turn right out of room 1606
+Continue, then turn left (after passing room 1604 on your left)
+Continue, then turn right (after passing room 1601 on your right)
+Continue, then after entering the 1300s, turn right
+Continue, then turn left (after passing the 1600s on your right)
+Continue, then turn right (after passing room 1310 on your left)
+Continue, then turn right into the 2018 stairs
+Go up 1 floor of stairs
+Turn left out of the 2018 stairs
+Continue, then turn right into room 2311"
+`;
+
+exports[`gives correct directions from 1608 to 1108 1`] = `
+"Turn right out of room 1608
+Continue, then turn left (after passing room 1604 on your left)
+Continue, then turn right (after passing room 1601 on your right)
+Continue, then after entering the 1300s, turn left
+Continue, then turn left into the 2025 stairs
+Go up 2 floors of stairs
+Turn left out of the 2025 stairs
+Continue, then turn right (after passing room 3105 on your right)
+Continue, then turn left (after passing room 3111 on your right)
+Continue, then turn left into the 2010 stairs
+Go down 2 floors of stairs
+Turn right out of the 2010 stairs
+Continue, then turn right into the 1108 and 1105 hallway
+Continue, then turn right into room 1108"
+`;
+
+exports[`gives correct directions from 1823 to 2503 1`] = `
+"Turn left out of room 1823
+Continue, then turn right (after passing room 1843 on your right)
+Continue, then turn right (after passing room 1853 on your left)
+Continue, then turn right
+Continue, then go straight into the stairs
+Go up 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn right into the long narrow hallway
+Turn left after going through the doors, then go down the hallway
+Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue straight
+Continue, then turn right into the narrow hallway
+Continue, then turn right into room 2503"
+`;
+
+exports[`gives correct directions from 1840 to 2846 1`] = `
+"Turn left out of room 1840
+Continue, then turn right (after passing room 1843 on your right)
+Continue, then turn right (after passing room 1853 on your left)
+Continue, then turn right
+Continue, then go straight into the stairs
+Go up 1 floor of stairs
+Go straight out of the stairs
+Continue, then go straight into the stairs
+Go up 1 floor of stairs
+Turn left out of the stairs
+Continue, then turn left (after passing room 2848 on your right)
+Continue, then turn right into room 2846"
+`;
+
+exports[`gives correct directions from 1841 to 2840 1`] = `
+"Turn right out of room 1841
+Continue, then turn right (after passing room 1843 on your right)
+Continue, then turn right (after passing room 1853 on your left)
+Continue, then turn right
+Continue, then go straight into the stairs
+Go up 1 floor of stairs
+Go straight out of the stairs
+Continue, then go straight into the stairs
+Go up 1 floor of stairs
+Turn left out of the stairs
+Continue, then turn left (after passing room 2848 on your right)
+Continue, then turn right into room 2840"
+`;
+
+exports[`gives correct directions from 1842 to 2714 1`] = `
+"Turn right out of room 1842
+Continue, then after entering the music hallway, turn left
+Continue, then turn right (after passing room 1853 on your left)
+Continue, then turn right
+Continue, then go straight into the stairs
+Go up 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn right into the long narrow hallway
+Turn left after going through the doors, then go down the hallway
+When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn left into the science wing
+Continue, then turn right (after passing room 2715 on your left)
+Continue, then turn right into room 2714"
+`;
+
+exports[`gives correct directions from 1850 to 2849 1`] = `
+"Turn left out of room 1850
+Continue, then turn right (after passing room 1853 on your left)
+Continue, then turn right
+Continue, then go straight into the stairs
+Go up 1 floor of stairs
+Go straight out of the stairs
+Continue, then go straight into the stairs
+Go up 1 floor of stairs
+Turn left out of the stairs
+Continue, then turn left into room 2849"
+`;
+
+exports[`gives correct directions from 1851 to 3111 1`] = `
+"Turn left out of room 1851
+Continue, then turn right (after passing room 1853 on your left)
+Continue, then turn right
+Continue, then go straight into the stairs
+Go up 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn right into the long narrow hallway
+Turn left after going through the doors, then go down the hallway
+Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue straight
+Continue, then after entering the 2200s, turn left
+Continue, then turn left into the 2015 stairs
+Go up 1 floor of stairs
+Turn left out of the 2015 stairs
+Continue, then turn right (after passing room 3105 on your right)
+Continue, then turn right into room 3111"
+`;
+
+exports[`gives correct directions from 1852 to 2404 1`] = `
+"Turn left out of room 1852
+Continue, then go straight into the stairs
+Go up 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn right into the long narrow hallway
+Turn left after going through the doors, then go down the hallway
+Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue straight
+Continue, then after entering the 2200s, turn left
+Continue, then turn left into the tiny hallway near the elevator
+Continue, then turn right into room 2404"
+`;
+
+exports[`gives correct directions from 2101 to 2113 1`] = `
+"Turn left out of room 2101
+Continue, then turn right into the 2015 stairs
+Go up 1 floor of stairs
+Turn left out of the 2015 stairs
+Continue, then turn right (after passing room 3105 on your right)
+Continue, then turn left (after passing room 3111 on your right)
+Continue, then turn left into the 2010 stairs
+Go down 1 floor of stairs
+Turn right out of the 2010 stairs
+Continue, then turn left into room 2113"
+`;
+
+exports[`gives correct directions from 2103 to 1305 1`] = `
+"Turn left out of room 2103
+Continue, then turn right into the 2025 stairs
+Go down 1 floor of stairs
+Turn left out of the 2025 stairs
+Continue, then turn right into room 1305"
+`;
+
+exports[`gives correct directions from 2109 to 1605 1`] = `
+"Turn left out of room 2109
+Continue, then turn left (after passing room 2109 on your left)
+Continue, then turn right into the 2025 stairs
+Go down 1 floor of stairs
+Turn right out of the 2025 stairs
+Continue, then turn right into the 1600s
+Continue, then turn left
+Continue, then turn right (after passing room 1602 on your left)
+Continue, then turn left into room 1605"
+`;
+
+exports[`gives correct directions from 2110 to Counseling Office 1`] = `
+"Turn left out of room 2110
+Continue, then turn left (after passing room 2109 on your left)
+Continue, then turn left into room 2203"
+`;
+
+exports[`gives correct directions from 2115 to Senior High Gym 1`] = `
+"Turn right out of room 2115
+Continue, then turn left into the 2010 stairs
+Go up 1 floor of stairs
+Turn right out of the 2010 stairs
+Continue, then turn right (after passing room 3113 on your left)
+Continue, then turn left (after passing room 3112 on your right)
+Continue, then turn right into the 2015 stairs
+Go down 1 floor of stairs
+Turn right out of the 2015 stairs
+Continue, then turn right into the Alumni Hall
+Continue, then after entering the arcade, turn left
+Go down the ramp, and go through to the end of the arcade
+Turn right and through the long narrow hallway
+The Senior High Gym is straight ahead. Go inside"
+`;
+
+exports[`gives correct directions from 2200 to 2723 1`] = `
+"Turn right out of room 2200
+Continue, then after entering the lobby, turn right
+Continue, then turn right into the Alumni Hall
+Continue, then after entering the arcade, turn left
+Go down the ramp, go through the arcade, and turn right into the 2700s (science wing)
+Continue, then turn right (after passing room 2715 on your left)
+Continue, then turn left into room 2723"
+`;
+
+exports[`gives correct directions from 2205 to 2719 1`] = `
+"Turn left out of room 2205
+Continue, then turn right into the 2025 stairs
+Go down 1 floor of stairs
+Turn right out of the 2025 stairs
+Continue, then turn right into the 1600s
+Continue, then turn left
+Continue, then turn right (after passing room 1602 on your left)
+Continue, then turn left into the stairs
+Go up 1 floor of stairs
+Turn left out of the stairs
+Continue, then turn right (after passing room 2715 on your left)
+Continue, then turn left into room 2719"
+`;
+
+exports[`gives correct directions from 2207 to 3726 1`] = `
+"Turn left out of room 2207
+Continue, then after entering the lobby, turn left
+Continue, then turn right into the Alumni Hall
+Continue, then after entering the arcade, turn left
+Go down the ramp, go through the arcade, and turn right into the 2700s (science wing)
+Continue, then turn left into the stairs
+Go up 1 floor of stairs
+Turn left out of the stairs
+Continue, then turn right (after passing room 3711 on your left)
+Continue, then turn right into room 3726"
+`;
+
+exports[`gives correct directions from 2210 to 2717 1`] = `
+"Turn right out of room 2210
+Continue, then turn right into the Alumni Hall
+Continue, then after entering the arcade, turn left
+Go down the ramp, go through the arcade, and turn right into the 2700s (science wing)
+Continue, then turn right (after passing room 2715 on your left)
+Continue, then turn left into room 2717"
+`;
+
+exports[`gives correct directions from 2211 to Computer Lab - Library 1`] = `
+"Turn left out of room 2211
+Continue, then after entering the lobby, turn right
+Continue, then turn left into the 2015 stairs
+Go up 1 floor of stairs
+Turn right out of the 2015 stairs
+Continue, then turn left into room 3201"
+`;
+
+exports[`gives correct directions from 2214 to 2604 1`] = `
+"Turn right out of room 2214
+Continue, then after entering the lobby, turn left
+Continue, then turn right into the 2600s
+Continue, then turn left
+Continue, then turn right into room 2604"
+`;
+
+exports[`gives correct directions from 2215 to 3214 1`] = `
+"Turn left out of room 2215
+Continue, then after entering the lobby, turn left
+Continue, then turn right into the 2024 stairs
+Go up 1 floor of stairs
+Turn left out of the 2024 stairs
+Continue, then turn right into the Library"
+`;
+
+exports[`gives correct directions from 2218 to 2715 1`] = `
+"Turn right out of room 2218
+Continue, then after entering the lobby, turn left
+Continue, then turn right into the Alumni Hall
+Continue, then after entering the arcade, turn left
+Go down the ramp, go through the arcade, and turn right into the 2700s (science wing)
+Continue, then turn left into room 2715"
+`;
+
+exports[`gives correct directions from 2219 to 1824 1`] = `
+"Exit room 2219
+Turn left
+Continue, then after entering the lobby, turn left
+Continue, then turn right into the Alumni Hall
+Continue, then after entering the arcade, turn left
+Go down the ramp, and go through to the end of the arcade
+Turn right and through the long narrow hallway
+Turn right when you get to the doors labeled \\"Music Lyceum\\" and enter the doors
+Turn left
+Continue, then go straight into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left (after passing room 1852 on your right)
+Continue, then turn left
+Continue, then turn left (after passing the little corner on your right)
+Continue, then turn right into room 1824"
+`;
+
+exports[`gives correct directions from 2222 to 3314 1`] = `
+"Exit room 2222
+Turn right
+Continue, then after entering the lobby, turn left
+Continue, then turn right into the 2024 stairs
+Go up 1 floor of stairs
+Turn right out of the 2024 stairs
+Continue, then turn left (after passing the 2025 stairs on your right)
+Continue, then turn right (after passing room 3310 on your left)
+Continue, then turn right into room 3314"
+`;
+
+exports[`gives correct directions from 2229 to 2716 1`] = `
+"Turn right out of room 2229
+Continue, then after entering the lobby, turn left
+Continue, then turn right into the Alumni Hall
+Continue, then after entering the arcade, turn left
+Go down the ramp, go through the arcade, and turn right into the 2700s (science wing)
+Continue, then turn right (after passing room 2715 on your left)
+Continue, then turn right into room 2716"
+`;
+
+exports[`gives correct directions from 2401 to 1846 1`] = `
+"Turn right out of room 2401
+Continue, then after entering the 2100s, turn right
+Continue, then turn right into the Alumni Hall
+Continue, then after entering the arcade, turn left
+Go down the ramp, and go through to the end of the arcade
+Turn right and through the long narrow hallway
+Turn right when you get to the doors labeled \\"Music Lyceum\\" and enter the doors
+Turn left
+Continue, then go straight into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left (after passing room 1852 on your right)
+Continue, then turn left
+Continue, then turn right into the little corner
+Continue, then turn right into room 1846"
+`;
+
+exports[`gives correct directions from 2500 to 3711 1`] = `
+"Turn right out of the Auditorium
+Continue, then turn right into the 2025 stairs
+Go down 1 floor of stairs
+Turn right out of the 2025 stairs
+Continue, then turn right into the 1600s
+Continue, then turn left
+Continue, then turn right (after passing room 1602 on your left)
+Continue, then turn left into the stairs
+Go up 2 floors of stairs
+Turn left out of the stairs
+Continue, then turn left into room 3711"
+`;
+
+exports[`gives correct directions from 2505 to 2209 1`] = `
+"Turn left out of room 2505
+Continue, then after entering Alumni Hall, turn right
+Continue, then after entering the 2200s, turn left
+Continue, then turn right into room 2209"
+`;
+
+exports[`gives correct directions from 2510 to Black Box Theatre 1`] = `
+"Turn left out of room 2510
+Continue, then turn left into room 2503"
+`;
+
+exports[`gives correct directions from 2602 to High School Gymnasium 1`] = `
+"Turn left out of room 2602
+Continue, then turn right (after passing room 2602 on your left)
+Continue, then after entering the arcade, go straight and a bit to left, and go to the end of the hall
+The Senior High Gym is straight ahead. Go inside"
+`;
+
+exports[`gives correct directions from 2603 to 2301 1`] = `
+"Turn right out of room 2603
+Continue, then turn left (after passing room 2603 on your right)
+Continue, then turn right (after passing room 2604 on your left)
+Continue, then after entering the 2300s, turn left
+Continue, then turn right into room 2301"
+`;
+
+exports[`gives correct directions from 2605 to 2402 1`] = `
+"Turn right out of room 2605
+Continue, then turn left (after passing room 2603 on your right)
+Continue, then turn right (after passing room 2604 on your left)
+Continue, then after entering the 2300s, turn left
+Continue, then turn left into the tiny hallway that's across from room 2101
+Continue, then go straight into the Junior High Gym"
+`;
+
+exports[`gives correct directions from 2607 to 3315 1`] = `
+"Turn right out of room 2607
+Continue, then turn left (after passing room 2603 on your right)
+Continue, then turn right (after passing room 2604 on your left)
+Continue, then after entering the 2300s, turn right
+Continue, then turn left (after passing the 2600s on your right)
+Continue, then turn right (after passing room 2306 on your left)
+Continue, then turn right into the 2018 stairs
+Go up 1 floor of stairs
+Turn left out of the 2018 stairs
+Continue, then turn right into room 3315"
+`;
+
+exports[`gives correct directions from 2609 to 3312 1`] = `
+"Turn right out of room 2609
+Continue, then turn left (after passing room 2603 on your right)
+Continue, then turn right (after passing room 2604 on your left)
+Continue, then after entering the 2300s, turn right
+Continue, then turn left (after passing the 2600s on your right)
+Continue, then turn right (after passing room 2306 on your left)
+Continue, then turn right into the 2018 stairs
+Go up 1 floor of stairs
+Turn left out of the 2018 stairs
+Continue, then turn left into room 3312"
+`;
+
+exports[`gives correct directions from 2611 to 2307 1`] = `
+"Turn right out of room 2611
+Continue, then turn left (after passing room 2603 on your right)
+Continue, then turn right (after passing room 2604 on your left)
+Continue, then after entering the 2300s, turn right
+Continue, then turn left (after passing the 2600s on your right)
+Continue, then turn right (after passing room 2306 on your left)
+Continue, then turn left into room 2307"
+`;
+
+exports[`gives correct directions from 2702 to 3207 1`] = `
+"Turn left out of room 2702
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Turn right out of the stairs
+Continue, then turn left (after passing room 1604 on your left)
+Continue, then turn right (after passing room 1601 on your right)
+Continue, then after entering the 1300s, turn left
+Continue, then turn left into the 2025 stairs
+Go up 2 floors of stairs
+Turn left out of the 2025 stairs
+Continue, then turn left into room 3207"
+`;
+
+exports[`gives correct directions from 2703 to Scene Shop 1`] = `
+"Turn right out of room 2703
+Continue, then after entering the arcade, turn left
+Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue straight
+Continue, then turn right into the narrow hallway
+Continue, then turn right into room 2505"
+`;
+
+exports[`gives correct directions from 2704 to 3114 1`] = `
+"Turn left out of room 2704
+Continue, then after entering the arcade, turn left
+Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue straight
+Continue, then after entering the 2200s, turn left
+Continue, then turn left into the 2015 stairs
+Go up 1 floor of stairs
+Turn left out of the 2015 stairs
+Continue, then turn right (after passing room 3105 on your right)
+Continue, then turn left (after passing room 3111 on your right)
+Continue, then turn left into room 3114"
+`;
+
+exports[`gives correct directions from 2705 to 2707 1`] = `
+"Turn left out of room 2705
+Continue, then turn left into room 2707"
+`;
+
+exports[`gives correct directions from 2713 to 2403 1`] = `
+"Turn right out of room 2713
+Continue, then after entering the arcade, turn left
+Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue straight
+Continue, then after entering the 2200s, turn left
+Continue, then turn left into the tiny hallway near the elevator
+Continue, then turn left into room 2403"
+`;
+
+exports[`gives correct directions from 2720 to Alumni Office 1`] = `
+"Turn left out of room 2720
+Continue, then turn left (after passing room 2717 on your right)
+Continue, then after entering the arcade, turn left
+Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue straight
+Continue, then after entering the 2200s, turn left
+Continue, then turn right into the 2200s
+Continue, then turn right into room 2215"
+`;
+
+exports[`gives correct directions from 2740 to 1304 1`] = `
+"Turn left out of the Forum
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Turn right out of the stairs
+Continue, then turn left (after passing room 1604 on your left)
+Continue, then turn right (after passing room 1601 on your right)
+Continue, then after entering the 1300s, turn left
+Continue, then turn left into room 1304"
+`;
+
+exports[`gives correct directions from 2800 to 2310 1`] = `
+"Go straight out of the arcade
+Continue, then turn left (after passing room 2603 on your right)
+Continue, then turn right (after passing room 2604 on your left)
+Continue, then after entering the 2300s, turn right
+Continue, then turn left (after passing the 2600s on your right)
+Continue, then turn right (after passing room 2306 on your left)
+Continue, then turn right into room 2310"
+`;
+
+exports[`gives correct directions from 2801 to 1857 1`] = `
+"Turn left out of the long narrow hallway
+Continue, then go straight into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left (after passing room 1852 on your right)
+Continue, then turn left
+Continue, then turn right into room 1857"
+`;
+
+exports[`gives correct directions from 2842 to 2111 1`] = `
+"Turn left out of room 2842
+Continue, then turn right (after passing room 2846 on your left)
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left into the long narrow hallway
+Turn left after going through the doors, then go down the hallway
+Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue straight
+Continue, then after entering the 2200s, turn left
+Continue, then turn left into the 2015 stairs
+Go up 1 floor of stairs
+Turn left out of the 2015 stairs
+Continue, then turn right (after passing room 3105 on your right)
+Continue, then turn left (after passing room 3111 on your right)
+Continue, then turn left into the 2010 stairs
+Go down 1 floor of stairs
+Turn right out of the 2010 stairs
+Continue, then turn left into room 2111"
+`;
+
+exports[`gives correct directions from 2843 to 2739 1`] = `
+"Turn right out of room 2843
+Continue, then turn right (after passing room 2846 on your left)
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left into the long narrow hallway
+Turn left after going through the doors, then go down the hallway
+When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn left into the science wing
+Continue, then turn left into room 2739"
+`;
+
+exports[`gives correct directions from 2844 to 1845 1`] = `
+"Turn left out of room 2844
+Continue, then turn right (after passing room 2846 on your left)
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then go straight into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left (after passing room 1852 on your right)
+Continue, then turn left
+Continue, then turn right into the little corner
+Continue, then go straight into room 1845"
+`;
+
+exports[`gives correct directions from 2847 to 3717 1`] = `
+"Turn right out of room 2847
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left into the long narrow hallway
+Turn left after going through the doors, then go down the hallway
+When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn left into the science wing
+Continue, then turn left into the stairs
+Go up 1 floor of stairs
+Turn left out of the stairs
+Continue, then turn right (after passing room 3711 on your left)
+Continue, then turn left into room 3717"
+`;
+
+exports[`gives correct directions from 2848 to 2302 1`] = `
+"Turn left out of room 2848
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left into the long narrow hallway
+Turn left after going through the doors, then go down the hallway
+When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn right into the modern foreign languages wing
+Continue straight
+Continue, then turn left (after passing room 2603 on your right)
+Continue, then turn right (after passing room 2604 on your left)
+Continue, then after entering the 2300s, turn left
+Continue, then turn right into room 2302"
+`;
+
+exports[`gives correct directions from 2851 to 2601 1`] = `
+"Turn right out of room 2851
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left into the long narrow hallway
+Turn left after going through the doors, then go down the hallway
+When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn right into the modern foreign languages wing
+Continue straight
+Continue, then turn left (after passing room 2603 on your right)
+Continue, then turn right into room 2601"
+`;
+
+exports[`gives correct directions from 2852 to 2857 1`] = `
+"Turn right out of room 2852
+Continue, then turn right into room 2857"
+`;
+
+exports[`gives correct directions from 2853 to 3709 1`] = `
+"Turn right out of room 2853
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left into the long narrow hallway
+Turn left after going through the doors, then go down the hallway
+When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn left into the science wing
+Continue, then turn left into the stairs
+Go up 1 floor of stairs
+Turn left out of the stairs
+Continue, then turn left into room 3709"
+`;
+
+exports[`gives correct directions from 2855 to 1105 1`] = `
+"Turn right out of room 2855
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left into the long narrow hallway
+Turn left after going through the doors, then go down the hallway
+Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue straight
+Continue, then after entering the 2200s, turn left
+Continue, then turn left into the 2015 stairs
+Go up 1 floor of stairs
+Turn left out of the 2015 stairs
+Continue, then turn right (after passing room 3105 on your right)
+Continue, then turn left (after passing room 3111 on your right)
+Continue, then turn left into the 2010 stairs
+Go down 2 floors of stairs
+Turn right out of the 2010 stairs
+Continue, then turn right into the 1108 and 1105 hallway
+Continue, then turn left into room 1105"
+`;
+
+exports[`gives correct directions from 3101 to Language Lab 1`] = `
+"Turn left out of room 3101
+Continue, then turn right into the 2025 stairs
+Go down 2 floors of stairs
+Turn right out of the 2025 stairs
+Continue, then turn right into the 1600s
+Continue, then turn left
+Continue, then turn right (after passing room 1602 on your left)
+Continue, then turn right into room 1604"
+`;
+
+exports[`gives correct directions from 3103 to Choir 1`] = `
+"Turn left out of room 3103
+Continue, then turn right into the 2015 stairs
+Go down 1 floor of stairs
+Turn right out of the 2015 stairs
+Continue, then turn right into the Alumni Hall
+Continue, then after entering the arcade, turn left
+Go down the ramp, and go through to the end of the arcade
+Turn right and through the long narrow hallway
+Turn right when you get to the doors labeled \\"Music Lyceum\\" and enter the doors
+Turn right
+Continue, then go straight into the stairs
+Go up 1 floor of stairs
+Turn left out of the stairs
+Continue, then turn left (after passing room 2848 on your right)
+Continue, then turn right into room 2840"
+`;
+
+exports[`gives correct directions from 3104 to 3104 1`] = `"Bruh. You at room 3104"`;
+
+exports[`gives correct directions from 3104 to 3504 1`] = `
+"Turn right out of room 3104
+Continue, then turn right into the 2015 stairs
+Go down 1 floor of stairs
+Turn right out of the 2015 stairs
+Continue, then turn right into the Alumni Hall
+Continue, then turn left into the narrow hallway
+Continue, then turn right into the corner with the stairs
+Continue, then turn right into the stairs
+Go up 1 floor of stairs
+Turn right out of the stairs
+Continue, then go straight into room 3504"
+`;
+
+exports[`gives correct directions from 3105 to Library 1`] = `
+"Turn left out of room 3105
+Continue, then turn left into the Library"
+`;
+
+exports[`gives correct directions from 3110 to 3724 1`] = `
+"Turn left out of room 3110
+Continue, then turn left (after passing room 3112 on your right)
+Continue, then turn right into the 2015 stairs
+Go down 1 floor of stairs
+Turn right out of the 2015 stairs
+Continue, then turn right into the Alumni Hall
+Continue, then after entering the arcade, turn left
+Go down the ramp, go through the arcade, and turn right into the 2700s (science wing)
+Continue, then turn left into the stairs
+Go up 1 floor of stairs
+Turn left out of the stairs
+Continue, then turn right (after passing room 3711 on your left)
+Continue, then turn right into room 3724"
+`;
+
+exports[`gives correct directions from 3117 to 2201 1`] = `
+"Turn left out of room 3117
+Continue, then turn right (after passing room 3113 on your left)
+Continue, then turn left (after passing room 3112 on your right)
+Continue, then turn right into the 2015 stairs
+Go down 1 floor of stairs
+Turn right out of the 2015 stairs
+Continue, then turn left into room 2201"
+`;
+
+exports[`gives correct directions from 3201 to 1607 1`] = `
+"Turn left out of room 3201
+Continue, then turn right into the 2025 stairs
+Go down 2 floors of stairs
+Turn right out of the 2025 stairs
+Continue, then turn right into the 1600s
+Continue, then turn left
+Continue, then turn right (after passing room 1602 on your left)
+Continue, then turn left into room 1607"
+`;
+
+exports[`gives correct directions from 3202 to 2114 1`] = `
+"Turn left out of room 3202
+Continue, then turn right (after passing room 3105 on your right)
+Continue, then turn left (after passing room 3111 on your right)
+Continue, then turn left into the 2010 stairs
+Go down 1 floor of stairs
+Turn right out of the 2010 stairs
+Continue, then turn right into room 2114"
+`;
+
+exports[`gives correct directions from 3204 to 2212 1`] = `
+"Turn left out of room 3204
+Continue, then turn left into the 2015 stairs
+Go down 1 floor of stairs
+Turn right out of the 2015 stairs
+Continue, then turn left into the 2200s
+Continue, then turn left into room 2212"
+`;
+
+exports[`gives correct directions from 3206 to 1849 1`] = `
+"Turn left out of room 3206
+Continue, then turn left into the 2015 stairs
+Go down 1 floor of stairs
+Turn right out of the 2015 stairs
+Continue, then turn right into the Alumni Hall
+Continue, then after entering the arcade, turn left
+Go down the ramp, and go through to the end of the arcade
+Turn right and through the long narrow hallway
+Turn right when you get to the doors labeled \\"Music Lyceum\\" and enter the doors
+Turn left
+Continue, then go straight into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left (after passing room 1852 on your right)
+Continue, then turn left
+Continue, then turn right into the little corner
+Continue, then turn right into room 1849"
+`;
+
+exports[`gives correct directions from 3208 to 2309 1`] = `
+"Turn right out of room 3208
+Continue, then turn right into the 2024 stairs
+Go down 1 floor of stairs
+Turn right out of the 2024 stairs
+Continue, then turn left (after passing the 2600s on your right)
+Continue, then turn right (after passing room 2306 on your left)
+Continue, then turn left into room 2309"
+`;
+
+exports[`gives correct directions from 3210 to Theater 1`] = `
+"Turn right out of room 3210
+Continue, then turn right into the 2024 stairs
+Go down 1 floor of stairs
+Turn left out of the 2024 stairs
+Continue, then turn left into the Alumni Hall
+Continue, then turn left into the narrow hallway
+Continue, then turn right into room 2503"
+`;
+
+exports[`gives correct directions from 3301 to 1843 1`] = `
+"Turn right out of room 3301
+Continue, then turn left into the 2024 stairs
+Go down 1 floor of stairs
+Turn right out of the 2024 stairs
+Continue, then turn right into the 2600s
+Continue, then turn left
+Continue, then turn right (after passing room 2602 on your left)
+Continue, then after entering the arcade, go straight and a bit to the left through the long narrow hallway
+Turn right when you get to the doors labeled \\"Music Lyceum\\"
+After going through the doors, turn left
+Continue, then go straight into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left (after passing room 1852 on your right)
+Continue, then turn left
+Continue, then turn left (after passing the little corner on your right)
+Continue, then turn left into room 1843"
+`;
+
+exports[`gives correct directions from 3303 to Athletic Director's Office 1`] = `
+"Turn right out of room 3303
+Continue, then turn left into the 2015 stairs
+Go down 1 floor of stairs
+Turn left out of the 2015 stairs
+Continue, then turn left into the tiny hallway that's across from room 2101
+Continue, then turn left into room 2401"
+`;
+
+exports[`gives correct directions from 3305 to 3716 1`] = `
+"Turn left out of room 3305
+Continue, then turn right into the 2025 stairs
+Go down 2 floors of stairs
+Turn right out of the 2025 stairs
+Continue, then turn right into the 1600s
+Continue, then turn left
+Continue, then turn right (after passing room 1602 on your left)
+Continue, then turn left into the stairs
+Go up 2 floors of stairs
+Turn left out of the stairs
+Continue, then turn right (after passing room 3711 on your left)
+Continue, then turn right into room 3716"
+`;
+
+exports[`gives correct directions from 3309 to Band (1850) 1`] = `
+"Turn right out of room 3309
+Continue, then turn right (after passing room 3309 on your right)
+Continue, then turn left into the 2025 stairs
+Go down 1 floor of stairs
+Turn right out of the 2025 stairs
+Continue, then turn right into the 2600s
+Continue, then turn left
+Continue, then turn right (after passing room 2602 on your left)
+Continue, then after entering the arcade, go straight and a bit to the left through the long narrow hallway
+Turn right when you get to the doors labeled \\"Music Lyceum\\"
+After going through the doors, turn left
+Continue, then go straight into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left (after passing room 1852 on your right)
+Continue, then turn left
+Continue, then turn right into room 1850"
+`;
+
+exports[`gives correct directions from 3311 to 1314 1`] = `
+"Turn left out of room 3311
+Continue, then turn right into the 2018 stairs
+Go down 2 floors of stairs
+Turn left out of the 2018 stairs
+Continue, then turn left into room 1314"
+`;
+
+exports[`gives correct directions from 3313 to 2105 1`] = `
+"Turn right out of room 3313
+Continue, then turn left (after passing room 3311 on your right)
+Continue, then turn right (after passing room 3309 on your right)
+Continue, then turn left into the 2015 stairs
+Go down 1 floor of stairs
+Turn left out of the 2015 stairs
+Continue, then turn right into room 2105"
+`;
+
+exports[`gives correct directions from 3701 to Computer Lab 1`] = `
+"Turn right out of room 3701
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Turn right out of the stairs
+Continue, then after entering the arcade, turn left
+Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue straight
+Continue, then after entering the 2200s, turn left
+Continue, then turn left into the 2015 stairs
+Go up 1 floor of stairs
+Turn left out of the 2015 stairs
+Continue, then turn left into room 3104"
+`;
+
+exports[`gives correct directions from 3702 to 3503 1`] = `
+"Turn left out of room 3702
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Turn right out of the stairs
+Continue, then after entering the arcade, turn left
+Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue straight
+Continue, then turn right into the narrow hallway
+Continue, then turn right into the corner with the stairs
+Continue, then turn right into the stairs
+Go up 1 floor of stairs
+Turn right out of the stairs
+Continue, then turn left into room 3503"
+`;
+
+exports[`gives correct directions from 3703 to 1853 1`] = `
+"Turn right out of room 3703
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Turn right out of the stairs
+Continue, then after entering the arcade, turn right, then go down to the end of the arcade and turn right
+Go down the hallway, and turn right when you get to the doors
+After going through the doors, turn left
+Continue, then go straight into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left (after passing room 1852 on your right)
+Continue, then turn left
+Continue, then turn right into room 1853"
+`;
+
+exports[`gives correct directions from 3704 to 1300 1`] = `
+"Turn left out of room 3704
+Continue, then turn right into the stairs
+Go down 2 floors of stairs
+Turn right out of the stairs
+Continue, then turn left (after passing room 1604 on your left)
+Continue, then turn right (after passing room 1601 on your right)
+Continue, then after entering the 1300s, turn left
+Continue, then turn left into room 1300"
+`;
+
+exports[`gives correct directions from 3707 to 3113 1`] = `
+"Turn right out of room 3707
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Turn right out of the stairs
+Continue, then after entering the arcade, turn left
+Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue straight
+Continue, then after entering the 2200s, turn left
+Continue, then turn left into the 2015 stairs
+Go up 1 floor of stairs
+Turn left out of the 2015 stairs
+Continue, then turn right (after passing room 3105 on your right)
+Continue, then turn left (after passing room 3111 on your right)
+Continue, then turn right into room 3113"
+`;
+
+exports[`gives correct directions from 3714 to 1310 1`] = `
+"Turn left out of room 3714
+Continue, then turn left (after passing room 3713 on your right)
+Continue, then turn right into the stairs
+Go down 2 floors of stairs
+Turn right out of the stairs
+Continue, then turn left (after passing room 1604 on your left)
+Continue, then turn right (after passing room 1601 on your right)
+Continue, then after entering the 1300s, turn right
+Continue, then turn left (after passing the 1600s on your right)
+Continue, then turn left into room 1310"
+`;
+
+exports[`gives correct directions from 3715 to 3505 1`] = `
+"Turn right out of room 3715
+Continue, then turn left (after passing room 3713 on your right)
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Turn right out of the stairs
+Continue, then after entering the arcade, go straight and a bit to the right to get to the 2600s, the modern languages wing
+Continue straight
+Continue, then turn left into the little hallway
+Go down the 3 steps
+Continue, then turn left into the door, and then turn left
+Continue, then go straight into the stairs
+Go up 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left into room 3505"
+`;
+
+exports[`gives correct directions from Alumni Foundation to Instrumental 1`] = `
+"Turn left out of room 2215
+Continue, then after entering the lobby, turn left
+Continue, then turn right into the Alumni Hall
+Continue, then after entering the arcade, turn left
+Go down the ramp, and go through to the end of the arcade
+Turn right and through the long narrow hallway
+Turn right when you get to the doors labeled \\"Music Lyceum\\" and enter the doors
+Turn left
+Continue, then go straight into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left (after passing room 1852 on your right)
+Continue, then turn left
+Continue, then turn left (after passing the little corner on your right)
+Continue, then turn right into room 1840"
+`;
+
+exports[`gives correct directions from Band (1845) to Black Box Theater 1`] = `
+"Go straight out of room 1845
+Continue, then after entering the music hallway, turn left
+Continue, then turn right (after passing room 1853 on your left)
+Continue, then turn right
+Continue, then go straight into the stairs
+Go up 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn right into the long narrow hallway
+Turn left after going through the doors, then go down the hallway
+Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue straight
+Continue, then turn right into the narrow hallway
+Continue, then turn right into room 2503"
+`;
+
+exports[`gives correct directions from Computer Lab - Engineering to 2722 1`] = `
+"Turn right out of room 3701
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Turn left out of the stairs
+Continue, then turn right (after passing room 2715 on your left)
+Continue, then turn right into room 2722"
+`;
+
+exports[`gives correct directions from Conference Room to 1303 1`] = `
+"Turn right out of room 2210
+Continue, then turn right into the 2025 stairs
+Go down 1 floor of stairs
+Turn left out of the 2025 stairs
+Continue, then turn right into room 1303"
+`;
+
+exports[`gives correct directions from Junior Gymnasium to 3102 1`] = `
+"Go straight out of the Junior High Gym
+Continue, then after entering the 2100s, turn right
+Continue, then turn right into the 2015 stairs
+Go up 1 floor of stairs
+Turn left out of the 2015 stairs
+Continue, then turn left into room 3102"
+`;
+
+exports[`gives correct directions from Junior High Gym to 3112 1`] = `
+"Go straight out of the Junior High Gym
+Continue, then after entering the 2100s, turn right
+Continue, then turn right into the 2015 stairs
+Go up 1 floor of stairs
+Turn left out of the 2015 stairs
+Continue, then turn right (after passing room 3105 on your right)
+Continue, then turn left into room 3112"
+`;
+
+exports[`gives correct directions from Medical Room to 2112 1`] = `
+"Turn right out of room 2212
+Continue, then after entering the lobby, turn right
+Continue, then turn right (after passing room 2105 on your right)
+Continue, then turn left into room 2112"
+`;
+
+exports[`gives correct directions from Nurse to Forum 1`] = `
+"Turn right out of room 2212
+Continue, then after entering the lobby, turn left
+Continue, then turn right into the Alumni Hall
+Continue, then after entering the arcade, turn left
+Go down the ramp, go through the arcade, and turn right into the 2700s (science wing)
+Continue, then turn right into the Forum"
+`;
+
+exports[`gives correct directions from Principal's Office to 1113 1`] = `
+"Turn left out of room 2204
+Continue, then turn left into the 2015 stairs
+Go up 1 floor of stairs
+Turn left out of the 2015 stairs
+Continue, then turn right (after passing room 3105 on your right)
+Continue, then turn left (after passing room 3111 on your right)
+Continue, then turn left into the 2010 stairs
+Go down 2 floors of stairs
+Turn right out of the 2010 stairs
+Continue, then turn left into room 1113"
+`;
+
+exports[`gives correct directions from Recital Hall to 2308 1`] = `
+"Turn left out of room 2852
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left into the long narrow hallway
+Turn left after going through the doors, then go down the hallway
+When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn right into the modern foreign languages wing
+Continue straight
+Continue, then turn left (after passing room 2603 on your right)
+Continue, then turn right (after passing room 2604 on your left)
+Continue, then after entering the 2300s, turn right
+Continue, then turn left (after passing the 2600s on your right)
+Continue, then turn right (after passing room 2306 on your left)
+Continue, then turn right into room 2308"
+`;
+
+exports[`gives correct directions from Schott Recital Hall to Main Office 1`] = `
+"Turn left out of room 2852
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left into the long narrow hallway
+Turn left after going through the doors, then go down the hallway
+Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue straight
+Continue, then after entering the 2200s, turn left
+Continue, then turn left into the entrance area
+Continue, then turn left into room 2200"
+`;
+
+exports[`gives correct directions from Strings to Band (1840) 1`] = `
+"Turn left out of room 2848
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then go straight into the stairs
+Go down 1 floor of stairs
+Go straight out of the stairs
+Continue, then turn left (after passing room 1852 on your right)
+Continue, then turn left
+Continue, then turn left (after passing the little corner on your right)
+Continue, then turn right into room 1840"
+`;
+
+exports[`gives correct directions from Westheimer Auditorium to Auditorium 1`] = `"Bruh. You at the Auditorium"`;
+
+exports[`gives correct directions from Writing Center to Registrar 1`] = `
+"Turn right out of room 3301
+Continue, then turn left into the 2024 stairs
+Go down 1 floor of stairs
+Turn left out of the 2024 stairs
+Continue, then turn right into room 2201"
+`;
