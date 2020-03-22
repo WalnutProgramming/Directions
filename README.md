@@ -18,14 +18,17 @@ You can also look at the Issues page to see some of our known problems and to-do
 1. Install [Yarn](https://yarnpkg.com/lang/en/docs/install/)
    - (This is required to be able to run our app on your computer.)
 1. Install [Visual Studio Code](https://code.visualstudio.com/) (VSCode)
-
    - (This is my favorite text editor, but it's not required if you prefer something else.)
+   - Install the following Visual Studio Code extensions. (Once you've installed the ESLint and Prettier extensions, they will automatically fix a lot of formatting problems whenever you save a file.)
+     1. [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) for linting (finding bugs, bad practices, formatting issues, etc.)
+     2. [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting
+     3. [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur) for working with .vue Single File Component files
 
 ### Running the app
 
 1. If it's not already open, open the project in GitHub Desktop. Click on the **Repository** menu, then click **Open in terminal** to open up a terminal window.
 1. Type `yarn` into the terminal window, and press enter. It will install a bunch of extra things that are required to run the app.
-1. To actually run the app, use the command `yarn serve`.
+1. To actually run the app, use the command `yarn serve`. If you make changes, the page will automatically update when you refresh.
 
 ### Editing the app
 
