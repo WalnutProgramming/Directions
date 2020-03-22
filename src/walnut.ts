@@ -429,22 +429,29 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
           return "";
       }
     }
-  })([
-    // The directions that we use here don't matter since we
-    // override the instructions for the arcade anyway.
-    new Fork(LEFT, reverseConnection("alumni hall to arcade"), "Alumni Hall"),
-    new Fork(LEFT, reverseConnection("2600s to arcade"), "the 2600s"),
-    new Fork(LEFT, reverseConnection("2700s to arcade"), "the 2700s"),
-    new Fork(
-      LEFT,
-      reverseConnection("music entrance to arcade"),
-      "the music lyceum"
-    ),
-    new Room("Senior High Gym", LEFT, {
-      prefix: "the",
-      aliases: ["2800", "2801", "High School Gymnasium"],
-    }),
-  ]),
+  })(
+    [
+      // The directions that we use here don't matter since we
+      // override the instructions for the arcade anyway.
+      new Fork(
+        FRONT,
+        reverseConnection("alumni hall to arcade"),
+        "Alumni Hall"
+      ),
+      new Fork(FRONT, reverseConnection("2600s to arcade"), "the 2600s"),
+      new Fork(FRONT, reverseConnection("2700s to arcade"), "the 2700s"),
+      new Fork(
+        FRONT,
+        reverseConnection("music entrance to arcade"),
+        "the music lyceum"
+      ),
+      new Room("Senior High Gym", FRONT, {
+        prefix: "the",
+        aliases: ["2800", "2801", "High School Gymnasium"],
+      }),
+    ],
+    { allowFrontConnectionsInMiddle: true }
+  ),
 
   // alumni hall
   new Hallway<ConnectionNodeId, StairNodeId>([

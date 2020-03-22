@@ -9074,9 +9074,9 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     inherits "^2.0.1"
 
 room-finder@^0.0.12-alpha.4:
-  version "0.0.12-alpha.4"
-  resolved "https://registry.yarnpkg.com/room-finder/-/room-finder-0.0.12-alpha.4.tgz#10ea73fd81a8e6bc2b0a37945a599af2c9896f64"
-  integrity sha512-iGUNE+/oaEnYWSRA3LWcU8hWNg9NMce1bGbEJLNW5yXTRGqTzrz1L49qJ0m+4E/sRd9Jpm82PPsO3waaJwYHmQ==
+  version "0.0.12-alpha.6"
+  resolved "https://registry.yarnpkg.com/room-finder/-/room-finder-0.0.12-alpha.6.tgz#80f84386fb41edc6768b5eeb50bc19cfb1ffee67"
+  integrity sha512-ohtBUhFzVK+Aacu8XQyEmc5Sg2n+5nfCFvpHA6KZ3ojUdnIMV3Xry6dQ87vj5GcUlW013URmRMucCIofUHxggA==
   dependencies:
     core-js "3"
     dijkstrajs "^1.0.1"

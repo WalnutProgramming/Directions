@@ -452,8 +452,7 @@ Continue, then turn left into room 2715"
 `;
 
 exports[`gives correct directions from 2219 to 1824 1`] = `
-"Exit room 2219
-Turn left
+"Exit room 2219, and then turn left
 Continue, then after entering the lobby, turn left
 Continue, then turn right into the Alumni Hall
 Continue, then after entering the arcade, turn left
@@ -471,8 +470,7 @@ Continue, then turn right into room 1824"
 `;
 
 exports[`gives correct directions from 2222 to 3314 1`] = `
-"Exit room 2222
-Turn right
+"Exit room 2222, and then turn right
 Continue, then after entering the lobby, turn left
 Continue, then turn right into the 2024 stairs
 Go up 1 floor of stairs
