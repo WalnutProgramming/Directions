@@ -704,4 +704,7 @@ const hallways: Hallway[] = [
   ]),
 ];
 
-export default new Building(hallways, hallwayConnections, stairConnections);
+const walnut = new Building(hallways, hallwayConnections, stairConnections);
+// @ts-ignore
+window.walnut = walnut;
+export default walnut;
