@@ -52,7 +52,7 @@ export default Vue.extend({
       if (this.isValid) {
         // Both have valid names, so put the directions in the HTML
         return walnut
-          .getDirections(this.fromRoom, this.toRoom)
+          .getDirections(this.fromRoom, this.toRoom)!
           .trim()
           .split("\n");
       }
