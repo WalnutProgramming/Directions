@@ -6,6 +6,20 @@
       especially for incoming students. That's why we created Walnut.Direct,
       straightforward directions between rooms in Walnut Hills.
     </p>
+
+    <!-- YouTube embed -->
+    <div class="video-responsive">
+      <iframe
+        class="video"
+        width="560"
+        height="315"
+        src="https://www.youtube-nocookie.com/embed/JqA1BJBsIOE?rel=0"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
     <h1 class="subtitle">How to Use It</h1>
     <p class="squished-p">
       On the <router-link to="/">main page</router-link>, type (or choose from
@@ -135,5 +149,21 @@ export default Vue.extend({
   margin-left: 5vw;
   margin-right: 5vw;
   font-size: 3vh;
+}
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+  width: 80%;
+  margin: 0 auto;
+}
+.video {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 </style>
