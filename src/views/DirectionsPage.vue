@@ -23,11 +23,15 @@ import Vue from "vue";
 // eslint-disable-next-line no-unused-vars
 import { Room } from "room-finder";
 import CustomButton from "@/components/buttons/CustomButton.vue";
-import walnut from "@/walnut";
+import { walnutNonAccessible } from "@/walnut";
 
 function fullNameOf(roomName: string) {
-  const [hallwayInd, ind] = walnut.getHallwayIndexAndIndex(roomName)!;
-  return (walnut.hallways[hallwayInd].partList[ind] as Room<string>).fullName;
+  const [hallwayInd, ind] = walnutNonAccessible.getHallwayIndexAndIndex(
+    roomName
+  )!;
+  return (walnutNonAccessible.hallways[hallwayInd].partList[ind] as Room<
+    string
+  >).fullName;
 }
 
 export default Vue.extend({
@@ -44,14 +48,14 @@ export default Vue.extend({
   computed: {
     isValid() {
       return (
-        walnut.getHallwayIndexAndIndex(this.fromRoom) != null &&
-        walnut.getHallwayIndexAndIndex(this.toRoom) != null
+        walnutNonAccessible.getHallwayIndexAndIndex(this.fromRoom) != null &&
+        walnutNonAccessible.getHallwayIndexAndIndex(this.toRoom) != null
       );
     },
     directions() {
       if (this.isValid) {
         // Both have valid names, so put the directions in the HTML
-        return walnut
+        return walnutNonAccessible
           .getDirections(this.fromRoom, this.toRoom)!
           .trim()
           .split("\n");

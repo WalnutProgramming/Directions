@@ -39,7 +39,7 @@ import CustomButton from "@/components/buttons/CustomButton.vue";
 import TheMaybeInstallButton from "@/components/TheMaybeInstallButton.vue";
 import RoomInput from "@/components/RoomInput.vue";
 import TheIOSDownloadSuggestion from "@/components/TheIOSDownloadSuggestion.vue";
-import walnut from "@/walnut";
+import { walnutNonAccessible } from "@/walnut";
 
 export default Vue.extend({
   components: {
@@ -59,8 +59,8 @@ export default Vue.extend({
       this.validateInput("fromRoom", false);
       this.validateInput("toRoom", false);
       if (
-        walnut.isValidRoomName(this.fromRoom) &&
-        walnut.isValidRoomName(this.toRoom)
+        walnutNonAccessible.isValidRoomName(this.fromRoom) &&
+        walnutNonAccessible.isValidRoomName(this.toRoom)
       ) {
         this.$router.push({
           path: "/directions",
@@ -73,7 +73,7 @@ export default Vue.extend({
       const val: string = (this as any)[inputName];
       if (val === "") {
         if (!allowBlank) message = "Please type a room number";
-      } else if (!walnut.isValidRoomName(val)) {
+      } else if (!walnutNonAccessible.isValidRoomName(val)) {
         message = `I can't find a room with the name "${val}"`;
       }
       const inp = document.getElementById(inputName);

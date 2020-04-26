@@ -1,8 +1,12 @@
-import walnut from "@/walnut";
-import { assertValidBuilding } from "room-finder";
+import { walnutNonAccessible, walnutAccessible } from "@/walnut";
+import { assertValidBuilding, isValidBuilding } from "room-finder";
 
-test("walnut is a valid Building", () => {
-  assertValidBuilding(walnut);
+test("non-accessible walnut is a valid Building", () => {
+  assertValidBuilding(walnutNonAccessible);
+});
+test("accessible walnut is a valid Building", () => {
+  expect(isValidBuilding(walnutAccessible).connectedSections).toHaveLength(1);
+  assertValidBuilding(walnutAccessible);
 });
 
 const routes = [
@@ -119,6 +123,15 @@ const routes = [
 
 test.each(routes)("gives correct directions from %s to %s", (from, to) => {
   expect(
-    walnut.getDirections(from.toString(), to.toString())
+    walnutNonAccessible.getDirections(from.toString(), to.toString())
   ).toMatchSnapshot();
 });
+
+test.each(routes)(
+  "gives correct accessible directions from %s to %s",
+  (from, to) => {
+    expect(
+      walnutAccessible.getDirections(from.toString(), to.toString())
+    ).toMatchSnapshot();
+  }
+);
