@@ -9,6 +9,9 @@
           <router-link tag="li" to="/myschedule">
             <a>My Schedule</a>
           </router-link>
+          <router-link tag="li" to="/settings">
+            <a>Settings</a>
+          </router-link>
           <router-link tag="li" to="/about">
             <a>About Us</a>
           </router-link>
@@ -23,8 +26,6 @@
       <router-view id="main-stuff" class="child-view"></router-view>
     </transition>
 
-    <TheMoonButton style="right: 1vh; bottom: 1vh; position: fixed" />
-
     <TheRoomsDataList />
   </div>
 </template>
@@ -33,12 +34,11 @@
 import Vue from "vue";
 
 import TheRoomsDataList from "@/components/TheRoomsDataList.vue";
-import TheMoonButton from "@/components/TheMoonButton.vue";
 import router from "@/router/index";
 
 export default Vue.extend({
   router,
-  components: { TheRoomsDataList, TheMoonButton },
+  components: { TheRoomsDataList },
   data() {
     return {
       transitionName: "fade",
@@ -86,7 +86,8 @@ export default Vue.extend({
 <style scoped>
 header {
   background-color: var(--background-color);
-  transition: background-color var(--linear-ease), color var(--linear-ease);
+  transition: background-color var(--fast-middle-ease),
+    color var(--fast-middle-ease);
   position: fixed;
   top: 0;
   left: 0;
