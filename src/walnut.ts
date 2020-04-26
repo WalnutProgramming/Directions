@@ -9,165 +9,80 @@ import {
   Fork,
   SimpleHallway,
   Building,
+  onFloor,
+  reverseConnection,
 } from "room-finder";
 
-const { LEFT, RIGHT, FRONT, BACK } = Direction;
+const { LEFT, RIGHT, FRONT } = Direction;
 
-enum StairNode {
-  A1 = "StairNode.A1",
-  A2 = "StairNode.A2",
-  A3 = "StairNode.A3",
-  B1 = "StairNode.B1",
-  B2 = "StairNode.B2",
-  B3 = "StairNode.B3",
-  C2 = "StairNode.C2",
-  C3 = "StairNode.C3",
-  D2 = "StairNode.D2",
-  D3 = "StairNode.D3",
-  F1 = "StairNode.F1",
-  F2 = "StairNode.F2",
-  F3 = "StairNode.F3",
-  SCIENCE_A1 = "StairNode.SCIENCE_A1",
-  SCIENCE_A2 = "StairNode.SCIENCE_A2",
-  SCIENCE_A3 = "StairNode.SCIENCE_A3",
-  MUSIC_ENTRANCE_TO_1 = "StairNode.MUSIC_ENTRANCE_TO_1",
-  MUSIC_1_TO_ENTRANCE = "StairNode.MUSIC_1_TO_ENTRANCE",
-  MUSIC_ENTRANCE_TO_2 = "StairNode.MUSIC_ENTRANCE_TO_2",
-  MUSIC_2_TO_ENTRANCE = "StairNode.MUSIC_2_TO_ENTRANCE",
-  ARTS_A2 = "StairNode.ARTS_A2",
-  ARTS_A3 = "StairNode.ARTS_A3",
-  ARTS_B2 = "StairNode.ARTS_B2",
-  ARTS_B3 = "StairNode.ARTS_B3",
-}
+type StairNodeId =
+  | "stair a"
+  | "stair b"
+  | "stair c"
+  | "stair d"
+  | "stair f"
+  | "stair science a"
+  | "stair music entrance to 1"
+  | "stair music entrance to 2"
+  | "stair arts a"
+  | "stair arts b"
+  | "elevator a"
+  | "elevator b"
+  | "elevator science"
+  | "elevator music";
 
-// When listing stairs, the furthest down entrance to the stairs goes first
-const stairConnections: string[][] = [
-  [StairNode.A1, StairNode.A2, StairNode.A3],
-  [StairNode.B1, StairNode.B2, StairNode.B3],
-  [StairNode.C2, StairNode.C3],
-  [StairNode.D2, StairNode.D3],
-  [StairNode.F1, StairNode.F2, StairNode.F3],
-  [StairNode.SCIENCE_A1, StairNode.SCIENCE_A2, StairNode.SCIENCE_A3],
-  [StairNode.MUSIC_ENTRANCE_TO_2, StairNode.MUSIC_2_TO_ENTRANCE],
-  [StairNode.MUSIC_1_TO_ENTRANCE, StairNode.MUSIC_ENTRANCE_TO_1],
-  [StairNode.ARTS_A2, StairNode.ARTS_A3],
-  [StairNode.ARTS_B2, StairNode.ARTS_B3],
-];
+type ConnectionNodeId =
+  | "1108 & 1105 to 1100s"
+  | "1300s to 1600s"
+  | "2300s to 2600s"
+  | "2600s to arcade"
+  | "2700s to arcade"
+  | "music entrance to arcade"
+  | "music 1 to music little corner"
+  | "lobby to 2200s"
+  | "lobby to 2240"
+  | "alumni hall to 2200s"
+  | "alumni hall to arcade"
+  | "2500s to alumni hall"
+  | "2500s to 2600s"
+  | "2600s to 2600s little hallway"
+  | "3500s corner to 3500s"
+  | "2500s corner to 2500s"
+  | "enter 2216"
+  | "enter 2215"
+  | "2100s to 2401"
+  | "2404 to 2100s";
 
-enum ConnectionNode {
-  C1100S_TO_1108_AND_1105 = "ConnectionNode.C1100S_TO_1108_AND_1105",
-  C1108_AND_1105_TO_1100S = "ConnectionNode.C1108_AND_1105_TO_1100S",
-  C1300S_TO_1600S = "ConnectionNode.C1300S_TO_1600S",
-  C1600S_TO_1300S = "ConnectionNode.C1600S_TO_1300S",
-  C2300S_TO_2600S = "ConnectionNode.C2300S_TO_2600S",
-  C2600S_TO_2300S = "ConnectionNode.C2600S_TO_2300S",
-  C2600S_TO_ARCADE = "ConnectionNode.C2600S_TO_ARCADE",
-  ARCADE_TO_2600S = "ConnectionNode.ARCADE_TO_2600S",
-  C2700S_TO_ARCADE = "ConnectionNode.C2700S_TO_ARCADE",
-  ARCADE_TO_2700S = "ConnectionNode.ARCADE_TO_2700S",
-  MUSIC_ENTRANCE_TO_ARCADE = "ConnectionNode.MUSIC_ENTRANCE_TO_ARCADE",
-  ARCADE_TO_MUSIC_ENTRANCE = "ConnectionNode.ARCADE_TO_MUSIC_ENTRANCE",
-  MUSIC1_TO_MUSIC_LITTLE_CORNER = "ConnectionNode.MUSIC1_TO_MUSIC_LITTLE_CORNER",
-  MUSIC_LITTLE_CORNER_TO_MUSIC1 = "ConnectionNode.MUSIC_LITTLE_CORNER_TO_MUSIC1",
-  LOBBY_TO_2200S = "ConnectionNode.LOBBY_TO_2200S",
-  C2200S_TO_LOBBY = "ConnectionNode.C2200S_TO_LOBBY",
-  LOBBY_TO_2240 = "ConnectionNode.LOBBY_TO_2240",
-  C2240_TO_LOBBY = "ConnectionNode.C2240_TO_LOBBY",
-  ALUMNI__HALL_TO_2200S = "ConnectionNode.ALUMNI__HALL_TO_2200S",
-  C2200S_TO_ALUMNI_HALL = "ConnectionNode.C2200S_TO_ALUMNI_HALL",
-  ALUMNI_HALL_TO_ARCADE = "ConnectionNode.ALUMNI_HALL_TO_ARCADE",
-  ARCADE_TO_ALUMNI_HALL = "ConnectionNode.ARCADE_TO_ALUMNI_HALL",
-  C2500S_TO_ALUMNI_HALL = "ConnectionNode.C2500S_TO_ALUMNI_HALL",
-  ALUMNI_HALL_TO_2500S = "ConnectionNode.ALUMNI_HALL_TO_2500S",
-  C2500S_TO_2600S = "ConnectionNode.C2500S_TO_2600S",
-  C2600S_TO_2500S = "ConnectionNode.C2600S_TO_2500S",
-  C2600S_TO_2600S_LITTLE_HALLWAY = "ConnectionNode.C2600S_TO_2600S_LITTLE_HALLWAY",
-  C2600S_LITTLE_HALLWAY_TO_2600S = "ConnectionNode.C2600S_LITTLE_HALLWAY_TO_2600S",
-  C3500S_CORNER_TO_3500S = "ConnectionNode.C3500S_CORNER_TO_3500S",
-  C3500S_TO_3500S_CORNER = "ConnectionNode.C3500S_TO_3500S_CORNER",
-  C2500S_CORNER_TO_2500S = "ConnectionNode.C2500S_CORNER_TO_2500S",
-  C2500S_TO_2500S_CORNER = "ConnectionNode.C2500S_TO_2500S_CORNER",
-  ENTER_2216 = "ConnectionNode.ENTER_2216",
-  EXIT_2216 = "ConnectionNode.EXIT_2216",
-  ENTER_2215 = "ConnectionNode.ENTER_2215",
-  EXIT_2215 = "ConnectionNode.EXIT_2215",
-  C2100S_TO_2404 = "ConnectionNode.C2100S_TO_2404",
-  C2404_T0_2100S = "ConnectionNode.C2404_TO_2100S",
-  C2100S_TO_2401 = "ConnectionNode.C2100S_TO_2401",
-  C2401_T0_2100S = "ConnectionNode.C2401_TO_2100S",
-}
-
-const hallwayConnections: [string, string][] = [
-  [
-    ConnectionNode.C1108_AND_1105_TO_1100S,
-    ConnectionNode.C1100S_TO_1108_AND_1105,
-  ],
-  [ConnectionNode.C1300S_TO_1600S, ConnectionNode.C1600S_TO_1300S],
-  [ConnectionNode.C2300S_TO_2600S, ConnectionNode.C2600S_TO_2300S],
-  [ConnectionNode.C2600S_TO_ARCADE, ConnectionNode.ARCADE_TO_2600S],
-  [ConnectionNode.C2700S_TO_ARCADE, ConnectionNode.ARCADE_TO_2700S],
-  [
-    ConnectionNode.MUSIC_ENTRANCE_TO_ARCADE,
-    ConnectionNode.ARCADE_TO_MUSIC_ENTRANCE,
-  ],
-  [
-    ConnectionNode.MUSIC1_TO_MUSIC_LITTLE_CORNER,
-    ConnectionNode.MUSIC_LITTLE_CORNER_TO_MUSIC1,
-  ],
-  [ConnectionNode.LOBBY_TO_2200S, ConnectionNode.C2200S_TO_LOBBY],
-  [ConnectionNode.LOBBY_TO_2240, ConnectionNode.C2240_TO_LOBBY],
-  [ConnectionNode.ALUMNI__HALL_TO_2200S, ConnectionNode.C2200S_TO_ALUMNI_HALL],
-  [ConnectionNode.ALUMNI_HALL_TO_ARCADE, ConnectionNode.ARCADE_TO_ALUMNI_HALL],
-  [ConnectionNode.C2500S_TO_ALUMNI_HALL, ConnectionNode.ALUMNI_HALL_TO_2500S],
-  [ConnectionNode.C2500S_TO_2600S, ConnectionNode.C2600S_TO_2500S],
-  [
-    ConnectionNode.C2600S_TO_2600S_LITTLE_HALLWAY,
-    ConnectionNode.C2600S_LITTLE_HALLWAY_TO_2600S,
-  ],
-  [
-    ConnectionNode.C3500S_CORNER_TO_3500S,
-    ConnectionNode.C3500S_TO_3500S_CORNER,
-  ],
-  [
-    ConnectionNode.C2500S_CORNER_TO_2500S,
-    ConnectionNode.C2500S_TO_2500S_CORNER,
-  ],
-  [ConnectionNode.ENTER_2216, ConnectionNode.EXIT_2216],
-  [ConnectionNode.ENTER_2215, ConnectionNode.EXIT_2215],
-
-  [ConnectionNode.C2100S_TO_2401, ConnectionNode.C2401_T0_2100S],
-  [ConnectionNode.C2404_T0_2100S, ConnectionNode.C2100S_TO_2404],
-];
-
-const hallways: Hallway[] = [
+const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
   // 1100s
   new Hallway([
-    new Room("1106", BACK),
+    new Room("1106", FRONT),
     new Room("1107", RIGHT),
     new Fork(
       LEFT,
-      ConnectionNode.C1100S_TO_1108_AND_1105,
+      reverseConnection("1108 & 1105 to 1100s"),
       "the 1108 and 1105 hallway"
     ),
     new Room("1109", RIGHT),
     new Room("1110"),
     new Room("1111", RIGHT),
     new Room("1113", RIGHT),
-    new Stairs(LEFT, StairNode.F1, "2010"),
+    new Stairs(LEFT, onFloor("stair f", 1), "the 2010 stairs"),
   ]),
 
   // 1108 and 1105
   new Hallway([
-    new Fork(BACK, ConnectionNode.C1108_AND_1105_TO_1100S, "the latter 1100s"),
+    new Fork(FRONT, "1108 & 1105 to 1100s", "the latter 1100s"),
     new Room("1108", RIGHT),
     new Room("1105", LEFT),
     new Turn(LEFT),
+    new Stairs(RIGHT, onFloor("elevator b", 1), "the elevator"),
     // fork to the wacky confusing cafeteria part goes here
   ]),
 
   // 1300s
   new Hallway([
-    new Stairs(LEFT, StairNode.A1, "2018"),
+    new Stairs(LEFT, onFloor("stair a", 1), "the 2018 stairs"),
     new Room("1314"),
     new Room("1315", RIGHT),
     new Room("1312"),
@@ -176,9 +91,10 @@ const hallways: Hallway[] = [
     new Turn(LEFT),
     new Room("1310", RIGHT),
     new Room("1309", RIGHT),
+    new Stairs(LEFT, onFloor("elevator a", 1), "the elevator"),
     new Turn(RIGHT),
-    new Fork(LEFT, ConnectionNode.C1300S_TO_1600S, "the 1600s"),
-    new Stairs(LEFT, StairNode.B1, "2025"),
+    new Fork(LEFT, "1300s to 1600s", "the 1600s"),
+    new Stairs(LEFT, onFloor("stair b", 1), "the 2025 stairs"),
     new Room("1305", RIGHT),
     new Room("1303", RIGHT),
     new Room("1304", LEFT),
@@ -188,7 +104,7 @@ const hallways: Hallway[] = [
 
   // 2nd floor main building (2100s, 2200s, 2300s)
   new Hallway([
-    new Stairs(LEFT, StairNode.A2, "2018"),
+    new Stairs(LEFT, onFloor("stair a", 2), "the 2018 stairs"),
     new Room("2310"),
     new Room("2311", RIGHT),
     new Room("2308"),
@@ -196,9 +112,10 @@ const hallways: Hallway[] = [
     new Room("2307", RIGHT),
     new Turn(LEFT),
     new Room("2306", RIGHT),
+    new Stairs(LEFT, onFloor("elevator a", 2), "the elevator"),
     new Turn(RIGHT),
-    new Fork(LEFT, ConnectionNode.C2300S_TO_2600S, "the 2600s"),
-    new Stairs(LEFT, StairNode.B2, "2025"),
+    new Fork(LEFT, "2300s to 2600s", "the 2600s"),
+    new Stairs(LEFT, onFloor("stair b", 2), "the 2025 stairs"),
     new Room("2302", RIGHT),
     new Room("Auditorium", LEFT, {
       prefix: "the",
@@ -206,32 +123,37 @@ const hallways: Hallway[] = [
     }),
     new Room("2301", RIGHT),
     new Room("2205", RIGHT),
-    new Stairs(LEFT, StairNode.C2, "2024"),
-    new Fork(LEFT, ConnectionNode.C2200S_TO_ALUMNI_HALL, "the Alumni Hall"),
+    new Stairs(LEFT, onFloor("stair c", 2), "the 2024 stairs"),
+    new Fork(
+      LEFT,
+      reverseConnection("alumni hall to 2200s"),
+      "the Alumni Hall"
+    ),
     new Room("2204", LEFT, { aliases: ["Principal's Office"] }),
     new Room("2203", RIGHT, { aliases: ["Counseling Office"] }),
     new Room("2202"),
     new Room("2201", RIGHT, { aliases: ["Registrar"] }),
-    new Fork(LEFT, ConnectionNode.LOBBY_TO_2240, "the entrance area"),
-    new Fork(RIGHT, ConnectionNode.LOBBY_TO_2200S, "the 2200s"),
+    new Fork(LEFT, "lobby to 2240", "the entrance area"),
+    new Fork(RIGHT, "lobby to 2200s", "the 2200s"),
     new Room("2210", LEFT, { aliases: ["Conference Room"] }),
     new Room("2209", RIGHT, {
       aliases: ["10-11 Administration Office", "10th and 11th Grade Office"],
     }),
-    new Stairs(LEFT, StairNode.D2, "2015"),
+    new Stairs(LEFT, onFloor("stair d", 2), "the 2015 stairs"),
     new Room("2101", RIGHT),
     new Fork(
       LEFT,
-      ConnectionNode.C2100S_TO_2401,
+      "2100s to 2401",
       "the tiny hallway that's across from room 2101"
     ),
     new Room("2103", RIGHT),
     new Fork(
       LEFT,
-      ConnectionNode.C2100S_TO_2404,
+      reverseConnection("2404 to 2100s"),
       "the tiny hallway near the elevator"
     ),
     new Room("2105", RIGHT),
+    new Stairs(LEFT, onFloor("elevator b", 2), "the elevator"),
     new Turn(RIGHT),
     new Room("2109", RIGHT),
     new Room("2112"),
@@ -241,18 +163,18 @@ const hallways: Hallway[] = [
     new Room("2114"),
     new Room("2113", RIGHT),
     new Room("2115", RIGHT),
-    new Stairs(LEFT, StairNode.F2, "2010"),
+    new Stairs(LEFT, onFloor("stair f", 2), "the 2010 stairs"),
   ]),
 
   // entrance area
   new Hallway([
-    new Fork(BACK, ConnectionNode.C2240_TO_LOBBY, "the lobby"),
+    new Fork(FRONT, reverseConnection("lobby to 2240"), "the lobby"),
     new Room("2200", LEFT, { aliases: ["Main Office"] }),
   ]),
 
   // administrative center
   new Hallway([
-    new Fork(BACK, ConnectionNode.C2200S_TO_LOBBY, "the lobby"),
+    new Fork(FRONT, reverseConnection("lobby to 2200s"), "the lobby"),
     new Room("2207", RIGHT, {
       aliases: ["7-9 Administration Offices", "7th, 8th, and 9th Grade Office"],
     }),
@@ -260,9 +182,9 @@ const hallways: Hallway[] = [
     new Room("2212", LEFT, { aliases: ["Medical Room", "Nurse"] }),
     new Room("2214"),
     new Room("2211", RIGHT),
-    new Room("2216", LEFT, { nodeId: ConnectionNode.ENTER_2216 }),
+    new Room("2216", LEFT, { nodeId: "enter 2216" }),
     new Room("2215", RIGHT, {
-      nodeId: ConnectionNode.ENTER_2215,
+      nodeId: "enter 2215",
       aliases: ["Alumni Foundation", "Alumni Office"],
     }),
     new Room("2218"),
@@ -270,7 +192,7 @@ const hallways: Hallway[] = [
 
   // hallway 2401
   new Hallway([
-    new Fork(BACK, ConnectionNode.C2401_T0_2100S, "the 2100s"),
+    new Fork(FRONT, reverseConnection("2100s to 2401"), "the 2100s"),
     new Room("2401", LEFT, {
       aliases: ["Athletic Director's Office"],
     }),
@@ -282,24 +204,28 @@ const hallways: Hallway[] = [
 
   // 2404 hallway
   new Hallway([
-    new Fork(BACK, ConnectionNode.C2404_T0_2100S, "the 2100s"),
+    new Fork(FRONT, "2404 to 2100s", "the 2100s"),
     new Room("2404", RIGHT),
     new Room("2403", LEFT),
   ]),
 
   // inside 2216
-  new SimpleHallway(ConnectionNode.EXIT_2216, [new Room("2222")], "room 2216"),
+  new SimpleHallway(
+    reverseConnection("enter 2216"),
+    [new Room("2222")],
+    "room 2216"
+  ),
 
   // inside 2215
   new SimpleHallway(
-    ConnectionNode.EXIT_2215,
+    reverseConnection("enter 2215"),
     [new Room("2219"), new Room("2221")],
     "room 2215"
   ),
 
   // 3rd floor main building (3100s, 3200s, 3300s)
   new Hallway([
-    new Stairs(LEFT, StairNode.A3, "2018"),
+    new Stairs(LEFT, onFloor("stair a", 3), "the 2018 stairs"),
     new Room("3314", LEFT),
     new Room("3315", RIGHT),
     new Room("3312", LEFT),
@@ -308,13 +234,14 @@ const hallways: Hallway[] = [
     new Turn(LEFT),
     new Room("3310", RIGHT), // these 2 rooms sometimes give weird directions
     new Room("3309", RIGHT), //
+    new Stairs(LEFT, onFloor("elevator a", 3), "the elevator", 2),
     new Turn(RIGHT),
-    new Stairs(LEFT, StairNode.B3, "2025", 2),
+    new Stairs(LEFT, onFloor("stair b", 3), "the 2025 stairs", 2),
     new Room("3305", RIGHT),
     new Room("3302", LEFT),
     new Room("3303", RIGHT),
     new Room("3301", RIGHT, { aliases: ["Writing Center"] }),
-    new Stairs(LEFT, StairNode.C3, "2024"),
+    new Stairs(LEFT, onFloor("stair c", 3), "the 2024 stairs"),
     new Room("3210", LEFT),
     new Room("3207", LEFT),
     new Room("3205", RIGHT),
@@ -327,11 +254,12 @@ const hallways: Hallway[] = [
     new Room("3201", RIGHT, {
       aliases: ["Computer Lab - Library"],
     }),
-    new Stairs(LEFT, StairNode.D3, "2015", 3),
+    new Stairs(LEFT, onFloor("stair d", 3), "the 2015 stairs", 3),
     new Room("3102", LEFT),
     new Room("3101", RIGHT),
     new Room("3104", LEFT, { aliases: ["Computer Lab"] }),
     new Room("3103", RIGHT),
+    new Stairs(LEFT, onFloor("elevator b", 3), "the elevator", 6),
     new Room("3105", RIGHT),
     new Turn(RIGHT),
     new Room("3112", LEFT),
@@ -342,17 +270,17 @@ const hallways: Hallway[] = [
     new Room("3114", LEFT),
     new Room("3115", RIGHT),
     new Room("3117", RIGHT),
-    new Stairs(LEFT, StairNode.F3, "2010"),
+    new Stairs(LEFT, onFloor("stair f", 3), "the 2010 stairs"),
   ]),
 
   // 1st floor modern languages wing (1600s)
   new Hallway([
-    new Fork(BACK, ConnectionNode.C1600S_TO_1300S, "the 1300s"),
+    new Fork(FRONT, reverseConnection("1300s to 1600s"), "the 1300s"),
     new Turn(LEFT),
     new Room("1601"),
     new Room("1602"),
     new Turn(RIGHT),
-    new (class extends Room {
+    new (class extends Room<ConnectionNodeId> {
       onLeave(forwardOrBackward: -1 | 1) {
         return super
           .onLeave(forwardOrBackward, true, false)
@@ -364,12 +292,12 @@ const hallways: Hallway[] = [
     new Room("1606"),
     new Room("1607"),
     new Room("1608"),
-    new Stairs(LEFT, StairNode.SCIENCE_A1, undefined, 4),
+    new Stairs(LEFT, onFloor("stair science a", 1), undefined, 4),
   ]),
 
   // 2nd floor modern languages wing (2600s)
   new Hallway([
-    new Fork(BACK, ConnectionNode.C2600S_TO_2300S, "the 2300s"),
+    new Fork(FRONT, reverseConnection("2300s to 2600s"), "the 2300s"),
     new Turn(LEFT),
     new Room("2604", RIGHT),
     new Room("2601"),
@@ -377,31 +305,31 @@ const hallways: Hallway[] = [
     new Turn(RIGHT),
     new Room("2603"),
     new Room("2605"),
-    new Fork(
-      RIGHT,
-      ConnectionNode.C2600S_TO_2600S_LITTLE_HALLWAY,
-      "the little hallway"
-    ),
+    new Fork(RIGHT, "2600s to 2600s little hallway", "the little hallway"),
     new Room("2607"),
     new Room("2609"),
     new Room("2611"),
-    new Fork(FRONT, ConnectionNode.C2600S_TO_ARCADE, "the arcade"),
+    new Fork(FRONT, "2600s to arcade", "the arcade"),
   ]),
 
   // little corner in the 2600s (go through here to get to the 2500s behind the auditorium)
   new Hallway([
-    new Fork(BACK, ConnectionNode.C2600S_LITTLE_HALLWAY_TO_2600S, "the 2600s"),
+    new Fork(
+      FRONT,
+      reverseConnection("2600s to 2600s little hallway"),
+      "the 2600s"
+    ),
     // There are a few stairs right here
-    new (class extends Room {
-      onPass(forwardOrBackward: -1 | 1, prevRoom: Room) {
+    new (class extends Room<ConnectionNodeId> {
+      onPass(forwardOrBackward: -1 | 1, prevRoom: Room<string>) {
         return `Go ${forwardOrBackward === -1 ? "up" : "down"} the 3 steps\n`;
       }
     })(),
-    new Fork(LEFT, ConnectionNode.C2600S_TO_2500S, "the door"),
+    new Fork(LEFT, reverseConnection("2500s to 2600s"), "the door"),
   ]),
 
   // arcade
-  new (class extends Hallway {
+  new (class extends Hallway<ConnectionNodeId, StairNodeId> {
     getDirectionsFromIndices(from: number, to: number) {
       const LANGUAGES = 1;
       const SCIENCE = 2;
@@ -511,88 +439,92 @@ const hallways: Hallway[] = [
           return "";
       }
     }
-  })([
-    // The directions that we use here don't matter since we
-    // override the instructions for the arcade anyway.
-    new Fork(FRONT, ConnectionNode.ARCADE_TO_ALUMNI_HALL, "Alumni Hall"),
-    new Fork(FRONT, ConnectionNode.ARCADE_TO_2600S, "the 2600s"),
-    new Fork(FRONT, ConnectionNode.ARCADE_TO_2700S, "the 2700s"),
-    new Fork(
-      FRONT,
-      ConnectionNode.ARCADE_TO_MUSIC_ENTRANCE,
-      "the music lyceum"
-    ),
-    new Room("Senior High Gym", FRONT, {
-      prefix: "the",
-      aliases: ["2800", "2801", "High School Gymnasium"],
-    }),
-  ]),
+  })(
+    [
+      // The directions that we use here don't matter since we
+      // override the instructions for the arcade anyway.
+      new Fork(
+        FRONT,
+        reverseConnection("alumni hall to arcade"),
+        "Alumni Hall"
+      ),
+      new Fork(FRONT, reverseConnection("2600s to arcade"), "the 2600s"),
+      new Fork(FRONT, reverseConnection("2700s to arcade"), "the 2700s"),
+      new Fork(
+        FRONT,
+        reverseConnection("music entrance to arcade"),
+        "the music lyceum"
+      ),
+      new Room("Senior High Gym", FRONT, {
+        prefix: "the",
+        aliases: ["2800", "2801", "High School Gymnasium"],
+      }),
+    ],
+    { allowFrontConnectionsInMiddle: true }
+  ),
 
   // alumni hall
-  new Hallway([
-    new Fork(BACK, ConnectionNode.ALUMNI__HALL_TO_2200S, "the 2200s"),
-    new Fork(LEFT, ConnectionNode.ALUMNI_HALL_TO_2500S, "the narrow hallway"),
-    new Fork(FRONT, ConnectionNode.ALUMNI_HALL_TO_ARCADE, "the arcade"),
+  new Hallway<ConnectionNodeId, StairNodeId>([
+    new Fork(FRONT, "alumni hall to 2200s", "the 2200s"),
+    new Fork(
+      LEFT,
+      reverseConnection("2500s to alumni hall"),
+      "the narrow hallway"
+    ),
+    new Fork(FRONT, "alumni hall to arcade", "the arcade"),
   ]),
 
   // 2500s (2nd floor Performing Arts Center, behind the auditorium)
   new Hallway([
-    new Fork(BACK, ConnectionNode.C2500S_TO_ALUMNI_HALL, "Alumni Hall"),
+    new Fork(FRONT, "2500s to alumni hall", "Alumni Hall"),
     new Room("2503", RIGHT, {
       aliases: ["Black Box Theatre", "Black Box Theater", "Theater"],
     }),
     new Room("2505", RIGHT, { aliases: ["Scene Shop"] }),
     new Fork(
       RIGHT,
-      ConnectionNode.C2500S_TO_2500S_CORNER,
+      reverseConnection("2500s corner to 2500s"),
       "the corner with the stairs"
     ),
     new Room("2510", RIGHT),
-    new Fork(LEFT, ConnectionNode.C2500S_TO_2600S, "the door"),
-    new Stairs(FRONT, StairNode.ARTS_B2),
+    new Fork(LEFT, "2500s to 2600s", "the door"),
+    new Stairs(FRONT, onFloor("stair arts b", 2)),
   ]),
 
   // 2500s stair corner
   new Hallway([
-    new Fork(
-      BACK,
-      ConnectionNode.C2500S_CORNER_TO_2500S,
-      "the main 2500s hallway"
-    ),
-    new Stairs(RIGHT, StairNode.ARTS_A2),
+    new Fork(FRONT, "2500s corner to 2500s", "the main 2500s hallway"),
+    new Stairs(RIGHT, onFloor("stair arts a", 2)),
   ]),
 
   // performingArtsCenter3
   new Hallway([
     new Fork(
       RIGHT,
-      ConnectionNode.C3500S_TO_3500S_CORNER,
+      reverseConnection("3500s corner to 3500s"),
       "the corner with the stairs"
     ),
     new Room("3505", RIGHT),
-    new Stairs(FRONT, StairNode.ARTS_B3),
+    new Stairs(FRONT, onFloor("stair arts b", 3)),
   ]),
 
   // 3500s (3rd floor Performing Arts Center, behind the auditorium)
   new Hallway([
-    new Fork(
-      BACK,
-      ConnectionNode.C3500S_CORNER_TO_3500S,
-      "the main 3500s hallway"
-    ),
-    new Stairs(RIGHT, StairNode.ARTS_A3),
+    new Fork(FRONT, "3500s corner to 3500s", "the main 3500s hallway"),
+    new Stairs(RIGHT, onFloor("stair arts a", 3)),
     new Room("3503", LEFT),
     new Room("3504", FRONT),
   ]),
 
   // 2nd floor science wing (2700s)
   new Hallway([
-    new (class extends Fork {
+    new (class extends Fork<ConnectionNodeId> {
       onLeave() {
         return "";
       }
-    })(BACK, ConnectionNode.C2700S_TO_ARCADE, "the arcade"),
-    new Stairs(LEFT, StairNode.SCIENCE_A2),
+    })(FRONT, "2700s to arcade", "the arcade"),
+    new Stairs(LEFT, onFloor("stair science a", 2)),
+    new Stairs(LEFT, onFloor("elevator science", 2), "the elevator"),
     new Room("2701"),
     new Room("2702", RIGHT),
     new Room("2703"),
@@ -616,7 +548,8 @@ const hallways: Hallway[] = [
 
   // 3rd floor science wing (3700s)
   new Hallway([
-    new Stairs(LEFT, StairNode.SCIENCE_A3),
+    new Stairs(LEFT, onFloor("stair science a", 3)),
+    new Stairs(LEFT, onFloor("elevator science", 3), "the elevator"),
     new Room("3701", LEFT, { aliases: ["Computer Lab - Engineering"] }),
     new Room("3702", RIGHT),
     new Room("3704", RIGHT),
@@ -637,30 +570,25 @@ const hallways: Hallway[] = [
   // entrance to music wing
   // (go up to get the 2nd floor, down to get the 1st floor science wing)
   new Hallway([
-    new Stairs(BACK, StairNode.MUSIC_ENTRANCE_TO_1),
-    new Fork(
-      RIGHT,
-      ConnectionNode.MUSIC_ENTRANCE_TO_ARCADE,
-      "the long narrow hallway"
-    ),
-    new Stairs(FRONT, StairNode.MUSIC_ENTRANCE_TO_2),
+    new Stairs(FRONT, onFloor("stair music entrance to 1", 2)),
+    new Fork(RIGHT, "music entrance to arcade", "the long narrow hallway"),
+    // TODO
+    new Stairs(LEFT, onFloor("elevator music", 1.5), "the elevator"),
+    new Stairs(FRONT, onFloor("stair music entrance to 2", 1)),
   ]),
 
   // music lyceum 1st floor (1800s)
-  new Hallway([
-    new Stairs(BACK, StairNode.MUSIC_1_TO_ENTRANCE),
+  new Hallway<ConnectionNodeId, StairNodeId>([
+    new Stairs(FRONT, onFloor("stair music entrance to 1", 1)),
     new Room("1852", RIGHT),
     new Turn(LEFT),
     new Turn(LEFT),
     new Room("1853", RIGHT),
+    new Stairs(RIGHT, onFloor("elevator music", 1), "the elevator"),
     new Room("1850", RIGHT, { aliases: ["Band (1850)"] }),
     new Room("1857", RIGHT),
     new Room("1851", RIGHT),
-    new Fork(
-      RIGHT,
-      ConnectionNode.MUSIC1_TO_MUSIC_LITTLE_CORNER,
-      "the little corner"
-    ),
+    new Fork(RIGHT, "music 1 to music little corner", "the little corner"),
     new Turn(LEFT),
     new Room("1843", LEFT),
     new Room("1840", RIGHT, { aliases: ["Instrumental", "Band (1840)"] }),
@@ -672,8 +600,8 @@ const hallways: Hallway[] = [
   // little corner in the 1st floor music wing
   new Hallway([
     new Fork(
-      BACK,
-      ConnectionNode.MUSIC_LITTLE_CORNER_TO_MUSIC1,
+      FRONT,
+      reverseConnection("music 1 to music little corner"),
       "the music hallway"
     ),
     new Room("1842"),
@@ -684,7 +612,8 @@ const hallways: Hallway[] = [
 
   // 2nd floor music wing (2800s)
   new Hallway([
-    new Stairs(LEFT, StairNode.MUSIC_2_TO_ENTRANCE),
+    new Stairs(LEFT, onFloor("stair music entrance to 2", 2)),
+    new Stairs(LEFT, onFloor("elevator music", 2), "the elevator"),
     new Room("2855"),
     new Room("2853"),
     new Room("2851"),
@@ -704,7 +633,20 @@ const hallways: Hallway[] = [
   ]),
 ];
 
-const walnut = new Building(hallways, hallwayConnections, stairConnections);
-// @ts-ignore
-window.walnut = walnut;
-export default walnut;
+const walnutAll = new Building<ConnectionNodeId, StairNodeId>(hallways);
+
+export const walnutNonAccessible = walnutAll.withAllowedConnectionTypes(
+  s => !s.includes("elevator")
+);
+
+export const walnutAccessible = walnutAll.withAllowedConnectionTypes(
+  // TODO!!! Since we currently don't know of a way to get to the 3500s without stairs,
+  // we are allowing "stair arts b".
+  s =>
+    (!s.includes("stair") || s === "stair arts b") &&
+    s !== "2500s to 2600s" &&
+    s !== "alumni hall to 2200s"
+);
+
+// expose to console
+Object.assign(window, { walnutNonAccessible, walnutAccessible });

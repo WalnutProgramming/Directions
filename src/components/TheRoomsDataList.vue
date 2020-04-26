@@ -8,9 +8,9 @@
 
 <script lang="ts">
 import Vue from "vue";
-import walnut from "@/walnut";
+import { walnutNonAccessible } from "@/walnut";
 
-const { roomsList } = walnut;
+const { roomsList } = walnutNonAccessible;
 
 export default Vue.extend({
   computed: {

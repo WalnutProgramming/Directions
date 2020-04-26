@@ -93,7 +93,7 @@ import RoomInput from "@/components/RoomInput.vue";
 import CustomButton from "@/components/buttons/CustomButton.vue";
 import MinusButton from "@/components/buttons/MinusButton.vue";
 import PlusButton from "@/components/buttons/PlusButton.vue";
-import walnut from "@/walnut";
+import { walnutNonAccessible } from "@/walnut";
 
 interface Room {
   value: string;
@@ -151,7 +151,10 @@ export default Vue.extend({
       Array.from(document.getElementsByClassName("my-input")).forEach(
         theInput => {
           const inp = theInput as HTMLInputElement;
-          if (inp.value === "" || walnut.isValidRoomName(inp.value)) {
+          if (
+            inp.value === "" ||
+            walnutNonAccessible.isValidRoomName(inp.value)
+          ) {
             inp.setCustomValidity("");
           } else {
             inp.setCustomValidity(
@@ -165,7 +168,8 @@ export default Vue.extend({
       ) as HTMLFormElement).reportValidity();
       if (
         this.rooms.every(
-          ({ value }) => value.trim() === "" || walnut.isValidRoomName(value)
+          ({ value }) =>
+            value.trim() === "" || walnutNonAccessible.isValidRoomName(value)
         )
       ) {
         /* */
