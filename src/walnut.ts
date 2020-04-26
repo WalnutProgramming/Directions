@@ -63,7 +63,7 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
     new Room("1110"),
     new Room("1111", RIGHT),
     new Room("1113", RIGHT),
-    new Stairs(LEFT, onFloor("f", 1), "2010"),
+    new Stairs(LEFT, onFloor("f", 1), "the 2010 stairs"),
   ]),
 
   // 1108 and 1105
@@ -77,7 +77,7 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
 
   // 1300s
   new Hallway([
-    new Stairs(LEFT, onFloor("a", 1), "2018"),
+    new Stairs(LEFT, onFloor("a", 1), "the 2018 stairs"),
     new Room("1314"),
     new Room("1315", RIGHT),
     new Room("1312"),
@@ -88,7 +88,7 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
     new Room("1309", RIGHT),
     new Turn(RIGHT),
     new Fork(LEFT, "1300s to 1600s", "the 1600s"),
-    new Stairs(LEFT, onFloor("b", 1), "2025"),
+    new Stairs(LEFT, onFloor("b", 1), "the 2025 stairs"),
     new Room("1305", RIGHT),
     new Room("1303", RIGHT),
     new Room("1304", LEFT),
@@ -98,7 +98,7 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
 
   // 2nd floor main building (2100s, 2200s, 2300s)
   new Hallway([
-    new Stairs(LEFT, onFloor("a", 2), "2018"),
+    new Stairs(LEFT, onFloor("a", 2), "the 2018 stairs"),
     new Room("2310"),
     new Room("2311", RIGHT),
     new Room("2308"),
@@ -108,7 +108,7 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
     new Room("2306", RIGHT),
     new Turn(RIGHT),
     new Fork(LEFT, "2300s to 2600s", "the 2600s"),
-    new Stairs(LEFT, onFloor("b", 2), "2025"),
+    new Stairs(LEFT, onFloor("b", 2), "the 2025 stairs"),
     new Room("2302", RIGHT),
     new Room("Auditorium", LEFT, {
       prefix: "the",
@@ -116,7 +116,7 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
     }),
     new Room("2301", RIGHT),
     new Room("2205", RIGHT),
-    new Stairs(LEFT, onFloor("c", 2), "2024"),
+    new Stairs(LEFT, onFloor("c", 2), "the 2024 stairs"),
     new Fork(
       LEFT,
       reverseConnection("alumni hall to 2200s"),
@@ -132,7 +132,7 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
     new Room("2209", RIGHT, {
       aliases: ["10-11 Administration Office", "10th and 11th Grade Office"],
     }),
-    new Stairs(LEFT, onFloor("d", 2), "2015"),
+    new Stairs(LEFT, onFloor("d", 2), "the 2015 stairs"),
     new Room("2101", RIGHT),
     new Fork(
       LEFT,
@@ -155,7 +155,7 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
     new Room("2114"),
     new Room("2113", RIGHT),
     new Room("2115", RIGHT),
-    new Stairs(LEFT, onFloor("f", 2), "2010"),
+    new Stairs(LEFT, onFloor("f", 2), "the 2010 stairs"),
   ]),
 
   // entrance area
@@ -217,7 +217,7 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
 
   // 3rd floor main building (3100s, 3200s, 3300s)
   new Hallway([
-    new Stairs(LEFT, onFloor("a", 3), "2018"),
+    new Stairs(LEFT, onFloor("a", 3), "the 2018 stairs"),
     new Room("3314", LEFT),
     new Room("3315", RIGHT),
     new Room("3312", LEFT),
@@ -227,12 +227,12 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
     new Room("3310", RIGHT), // these 2 rooms sometimes give weird directions
     new Room("3309", RIGHT), //
     new Turn(RIGHT),
-    new Stairs(LEFT, onFloor("b", 3), "2025", 2),
+    new Stairs(LEFT, onFloor("b", 3), "the 2025 stairs", 2),
     new Room("3305", RIGHT),
     new Room("3302", LEFT),
     new Room("3303", RIGHT),
     new Room("3301", RIGHT, { aliases: ["Writing Center"] }),
-    new Stairs(LEFT, onFloor("c", 3), "2024"),
+    new Stairs(LEFT, onFloor("c", 3), "the 2024 stairs"),
     new Room("3210", LEFT),
     new Room("3207", LEFT),
     new Room("3205", RIGHT),
@@ -245,7 +245,7 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
     new Room("3201", RIGHT, {
       aliases: ["Computer Lab - Library"],
     }),
-    new Stairs(LEFT, onFloor("d", 3), "2015", 3),
+    new Stairs(LEFT, onFloor("d", 3), "the 2015 stairs", 3),
     new Room("3102", LEFT),
     new Room("3101", RIGHT),
     new Room("3104", LEFT, { aliases: ["Computer Lab"] }),
@@ -260,7 +260,7 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
     new Room("3114", LEFT),
     new Room("3115", RIGHT),
     new Room("3117", RIGHT),
-    new Stairs(LEFT, onFloor("f", 3), "2010"),
+    new Stairs(LEFT, onFloor("f", 3), "the 2010 stairs"),
   ]),
 
   // 1st floor modern languages wing (1600s)
