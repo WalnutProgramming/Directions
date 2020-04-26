@@ -7,6 +7,10 @@ import App from "@/App.vue";
 import router from "@/router";
 import "@/registerServiceWorker";
 import store from "./store";
+import {
+  messageOnNextPageReloadKey,
+  showMessageOnNextPageReload,
+} from "./showMessageOnNextPageReload";
 
 Vue.use(VueSnackbar, { close: true });
 Vue.use(Meta);
@@ -18,12 +22,6 @@ const vm = new Vue({
   store,
   render: h => h(App),
 }).$mount("#app");
-
-const messageOnNextPageReloadKey = "messageOnNextPageReload";
-
-export function showMessageOnNextPageReload(message: string) {
-  sessionStorage.setItem(messageOnNextPageReloadKey, message);
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   const text = sessionStorage.getItem(messageOnNextPageReloadKey);

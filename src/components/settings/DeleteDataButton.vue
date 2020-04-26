@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { showMessageOnNextPageReload } from "@/main";
+import { showMessageOnNextPageReload } from "@/showMessageOnNextPageReload";
 
 export default Vue.extend({
   methods: {
