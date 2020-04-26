@@ -8,7 +8,7 @@ import router from "@/router";
 import "@/registerServiceWorker";
 import store from "./store";
 
-Vue.use(VueSnackbar, {});
+Vue.use(VueSnackbar, { close: true });
 Vue.use(Meta);
 
 Vue.config.productionTip = false;
@@ -19,11 +19,30 @@ const vm = new Vue({
   render: h => h(App),
 }).$mount("#app");
 
+const messageOnNextPageReloadKey = "messageOnNextPageReload";
+
+export function showMessageOnNextPageReload(message: string) {
+  sessionStorage.setItem(messageOnNextPageReloadKey, message);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const text = sessionStorage.getItem(messageOnNextPageReloadKey);
+  if (text != null) {
+    Vue.nextTick(() => {
+      (vm as any).$snack.show({
+        text,
+      });
+      sessionStorage.removeItem(messageOnNextPageReloadKey);
+    });
+  }
+});
+
 document.addEventListener("refresh-snackbar", () => {
   (vm as any).$snack.show({
-    text: "This site has been updated",
-    button: "refresh",
+    text: "New update for site is available",
+    button: "refresh to update",
     action: () => {
+      showMessageOnNextPageReload("Updated site");
       window.location.reload();
     },
   });

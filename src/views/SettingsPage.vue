@@ -9,6 +9,7 @@
     <br /><br /><br />
     <div style="font-size: 0.5em;">
       * We don't currently know a way to get to the 3500s without using stairs.
+      If you know of a way, please tell us on the Feedback page.
     </div>
   </div>
 </template>

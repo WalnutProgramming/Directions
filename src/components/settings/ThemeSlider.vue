@@ -1,10 +1,12 @@
 <template>
-  <label>
-    <span class="switch">
+  <label style="display: flex; flex-direction: row; align-items: center">
+    <span class="switch" style="min-width: 24vh">
       <input id="dark-setting" v-model="darkTheme" type="checkbox" />
       <span class="slider" />
     </span>
-    Toggle Theme
+    <span style="margin-left: 1vw">
+      Dark Theme
+    </span>
   </label>
 </template>
 

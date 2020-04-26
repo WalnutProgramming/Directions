@@ -11,10 +11,12 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { showMessageOnNextPageReload } from "@/main";
 
 export default Vue.extend({
   methods: {
     reloadPage() {
+      showMessageOnNextPageReload("Refreshed app");
       window.location.reload();
     },
   },
@@ -33,22 +35,4 @@ export default Vue.extend({
   background-size: 100% 100%;
   vertical-align: middle;
 }
-
-/*
-.refresh-button:focus {
-  animation-name: spin;
-  animation-duration: 0.75s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-*/
 </style>
