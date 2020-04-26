@@ -1,7 +1,10 @@
 <template>
-  <label class="switch">
-    <input id="dark-setting" v-model="darkTheme" type="checkbox" />
-    <span class="slider" />
+  <label>
+    <span class="switch">
+      <input id="dark-setting" v-model="darkTheme" type="checkbox" />
+      <span class="slider" />
+    </span>
+    Toggle Theme
   </label>
 </template>
 

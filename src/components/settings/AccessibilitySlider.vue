@@ -1,7 +1,10 @@
 <template>
-  <label class="switch">
-    <input type="checkbox" />
-    <span class="slider" />
+  <label>
+    <span class="switch">
+      <input v-model="accessibilityMode" type="checkbox" />
+      <span class="slider" />
+    </span>
+    Accessibility Mode*
   </label>
 </template>
 
@@ -9,11 +12,16 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  /* should include:
-    getting the state of the slider
-    putting the slider in the right state when the user loads the page
-  */
-  props: {},
+  computed: {
+    accessibilityMode: {
+      get() {
+        return this.$store.state.isAccessibilityMode;
+      },
+      set(newVal) {
+        this.$store.commit("setAccessibilityMode", newVal);
+      },
+    },
+  },
 });
 </script>
 

@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import { walnutAccessible, walnutNonAccessible } from "@/walnut";
 
 Vue.use(Vuex);
 
@@ -13,10 +14,11 @@ const storedSettings = JSON.parse(
   localStorage.getItem(SETTINGS_LOCALSTORAGE) ?? "{}"
 );
 
-const initialState: { isDarkMode: boolean } = {
+const initialState: { isDarkMode: boolean; isAccessibilityMode: boolean } = {
   isDarkMode:
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches,
+  isAccessibilityMode: false,
   ...storedSettings,
 };
 
@@ -24,12 +26,16 @@ setTheme(initialState.isDarkMode);
 
 const settings = new Vuex.Store({
   state: { ...initialState },
+  getters: {
+    walnut: state =>
+      state.isAccessibilityMode ? walnutAccessible : walnutNonAccessible,
+  },
   mutations: {
-    toggleTheme(state) {
-      state.isDarkMode = !state.isDarkMode;
-    },
     setDarkTheme(state, newVal) {
       state.isDarkMode = newVal;
+    },
+    setAccessibilityMode(state, newVal) {
+      state.isAccessibilityMode = newVal;
     },
   },
 });

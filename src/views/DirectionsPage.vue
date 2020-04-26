@@ -24,6 +24,7 @@ import Vue from "vue";
 import { Room } from "room-finder";
 import CustomButton from "@/components/buttons/CustomButton.vue";
 import { walnutNonAccessible } from "@/walnut";
+import store from "@/store";
 
 function fullNameOf(roomName: string) {
   const [hallwayInd, ind] = walnutNonAccessible.getHallwayIndexAndIndex(
@@ -55,7 +56,7 @@ export default Vue.extend({
     directions() {
       if (this.isValid) {
         // Both have valid names, so put the directions in the HTML
-        return walnutNonAccessible
+        return store.getters.walnut
           .getDirections(this.fromRoom, this.toRoom)!
           .trim()
           .split("\n");

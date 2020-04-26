@@ -1,15 +1,14 @@
 <template>
   <div style="width: 96vw; left: 2vw; top: 2vw;">
-    <ThemeSlider /> Toggle Theme <br /><br />
-    <AccessibilitySlider /> Accessibility Mode* <br /><br />
-    <RefreshButton /> Refresh App <br /><br />
-    <CheckUpdatesButton /> Check For Updates <br /><br />
-    <div>
-      <button @click="clearStorage">Clear localStorage</button>
-    </div>
+    <ThemeSlider /> <br /><br />
+    <AccessibilitySlider /> <br /><br />
+    <RefreshButton /> <br /><br />
+    <CheckUpdatesButton /> <br /><br />
+    <DeleteDataButton />
+
     <br /><br /><br />
     <div style="font-size: 0.5em;">
-      * does not change directions yet
+      * We don't currently know a way to get to the 3500s without using stairs.
     </div>
   </div>
 </template>
@@ -20,6 +19,7 @@ import AccessibilitySlider from "@/components/settings/AccessibilitySlider.vue";
 import ThemeSlider from "@/components/settings/ThemeSlider.vue";
 import RefreshButton from "@/components/settings/RefreshButton.vue";
 import CheckUpdatesButton from "@/components/settings/CheckUpdatesButton.vue";
+import DeleteDataButton from "@/components/settings/DeleteDataButton.vue";
 
 export default Vue.extend({
   components: {
@@ -27,12 +27,7 @@ export default Vue.extend({
     RefreshButton,
     CheckUpdatesButton,
     ThemeSlider,
-  },
-  methods: {
-    clearStorage() {
-      localStorage.clear();
-      window.location.reload();
-    },
+    DeleteDataButton,
   },
 });
 </script>

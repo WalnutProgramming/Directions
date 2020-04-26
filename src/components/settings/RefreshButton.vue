@@ -1,5 +1,12 @@
 <template>
-  <button class="refresh-button" @click="reloadPage"></button>
+  <span @click="reloadPage">
+    <button
+      class="refresh-button"
+      aria-labelledby="refresh-button-label"
+      @click="reloadPage"
+    ></button>
+    <label id="refresh-button-label"> Refresh App </label>
+  </span>
 </template>
 
 <script lang="ts">

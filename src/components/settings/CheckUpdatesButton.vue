@@ -1,5 +1,12 @@
 <template>
-  <button class="updates-button" @click="checkForUpdates"></button>
+  <span @click="checkForUpdates">
+    <button
+      class="updates-button"
+      aria-labelledby="updates-button-label"
+      @click="checkForUpdates"
+    ></button>
+    <label id="updates-button-label"> Check For Updates </label>
+  </span>
 </template>
 
 <script lang="ts">
