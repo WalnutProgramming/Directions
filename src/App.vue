@@ -106,22 +106,34 @@ header * {
   display: inline;
 }
 
-header li {
-  /* margin-left: 2vw; */
-  margin-right: 4vw;
+nav {
+  overflow: auto;
 }
 
 ul {
-  padding-left: 5vw;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  display: flex;
 }
 
-header li a {
+li {
+  float: left;
+}
+
+li a {
   color: var(--header-bar-text-color);
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  padding: 14px 2vw;
   text-decoration: none;
 }
 
-header li a:hover {
+li a:hover {
   color: var(--header-bar-hover-text-color);
+  background-color: var(--header-bar-hover-background-color);
 }
 
 #main-stuff {
@@ -130,6 +142,7 @@ header li a:hover {
 
 header li.router-link-active a {
   color: var(--header-bar-selected-text-color);
+  background-color: var(--header-bar-selected-background-color);
 }
 
 /* transitions */

@@ -81,8 +81,10 @@ html[data-theme="light"] {
 
   --header-bar-text-color: #0b004b;
   --header-bar-selected-text-color: #2355b8;
-  --header-bar-hover-text-color: #03a1fc;
+  --header-bar-hover-text-color: #098399;
   --header-bar-shadow-color: #03a1fc;
+  --header-bar-hover-background-color: rgb(223, 224, 231);
+  --header-bar-selected-background-color: rgb(222, 237, 240);
 
   --link-color: #0000ee;
   --visited-link-color: #5a1a8b;
@@ -125,6 +127,8 @@ html[data-theme="dark"] {
   --header-bar-selected-text-color: #dac92d;
   --header-bar-hover-text-color: #f0d019;
   --header-bar-shadow-color: #f0ac19;
+  --header-bar-hover-background-color: #333;
+  --header-bar-selected-background-color: black;
 
   --link-color: #0087e0;
   --visited-link-color: #9a41ee;
