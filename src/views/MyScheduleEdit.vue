@@ -163,9 +163,8 @@ export default Vue.extend({
           }
         }
       );
-      (document.getElementById(
-        "scheduleForm"
-      ) as HTMLFormElement).reportValidity();
+      const form = document.getElementById("scheduleForm") as HTMLFormElement;
+      if ("reportValidity" in form /* browser support */) form.reportValidity();
       if (
         this.rooms.every(
           ({ value }) =>

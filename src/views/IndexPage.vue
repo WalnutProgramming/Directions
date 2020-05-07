@@ -77,11 +77,11 @@ export default Vue.extend({
         message = `I can't find a room with the name "${val}"`;
       }
       const inp = document.getElementById(inputName);
-      if (inp != null && "setCustomValidity" in inp) {
+      if (inp != null && "setCustomValidity" in inp /* browser support */) {
         (inp as any).setCustomValidity(message);
       }
       const form = document.getElementById("roomForm");
-      if (form != null && "reportValidity" in form) {
+      if (form != null && "reportValidity" in form /* browser support */) {
         (form as any).reportValidity();
       }
     },

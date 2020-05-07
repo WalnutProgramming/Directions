@@ -7,7 +7,8 @@ Vue.use(Vuex);
 const SETTINGS_LOCALSTORAGE = "settings";
 
 function setTheme(dark: boolean) {
-  document.documentElement.dataset.theme = dark ? "dark" : "light";
+  if ("dataset" in document.documentElement /* IE10 doesn't support this */)
+    document.documentElement.dataset.theme = dark ? "dark" : "light";
 }
 
 const storedSettings = JSON.parse(

@@ -25,4 +25,6 @@ module.exports = {
       short_name: "Walnut.Direct",
     },
   },
+  // IE10 support for vue-snack
+  transpileDependencies: process.env.VUE_CLI_MODERN_BUILD ? [] : ["vue-snack"],
 };

@@ -1,3 +1,6 @@
+// polyfill needed for vue-snack IE support
+import "core-js/features/array/from";
+
 import Vue from "vue";
 import VueSnackbar from "vue-snack";
 import "vue-snack/dist/vue-snack.min.css";
