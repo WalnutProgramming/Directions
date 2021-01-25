@@ -636,13 +636,13 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
 const walnutAll = new Building<ConnectionNodeId, StairNodeId>(hallways);
 
 export const walnutNonAccessible = walnutAll.withAllowedConnectionTypes(
-  s => !s.includes("elevator")
+  (s) => !s.includes("elevator")
 );
 
 export const walnutAccessible = walnutAll.withAllowedConnectionTypes(
   // TODO!!! Since we currently don't know of a way to get to the 3500s without stairs,
   // we are allowing "stair arts b".
-  s =>
+  (s) =>
     (!s.includes("stair") || s === "stair arts b") &&
     s !== "2500s to 2600s" &&
     s !== "alumni hall to 2200s"

@@ -1,27 +1,31 @@
 <template>
   <div>
-    <div style="padding-left: 2vw;">
-      <ol style="margin-block-start: 0em;">
+    <div style="padding-left: 2vw">
+      <ol style="margin-block-start: 0em">
         <div v-for="(room, index) in rooms" :key="index">
-          <li style="padding: 0.5vh;">
+          <li style="padding: 0.5vh">
             {{ room.value }}
           </li>
           <CustomButton
             v-if="
               index != rooms.length - 1 &&
-                room.value.trim() !== '' &&
-                rooms[index + 1].value.trim() !== ''
+              room.value.trim() !== '' &&
+              rooms[index + 1].value.trim() !== ''
             "
-            style="font-size: .7em; margin-left: -1.5em; margin-top: .1em; margin-bottom: .3em; padding-left: 2vw;"
+            style="
+              font-size: 0.7em;
+              margin-left: -1.5em;
+              margin-top: 0.1em;
+              margin-bottom: 0.3em;
+              padding-left: 2vw;
+            "
             @click="go(index)"
           >
             ↓ Go from {{ rooms[index].value }} to {{ rooms[index + 1].value }} ↓
           </CustomButton>
         </div>
       </ol>
-      <EditButton @click="edit()">
-        Edit
-      </EditButton>
+      <EditButton @click="edit()"> Edit </EditButton>
     </div>
   </div>
 </template>

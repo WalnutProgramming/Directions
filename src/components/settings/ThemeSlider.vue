@@ -4,9 +4,7 @@
       <input id="dark-setting" v-model="darkTheme" type="checkbox" />
       <span class="slider" />
     </span>
-    <span style="margin-left: 1vw">
-      Dark Theme
-    </span>
+    <span style="margin-left: 1vw"> Dark Theme </span>
   </label>
 </template>
 

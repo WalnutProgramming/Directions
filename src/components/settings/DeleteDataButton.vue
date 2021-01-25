@@ -1,8 +1,6 @@
 <template>
   <div>
-    <button @click="clearStorage">
-      Delete Walnut.Direct Local Storage
-    </button>
+    <button @click="clearStorage">Delete Walnut.Direct Local Storage</button>
   </div>
 </template>
 

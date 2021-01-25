@@ -1,6 +1,6 @@
 <template>
   <div>
-    <CustomButton style="font-size: 0.5em; padding-left: 1vw;" @click="back">
+    <CustomButton style="font-size: 0.5em; padding-left: 1vw" @click="back">
       &laquo; Back
     </CustomButton>
 
@@ -30,9 +30,9 @@ function fullNameOf(roomName: string) {
   const [hallwayInd, ind] = walnutNonAccessible.getHallwayIndexAndIndex(
     roomName
   )!;
-  return (walnutNonAccessible.hallways[hallwayInd].partList[ind] as Room<
-    string
-  >).fullName;
+  return (walnutNonAccessible.hallways[hallwayInd].partList[
+    ind
+  ] as Room<string>).fullName;
 }
 
 export default Vue.extend({

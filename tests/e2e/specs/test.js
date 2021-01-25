@@ -17,17 +17,11 @@ describe("Walnut.Direct Main Functionality", () => {
   it("gets correct directions from room 3104 to 3113", () => {
     cy.visit("/");
     cy.contains("h1", "Where do you need to go?");
-    cy.get("#fromRoom")
-      .type("3104")
-      .should("have.value", "3104");
+    cy.get("#fromRoom").type("3104").should("have.value", "3104");
     // Type an invalid room number
-    cy.get("#toRoom")
-      .type("3113a")
-      .should("have.value", "3113a");
+    cy.get("#toRoom").type("3113a").should("have.value", "3113a");
     // It shouldn't allow us to Go, since it's invalid
-    cy.get("button:not(.moon-button)")
-      .contains("Go")
-      .click();
+    cy.get("button:not(.moon-button)").contains("Go").click();
     // It should show us an error message
     cy.get("#toRoom").should(
       beInvalid(`I can't find a room with the name "3113a"`)
@@ -36,13 +30,9 @@ describe("Walnut.Direct Main Functionality", () => {
     // Shouldn't change the URL
     cy.url().should("not.contain", "/directions");
     // Fix the toRoom
-    cy.get("#toRoom")
-      .type("{backspace}")
-      .should("have.value", "3113");
+    cy.get("#toRoom").type("{backspace}").should("have.value", "3113");
     // Now it should work
-    cy.get("button:not(.moon-button)")
-      .contains("Go")
-      .click();
+    cy.get("button:not(.moon-button)").contains("Go").click();
     // We're in the directions page
     cy.url().should("contain", "/directions?fromRoom=3104&toRoom=3113");
     cy.contains("p:nth-child(1)", "Turn left out of room 3104");
@@ -56,9 +46,7 @@ describe("Walnut.Direct Main Functionality", () => {
     );
     cy.contains("p:nth-child(4)", "Continue, then turn right into room 3113");
     // Back button works
-    cy.get("button:not(.moon-button)")
-      .should("have.length", 1)
-      .click();
+    cy.get("button:not(.moon-button)").should("have.length", 1).click();
     cy.contains("h1", "Where do you need to go?");
   });
 });
@@ -120,16 +108,12 @@ describe("My Schedule page", () => {
     );
     cy.contains("Turn left out of room 3104");
     // Go back
-    cy.get("button:not(.moon-button)")
-      .should("have.length", 1)
-      .click();
+    cy.get("button:not(.moon-button)").should("have.length", 1).click();
     cy.url()
       .should("contain", "/myschedule")
       .should("not.contain", "/myschedule/edit");
     // Edit
-    cy.get(".edit button")
-      .should("have.length", 1)
-      .click();
+    cy.get(".edit button").should("have.length", 1).click();
     cy.url()
       .should("contain", "/myschedule/edit")
       .should("not.contain", "/myschedule/edit?new=true");
@@ -182,7 +166,7 @@ describe("iOS download suggestion", () => {
   it("appears on iPhone", () => {
     // Pretend to be an iPhone
     cy.visit("/", {
-      onBeforeLoad: win => {
+      onBeforeLoad: (win) => {
         Object.defineProperty(win.navigator, "userAgent", {
           value: "iPhone",
         });

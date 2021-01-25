@@ -19,7 +19,7 @@ export default Vue.extend({
     };
   },
   created() {
-    window.addEventListener("beforeinstallprompt", e => {
+    window.addEventListener("beforeinstallprompt", (e) => {
       this.showButton = true;
       this.deferredPrompt = e as any;
     });

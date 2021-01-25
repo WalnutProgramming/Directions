@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div style="text-align:center">
+    <div style="text-align: center">
       <TheMaybeInstallButton></TheMaybeInstallButton>
 
       <main>
@@ -22,9 +22,7 @@
           ></RoomInput>
           <br />
 
-          <CustomButton @click="submit">
-            Go
-          </CustomButton>
+          <CustomButton @click="submit"> Go </CustomButton>
         </form>
       </main>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="about" style="text-align:center">
+  <div class="about" style="text-align: center">
     <h1 class="title">Walnut.Direct</h1>
     <p class="squished-p">
       Walnut Hills High School is a big and confusing school to navigate,
@@ -42,9 +42,7 @@
       We've also made sure to make our work as generalizable as possible so that
       it can be extended to work in other buildings, such as hospitals. For this
       reason, we've published our
-      <a href="https://room-finder.walnut.direct/">
-        room-finder package
-      </a>
+      <a href="https://room-finder.walnut.direct/"> room-finder package </a>
       on npm so that anyone can use it for another building.
     </p>
     <h1 class="subtitle">Our Club:</h1>
@@ -72,9 +70,7 @@
     <h1 class="subtitle">Feedback</h1>
     <p class="squished-p">
       You can go to the
-      <router-link to="/feedback">
-        Feedback
-      </router-link>
+      <router-link to="/feedback"> Feedback </router-link>
       section to tell us how we can improve the project. The project is NOT
       finished, and we are aware of a lot of issues, including the fact that
       we're missing the 1400s, 2400s, cafeteria, some rooms in the gym, and some

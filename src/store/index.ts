@@ -28,7 +28,7 @@ setTheme(initialState.isDarkMode);
 const settings = new Vuex.Store({
   state: { ...initialState },
   getters: {
-    walnut: state =>
+    walnut: (state) =>
       state.isAccessibilityMode ? walnutAccessible : walnutNonAccessible,
   },
   mutations: {
@@ -46,7 +46,7 @@ settings.subscribe((mutation, state) => {
 });
 
 settings.watch(
-  state => state.isDarkMode,
+  (state) => state.isDarkMode,
   (dark: boolean) => {
     setTheme(dark);
     document.querySelector("body")?.classList.add("enable-transition");

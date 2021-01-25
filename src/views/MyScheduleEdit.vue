@@ -8,7 +8,7 @@
           <CustomButton
             class="save"
             :type-submit="false"
-            style="font-size:14px;  margin-right: 5vw"
+            style="font-size: 14px; margin-right: 5vw"
             button-style="padding: 12px 20px;"
             @click="cancel"
           >
@@ -24,9 +24,7 @@
       <p v-if="$route.query.new" class="p">
         You don't seem to have an existing schedule. Create a new one!
       </p>
-      <p class="p">
-        Hold and drag to reorder classes.
-      </p>
+      <p class="p">Hold and drag to reorder classes.</p>
       <p class="p">
         Your schedule will be stored in your browser <b>on this device only</b>.
         If you're in private/incognito mode, your schedule will not be saved.
@@ -37,25 +35,29 @@
           class="list"
           lock-axis="y"
           :press-delay="50"
-          style="border: none;"
+          style="border: none"
         >
           <SlickItem
             v-for="(room, index) in rooms"
             :key="room.originalIndex"
             class="list-item"
-            style="border-radius: 15px; height: 9vh;"
+            style="border-radius: 15px; height: 9vh"
             :index="index"
             :item="room"
           >
             <span
-              style="width: 3em; font-size: 25px; color: var(--less-important-text-color)"
+              style="
+                width: 3em;
+                font-size: 25px;
+                color: var(--less-important-text-color);
+              "
             >
               ☰&nbsp;&nbsp;<span style="">{{ index + 1 }}.&nbsp;&nbsp;</span>
             </span>
             <MinusButton
               type="button"
               class="smallerButton"
-              style="font-size: 20px; margin-right: 10px; margin-top: 0.75vh;"
+              style="font-size: 20px; margin-right: 10px; margin-top: 0.75vh"
               @click="removeIndex(index)"
             >
               —
@@ -64,14 +66,14 @@
               v-model="room.value"
               :name="`room-${room.originalIndex}`"
               class="my-input"
-              style="max-width: 40vw; font-size: 20px; transition: none;"
+              style="max-width: 40vw; font-size: 20px; transition: none"
             />
           </SlickItem>
-          <div class="list-item" style="border-radius: 15px; border: none;">
+          <div class="list-item" style="border-radius: 15px; border: none">
             <PlusButton
               type="button"
               class="smallerButton"
-              style="font-size: 25px;"
+              style="font-size: 25px"
               @click="newRoom"
             >
               <b>+</b>
@@ -113,8 +115,8 @@ function getStoredRooms() {
 }
 
 function roomsListsEqual(a: Room[], b: Room[]) {
-  const aValues = a.map(({ value }) => value).filter(v => v !== "");
-  const bValues = b.map(({ value }) => value).filter(v => v !== "");
+  const aValues = a.map(({ value }) => value).filter((v) => v !== "");
+  const bValues = b.map(({ value }) => value).filter((v) => v !== "");
   if (aValues.length !== bValues.length) {
     return false;
   }
@@ -149,7 +151,7 @@ export default Vue.extend({
     },
     save() {
       Array.from(document.getElementsByClassName("my-input")).forEach(
-        theInput => {
+        (theInput) => {
           const inp = theInput as HTMLInputElement;
           if (
             inp.value === "" ||

@@ -23,7 +23,7 @@ Vue.config.productionTip = false;
 const vm = new Vue({
   router,
   store,
-  render: h => h(App),
+  render: (h) => h(App),
 }).$mount("#app");
 
 document.addEventListener("DOMContentLoaded", () => {
