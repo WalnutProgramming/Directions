@@ -27,4 +27,11 @@ module.exports = {
   },
   // IE10 support for vue-snack
   transpileDependencies: process.env.VUE_CLI_MODERN_BUILD ? [] : ["vue-snack"],
+
+  // https://cli.vuejs.org/guide/troubleshooting.html#symbolic-links-in-node-modules
+  // This is for when using yarn link, because that messes up eslint. Safe to delete
+  // when not using yarn link.
+  chainWebpack: (config) => {
+    config.resolve.symlinks(false);
+  },
 };
