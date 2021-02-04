@@ -27,6 +27,13 @@
       </main>
     </div>
 
+    <p style="font-size: 0.7em; padding: 1rem 1rem">
+      <b>Update:</b> The Walnut Hills Programming Club is currently in the
+      process of modifying this app's directions based on the COVID-19
+      precautions for one-way stairways. We are also working on adding a few
+      missing rooms (most importantly, the cafeteria).
+    </p>
+
     <TheIOSDownloadSuggestion />
   </div>
 </template>
