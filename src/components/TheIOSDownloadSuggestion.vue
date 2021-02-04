@@ -38,6 +38,8 @@ export default Vue.extend({
 
 <style scoped>
 #iosDownloadSuggestion {
-  font-size: 15px;
+  font-size: 17px;
+  padding: 0 1rem;
+  padding-bottom: 4rem;
 }
 </style>
