@@ -505,11 +505,10 @@ Continue, then turn left into room 3711"
 `;
 
 exports[`gives correct accessible directions from 2505 to 2209 1`] = `
-"Turn left out of room 2505
-Continue, then after entering Alumni Hall, turn left
-Continue, then after entering the arcade, turn left
-Go down the ramp, go through the arcade, and turn left into the 2600s (modern foreign languages wing)
-Continue straight
+"Turn right out of room 2505
+Continue, then turn left into the door, and then turn right
+Go up the 3 steps
+Continue, then after entering the 2600s, turn left
 Continue, then turn left (after passing room 2603 on your right)
 Continue, then turn right (after passing room 2604 on your left)
 Continue, then after entering the 2300s, turn left
@@ -517,8 +516,14 @@ Continue, then turn right into room 2209"
 `;
 
 exports[`gives correct accessible directions from 2510 to Black Box Theatre 1`] = `
-"Turn left out of room 2510
-Continue, then turn left into room 2503"
+"Turn right out of room 2510
+Continue, then turn left into the door, and then turn right
+Go up the 3 steps
+Continue, then after entering the 2600s, turn right
+Continue, then after entering the arcade, turn right, go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue straight
+Continue, then turn right into the narrow hallway
+Continue, then turn right into room 2503"
 `;
 
 exports[`gives correct accessible directions from 2602 to High School Gymnasium 1`] = `
@@ -845,9 +850,9 @@ Continue, then turn right (after passing the elevator on your left)
 Continue, then turn left into the 2600s
 Continue, then turn left
 Continue, then turn right (after passing room 2602 on your left)
-Continue, then after entering the arcade, turn right, go to the end of the arcade, go up the ramp, turn right, and go through the doors
-Continue straight
-Continue, then turn right into the narrow hallway
+Continue, then turn right into the little hallway
+Go down the 3 steps
+Continue, then turn left into the door, and then turn left
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
 Go straight out of the stairs
@@ -1081,10 +1086,10 @@ Continue, then after entering the arcade, turn left
 Go to the end of the arcade, go up the ramp, turn right, and go through the doors
 Continue straight
 Continue, then turn right into the narrow hallway
-Continue, then go straight into the stairs
+Continue, then turn right into the corner with the stairs
+Continue, then turn right into the stairs
 Go up 1 floor of stairs
-Go straight out of the stairs
-Continue, then turn left into the corner with the stairs
+Turn right out of the stairs
 Continue, then turn left into room 3503"
 `;
 
@@ -1162,10 +1167,11 @@ Continue, then turn left (after passing room 3713 on your right)
 Continue, then turn right into the elevator
 Go to floor 2
 Turn right out of the elevator
-Continue, then after entering the arcade, turn left
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue, then after entering the arcade, go straight and a bit to the right to get to the 2600s, the modern languages wing
 Continue straight
-Continue, then turn right into the narrow hallway
+Continue, then turn left into the little hallway
+Go down the 3 steps
+Continue, then turn left into the door, and then turn left
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
 Go straight out of the stairs
@@ -1828,15 +1834,25 @@ Continue, then turn left into room 3711"
 `;
 
 exports[`gives correct directions from 2505 to 2209 1`] = `
-"Turn left out of room 2505
-Continue, then after entering Alumni Hall, turn right
-Continue, then after entering the 2200s, turn left
+"Turn right out of room 2505
+Continue, then turn left into the door, and then turn right
+Go up the 3 steps
+Continue, then after entering the 2600s, turn left
+Continue, then turn left (after passing room 2603 on your right)
+Continue, then turn right (after passing room 2604 on your left)
+Continue, then after entering the 2300s, turn left
 Continue, then turn right into room 2209"
 `;
 
 exports[`gives correct directions from 2510 to Black Box Theatre 1`] = `
-"Turn left out of room 2510
-Continue, then turn left into room 2503"
+"Turn right out of room 2510
+Continue, then turn left into the door, and then turn right
+Go up the 3 steps
+Continue, then after entering the 2600s, turn right
+Continue, then after entering the arcade, turn right, go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue straight
+Continue, then turn right into the narrow hallway
+Continue, then turn right into room 2503"
 `;
 
 exports[`gives correct directions from 2602 to High School Gymnasium 1`] = `

@@ -13,6 +13,8 @@ import {
   reverseConnection,
 } from "room-finder";
 
+const COVID_ONE_WAY_HALLWAY_AND_STAIRS = true;
+
 const { LEFT, RIGHT, FRONT } = Direction;
 
 type StairNodeId =
@@ -475,21 +477,24 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
   ]),
 
   // 2500s (2nd floor Performing Arts Center, behind the auditorium)
-  new Hallway([
-    new Fork(FRONT, "2500s to alumni hall", "Alumni Hall"),
-    new Room("2503", RIGHT, {
-      aliases: ["Black Box Theatre", "Black Box Theater", "Theater"],
-    }),
-    new Room("2505", RIGHT, { aliases: ["Scene Shop"] }),
-    new Fork(
-      RIGHT,
-      reverseConnection("2500s corner to 2500s"),
-      "the corner with the stairs"
-    ),
-    new Room("2510", RIGHT),
-    new Fork(LEFT, "2500s to 2600s", "the door"),
-    new Stairs(FRONT, onFloor("stair arts b", 2)),
-  ]),
+  new Hallway(
+    [
+      new Fork(FRONT, "2500s to alumni hall", "Alumni Hall"),
+      new Room("2503", RIGHT, {
+        aliases: ["Black Box Theatre", "Black Box Theater", "Theater"],
+      }),
+      new Room("2505", RIGHT, { aliases: ["Scene Shop"] }),
+      new Fork(
+        RIGHT,
+        reverseConnection("2500s corner to 2500s"),
+        "the corner with the stairs"
+      ),
+      new Room("2510", RIGHT),
+      new Fork(LEFT, "2500s to 2600s", "the door"),
+      new Stairs(FRONT, onFloor("stair arts b", 2)),
+    ],
+    { oneWay: COVID_ONE_WAY_HALLWAY_AND_STAIRS && "forward" }
+  ),
 
   // 2500s stair corner
   new Hallway([
@@ -641,10 +646,10 @@ export const walnutNonAccessible = walnutAll.withAllowedConnectionTypes(
 
 export const walnutAccessible = walnutAll.withAllowedConnectionTypes(
   // TODO!!! Since we currently don't know of a way to get to the 3500s without stairs,
-  // we are allowing "stair arts b".
+  // we are allowing "stair arts a" and "stair arts b".
   (s) =>
-    (!s.includes("stair") || s === "stair arts b") &&
-    s !== "2500s to 2600s" &&
+    (!s.includes("stair") || s === "stair arts a" || s === "stair arts b") &&
+    (COVID_ONE_WAY_HALLWAY_AND_STAIRS || s !== "2500s to 2600s") &&
     s !== "alumni hall to 2200s"
 );
 
