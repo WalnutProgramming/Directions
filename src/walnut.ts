@@ -638,7 +638,30 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
   ]),
 ];
 
-const walnutAll = new Building<ConnectionNodeId, StairNodeId>(hallways);
+const walnutAll = new Building<ConnectionNodeId, StairNodeId>(
+  hallways
+  //  ,{
+  //   oneWayStaircases: COVID_ONE_WAY_HALLWAY_AND_STAIRS
+  //     ? {
+  //         "stair a": "down",
+  //         "stair b": "down",
+  //         "stair c": "up",
+
+  //         // TODO: add stair C for floor 1. Really weird directions otherwise.
+
+  //         // TODO: need cafeteria to uncomment both of these next 2
+  //         "stair d": "down",
+  //         "stair f": "down",
+
+  //         // TODO: top stairs, near locker room
+  //         // TODO: top stairs, other way from orchestra
+  //         // TODO: these next 2 (relies on previous 2)
+  //         "stair music entrance to 1": "down",
+  //         "stair music entrance to 2": "up",
+  //       }
+  //     : {},
+  // }
+);
 
 export const walnutNonAccessible = walnutAll.withAllowedConnectionTypes(
   (s) => !s.includes("elevator")
@@ -654,4 +677,4 @@ export const walnutAccessible = walnutAll.withAllowedConnectionTypes(
 );
 
 // expose to console
-Object.assign(window, { walnutNonAccessible, walnutAccessible });
+Object.assign(window, { walnutAll, walnutNonAccessible, walnutAccessible });
