@@ -628,7 +628,7 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
     }),
     new Room("2847"),
     new Room("2857", RIGHT),
-    new Room("2848", RIGHT, { aliases: ["Strings"] }),
+    new Room("2848", RIGHT, { aliases: ["Strings", "Orchestra"] }),
     new Turn(LEFT),
     new Room("2846", RIGHT),
     new Room("2844", RIGHT),
