@@ -1,9 +1,11 @@
 <template>
-  <div>
+  <div style="padding-bottom: 2rem">
     <div style="text-align: center">
       <TheMaybeInstallButton></TheMaybeInstallButton>
 
       <main>
+        <StatusUpdates />
+
         <h1 class="where-question">Where do you need to go?</h1>
         <form id="roomForm">
           <label for="fromRoom" class="label"> I'm at room: </label>
@@ -27,13 +29,6 @@
       </main>
     </div>
 
-    <p style="font-size: 0.7em; padding: 1rem 1rem">
-      <b>Update:</b> The Walnut Hills Programming Club is currently in the
-      process of modifying this app's directions based on the COVID-19
-      precautions for one-way stairways. We are also working on adding a few
-      missing rooms (most importantly, the cafeteria).
-    </p>
-
     <TheIOSDownloadSuggestion />
   </div>
 </template>
@@ -44,6 +39,7 @@ import CustomButton from "@/components/buttons/CustomButton.vue";
 import TheMaybeInstallButton from "@/components/TheMaybeInstallButton.vue";
 import RoomInput from "@/components/RoomInput.vue";
 import TheIOSDownloadSuggestion from "@/components/TheIOSDownloadSuggestion.vue";
+import StatusUpdates from "@/components/StatusUpdates.vue";
 import { walnutNonAccessible } from "@/walnut";
 
 export default Vue.extend({
@@ -52,6 +48,7 @@ export default Vue.extend({
     TheMaybeInstallButton,
     RoomInput,
     TheIOSDownloadSuggestion,
+    StatusUpdates,
   },
   data() {
     return {

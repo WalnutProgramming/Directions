@@ -43,6 +43,10 @@ p {
   color: var(--par-text-color);
 }
 
+summary {
+  color: var(--subheading-text-color);
+}
+
 main {
   margin: 0;
 }
