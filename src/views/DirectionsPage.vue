@@ -66,7 +66,7 @@ export default Vue.extend({
   },
   methods: {
     back() {
-      if (this.$route.query.scheduleInd != null) {
+      if (this.$route.query.isFromSchedule === "true") {
         this.$router.push("/myschedule");
       } else {
         this.$router.push("/");
