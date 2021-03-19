@@ -7,7 +7,7 @@
         <StatusUpdates />
         
         <p> Click 
-	<a href=https://file.groupme.com/v1/46049414/files/a3e56f6c-45ce-4e70-adbc-865be77b3f4e>here</a>
+	<a href="http://www.walnuthillseagles.com/news-pdfs/2013/WHHS_Floor_Maps.pdf">here</a>
     for a link to the floor map! <p>
 
         <h1 class="where-question">Where do you need to go?</h1>
