@@ -15,8 +15,6 @@
           for a link to the floor map!
         </p>
 
-        <p></p>
-
         <h1 class="where-question">Where do you need to go?</h1>
         <form id="roomForm">
           <label for="fromRoom" class="label"> I'm at room: </label>
