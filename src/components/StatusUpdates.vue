@@ -15,7 +15,7 @@
         modifying this app's directions based on the COVID-19 precautions for
         one-way stairways. We are also working on adding a few missing rooms —
         most importantly, the cafeteria. Many of the routes given by the app
-        will change once we make this changes.
+        will change once we make these changes.
       </p>
       <p>
         Walnut.Direct does not currently include outdoor routes, but if you know
