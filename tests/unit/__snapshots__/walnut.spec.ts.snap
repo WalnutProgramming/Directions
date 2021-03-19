@@ -1324,7 +1324,8 @@ Continue, then turn right into the elevator
 Go to floor 2
 Turn left out of the elevator
 Continue, then turn right (after passing the elevator on your left)
-Continue, then turn right into room 2201"
+Continue, then turn right into the 2200s
+Continue, then turn left into room 2216"
 `;
 
 exports[`gives correct directions from 7-9 Administration Offices to 3205 1`] = `
@@ -2622,5 +2623,6 @@ exports[`gives correct directions from Writing Center to Registrar 1`] = `
 Continue, then turn left into the 2024 stairs
 Go down 1 floor of stairs
 Turn left out of the 2024 stairs
-Continue, then turn right into room 2201"
+Continue, then turn right into the 2200s
+Continue, then turn left into room 2216"
 `;

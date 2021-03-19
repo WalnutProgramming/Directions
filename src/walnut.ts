@@ -134,7 +134,7 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
     new Room("2204", LEFT, { aliases: ["Principal's Office"] }),
     new Room("2203", RIGHT, { aliases: ["Counseling Office"] }),
     new Room("2202"),
-    new Room("2201", RIGHT, { aliases: ["Registrar"] }),
+    new Room("2201", RIGHT, { aliases: [] }),
     new Fork(LEFT, "lobby to 2240", "the entrance area"),
     new Fork(RIGHT, "lobby to 2200s", "the 2200s"),
     new Room("2210", LEFT, { aliases: ["Conference Room"] }),
@@ -182,14 +182,16 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
     }),
     new Room("2229"),
     new Room("2212", LEFT, { aliases: ["Medical Room", "Nurse"] }),
-    new Room("2214"),
+    new Room("2214", LEFT, {
+      aliases: ["COVID Isolation Room", "Isolation Room"],
+    }),
     new Room("2211", RIGHT),
-    new Room("2216", LEFT, { nodeId: "enter 2216" }),
+    new Room("2216", LEFT, { nodeId: "enter 2216", aliases: ["Registrar"] }),
     new Room("2215", RIGHT, {
       nodeId: "enter 2215",
       aliases: ["Alumni Foundation", "Alumni Office"],
     }),
-    new Room("2218"),
+    new Room("2218", LEFT, { aliases: ["Counselor"] }),
   ]),
 
   // hallway 2401
