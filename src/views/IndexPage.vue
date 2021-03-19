@@ -5,10 +5,17 @@
 
       <main>
         <StatusUpdates />
-        
-        <p> Click 
-	<a href="http://www.walnuthillseagles.com/news-pdfs/2013/WHHS_Floor_Maps.pdf">here</a>
-    for a link to the floor map! <p>
+
+        <p>
+          Click
+          <a
+            href="http://www.walnuthillseagles.com/news-pdfs/2013/WHHS_Floor_Maps.pdf"
+            >here</a
+          >
+          for a link to the floor map!
+        </p>
+
+        <p></p>
 
         <h1 class="where-question">Where do you need to go?</h1>
         <form id="roomForm">
