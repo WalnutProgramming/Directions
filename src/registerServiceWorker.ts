@@ -5,8 +5,9 @@ import { register } from "register-service-worker";
 (window as any).needsRefresh = false;
 
 let lastUpdated = 0;
+const SECONDS_TO_THROTTLE = 60;
 function throttledCheckForUpdates() {
-  if (Date.now() - lastUpdated >= 10 * 1000) {
+  if (Date.now() - lastUpdated >= SECONDS_TO_THROTTLE * 1000) {
     document.dispatchEvent(new Event("check-for-updates"));
     lastUpdated = Date.now();
   }
