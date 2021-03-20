@@ -81,7 +81,7 @@ html[data-theme="light"] {
   --heading-text-color: #220d8a;
   --subheading-text-color: #204ba0;
   --par-text-color: #000000;
-  --less-important-text-color: #6f6f6f;
+  --less-important-text-color: #615f5f;
 
   --header-bar-text-color: #0b004b;
   --header-bar-selected-text-color: #2355b8;
@@ -123,7 +123,7 @@ html[data-theme="dark"] {
   --heading-text-color: #ccc9a9;
   --subheading-text-color: #fffcec;
   --par-text-color: #ffffff;
-  --less-important-text-color: #6f6f6f;
+  --less-important-text-color: #c4bfbf;
 
   --header-bar-text-color: #908414;
   --header-bar-selected-text-color: #dac92d;
