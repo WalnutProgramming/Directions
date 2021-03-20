@@ -32,10 +32,12 @@ if (process.env.NODE_ENV === "production") {
       // https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#manual_updates)
 
       document.addEventListener("check-for-updates", () => {
+        // We want to check for a new version even if we know we need
+        // a refresh because there could have been a second update.
+        registration.update();
+
         if ((window as any).needsRefresh) {
           document.dispatchEvent(new Event("needs-refresh"));
-        } else {
-          registration.update();
         }
       });
     },
