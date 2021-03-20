@@ -4,9 +4,7 @@
       <input v-model="accessibilityMode" type="checkbox" />
       <span class="slider" />
     </span>
-    <span style="margin-left: 1vw">
-      Accessibility Mode (use elevators rather than stairs*)
-    </span>
+    <span style="margin-left: 1vw"> Elevators Only* </span>
   </label>
 </template>
 
