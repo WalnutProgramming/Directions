@@ -2,7 +2,7 @@
 
 import { register } from "register-service-worker";
 
-let needsRefresh = false;
+(window as any).needsRefresh = false;
 
 if (process.env.NODE_ENV === "production") {
   register(`${process.env.BASE_URL}service-worker.js`, {
@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === "production") {
       });
 
       document.addEventListener("check-for-updates", () => {
-        if (needsRefresh) {
+        if ((window as any).needsRefresh) {
           document.dispatchEvent(new Event("needs-refresh"));
         } else {
           registration.update();
@@ -37,7 +37,7 @@ if (process.env.NODE_ENV === "production") {
     },
     updated() {
       console.log("New content is available; please refresh.");
-      needsRefresh = true;
+      (window as any).needsRefresh = true;
       document.dispatchEvent(new Event("needs-refresh"));
     },
     offline() {

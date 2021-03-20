@@ -21,15 +21,18 @@ export default Vue.extend({
   },
   methods: {
     checkForUpdates(): void {
-      document.dispatchEvent(new Event("check-for-updates"));
       document.addEventListener("needs-refresh", refreshToUpdate);
+      document.dispatchEvent(new Event("check-for-updates"));
       this.spin = true;
       setTimeout(() => {
+        document.removeEventListener("needs-refresh", refreshToUpdate);
         this.spin = false;
-        this.$snack.show({
-          text: "No updates found",
-          button: "",
-        });
+        if (!(window as any).needsRefresh) {
+          this.$snack.show({
+            text: "No updates found",
+            button: "",
+          });
+        }
       }, 1000);
     },
   },
