@@ -13,9 +13,13 @@ if (process.env.NODE_ENV === "production") {
       console.log("Service worker has been registered.");
       // Check for new version of service worker every 45 minutes
       setInterval(() => {
-        console.log("Checking for updates");
-        registration.update();
+        document.dispatchEvent(new Event("check-for-updates"));
       }, 1000 * 60 * 45);
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") {
+          document.dispatchEvent(new Event("check-for-updates"));
+        }
+      });
 
       document.addEventListener("check-for-updates", () => {
         if (needsRefresh) {
