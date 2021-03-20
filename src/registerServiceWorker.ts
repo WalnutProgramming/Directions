@@ -4,6 +4,14 @@ import { register } from "register-service-worker";
 
 (window as any).needsRefresh = false;
 
+let lastUpdated = 0;
+function throttledCheckForUpdates() {
+  if (Date.now() - lastUpdated >= 10 * 1000) {
+    document.dispatchEvent(new Event("check-for-updates"));
+    lastUpdated = Date.now();
+  }
+}
+
 if (process.env.NODE_ENV === "production") {
   register(`${process.env.BASE_URL}service-worker.js`, {
     ready() {
@@ -12,12 +20,10 @@ if (process.env.NODE_ENV === "production") {
     registered(registration: ServiceWorkerRegistration) {
       console.log("Service worker has been registered.");
       // Check for new version of service worker every 45 minutes
-      setInterval(() => {
-        document.dispatchEvent(new Event("check-for-updates"));
-      }, 1000 * 60 * 45);
+      setInterval(throttledCheckForUpdates, 1000 * 60 * 45);
       document.addEventListener("visibilitychange", () => {
         if (document.visibilityState === "visible") {
-          document.dispatchEvent(new Event("check-for-updates"));
+          throttledCheckForUpdates();
         }
       });
 
