@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Vue.nextTick(() => {
       (vm as any).$snack.show({
         text,
+        button: "",
       });
       sessionStorage.removeItem(messageOnNextPageReloadKey);
     });

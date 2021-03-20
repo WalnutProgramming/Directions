@@ -27,7 +27,10 @@ export default Vue.extend({
       setTimeout(() => {
         this.spin = false;
         if (!updateFound) {
-          (this as any).$snack.show({ text: "No updates found" });
+          (this as any).$snack.show({
+            text: "No updates found",
+            button: "",
+          });
         }
       }, 1000);
     },
