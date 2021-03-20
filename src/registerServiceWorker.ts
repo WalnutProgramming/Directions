@@ -21,11 +21,15 @@ if (process.env.NODE_ENV === "production") {
       console.log("Service worker has been registered.");
       // Check for new version of service worker every 45 minutes
       setInterval(throttledCheckForUpdates, 1000 * 60 * 45);
+      // Check for new version when window comes into focus
       document.addEventListener("visibilitychange", () => {
         if (document.visibilityState === "visible") {
           throttledCheckForUpdates();
         }
       });
+      // Browser automatically checks for a new version when page loads
+      // ("A navigation to an in-scope page." in https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle,
+      // https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle#manual_updates)
 
       document.addEventListener("check-for-updates", () => {
         if ((window as any).needsRefresh) {
