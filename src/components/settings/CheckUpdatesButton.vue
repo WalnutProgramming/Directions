@@ -10,7 +10,10 @@
 </template>
 
 <script lang="ts">
+/// <reference path="../../vue-snack-vue-property.d.ts" />
+
 import Vue from "vue";
+import { refreshToUpdate } from "@/showMessageOnNextPageReload";
 
 export default Vue.extend({
   data() {
@@ -19,19 +22,14 @@ export default Vue.extend({
   methods: {
     checkForUpdates(): void {
       document.dispatchEvent(new Event("check-for-updates"));
+      document.addEventListener("needs-refresh", refreshToUpdate);
       this.spin = true;
-      let updateFound = false;
-      document.addEventListener("refresh-snackbar", () => {
-        updateFound = true;
-      });
       setTimeout(() => {
         this.spin = false;
-        if (!updateFound) {
-          (this as any).$snack.show({
-            text: "No updates found",
-            button: "",
-          });
-        }
+        this.$snack.show({
+          text: "No updates found",
+          button: "",
+        });
       }, 1000);
     },
   },

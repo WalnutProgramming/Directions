@@ -2,6 +2,8 @@
 
 import { register } from "register-service-worker";
 
+let needsRefresh = false;
+
 if (process.env.NODE_ENV === "production") {
   register(`${process.env.BASE_URL}service-worker.js`, {
     ready() {
@@ -16,7 +18,11 @@ if (process.env.NODE_ENV === "production") {
       }, 1000 * 60 * 45);
 
       document.addEventListener("check-for-updates", () => {
-        registration.update();
+        if (needsRefresh) {
+          document.dispatchEvent(new Event("needs-refresh"));
+        } else {
+          registration.update();
+        }
       });
     },
     cached() {
@@ -27,7 +33,8 @@ if (process.env.NODE_ENV === "production") {
     },
     updated() {
       console.log("New content is available; please refresh.");
-      document.dispatchEvent(new Event("refresh-snackbar"));
+      needsRefresh = true;
+      document.dispatchEvent(new Event("needs-refresh"));
     },
     offline() {
       console.log(
