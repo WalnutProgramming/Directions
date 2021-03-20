@@ -33,7 +33,7 @@ export default Vue.extend({
             button: "",
           });
         }
-      }, 1000);
+      }, 4000);
     },
   },
 });
@@ -54,8 +54,8 @@ export default Vue.extend({
 
 .spin {
   animation-name: spin;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
+  animation-duration: 1.333s;
+  animation-iteration-count: 3;
   animation-timing-function: linear;
 }
 
