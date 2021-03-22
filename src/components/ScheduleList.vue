@@ -39,19 +39,26 @@ interface StoredRoomWithActualIndex extends StoredRoom {
   actualIndex: number;
 }
 
+function range(len: number) {
+  return [...Array(len).keys()];
+}
+
 export default Vue.extend({
   components: { CustomButton },
   props: {
     allRooms: { type: Array as PropType<StoredRoom[]>, required: true },
     order: {
-      type: Array as PropType<number[]>,
-      default: () => [0, 1, 2, 3, 4, 5, 6],
+      type: Array as PropType<number[] | null>,
+      default: null,
     },
   },
   computed: {
+    orderWithDefault() {
+      return this.order ?? range(this.allRooms.length);
+    },
     rooms(): StoredRoomWithActualIndex[] {
-      return this.order.map((ind) => ({
-        ...this.allRooms[ind],
+      return this.orderWithDefault.map((ind) => ({
+        ...(this.allRooms[ind] ?? { value: "", originalIndex: 0 }),
         actualIndex: ind,
       }));
     },
