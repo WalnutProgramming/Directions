@@ -13,7 +13,7 @@
             <a> Settings </a>
           </router-link>
           <router-link tag="li" to="/about">
-            <a> About Us </a>
+            <a> About </a>
           </router-link>
           <router-link tag="li" to="/feedback">
             <a> Feedback </a>
