@@ -135,6 +135,25 @@ export default Vue.extend({
     MinusButton,
     PlusButton,
   },
+  beforeRouteLeave(to, from, next) {
+    const stored = getStoredRooms();
+    if (
+      (stored == null && roomsListsEqual(this.rooms, getDefaultRooms())) ||
+      (stored != null && roomsListsEqual(this.rooms, JSON.parse(stored).rooms))
+    ) {
+      next();
+    } else {
+      // eslint-disable-next-line no-alert
+      const answer = window.confirm(
+        "Are you sure you want to leave? Your changes to your schedule will NOT be saved."
+      );
+      if (answer) {
+        next();
+      } else {
+        next(false);
+      }
+    }
+  },
   data() {
     const stored = getStoredRooms();
     let rooms: Room[];
@@ -187,25 +206,6 @@ export default Vue.extend({
     removeIndex(index: number) {
       this.rooms.splice(index, 1);
     },
-  },
-  beforeRouteLeave(to, from, next) {
-    const stored = getStoredRooms();
-    if (
-      (stored == null && roomsListsEqual(this.rooms, getDefaultRooms())) ||
-      (stored != null && roomsListsEqual(this.rooms, JSON.parse(stored).rooms))
-    ) {
-      next();
-    } else {
-      // eslint-disable-next-line no-alert
-      const answer = window.confirm(
-        "Are you sure you want to leave? Your changes to your schedule will NOT be saved."
-      );
-      if (answer) {
-        next();
-      } else {
-        next(false);
-      }
-    }
   },
   metaInfo: {
     title: "My Schedule - Edit",
