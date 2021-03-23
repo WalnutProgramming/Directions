@@ -7,6 +7,14 @@
         (click to expand/collapse)
       </summary>
       <p>
+        Click
+        <a
+          href="http://www.walnuthillseagles.com/news-pdfs/2013/WHHS_Floor_Maps.pdf"
+          >here</a
+        >
+        for a link to the floor map!
+      </p>
+      <p>
         Be sure to stay distanced, walk on the right side of the hallway, and
         follow all rules given by the administration for COVID-19 safety.
       </p>
