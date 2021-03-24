@@ -6,7 +6,12 @@
       <div class="lists">
         <div>
           <h2>Regular Schedule</h2>
-          <ScheduleList v-if="rooms != null" :all-rooms="rooms" @go="go" />
+          <ScheduleList
+            v-if="rooms != null"
+            data-testid="regular-schedule"
+            :all-rooms="rooms"
+            @go="go"
+          />
         </div>
         <div>
           <h2>Monday/Thursday Block</h2>
