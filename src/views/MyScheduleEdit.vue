@@ -24,7 +24,10 @@
       <p v-if="$route.query.new" class="p">
         You don't seem to have an existing schedule. Create a new one!
       </p>
-      <p class="p">Hold and drag to reorder classes.</p>
+      <p class="p">
+        Hold and drag to reorder classes. Press "Save" when you're finished
+        editing.
+      </p>
       <p class="p">
         Your schedule will be stored in your browser <b>on this device only</b>.
         If you're in private/incognito mode, your schedule will not be saved.
