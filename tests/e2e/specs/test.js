@@ -21,7 +21,7 @@ describe("Walnut.Direct Main Functionality", () => {
     // Type an invalid room number
     cy.get("#toRoom").type("3113a").should("have.value", "3113a");
     // It shouldn't allow us to Go, since it's invalid
-    cy.get("button:not(.moon-button)").contains("Go").click();
+    cy.get("button").contains("Go").click();
     // It should show us an error message
     cy.get("#toRoom").should(
       beInvalid(`I can't find a room with the name "3113a"`)
@@ -32,7 +32,7 @@ describe("Walnut.Direct Main Functionality", () => {
     // Fix the toRoom
     cy.get("#toRoom").type("{backspace}").should("have.value", "3113");
     // Now it should work
-    cy.get("button:not(.moon-button)").contains("Go").click();
+    cy.get("button").contains("Go").click();
     // We're in the directions page
     cy.url().should("contain", "/directions?fromRoom=3104&toRoom=3113");
     cy.contains("p:nth-child(1)", "Turn left out of room 3104");
@@ -46,7 +46,7 @@ describe("Walnut.Direct Main Functionality", () => {
     );
     cy.contains("p:nth-child(4)", "Continue, then turn right into room 3113");
     // Back button works
-    cy.get("button:not(.moon-button)").should("have.length", 1).click();
+    cy.get("button").should("have.length", 1).click();
     cy.contains("h1", "Where do you need to go?");
   });
 });
@@ -62,8 +62,8 @@ describe("My Schedule page", () => {
     );
     function shouldHaveNInputs(/** @type {number} */ n) {
       cy.get(".roomInput").should("have.length", n);
-      cy.get(".minus button:not(.moon-button)").should("have.length", n);
-      cy.get(".plus button:not(.moon-button)").should("have.length", 1);
+      cy.get(".minus button").should("have.length", n);
+      cy.get(".plus button").should("have.length", 1);
     }
     function nthRoomInput(/** @type {number} */ n) {
       return cy.get(`#scheduleForm .list-item:nth-child(${n}) input`);
@@ -97,18 +97,15 @@ describe("My Schedule page", () => {
     cy.url()
       .should("contain", "/myschedule")
       .should("not.contain", "/myschedule/edit");
-    cy.get("ol button:not(.moon-button)")
+    cy.get('[data-testid="regular-schedule"] button')
       .should("have.length", 2)
       .first()
       .click();
     // Get directions from 2nd to 3rd room in schedule
-    cy.url().should(
-      "contain",
-      "/directions?fromRoom=3104&toRoom=3113&scheduleInd=1"
-    );
+    cy.url().should("contain", "/directions?fromRoom=3104&toRoom=3113");
     cy.contains("Turn left out of room 3104");
     // Go back
-    cy.get("button:not(.moon-button)").should("have.length", 1).click();
+    cy.get("button").should("have.length", 1).click();
     cy.url()
       .should("contain", "/myschedule")
       .should("not.contain", "/myschedule/edit");

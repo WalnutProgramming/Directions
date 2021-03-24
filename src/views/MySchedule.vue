@@ -1,47 +1,61 @@
 <template>
   <div>
     <div style="padding-left: 2vw">
-      <ol style="margin-block-start: 0em">
-        <div v-for="(room, index) in rooms" :key="index">
-          <li style="padding: 0.5vh">
-            {{ room.value }}
-          </li>
-          <CustomButton
-            v-if="
-              index != rooms.length - 1 &&
-              room.value.trim() !== '' &&
-              rooms[index + 1].value.trim() !== ''
-            "
-            style="
-              font-size: 0.7em;
-              margin-left: -1.5em;
-              margin-top: 0.1em;
-              margin-bottom: 0.3em;
-              padding-left: 2vw;
-            "
-            @click="go(index)"
-          >
-            ↓ Go from {{ rooms[index].value }} to {{ rooms[index + 1].value }} ↓
-          </CustomButton>
+      <EditButton @click="edit()"> Edit Schedule </EditButton>
+
+      <div class="lists">
+        <div>
+          <h2>Regular Schedule</h2>
+          <ScheduleList
+            v-if="rooms != null"
+            data-testid="regular-schedule"
+            :all-rooms="rooms"
+            @go="go"
+          />
         </div>
-      </ol>
-      <EditButton @click="edit()"> Edit </EditButton>
+        <div>
+          <h2>Monday/Thursday Block</h2>
+          <ScheduleList
+            v-if="rooms != null"
+            :all-rooms="rooms"
+            :order="mondayThursdayOrder"
+            @go="go"
+          />
+        </div>
+        <div>
+          <h2>Tuesday/Friday Block</h2>
+          <ScheduleList
+            v-if="rooms != null"
+            :all-rooms="rooms"
+            :order="tuesdayFridayOrder"
+            @go="go"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import CustomButton from "@/components/buttons/CustomButton.vue";
 import EditButton from "@/components/buttons/EditButton.vue";
+import ScheduleList from "@/components/ScheduleList.vue";
 
 export default Vue.extend({
-  components: { CustomButton, EditButton },
+  components: { EditButton, ScheduleList },
   data() {
     const stored = localStorage.getItem("myschedule");
     return {
       rooms: stored == null ? null : JSON.parse(stored).rooms,
     };
+  },
+  computed: {
+    mondayThursdayOrder() {
+      return [1, 3, 4, 6].map((n) => n - 1);
+    },
+    tuesdayFridayOrder() {
+      return [2, 3, 5, 7].map((n) => n - 1);
+    },
   },
   created() {
     if (localStorage.getItem("myschedule") == null) {
@@ -49,13 +63,13 @@ export default Vue.extend({
     }
   },
   methods: {
-    go(index: number) {
+    go({ fromRoom, toRoom }: { fromRoom: string; toRoom: string }) {
       this.$router.push({
         path: "/directions",
         query: {
-          fromRoom: this.rooms[index].value,
-          toRoom: this.rooms[index + 1].value,
-          scheduleInd: index.toString(),
+          fromRoom,
+          toRoom,
+          isFromSchedule: "true",
         },
       });
     },
@@ -80,7 +94,25 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-li {
-  color: var(--less-important-text-color);
+h2 {
+  color: var(--subheading-text-color);
+}
+
+.lists {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1200px) {
+  .lists {
+    flex-direction: row;
+  }
+  .lists > * {
+    padding: 1rem 3rem;
+  }
+}
+
+h2 {
+  font-size: 35px;
 }
 </style>
