@@ -26,6 +26,7 @@ type StairNodeId =
   | "stair science a"
   | "stair music entrance to 1"
   | "stair music entrance to 2"
+  | "stair music 2 back"
   | "stair arts a"
   | "stair arts b"
   | "elevator a"
@@ -39,7 +40,8 @@ type ConnectionNodeId =
   | "2300s to 2600s"
   | "2600s to arcade"
   | "2700s to arcade"
-  | "music entrance to arcade"
+  | "music entrance to long hallway"
+  | "long hallway to arcade"
   | "music 1 to music little corner"
   | "lobby to 2200s"
   | "lobby to 2240"
@@ -337,27 +339,17 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
     getDirectionsFromIndices(from: number, to: number) {
       const LANGUAGES = 1;
       const SCIENCE = 2;
-      const MUSIC = 3;
-      const GYM = 4;
+      const LONG_HALLWAY = 3;
       const ALUMNI = 0;
       switch (from) {
         case LANGUAGES:
           switch (to) {
             case SCIENCE:
               return "go straight and a bit to the right to get to the 2700s, the science wing\n";
-            case MUSIC:
-              return (
-                "go straight and a bit to the left through the long narrow hallway\n" +
-                'turn right when you get to the doors labeled "Music Lyceum"\n' +
-                "after going through the doors, "
-              );
-            case GYM:
-              return (
-                "go straight and a bit to left, and go to the end of the hall\n" +
-                "the Senior High Gym is straight ahead. Go inside\n"
-              );
+            case LONG_HALLWAY:
+              return "go straight and a bit to the left to get to the long narrow hallway\n";
             case ALUMNI:
-              return "turn right, go to the end of the arcade, go up the ramp, turn right, and go through the doors\n";
+              return "turn right, go to the end of the arcade, go up the ramp, and go through the doors on your right\n";
             default:
               return "";
           }
@@ -365,76 +357,34 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
           switch (to) {
             case LANGUAGES:
               return "go straight and a bit to the right to get to the 2600s, the modern languages wing\n";
-            case MUSIC:
-              return (
-                "turn right, then go down to the end of the arcade and turn right\n" +
-                "go down the hallway, and turn right when you get to the doors\n" +
-                "after going through the doors, "
-              );
-            case GYM:
-              return "turn right when you leave the science wing\nGo forward and turn right again, then go down to the end of the narrow hallway\n";
+            case LONG_HALLWAY:
+              return "turn right\ngo to the end of the arcade and turn right into the narrow hallway\n";
             case ALUMNI:
-              return "turn left\ngo to the end of the arcade, go up the ramp, turn right, and go through the doors\n";
+              return "turn left\ngo to the end of the arcade, go up the ramp, and go through the doors on your right\n";
             default:
               return "";
           }
-        case MUSIC:
+        case LONG_HALLWAY:
           switch (to) {
             case SCIENCE:
-              return (
-                "turn left after going through the doors, then go down the hallway\n" +
-                "when you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn left into the science wing\n"
-              );
+              return "turn left and go down the arcade and turn left into the science wing\n";
             case LANGUAGES:
-              return (
-                "turn left after going through the doors, then go down the hallway\n" +
-                "when you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn right into the modern foreign languages wing\n"
-              );
-            case GYM:
-              return "turn right after going through the doors, then go forward until you get to the gym\n";
+              return "turn left and go down the arcade and turn right into the modern foreign languages wing\n";
             case ALUMNI:
-              return (
-                "turn left after going through the doors, then go down the hallway\n" +
-                "go to the end of the arcade, go up the ramp, turn right, and go through the doors\n"
-              );
+              return "turn left and go to the end of the arcade\ngo up the ramp, then go through the doors on your right\n";
             default:
               return "";
           }
-        case GYM:
-          (() => {
-            const str =
-              "exit the gym and go out via the narrow hallway on the right\n";
-            switch (to) {
-              case SCIENCE:
-                return `${str}go until the narrow hallway empties into the Arcade\nTurn left, go a little bit, and turn left again to get to the science wing\n`;
-              case LANGUAGES:
-                return `${str}go until the narrow hallway empties into the Arcade\nGo straight and a bit to the left; go forward into the language wing\n`;
-              case MUSIC:
-                return `${str}After entering the narrow hallway, immediately turn left into the double doors labeled "Music Lyceum"\n`;
-              case ALUMNI:
-                return `${str}Go to the end of the arcade, go up the ramp, turn right, and go through the doors\n`;
-              default:
-                return "";
-            }
-          })();
-          return "";
         case ALUMNI:
           switch (to) {
             case SCIENCE:
               return "turn left\ngo down the ramp, go through the arcade, and turn right into the 2700s (science wing)\n";
             case LANGUAGES:
               return "turn left\ngo down the ramp, go through the arcade, and turn left into the 2600s (modern foreign languages wing)\n";
-            case MUSIC:
+            case LONG_HALLWAY:
               return (
-                "turn left\ngo down the ramp, and go through to the end of the arcade\n" +
-                "turn right and through the long narrow hallway\n" +
-                'turn right when you get to the doors labeled "Music Lyceum" and enter the doors\n'
-              );
-            case GYM:
-              return (
-                "turn left\ngo down the ramp, and go through to the end of the arcade\n" +
-                "turn right and through the long narrow hallway\n" +
-                "the Senior High Gym is straight ahead. Go inside\n"
+                "turn left\ngo down the ramp, and go all the way to the other end of the arcade\n" +
+                "turn right to get to the long narrow hallway\n"
               );
             default:
               return "";
@@ -456,13 +406,9 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
       new Fork(FRONT, reverseConnection("2700s to arcade"), "the 2700s"),
       new Fork(
         FRONT,
-        reverseConnection("music entrance to arcade"),
-        "the music lyceum"
+        reverseConnection("long hallway to arcade"),
+        "the long, narrow hallway"
       ),
-      new Room("Senior High Gym", FRONT, {
-        prefix: "the",
-        aliases: ["2800", "2801", "High School Gymnasium"],
-      }),
     ],
     { allowFrontConnectionsInMiddle: true }
   ),
@@ -578,10 +524,30 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
   // (go up to get the 2nd floor, down to get the 1st floor science wing)
   new Hallway([
     new Stairs(FRONT, onFloor("stair music entrance to 1", 2)),
-    new Fork(RIGHT, "music entrance to arcade", "the long narrow hallway"),
+    new Fork(
+      RIGHT,
+      "music entrance to long hallway",
+      "the long narrow hallway"
+    ),
     // TODO
     new Stairs(LEFT, onFloor("elevator music", 1.5), "the elevator"),
     new Stairs(FRONT, onFloor("stair music entrance to 2", 1)),
+  ]),
+
+  // long hallway between arcade and music wing
+  new Hallway([
+    new Fork(FRONT, "long hallway to arcade", "the arcade"),
+    new Fork(
+      RIGHT,
+      reverseConnection("music entrance to long hallway"),
+      'the doors labeled "Music Lyceum"'
+    ),
+    new Turn(RIGHT),
+    new Room("Senior High Gym", LEFT, {
+      prefix: "the",
+      aliases: ["2800", "2801", "High School Gymnasium"],
+    }),
+    new Stairs(FRONT, onFloor("stair music 2 back", 2)),
   ]),
 
   // music lyceum 1st floor (1800s)
@@ -637,33 +603,31 @@ const hallways: Hallway<ConnectionNodeId, StairNodeId>[] = [
     new Room("2842", RIGHT),
     new Room("2843"),
     new Room("2840", RIGHT, { aliases: ["Choir"] }),
+    new Stairs(FRONT, onFloor("stair music 2 back", 3)),
   ]),
 ];
 
-const walnutAll = new Building<ConnectionNodeId, StairNodeId>(
-  hallways
-  //  ,{
-  //   oneWayStaircases: COVID_ONE_WAY_HALLWAY_AND_STAIRS
-  //     ? {
-  //         "stair a": "down",
-  //         "stair b": "down",
-  //         "stair c": "up",
+const walnutAll = new Building<ConnectionNodeId, StairNodeId>(hallways, {
+  oneWayStaircases: COVID_ONE_WAY_HALLWAY_AND_STAIRS
+    ? {
+        // "stair a": "down",
+        // "stair b": "down",
+        // "stair c": "up",
 
-  //         // TODO: add stair C for floor 1. Really weird directions otherwise.
+        // // TODO: add stair C for floor 1. Really weird directions otherwise.
 
-  //         // TODO: need cafeteria to uncomment both of these next 2
-  //         "stair d": "down",
-  //         "stair f": "down",
+        // // TODO: need cafeteria to uncomment both of these next 2
+        // "stair d": "down",
+        // "stair f": "down",
 
-  //         // TODO: top stairs, near locker room
-  //         // TODO: top stairs, other way from orchestra
-  //         // TODO: these next 2 (relies on previous 2)
-  //         "stair music entrance to 1": "down",
-  //         "stair music entrance to 2": "up",
-  //       }
-  //     : {},
-  // }
-);
+        // TODO: top stairs, near locker room
+        // "stair music entrance to 1": "down",
+        // "stair music entrance to 2": "up",
+        "stair music entrance to 2": "up",
+        "stair music 2 back": "down",
+      }
+    : {},
+});
 
 export const walnutNonAccessible = walnutAll.withAllowedConnectionTypes(
   (s) => !s.includes("elevator")

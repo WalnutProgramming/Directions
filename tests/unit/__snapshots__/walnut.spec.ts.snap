@@ -219,9 +219,9 @@ Continue, then turn right (after passing room 1843 on your right)
 Continue, then turn left into the elevator
 Go to floor 1.5
 Turn right out of the elevator
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue, then turn left into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go to the end of the arcade
+Go up the ramp, then go through the doors on your right
 Continue straight
 Continue, then turn right into the narrow hallway
 Continue, then turn right into room 2503"
@@ -253,9 +253,8 @@ Continue, then after entering the music hallway, turn left
 Continue, then turn left into the elevator
 Go to floor 1.5
 Turn right out of the elevator
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn left into the science wing
+Continue, then turn left into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go down the arcade and turn left into the science wing
 Continue, then turn right (after passing room 2715 on your left)
 Continue, then turn right into room 2714"
 `;
@@ -273,9 +272,8 @@ exports[`gives correct accessible directions from 1851 to 3111 1`] = `
 Continue, then turn left into the elevator
 Go to floor 1.5
 Turn right out of the elevator
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn right into the modern foreign languages wing
+Continue, then turn left into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go down the arcade and turn right into the modern foreign languages wing
 Continue straight
 Continue, then turn left (after passing room 2603 on your right)
 Continue, then turn right (after passing room 2604 on your left)
@@ -294,9 +292,8 @@ Continue, then turn left
 Continue, then turn right into the elevator
 Go to floor 1.5
 Turn right out of the elevator
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn right into the modern foreign languages wing
+Continue, then turn left into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go down the arcade and turn right into the modern foreign languages wing
 Continue straight
 Continue, then turn left (after passing room 2603 on your right)
 Continue, then turn right (after passing room 2604 on your left)
@@ -349,8 +346,10 @@ Continue, then turn left (after passing room 2109 on your left)
 Continue, then turn right into the 2600s
 Continue, then turn left
 Continue, then turn right (after passing room 2602 on your left)
-Continue, then after entering the arcade, go straight and a bit to left, and go to the end of the hall
-The Senior High Gym is straight ahead. Go inside"
+Continue, then after entering the arcade, go straight and a bit to the left to get to the long narrow hallway
+Continue straight
+Continue, then turn right (after passing the doors labeled \\"Music Lyceum\\" on your right)
+Continue, then turn left into the Senior High Gym"
 `;
 
 exports[`gives correct accessible directions from 2200 to 2723 1`] = `
@@ -444,9 +443,9 @@ Continue, then after entering the lobby, turn left
 Continue, then turn right into the 2600s
 Continue, then turn left
 Continue, then turn right (after passing room 2602 on your left)
-Continue, then after entering the arcade, go straight and a bit to the left through the long narrow hallway
-Turn right when you get to the doors labeled \\"Music Lyceum\\"
-After going through the doors, turn right
+Continue, then after entering the arcade, go straight and a bit to the left to get to the long narrow hallway
+Continue straight
+Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn right
 Continue, then turn left into the elevator
 Go to floor 1
 Turn right out of the elevator
@@ -482,9 +481,9 @@ Continue, then after entering the 2100s, turn right
 Continue, then turn right into the 2600s
 Continue, then turn left
 Continue, then turn right (after passing room 2602 on your left)
-Continue, then after entering the arcade, go straight and a bit to the left through the long narrow hallway
-Turn right when you get to the doors labeled \\"Music Lyceum\\"
-After going through the doors, turn right
+Continue, then after entering the arcade, go straight and a bit to the left to get to the long narrow hallway
+Continue straight
+Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn right
 Continue, then turn left into the elevator
 Go to floor 1
 Turn right out of the elevator
@@ -520,7 +519,7 @@ exports[`gives correct accessible directions from 2510 to Black Box Theatre 1`] 
 Continue, then turn left into the door, and then turn right
 Go up the 3 steps
 Continue, then after entering the 2600s, turn right
-Continue, then after entering the arcade, turn right, go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue, then after entering the arcade, turn right, go to the end of the arcade, go up the ramp, and go through the doors on your right
 Continue straight
 Continue, then turn right into the narrow hallway
 Continue, then turn right into room 2503"
@@ -529,8 +528,10 @@ Continue, then turn right into room 2503"
 exports[`gives correct accessible directions from 2602 to High School Gymnasium 1`] = `
 "Turn left out of room 2602
 Continue, then turn right (after passing room 2602 on your left)
-Continue, then after entering the arcade, go straight and a bit to left, and go to the end of the hall
-The Senior High Gym is straight ahead. Go inside"
+Continue, then after entering the arcade, go straight and a bit to the left to get to the long narrow hallway
+Continue straight
+Continue, then turn right (after passing the doors labeled \\"Music Lyceum\\" on your right)
+Continue, then turn left into the Senior High Gym"
 `;
 
 exports[`gives correct accessible directions from 2603 to 2301 1`] = `
@@ -604,7 +605,7 @@ Continue, then turn left into room 3207"
 exports[`gives correct accessible directions from 2703 to Scene Shop 1`] = `
 "Turn right out of room 2703
 Continue, then after entering the arcade, turn left
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Go to the end of the arcade, go up the ramp, and go through the doors on your right
 Continue straight
 Continue, then turn right into the narrow hallway
 Continue, then turn right into room 2505"
@@ -669,7 +670,10 @@ Continue, then turn left into room 1304"
 `;
 
 exports[`gives correct accessible directions from 2800 to 2310 1`] = `
-"Go straight out of the arcade
+"Turn right out of the Senior High Gym
+Continue, then turn left (after passing the Senior High Gym on your right)
+Continue, then after entering the arcade, turn left and go down the arcade and turn right into the modern foreign languages wing
+Continue straight
 Continue, then turn left (after passing room 2603 on your right)
 Continue, then turn right (after passing room 2604 on your left)
 Continue, then after entering the 2300s, turn right
@@ -679,7 +683,9 @@ Continue, then turn right into room 2310"
 `;
 
 exports[`gives correct accessible directions from 2801 to 1857 1`] = `
-"Turn right out of the long narrow hallway
+"Turn right out of the Senior High Gym
+Continue, then turn left (after passing the Senior High Gym on your right)
+Continue, then turn left into the doors labeled \\"Music Lyceum\\", and then turn right
 Continue, then turn left into the elevator
 Go to floor 1
 Turn right out of the elevator
@@ -692,9 +698,8 @@ Continue, then turn right (after passing room 2846 on your left)
 Continue, then turn right into the elevator
 Go to floor 1.5
 Turn right out of the elevator
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn right into the modern foreign languages wing
+Continue, then turn left into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go down the arcade and turn right into the modern foreign languages wing
 Continue straight
 Continue, then turn left (after passing room 2603 on your right)
 Continue, then turn right (after passing room 2604 on your left)
@@ -710,9 +715,8 @@ Continue, then turn right (after passing room 2846 on your left)
 Continue, then turn right into the elevator
 Go to floor 1.5
 Turn right out of the elevator
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn left into the science wing
+Continue, then turn left into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go down the arcade and turn left into the science wing
 Continue, then turn left into room 2739"
 `;
 
@@ -731,9 +735,8 @@ exports[`gives correct accessible directions from 2847 to 3717 1`] = `
 Continue, then turn right into the elevator
 Go to floor 1.5
 Turn right out of the elevator
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn left into the science wing
+Continue, then turn left into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go down the arcade and turn left into the science wing
 Continue, then turn left into the elevator
 Go to floor 3
 Turn left out of the elevator
@@ -746,9 +749,8 @@ exports[`gives correct accessible directions from 2848 to 2302 1`] = `
 Continue, then turn right into the elevator
 Go to floor 1.5
 Turn right out of the elevator
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn right into the modern foreign languages wing
+Continue, then turn left into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go down the arcade and turn right into the modern foreign languages wing
 Continue straight
 Continue, then turn left (after passing room 2603 on your right)
 Continue, then turn right (after passing room 2604 on your left)
@@ -761,9 +763,8 @@ exports[`gives correct accessible directions from 2851 to 2601 1`] = `
 Continue, then turn right into the elevator
 Go to floor 1.5
 Turn right out of the elevator
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn right into the modern foreign languages wing
+Continue, then turn left into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go down the arcade and turn right into the modern foreign languages wing
 Continue straight
 Continue, then turn left (after passing room 2603 on your right)
 Continue, then turn right into room 2601"
@@ -779,9 +780,8 @@ exports[`gives correct accessible directions from 2853 to 3709 1`] = `
 Continue, then turn right into the elevator
 Go to floor 1.5
 Turn right out of the elevator
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn left into the science wing
+Continue, then turn left into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go down the arcade and turn left into the science wing
 Continue, then turn left into the elevator
 Go to floor 3
 Turn left out of the elevator
@@ -793,9 +793,8 @@ exports[`gives correct accessible directions from 2855 to 1105 1`] = `
 Continue, then turn right into the elevator
 Go to floor 1.5
 Turn right out of the elevator
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn right into the modern foreign languages wing
+Continue, then turn left into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go down the arcade and turn right into the modern foreign languages wing
 Continue straight
 Continue, then turn left (after passing room 2603 on your right)
 Continue, then turn right (after passing room 2604 on your left)
@@ -828,9 +827,9 @@ Turn right out of the elevator
 Continue, then turn right into the 2600s
 Continue, then turn left
 Continue, then turn right (after passing room 2602 on your left)
-Continue, then after entering the arcade, go straight and a bit to the left through the long narrow hallway
-Turn right when you get to the doors labeled \\"Music Lyceum\\"
-After going through the doors, turn right
+Continue, then after entering the arcade, go straight and a bit to the left to get to the long narrow hallway
+Continue straight
+Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn right
 Continue, then turn left into the elevator
 Go to floor 2
 Turn left out of the elevator
@@ -936,9 +935,9 @@ Continue, then turn right (after passing the elevator on your left)
 Continue, then turn left into the 2600s
 Continue, then turn left
 Continue, then turn right (after passing room 2602 on your left)
-Continue, then after entering the arcade, go straight and a bit to the left through the long narrow hallway
-Turn right when you get to the doors labeled \\"Music Lyceum\\"
-After going through the doors, turn right
+Continue, then after entering the arcade, go straight and a bit to the left to get to the long narrow hallway
+Continue straight
+Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn right
 Continue, then turn left into the elevator
 Go to floor 1
 Turn right out of the elevator
@@ -966,7 +965,7 @@ Continue, then turn right (after passing the elevator on your left)
 Continue, then turn left into the 2600s
 Continue, then turn left
 Continue, then turn right (after passing room 2602 on your left)
-Continue, then after entering the arcade, turn right, go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue, then after entering the arcade, turn right, go to the end of the arcade, go up the ramp, and go through the doors on your right
 Continue straight
 Continue, then turn right into the narrow hallway
 Continue, then turn right into room 2503"
@@ -982,9 +981,9 @@ Continue, then turn right (after passing the elevator on your left)
 Continue, then turn left into the 2600s
 Continue, then turn left
 Continue, then turn right (after passing room 2602 on your left)
-Continue, then after entering the arcade, go straight and a bit to the left through the long narrow hallway
-Turn right when you get to the doors labeled \\"Music Lyceum\\"
-After going through the doors, turn right
+Continue, then after entering the arcade, go straight and a bit to the left to get to the long narrow hallway
+Continue straight
+Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn right
 Continue, then turn left into the elevator
 Go to floor 1
 Turn right out of the elevator
@@ -1030,9 +1029,9 @@ Continue, then turn right (after passing the elevator on your left)
 Continue, then turn left into the 2600s
 Continue, then turn left
 Continue, then turn right (after passing room 2602 on your left)
-Continue, then after entering the arcade, go straight and a bit to the left through the long narrow hallway
-Turn right when you get to the doors labeled \\"Music Lyceum\\"
-After going through the doors, turn right
+Continue, then after entering the arcade, go straight and a bit to the left to get to the long narrow hallway
+Continue straight
+Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn right
 Continue, then turn left into the elevator
 Go to floor 1
 Turn right out of the elevator
@@ -1083,7 +1082,7 @@ Continue, then turn right into the elevator
 Go to floor 2
 Turn right out of the elevator
 Continue, then after entering the arcade, turn left
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Go to the end of the arcade, go up the ramp, and go through the doors on your right
 Continue straight
 Continue, then turn right into the narrow hallway
 Continue, then turn right into the corner with the stairs
@@ -1098,9 +1097,10 @@ exports[`gives correct accessible directions from 3703 to 1853 1`] = `
 Continue, then turn right into the elevator
 Go to floor 2
 Turn right out of the elevator
-Continue, then after entering the arcade, turn right, then go down to the end of the arcade and turn right
-Go down the hallway, and turn right when you get to the doors
-After going through the doors, turn right
+Continue, then after entering the arcade, turn right
+Go to the end of the arcade and turn right into the narrow hallway
+Continue straight
+Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn right
 Continue, then turn left into the elevator
 Go to floor 1
 Turn left out of the elevator
@@ -1184,9 +1184,9 @@ Continue, then after entering the lobby, turn left
 Continue, then turn right into the 2600s
 Continue, then turn left
 Continue, then turn right (after passing room 2602 on your left)
-Continue, then after entering the arcade, go straight and a bit to the left through the long narrow hallway
-Turn right when you get to the doors labeled \\"Music Lyceum\\"
-After going through the doors, turn right
+Continue, then after entering the arcade, go straight and a bit to the left to get to the long narrow hallway
+Continue straight
+Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn right
 Continue, then turn left into the elevator
 Go to floor 1
 Turn right out of the elevator
@@ -1200,9 +1200,9 @@ Continue, then after entering the music hallway, turn left
 Continue, then turn left into the elevator
 Go to floor 1.5
 Turn right out of the elevator
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue, then turn left into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go to the end of the arcade
+Go up the ramp, then go through the doors on your right
 Continue straight
 Continue, then turn right into the narrow hallway
 Continue, then turn right into room 2503"
@@ -1278,9 +1278,8 @@ exports[`gives correct accessible directions from Recital Hall to 2308 1`] = `
 Continue, then turn right into the elevator
 Go to floor 1.5
 Turn right out of the elevator
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn right into the modern foreign languages wing
+Continue, then turn left into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go down the arcade and turn right into the modern foreign languages wing
 Continue straight
 Continue, then turn left (after passing room 2603 on your right)
 Continue, then turn right (after passing room 2604 on your left)
@@ -1295,9 +1294,8 @@ exports[`gives correct accessible directions from Schott Recital Hall to Main Of
 Continue, then turn right into the elevator
 Go to floor 1.5
 Turn right out of the elevator
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn right into the modern foreign languages wing
+Continue, then turn left into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go down the arcade and turn right into the modern foreign languages wing
 Continue straight
 Continue, then turn left (after passing room 2603 on your right)
 Continue, then turn right (after passing room 2604 on your left)
@@ -1536,9 +1534,9 @@ Continue, then turn right
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
 Go straight out of the stairs
-Continue, then turn right into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue, then turn right into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go to the end of the arcade
+Go up the ramp, then go through the doors on your right
 Continue straight
 Continue, then turn right into the narrow hallway
 Continue, then turn right into room 2503"
@@ -1582,9 +1580,8 @@ Continue, then turn right
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
 Go straight out of the stairs
-Continue, then turn right into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn left into the science wing
+Continue, then turn right into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go down the arcade and turn left into the science wing
 Continue, then turn right (after passing room 2715 on your left)
 Continue, then turn right into room 2714"
 `;
@@ -1609,9 +1606,9 @@ Continue, then turn right
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
 Go straight out of the stairs
-Continue, then turn right into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue, then turn right into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go to the end of the arcade
+Go up the ramp, then go through the doors on your right
 Continue straight
 Continue, then after entering the 2200s, turn left
 Continue, then turn right (after passing the elevator on your left)
@@ -1628,9 +1625,9 @@ exports[`gives correct directions from 1852 to 2404 1`] = `
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
 Go straight out of the stairs
-Continue, then turn right into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue, then turn right into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go to the end of the arcade
+Go up the ramp, then go through the doors on your right
 Continue straight
 Continue, then after entering the 2200s, turn left
 Continue, then turn left into the tiny hallway near the elevator
@@ -1676,9 +1673,11 @@ Continue, then turn right (after passing room 2111 on your left)
 Continue, then turn left (after passing room 2109 on your left)
 Continue, then turn right into the Alumni Hall
 Continue, then after entering the arcade, turn left
-Go down the ramp, and go through to the end of the arcade
-Turn right and through the long narrow hallway
-The Senior High Gym is straight ahead. Go inside"
+Go down the ramp, and go all the way to the other end of the arcade
+Turn right to get to the long narrow hallway
+Continue straight
+Continue, then turn right (after passing the doors labeled \\"Music Lyceum\\" on your right)
+Continue, then turn left into the Senior High Gym"
 `;
 
 exports[`gives correct directions from 2200 to 2723 1`] = `
@@ -1768,10 +1767,10 @@ exports[`gives correct directions from 2219 to 1824 1`] = `
 Continue, then after entering the lobby, turn left
 Continue, then turn right into the Alumni Hall
 Continue, then after entering the arcade, turn left
-Go down the ramp, and go through to the end of the arcade
-Turn right and through the long narrow hallway
-Turn right when you get to the doors labeled \\"Music Lyceum\\" and enter the doors
-Turn left
+Go down the ramp, and go all the way to the other end of the arcade
+Turn right to get to the long narrow hallway
+Continue straight
+Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn left
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
@@ -1807,10 +1806,10 @@ exports[`gives correct directions from 2401 to 1846 1`] = `
 Continue, then after entering the 2100s, turn right
 Continue, then turn right into the Alumni Hall
 Continue, then after entering the arcade, turn left
-Go down the ramp, and go through to the end of the arcade
-Turn right and through the long narrow hallway
-Turn right when you get to the doors labeled \\"Music Lyceum\\" and enter the doors
-Turn left
+Go down the ramp, and go all the way to the other end of the arcade
+Turn right to get to the long narrow hallway
+Continue straight
+Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn left
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
@@ -1850,7 +1849,7 @@ exports[`gives correct directions from 2510 to Black Box Theatre 1`] = `
 Continue, then turn left into the door, and then turn right
 Go up the 3 steps
 Continue, then after entering the 2600s, turn right
-Continue, then after entering the arcade, turn right, go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue, then after entering the arcade, turn right, go to the end of the arcade, go up the ramp, and go through the doors on your right
 Continue straight
 Continue, then turn right into the narrow hallway
 Continue, then turn right into room 2503"
@@ -1859,8 +1858,10 @@ Continue, then turn right into room 2503"
 exports[`gives correct directions from 2602 to High School Gymnasium 1`] = `
 "Turn left out of room 2602
 Continue, then turn right (after passing room 2602 on your left)
-Continue, then after entering the arcade, go straight and a bit to left, and go to the end of the hall
-The Senior High Gym is straight ahead. Go inside"
+Continue, then after entering the arcade, go straight and a bit to the left to get to the long narrow hallway
+Continue straight
+Continue, then turn right (after passing the doors labeled \\"Music Lyceum\\" on your right)
+Continue, then turn left into the Senior High Gym"
 `;
 
 exports[`gives correct directions from 2603 to 2301 1`] = `
@@ -1933,7 +1934,7 @@ Continue, then turn left into room 3207"
 exports[`gives correct directions from 2703 to Scene Shop 1`] = `
 "Turn right out of room 2703
 Continue, then after entering the arcade, turn left
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Go to the end of the arcade, go up the ramp, and go through the doors on your right
 Continue straight
 Continue, then turn right into the narrow hallway
 Continue, then turn right into room 2505"
@@ -1942,7 +1943,7 @@ Continue, then turn right into room 2505"
 exports[`gives correct directions from 2704 to 3114 1`] = `
 "Turn left out of room 2704
 Continue, then after entering the arcade, turn left
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Go to the end of the arcade, go up the ramp, and go through the doors on your right
 Continue straight
 Continue, then after entering the 2200s, turn left
 Continue, then turn right (after passing the elevator on your left)
@@ -1961,7 +1962,7 @@ Continue, then turn left into room 2707"
 exports[`gives correct directions from 2713 to 2403 1`] = `
 "Turn right out of room 2713
 Continue, then after entering the arcade, turn left
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Go to the end of the arcade, go up the ramp, and go through the doors on your right
 Continue straight
 Continue, then after entering the 2200s, turn left
 Continue, then turn left into the tiny hallway near the elevator
@@ -1972,7 +1973,7 @@ exports[`gives correct directions from 2720 to Alumni Office 1`] = `
 "Turn left out of room 2720
 Continue, then turn left (after passing room 2717 on your right)
 Continue, then after entering the arcade, turn left
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Go to the end of the arcade, go up the ramp, and go through the doors on your right
 Continue straight
 Continue, then after entering the 2200s, turn left
 Continue, then turn right into the 2200s
@@ -1991,7 +1992,10 @@ Continue, then turn left into room 1304"
 `;
 
 exports[`gives correct directions from 2800 to 2310 1`] = `
-"Go straight out of the arcade
+"Turn right out of the Senior High Gym
+Continue, then turn left (after passing the Senior High Gym on your right)
+Continue, then after entering the arcade, turn left and go down the arcade and turn right into the modern foreign languages wing
+Continue straight
 Continue, then turn left (after passing room 2603 on your right)
 Continue, then turn right (after passing room 2604 on your left)
 Continue, then after entering the 2300s, turn right
@@ -2001,7 +2005,9 @@ Continue, then turn right into room 2310"
 `;
 
 exports[`gives correct directions from 2801 to 1857 1`] = `
-"Turn left out of the long narrow hallway
+"Turn right out of the Senior High Gym
+Continue, then turn left (after passing the Senior High Gym on your right)
+Continue, then turn left into the doors labeled \\"Music Lyceum\\", and then turn left
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
@@ -2011,14 +2017,13 @@ Continue, then turn right into room 1857"
 `;
 
 exports[`gives correct directions from 2842 to 2111 1`] = `
-"Turn left out of room 2842
-Continue, then turn right (after passing room 2846 on your left)
-Continue, then turn right into the stairs
+"Turn right out of room 2842
+Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue, then turn left (after passing the Senior High Gym on your right)
+Continue, then after entering the arcade, turn left and go to the end of the arcade
+Go up the ramp, then go through the doors on your right
 Continue straight
 Continue, then after entering the 2200s, turn left
 Continue, then turn right (after passing the elevator on your left)
@@ -2027,23 +2032,22 @@ Continue, then turn right into room 2111"
 `;
 
 exports[`gives correct directions from 2843 to 2739 1`] = `
-"Turn right out of room 2843
-Continue, then turn right (after passing room 2846 on your left)
-Continue, then turn right into the stairs
+"Turn left out of room 2843
+Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn left into the science wing
+Continue, then turn left (after passing the Senior High Gym on your right)
+Continue, then after entering the arcade, turn left and go down the arcade and turn left into the science wing
 Continue, then turn left into room 2739"
 `;
 
 exports[`gives correct directions from 2844 to 1845 1`] = `
-"Turn left out of room 2844
-Continue, then turn right (after passing room 2846 on your left)
-Continue, then turn right into the stairs
+"Turn right out of room 2844
+Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
+Continue, then turn left (after passing the Senior High Gym on your right)
+Continue, then turn left into the doors labeled \\"Music Lyceum\\", and then turn left
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
@@ -2054,13 +2058,13 @@ Continue, then go straight into room 1845"
 `;
 
 exports[`gives correct directions from 2847 to 3717 1`] = `
-"Turn right out of room 2847
-Continue, then turn right into the stairs
+"Turn left out of room 2847
+Continue, then turn left (after passing room 2848 on your right)
+Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn left into the science wing
+Continue, then turn left (after passing the Senior High Gym on your right)
+Continue, then after entering the arcade, turn left and go down the arcade and turn left into the science wing
 Continue, then turn left into the stairs
 Go up 1 floor of stairs
 Turn left out of the stairs
@@ -2069,13 +2073,13 @@ Continue, then turn left into room 3717"
 `;
 
 exports[`gives correct directions from 2848 to 2302 1`] = `
-"Turn left out of room 2848
-Continue, then turn right into the stairs
+"Turn right out of room 2848
+Continue, then turn left (after passing room 2848 on your right)
+Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn right into the modern foreign languages wing
+Continue, then turn left (after passing the Senior High Gym on your right)
+Continue, then after entering the arcade, turn left and go down the arcade and turn right into the modern foreign languages wing
 Continue straight
 Continue, then turn left (after passing room 2603 on your right)
 Continue, then turn right (after passing room 2604 on your left)
@@ -2084,13 +2088,13 @@ Continue, then turn right into room 2302"
 `;
 
 exports[`gives correct directions from 2851 to 2601 1`] = `
-"Turn right out of room 2851
-Continue, then turn right into the stairs
+"Turn left out of room 2851
+Continue, then turn left (after passing room 2848 on your right)
+Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn right into the modern foreign languages wing
+Continue, then turn left (after passing the Senior High Gym on your right)
+Continue, then after entering the arcade, turn left and go down the arcade and turn right into the modern foreign languages wing
 Continue straight
 Continue, then turn left (after passing room 2603 on your right)
 Continue, then turn right into room 2601"
@@ -2102,13 +2106,13 @@ Continue, then turn right into room 2857"
 `;
 
 exports[`gives correct directions from 2853 to 3709 1`] = `
-"Turn right out of room 2853
-Continue, then turn right into the stairs
+"Turn left out of room 2853
+Continue, then turn left (after passing room 2848 on your right)
+Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn left into the science wing
+Continue, then turn left (after passing the Senior High Gym on your right)
+Continue, then after entering the arcade, turn left and go down the arcade and turn left into the science wing
 Continue, then turn left into the stairs
 Go up 1 floor of stairs
 Turn left out of the stairs
@@ -2116,13 +2120,14 @@ Continue, then turn left into room 3709"
 `;
 
 exports[`gives correct directions from 2855 to 1105 1`] = `
-"Turn right out of room 2855
-Continue, then turn right into the stairs
+"Turn left out of room 2855
+Continue, then turn left (after passing room 2848 on your right)
+Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue, then turn left (after passing the Senior High Gym on your right)
+Continue, then after entering the arcade, turn left and go to the end of the arcade
+Go up the ramp, then go through the doors on your right
 Continue straight
 Continue, then after entering the 2200s, turn left
 Continue, then turn right (after passing the elevator on your left)
@@ -2156,10 +2161,10 @@ Continue, then turn right (after passing room 2111 on your left)
 Continue, then turn left (after passing room 2109 on your left)
 Continue, then turn right into the Alumni Hall
 Continue, then after entering the arcade, turn left
-Go down the ramp, and go through to the end of the arcade
-Turn right and through the long narrow hallway
-Turn right when you get to the doors labeled \\"Music Lyceum\\" and enter the doors
-Turn right
+Go down the ramp, and go all the way to the other end of the arcade
+Turn right to get to the long narrow hallway
+Continue straight
+Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn right
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
 Turn left out of the stairs
@@ -2253,10 +2258,10 @@ Go down 1 floor of stairs
 Turn left out of the 2024 stairs
 Continue, then turn left into the Alumni Hall
 Continue, then after entering the arcade, turn left
-Go down the ramp, and go through to the end of the arcade
-Turn right and through the long narrow hallway
-Turn right when you get to the doors labeled \\"Music Lyceum\\" and enter the doors
-Turn left
+Go down the ramp, and go all the way to the other end of the arcade
+Turn right to get to the long narrow hallway
+Continue straight
+Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn left
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
@@ -2294,9 +2299,9 @@ Turn right out of the 2025 stairs
 Continue, then turn right into the 2600s
 Continue, then turn left
 Continue, then turn right (after passing room 2602 on your left)
-Continue, then after entering the arcade, go straight and a bit to the left through the long narrow hallway
-Turn right when you get to the doors labeled \\"Music Lyceum\\"
-After going through the doors, turn left
+Continue, then after entering the arcade, go straight and a bit to the left to get to the long narrow hallway
+Continue straight
+Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn left
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
@@ -2339,9 +2344,9 @@ Turn right out of the 2025 stairs
 Continue, then turn right into the 2600s
 Continue, then turn left
 Continue, then turn right (after passing room 2602 on your left)
-Continue, then after entering the arcade, go straight and a bit to the left through the long narrow hallway
-Turn right when you get to the doors labeled \\"Music Lyceum\\"
-After going through the doors, turn left
+Continue, then after entering the arcade, go straight and a bit to the left to get to the long narrow hallway
+Continue straight
+Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn left
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
@@ -2374,7 +2379,7 @@ Continue, then turn right into the stairs
 Go down 1 floor of stairs
 Turn right out of the stairs
 Continue, then after entering the arcade, turn left
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Go to the end of the arcade, go up the ramp, and go through the doors on your right
 Continue straight
 Continue, then after entering the 2200s, turn left
 Continue, then turn left into the 2015 stairs
@@ -2389,7 +2394,7 @@ Continue, then turn right into the stairs
 Go down 1 floor of stairs
 Turn right out of the stairs
 Continue, then after entering the arcade, turn left
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Go to the end of the arcade, go up the ramp, and go through the doors on your right
 Continue straight
 Continue, then turn right into the narrow hallway
 Continue, then turn right into the corner with the stairs
@@ -2404,9 +2409,10 @@ exports[`gives correct directions from 3703 to 1853 1`] = `
 Continue, then turn right into the stairs
 Go down 1 floor of stairs
 Turn right out of the stairs
-Continue, then after entering the arcade, turn right, then go down to the end of the arcade and turn right
-Go down the hallway, and turn right when you get to the doors
-After going through the doors, turn left
+Continue, then after entering the arcade, turn right
+Go to the end of the arcade and turn right into the narrow hallway
+Continue straight
+Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn left
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
@@ -2432,7 +2438,7 @@ Continue, then turn right into the stairs
 Go down 1 floor of stairs
 Turn right out of the stairs
 Continue, then after entering the arcade, turn left
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Go to the end of the arcade, go up the ramp, and go through the doors on your right
 Continue straight
 Continue, then after entering the 2200s, turn left
 Continue, then turn right (after passing the elevator on your left)
@@ -2478,10 +2484,10 @@ exports[`gives correct directions from Alumni Foundation to Instrumental 1`] = `
 Continue, then after entering the lobby, turn left
 Continue, then turn right into the Alumni Hall
 Continue, then after entering the arcade, turn left
-Go down the ramp, and go through to the end of the arcade
-Turn right and through the long narrow hallway
-Turn right when you get to the doors labeled \\"Music Lyceum\\" and enter the doors
-Turn left
+Go down the ramp, and go all the way to the other end of the arcade
+Turn right to get to the long narrow hallway
+Continue straight
+Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn left
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
@@ -2499,9 +2505,9 @@ Continue, then turn right
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
 Go straight out of the stairs
-Continue, then turn right into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue, then turn right into the long narrow hallway, and then turn left
+Continue, then after entering the arcade, turn left and go to the end of the arcade
+Go up the ramp, then go through the doors on your right
 Continue straight
 Continue, then turn right into the narrow hallway
 Continue, then turn right into room 2503"
@@ -2572,13 +2578,13 @@ Continue, then turn left into room 1113"
 `;
 
 exports[`gives correct directions from Recital Hall to 2308 1`] = `
-"Turn left out of room 2852
-Continue, then turn right into the stairs
+"Turn right out of room 2852
+Continue, then turn left (after passing room 2848 on your right)
+Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-When you get to the end of the hallway, turn left into the arcade, then go down the arcade and turn right into the modern foreign languages wing
+Continue, then turn left (after passing the Senior High Gym on your right)
+Continue, then after entering the arcade, turn left and go down the arcade and turn right into the modern foreign languages wing
 Continue straight
 Continue, then turn left (after passing room 2603 on your right)
 Continue, then turn right (after passing room 2604 on your left)
@@ -2589,13 +2595,14 @@ Continue, then turn right into room 2308"
 `;
 
 exports[`gives correct directions from Schott Recital Hall to Main Office 1`] = `
-"Turn left out of room 2852
-Continue, then turn right into the stairs
+"Turn right out of room 2852
+Continue, then turn left (after passing room 2848 on your right)
+Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
-Continue, then turn left into the long narrow hallway
-Turn left after going through the doors, then go down the hallway
-Go to the end of the arcade, go up the ramp, turn right, and go through the doors
+Continue, then turn left (after passing the Senior High Gym on your right)
+Continue, then after entering the arcade, turn left and go to the end of the arcade
+Go up the ramp, then go through the doors on your right
 Continue straight
 Continue, then after entering the 2200s, turn left
 Continue, then turn left into the entrance area
@@ -2603,10 +2610,13 @@ Continue, then turn left into room 2200"
 `;
 
 exports[`gives correct directions from Strings to Band (1840) 1`] = `
-"Turn left out of room 2848
-Continue, then turn right into the stairs
+"Turn right out of room 2848
+Continue, then turn left (after passing room 2848 on your right)
+Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
+Continue, then turn left (after passing the Senior High Gym on your right)
+Continue, then turn left into the doors labeled \\"Music Lyceum\\", and then turn left
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
