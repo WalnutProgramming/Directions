@@ -1,3 +1,5 @@
+/// <reference path="./vue-snack-vue-property.d.ts" />
+
 // polyfill needed for vue-snack IE support
 import "core-js/features/array/from";
 
@@ -12,7 +14,7 @@ import "@/registerServiceWorker";
 import store from "./store";
 import {
   messageOnNextPageReloadKey,
-  showMessageOnNextPageReload,
+  refreshToUpdate,
 } from "./showMessageOnNextPageReload";
 
 Vue.use(VueSnackbar, { close: true });
@@ -32,19 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
     Vue.nextTick(() => {
       (vm as any).$snack.show({
         text,
+        button: "",
       });
       sessionStorage.removeItem(messageOnNextPageReloadKey);
     });
   }
 });
 
-document.addEventListener("refresh-snackbar", () => {
-  (vm as any).$snack.show({
+document.addEventListener("needs-refresh", () => {
+  vm.$snack.show({
     text: "New update for site is available",
     button: "refresh to update",
-    action: () => {
-      showMessageOnNextPageReload("Updated site");
-      window.location.reload();
-    },
+    action: refreshToUpdate,
   });
 });

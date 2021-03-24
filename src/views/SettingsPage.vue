@@ -1,9 +1,9 @@
 <template>
   <div style="width: 96vw; left: 2vw; top: 2vw">
-    <ThemeSlider /> <br /><br />
     <AccessibilitySlider /> <br /><br />
-    <RefreshButton /> <br /><br />
+    <ThemeSlider /> <br /><br />
     <CheckUpdatesButton /> <br /><br />
+    <RefreshButton /> <br /><br />
     <DeleteDataButton />
 
     <br /><br /><br />

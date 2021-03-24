@@ -1,7 +1,8 @@
 <template>
   <div v-if="showiOSDownloadSuggestion" id="iosDownloadSuggestion">
     <p>
-      To install this page as an app, press
+      To install this page as an app,
+      {{ isSafari ? "" : "open this page in Safari, then " }}press
       <img
         src="@/assets/iosDownload.png"
         alt="iosDownload"
@@ -12,8 +13,8 @@
           margin-right: 0.25em;
         "
       />
-      at the bottom of the page and then press "Add to Home Screen" in the menu
-      that appears.
+      in the bottom bar. Then, press "Add to Home Screen" in the menu that
+      appears.
     </p>
   </div>
 </template>
@@ -31,6 +32,13 @@ export default Vue.extend({
         "matchMedia" in window &&
         window.matchMedia("(display-mode: standalone)").matches;
       return iOS && !isInstalledPWA;
+    },
+
+    // non-Safari iOS browsers can't install PWAs
+    isSafari() {
+      // Given that we're on iOS:
+      // non-Safari browsers seem to have, for example, "FxiOS/" or "CriOS/" or "OPiOS/" instead of "Version/"
+      return navigator.userAgent.includes("Version/");
     },
   },
 });
