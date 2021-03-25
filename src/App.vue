@@ -9,6 +9,7 @@
           <router-link tag="li" to="/myschedule">
             <a> My Schedule </a>
           </router-link>
+          <li><a href="https://file.groupme.com/v1/46049414/files/a3e56f6c-45ce-4e70-adbc-865be77b3f4e">Floor Map</a></li>
           <router-link tag="li" to="/settings">
             <a> Settings </a>
           </router-link>
