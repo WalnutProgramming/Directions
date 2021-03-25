@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <details class="details" open>
+    <details class="details">
       <summary>
         Walnut.Direct Status Updates
         <br />
