@@ -13,8 +13,6 @@ const walnutAll = new Building<ConnectionNodeId, StairNodeId>(hallways, {
         // "stair b": "down",
         // "stair c": "up",
 
-        // // TODO: add stair C for floor 1. Really weird directions otherwise.
-
         // // TODO: need cafeteria to uncomment both of these next 2
         // "stair d": "down",
         // "stair f": "down",

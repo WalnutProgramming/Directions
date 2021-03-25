@@ -33,6 +33,8 @@ const hallways: WalnutHallway[] = [
     new Room("1303", RIGHT),
     new Room("1304", LEFT),
     new Room("1301", RIGHT),
+    // TODO: is the following staircase actually labelled 2024?
+    new Stairs(LEFT, onFloor("stair c", 1), "the 2024 stairs"),
     new Room("1300"),
   ]),
 
