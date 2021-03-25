@@ -12,6 +12,7 @@ export type StairNodeId =
   | "stair music entrance to 1"
   | "stair music entrance to 2"
   | "stair music 2 back"
+  | "stair to 1800s"
   | "stair arts a"
   | "stair arts b"
   | "elevator a"
