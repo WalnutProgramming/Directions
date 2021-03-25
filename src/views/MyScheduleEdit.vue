@@ -83,9 +83,6 @@
             </PlusButton>
           </div>
         </SlickList>
-        <div>
-          <CustomButton class="save" @click="save">Save</CustomButton>
-        </div>
       </form>
     </div>
   </div>
