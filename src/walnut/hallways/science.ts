@@ -31,7 +31,7 @@ const hallways: WalnutHallway[] = [
     new Room("2707"),
     new Room("2709"),
     new Room("Forum", RIGHT, { prefix: "the", aliases: ["2740"] }),
-    new Room("2739"),
+    new Fork(LEFT, "2700s to 2739", "Area Across the Forum"),
     new Room("2713"),
     new Room("2715"),
     new Turn(RIGHT),
@@ -43,7 +43,16 @@ const hallways: WalnutHallway[] = [
     new Room("2720", RIGHT),
     new Room("2722", RIGHT),
   ]),
-
+  // 2739 (Area across the Forum)
+  new Hallway([
+    new Fork(
+      FRONT,
+      reverseConnection("2700s to 2739"),
+      "Area Across the Forum"
+    ),
+    new Room("2709"),
+    new Room("2711", RIGHT),
+  ]),
   // 3rd floor science wing (3700s)
   new Hallway([
     new Stairs(LEFT, onFloor("stair science a", 3)),
