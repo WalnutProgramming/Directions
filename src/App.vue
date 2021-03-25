@@ -46,7 +46,12 @@ export default Vue.extend({
   },
   watch: {
     $route(to, from) {
-      if (from.path === "/" && to.path === "/directions") {
+      if (
+        "media" in window &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        this.transitionName = "fade";
+      } else if (from.path === "/" && to.path === "/directions") {
         this.transitionName = "slide-left";
       } else if (from.path === "/directions" && to.path === "/") {
         this.transitionName = "slide-right";
