@@ -78,7 +78,9 @@
     "rules": {
       "no-unused-expressions": "off",
       "@typescript-eslint/no-unused-expressions": "warn",
-      "import/prefer-default-export": "off"
+      "import/prefer-default-export": "off",
+      "class-methods-use-this": "off",
+      "max-classes-per-file": "off"
     }
   },
   "prettier": {
