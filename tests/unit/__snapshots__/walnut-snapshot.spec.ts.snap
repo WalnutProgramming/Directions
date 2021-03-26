@@ -1527,14 +1527,13 @@ Continue, then turn right into room 1108"
 `;
 
 exports[`gives correct directions from 1823 to 2503 1`] = `
-"Turn left out of room 1823
-Continue, then turn right (after passing room 1843 on your right)
-Continue, then turn right (after passing room 1853 on your left)
+"Turn right out of room 1823
+Continue, then turn right (after passing room 1823 on your right)
 Continue, then turn right
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
-Go straight out of the stairs
-Continue, then turn right into the long narrow hallway, and then turn left
+Turn right out of the stairs
+Continue, then turn left (after passing the Senior High Gym on your right)
 Continue, then after entering the arcade, turn left and go to the end of the arcade
 Go up the ramp, then go through the doors on your right
 Continue straight
@@ -1543,13 +1542,14 @@ Continue, then turn right into room 2503"
 `;
 
 exports[`gives correct directions from 1840 to 2846 1`] = `
-"Turn left out of room 1840
-Continue, then turn right (after passing room 1843 on your right)
-Continue, then turn right (after passing room 1853 on your left)
+"Turn right out of room 1840
+Continue, then turn right (after passing room 1823 on your right)
 Continue, then turn right
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
-Go straight out of the stairs
+Turn right out of the stairs
+Continue, then turn left (after passing the Senior High Gym on your right)
+Continue, then turn left into the doors labeled \\"Music Lyceum\\", and then turn right
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
 Turn left out of the stairs
@@ -1558,13 +1558,14 @@ Continue, then turn right into room 2846"
 `;
 
 exports[`gives correct directions from 1841 to 2840 1`] = `
-"Turn right out of room 1841
-Continue, then turn right (after passing room 1843 on your right)
-Continue, then turn right (after passing room 1853 on your left)
+"Turn left out of room 1841
+Continue, then turn right (after passing room 1823 on your right)
 Continue, then turn right
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
-Go straight out of the stairs
+Turn right out of the stairs
+Continue, then turn left (after passing the Senior High Gym on your right)
+Continue, then turn left into the doors labeled \\"Music Lyceum\\", and then turn right
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
 Turn left out of the stairs
@@ -1574,25 +1575,29 @@ Continue, then turn right into room 2840"
 
 exports[`gives correct directions from 1842 to 2714 1`] = `
 "Turn right out of room 1842
-Continue, then after entering the music hallway, turn left
-Continue, then turn right (after passing room 1853 on your left)
+Continue, then after entering the music hallway, turn right
+Continue, then turn left (after passing the little corner on your right)
+Continue, then turn right (after passing room 1823 on your right)
 Continue, then turn right
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
-Go straight out of the stairs
-Continue, then turn right into the long narrow hallway, and then turn left
+Turn right out of the stairs
+Continue, then turn left (after passing the Senior High Gym on your right)
 Continue, then after entering the arcade, turn left and go down the arcade and turn left into the science wing
 Continue, then turn right (after passing room 2715 on your left)
 Continue, then turn right into room 2714"
 `;
 
 exports[`gives correct directions from 1850 to 2849 1`] = `
-"Turn left out of room 1850
-Continue, then turn right (after passing room 1853 on your left)
+"Turn right out of room 1850
+Continue, then turn left (after passing the little corner on your right)
+Continue, then turn right (after passing room 1823 on your right)
 Continue, then turn right
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
-Go straight out of the stairs
+Turn right out of the stairs
+Continue, then turn left (after passing the Senior High Gym on your right)
+Continue, then turn left into the doors labeled \\"Music Lyceum\\", and then turn right
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
 Turn left out of the stairs
@@ -1600,13 +1605,14 @@ Continue, then turn left into room 2849"
 `;
 
 exports[`gives correct directions from 1851 to 3111 1`] = `
-"Turn left out of room 1851
-Continue, then turn right (after passing room 1853 on your left)
+"Turn right out of room 1851
+Continue, then turn left (after passing the little corner on your right)
+Continue, then turn right (after passing room 1823 on your right)
 Continue, then turn right
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
-Go straight out of the stairs
-Continue, then turn right into the long narrow hallway, and then turn left
+Turn right out of the stairs
+Continue, then turn left (after passing the Senior High Gym on your right)
 Continue, then after entering the arcade, turn left and go to the end of the arcade
 Go up the ramp, then go through the doors on your right
 Continue straight
@@ -1621,11 +1627,16 @@ Continue, then turn left into room 3111"
 `;
 
 exports[`gives correct directions from 1852 to 2404 1`] = `
-"Turn left out of room 1852
+"Turn right out of room 1852
+Continue, then turn left (after passing room 1852 on your right)
+Continue, then turn left
+Continue, then turn left (after passing the little corner on your right)
+Continue, then turn right (after passing room 1823 on your right)
+Continue, then turn right
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
-Go straight out of the stairs
-Continue, then turn right into the long narrow hallway, and then turn left
+Turn right out of the stairs
+Continue, then turn left (after passing the Senior High Gym on your right)
 Continue, then after entering the arcade, turn left and go to the end of the arcade
 Go up the ramp, then go through the doors on your right
 Continue straight
@@ -2020,7 +2031,7 @@ exports[`gives correct directions from 2842 to 2111 1`] = `
 "Turn right out of room 2842
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
-Go straight out of the stairs
+Turn left out of the stairs
 Continue, then turn left (after passing the Senior High Gym on your right)
 Continue, then after entering the arcade, turn left and go to the end of the arcade
 Go up the ramp, then go through the doors on your right
@@ -2035,7 +2046,7 @@ exports[`gives correct directions from 2843 to 2739 1`] = `
 "Turn left out of room 2843
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
-Go straight out of the stairs
+Turn left out of the stairs
 Continue, then turn left (after passing the Senior High Gym on your right)
 Continue, then after entering the arcade, turn left and go down the arcade and turn left into the science wing
 Continue, then turn left into room 2739"
@@ -2045,7 +2056,7 @@ exports[`gives correct directions from 2844 to 1845 1`] = `
 "Turn right out of room 2844
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
-Go straight out of the stairs
+Turn left out of the stairs
 Continue, then turn left (after passing the Senior High Gym on your right)
 Continue, then turn left into the doors labeled \\"Music Lyceum\\", and then turn left
 Continue, then go straight into the stairs
@@ -2062,7 +2073,7 @@ exports[`gives correct directions from 2847 to 3717 1`] = `
 Continue, then turn left (after passing room 2848 on your right)
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
-Go straight out of the stairs
+Turn left out of the stairs
 Continue, then turn left (after passing the Senior High Gym on your right)
 Continue, then after entering the arcade, turn left and go down the arcade and turn left into the science wing
 Continue, then turn left into the stairs
@@ -2077,7 +2088,7 @@ exports[`gives correct directions from 2848 to 2302 1`] = `
 Continue, then turn left (after passing room 2848 on your right)
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
-Go straight out of the stairs
+Turn left out of the stairs
 Continue, then turn left (after passing the Senior High Gym on your right)
 Continue, then after entering the arcade, turn left and go down the arcade and turn right into the modern foreign languages wing
 Continue straight
@@ -2092,7 +2103,7 @@ exports[`gives correct directions from 2851 to 2601 1`] = `
 Continue, then turn left (after passing room 2848 on your right)
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
-Go straight out of the stairs
+Turn left out of the stairs
 Continue, then turn left (after passing the Senior High Gym on your right)
 Continue, then after entering the arcade, turn left and go down the arcade and turn right into the modern foreign languages wing
 Continue straight
@@ -2110,7 +2121,7 @@ exports[`gives correct directions from 2853 to 3709 1`] = `
 Continue, then turn left (after passing room 2848 on your right)
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
-Go straight out of the stairs
+Turn left out of the stairs
 Continue, then turn left (after passing the Senior High Gym on your right)
 Continue, then after entering the arcade, turn left and go down the arcade and turn left into the science wing
 Continue, then turn left into the stairs
@@ -2124,7 +2135,7 @@ exports[`gives correct directions from 2855 to 1105 1`] = `
 Continue, then turn left (after passing room 2848 on your right)
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
-Go straight out of the stairs
+Turn left out of the stairs
 Continue, then turn left (after passing the Senior High Gym on your right)
 Continue, then after entering the arcade, turn left and go to the end of the arcade
 Go up the ramp, then go through the doors on your right
@@ -2499,13 +2510,14 @@ Continue, then turn right into room 1840"
 
 exports[`gives correct directions from Band (1845) to Black Box Theater 1`] = `
 "Go straight out of room 1845
-Continue, then after entering the music hallway, turn left
-Continue, then turn right (after passing room 1853 on your left)
+Continue, then after entering the music hallway, turn right
+Continue, then turn left (after passing the little corner on your right)
+Continue, then turn right (after passing room 1823 on your right)
 Continue, then turn right
 Continue, then go straight into the stairs
 Go up 1 floor of stairs
-Go straight out of the stairs
-Continue, then turn right into the long narrow hallway, and then turn left
+Turn right out of the stairs
+Continue, then turn left (after passing the Senior High Gym on your right)
 Continue, then after entering the arcade, turn left and go to the end of the arcade
 Go up the ramp, then go through the doors on your right
 Continue straight
@@ -2582,7 +2594,7 @@ exports[`gives correct directions from Recital Hall to 2308 1`] = `
 Continue, then turn left (after passing room 2848 on your right)
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
-Go straight out of the stairs
+Turn left out of the stairs
 Continue, then turn left (after passing the Senior High Gym on your right)
 Continue, then after entering the arcade, turn left and go down the arcade and turn right into the modern foreign languages wing
 Continue straight
@@ -2599,7 +2611,7 @@ exports[`gives correct directions from Schott Recital Hall to Main Office 1`] = 
 Continue, then turn left (after passing room 2848 on your right)
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
-Go straight out of the stairs
+Turn left out of the stairs
 Continue, then turn left (after passing the Senior High Gym on your right)
 Continue, then after entering the arcade, turn left and go to the end of the arcade
 Go up the ramp, then go through the doors on your right
@@ -2614,7 +2626,7 @@ exports[`gives correct directions from Strings to Band (1840) 1`] = `
 Continue, then turn left (after passing room 2848 on your right)
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
-Go straight out of the stairs
+Turn left out of the stairs
 Continue, then turn left (after passing the Senior High Gym on your right)
 Continue, then turn left into the doors labeled \\"Music Lyceum\\", and then turn left
 Continue, then go straight into the stairs
