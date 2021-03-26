@@ -9,7 +9,12 @@
           <router-link tag="li" to="/myschedule">
             <a> My Schedule </a>
           </router-link>
-          <li><a href="http://www.walnuthillseagles.com/news-pdfs/2013/WHHS_Floor_Maps.pdf">Floor Map</a></li>
+          <li>
+            <a
+              href="http://www.walnuthillseagles.com/news-pdfs/2013/WHHS_Floor_Maps.pdf"
+              >Floor Map</a
+            >
+          </li>
           <router-link tag="li" to="/settings">
             <a> Settings </a>
           </router-link>
