@@ -25,6 +25,7 @@ export type ConnectionNodeId =
   | "2300s to 2600s"
   | "2600s to arcade"
   | "2700s to arcade"
+  | "2700s to 2739"
   | "music entrance to long hallway"
   | "long hallway to arcade"
   | "music 1 to music little corner"

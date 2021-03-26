@@ -28,6 +28,7 @@ Continue, then turn right into the 2600s
 Continue, then turn left
 Continue, then turn right (after passing room 2602 on your left)
 Continue, then after entering the arcade, go straight and a bit to the right to get to the 2700s, the science wing
+Continue, then turn left into Area Across the Forum
 Continue, then turn left into room 2709"
 `;
 
@@ -709,7 +710,7 @@ Continue, then turn left (after passing room 2110 on your right)
 Continue, then turn right into room 2111"
 `;
 
-exports[`gives correct accessible directions from 2843 to 2739 1`] = `
+exports[`gives correct accessible directions from 2843 to 2711 1`] = `
 "Turn right out of room 2843
 Continue, then turn right (after passing room 2846 on your left)
 Continue, then turn right into the elevator
@@ -717,7 +718,8 @@ Go to floor 1.5
 Turn right out of the elevator
 Continue, then turn left into the long narrow hallway, and then turn left
 Continue, then after entering the arcade, turn left and go down the arcade and turn left into the science wing
-Continue, then turn left into room 2739"
+Continue, then turn left into Area Across the Forum
+Continue, then turn right into room 2711"
 `;
 
 exports[`gives correct accessible directions from 2844 to 1845 1`] = `
@@ -1351,6 +1353,7 @@ Continue, then turn left (after passing room 2109 on your left)
 Continue, then turn right into the Alumni Hall
 Continue, then after entering the arcade, turn left
 Go down the ramp, go through the arcade, and turn right into the 2700s (science wing)
+Continue, then turn left into Area Across the Forum
 Continue, then turn left into room 2709"
 `;
 
@@ -1925,9 +1928,9 @@ Turn right out of the stairs
 Continue, then turn left (after passing room 1604 on your left)
 Continue, then turn right (after passing room 1601 on your right)
 Continue, then after entering the 1300s, turn left
-Continue, then turn left into the 2024 stairs
+Continue, then turn left into the 2025 stairs
 Go up 2 floors of stairs
-Turn left out of the 2024 stairs
+Turn left out of the 2025 stairs
 Continue, then turn left into room 3207"
 `;
 
@@ -2031,14 +2034,15 @@ Continue, then turn left (after passing room 2110 on your right)
 Continue, then turn right into room 2111"
 `;
 
-exports[`gives correct directions from 2843 to 2739 1`] = `
+exports[`gives correct directions from 2843 to 2711 1`] = `
 "Turn left out of room 2843
 Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Go straight out of the stairs
 Continue, then turn left (after passing the Senior High Gym on your right)
 Continue, then after entering the arcade, turn left and go down the arcade and turn left into the science wing
-Continue, then turn left into room 2739"
+Continue, then turn left into Area Across the Forum
+Continue, then turn right into room 2711"
 `;
 
 exports[`gives correct directions from 2844 to 1845 1`] = `
