@@ -29,7 +29,6 @@ const hallways: WalnutHallway[] = [
     new Room("2704", RIGHT),
     new Room("2705"),
     new Room("2707"),
-    new Room("2709"),
     new Room("Forum", RIGHT, { prefix: "the", aliases: ["2740"] }),
     new Fork(LEFT, "2700s to 2739", "Area Across the Forum"),
     new Room("2713"),
