@@ -17,9 +17,9 @@ const walnutAll = new Building<ConnectionNodeId, StairNodeId>(hallways, {
         // "stair d": "down",
         // "stair f": "down",
 
-        // TODO: top stairs, near locker room
-        // "stair music entrance to 1": "down",
-        // "stair music entrance to 2": "up",
+        "stair music entrance to 1": "down",
+        "stair to 1800s": "up",
+
         "stair music entrance to 2": "up",
         "stair music 2 back": "down",
       }

@@ -106,7 +106,8 @@ const hallways: WalnutHallway[] = [
       prefix: "the",
       aliases: ["2800", "2801", "High School Gymnasium"],
     }),
-    new Stairs(FRONT, onFloor("stair music 2 back", 2)),
+    new Stairs(RIGHT, onFloor("stair music 2 back", 2)),
+    new Stairs(LEFT, onFloor("stair to 1800s", 2)),
   ]),
 ];
 export default hallways;

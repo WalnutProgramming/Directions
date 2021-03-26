@@ -46,6 +46,9 @@ const hallways: WalnutHallway[] = [
     new Room("1841", LEFT),
     new Room("1824", RIGHT),
     new Room("1823", RIGHT),
+    new Turn(RIGHT),
+    new Turn(RIGHT),
+    new Stairs(FRONT, onFloor("stair to 1800s", 1)),
   ]),
 
   // little corner in the 1st floor music wing
