@@ -91,7 +91,7 @@ describe("My Schedule page", () => {
     nthRoomInput(4).should("have.value", "1309");
     // Save
     cy.get("button.active-button[type='submit']")
-      .should("have.length", 2)
+      .should("have.length", 1)
       .first()
       .click();
     cy.url()
@@ -118,7 +118,7 @@ describe("My Schedule page", () => {
     nthRoomInput(7).type("notaroom");
     // Saving shouldn't work if there's an invalid room
     cy.get("button.active-button[type='submit']")
-      .should("have.length", 2)
+      .should("have.length", 1)
       .first()
       .click();
     cy.url().should("contain", "/myschedule/edit");
@@ -128,7 +128,7 @@ describe("My Schedule page", () => {
     // Remove invalid room
     nthRoomInput(7).clear();
     cy.get("button.active-button[type='submit']")
-      .should("have.length", 2)
+      .should("have.length", 1)
       .first()
       .click();
     cy.url()
