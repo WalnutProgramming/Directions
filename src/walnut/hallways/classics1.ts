@@ -9,7 +9,7 @@ import {
   onFloor,
   reverseConnection,
 } from "room-finder";
-import { WalnutHallway } from "../shared";
+import { WalnutHallway, ConnectionNodeId } from "../shared";
 
 const { LEFT, RIGHT, FRONT } = Direction;
 
@@ -36,12 +36,54 @@ const hallways: WalnutHallway[] = [
     // TODO: is the following staircase actually labelled 2024?
     new Stairs(LEFT, onFloor("stair c", 1), "the 2024 stairs"),
     new Room("1300"),
+    new Fork(RIGHT, "1300s to cafeteria", "the cafeteria"),
   ]),
 
-  // 1100s
+  // cafeteria
   new Hallway([
+    new Fork(LEFT, reverseConnection("1300s to cafeteria"), "the 1300s"),
+    new Fork(LEFT, "cafeteria to delivery hallway", "the delivery hallway"),
+  ]),
+
+  // delivery hallway
+  new Hallway([
+    new Fork(
+      RIGHT,
+      reverseConnection("cafeteria to delivery hallway"),
+      "the cafeteria"
+    ),
+    new Fork(RIGHT, "delivery hallway to 1100s", "the 1100s"),
+  ]),
+
+  // early 1100s
+  new Hallway([
+    new Fork(
+      LEFT,
+      reverseConnection("delivery hallway to 1100s"),
+      "the delivery hallway"
+    ),
+
+    // There are a few stairs right here
+    new (class extends Room<ConnectionNodeId> {
+      onPass(forwardOrBackward: -1 | 1, prevRoom: Room<string>) {
+        return `Go ${forwardOrBackward === -1 ? "down" : "up"} the 3 steps\n`;
+      }
+    })(),
+
+    new Stairs(LEFT, onFloor("elevator b", 1), "the elevator"),
+    new Turn(RIGHT),
+    new Room("1105", RIGHT),
+    new Room("1108", LEFT),
+    new Fork(FRONT, "1108 & 1105 to 1100s", "the latter 1100s"),
+  ]),
+
+  // latter 1100s
+  new Hallway([
+    // these 2 rooms are in the corner
     new Room("1106", FRONT),
     new Room("1107", RIGHT),
+
+    // main 1100s continued
     new Fork(
       LEFT,
       reverseConnection("1108 & 1105 to 1100s"),
@@ -52,16 +94,6 @@ const hallways: WalnutHallway[] = [
     new Room("1111", RIGHT),
     new Room("1113", RIGHT),
     new Stairs(LEFT, onFloor("stair f", 1), "the 2010 stairs"),
-  ]),
-
-  // 1108 and 1105
-  new Hallway([
-    new Fork(FRONT, "1108 & 1105 to 1100s", "the latter 1100s"),
-    new Room("1108", RIGHT),
-    new Room("1105", LEFT),
-    new Turn(LEFT),
-    new Stairs(RIGHT, onFloor("elevator b", 1), "the elevator"),
-    // fork to the wacky confusing cafeteria part goes here
   ]),
 ];
 export default hallways;

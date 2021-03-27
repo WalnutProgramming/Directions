@@ -42,6 +42,9 @@ export type ConnectionNodeId =
   | "enter 2216"
   | "enter 2215"
   | "2100s to 2401"
-  | "2404 to 2100s";
+  | "2404 to 2100s"
+  | "1300s to cafeteria"
+  | "cafeteria to delivery hallway"
+  | "delivery hallway to 1100s";
 
 export type WalnutHallway = Hallway<ConnectionNodeId, StairNodeId>;
