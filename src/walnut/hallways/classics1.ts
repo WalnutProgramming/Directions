@@ -68,7 +68,7 @@ const hallways: WalnutHallway[] = [
     }
   })([
     new Fork(LEFT, reverseConnection("1300s to cafeteria"), "the 1300s"),
-    new Room("Cafeteria"),
+    new Room("Cafeteria", LEFT, { aliases: ["Student Dining", "1230"] }),
     new Fork(LEFT, "cafeteria to delivery hallway", "the delivery hallway"),
   ]),
 
