@@ -1,7 +1,14 @@
 <template>
-  <div>
-    <button @click="clearStorage">Delete Walnut.Direct Local Storage</button>
-  </div>
+  <span @click="clearStorage">
+    <button
+      class="delete-data-button"
+      aria-labelledby="delete-data-button-label"
+      @click="clearStorage"
+    ></button>
+    <label id="delete-data-button-label">
+      Delete Walnut.Direct Local Storage
+    </label>
+  </span>
 </template>
 
 <script lang="ts">
@@ -25,3 +32,17 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped>
+.delete-data-button {
+  width: 7vh;
+  height: 7vh;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  background: url("../../assets/trash.svg");
+  background-size: 100% 100%;
+  vertical-align: middle;
+}
+</style>
