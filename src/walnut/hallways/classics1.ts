@@ -116,7 +116,7 @@ const hallways: WalnutHallway[] = [
     new Fork(
       LEFT,
       reverseConnection("1108 & 1105 to 1100s"),
-      "the 1108 and 1105 hallway"
+      "the early 1100s"
     ),
     new Room("1109", RIGHT),
     new Room("1110"),
