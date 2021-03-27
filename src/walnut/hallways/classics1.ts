@@ -82,6 +82,12 @@ const hallways: WalnutHallway[] = [
     new Fork(RIGHT, "delivery hallway to 1100s", "the 1100s"),
   ]),
 
+  // the 1.5th floor landing
+  new Hallway([
+    new Stairs(LEFT, onFloor("stair d", 1.5), "the stairs"),
+    new Stairs(FRONT, onFloor("stair 1100s to 1.5th floor", 1.5), "the stairs"),
+  ]),
+
   // early 1100s
   new Hallway([
     new Fork(
@@ -98,6 +104,12 @@ const hallways: WalnutHallway[] = [
         } the small set of stairs\n`;
       }
     })(),
+
+    new Stairs(
+      RIGHT,
+      onFloor("stair 1100s to 1.5th floor", 1),
+      "the stairs on the right"
+    ),
 
     new Stairs(LEFT, onFloor("elevator b", 1), "the elevator"),
     new Turn(RIGHT),
