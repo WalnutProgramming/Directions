@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 import {
   Direction,
   Room,
@@ -9,7 +10,7 @@ import {
   onFloor,
   reverseConnection,
 } from "room-finder";
-import { WalnutHallway, ConnectionNodeId } from "../shared";
+import { WalnutHallway, ConnectionNodeId, StairNodeId } from "../shared";
 
 const { LEFT, RIGHT, FRONT } = Direction;
 
@@ -40,8 +41,34 @@ const hallways: WalnutHallway[] = [
   ]),
 
   // cafeteria
-  new Hallway([
+  new (class extends Hallway<ConnectionNodeId, StairNodeId> {
+    getDirectionsFromIndices(
+      from: number,
+      to: number,
+      options: {
+        isBeginningOfDirections: boolean;
+        isEndOfDirections: boolean;
+        entranceWasStraight: boolean;
+      }
+    ) {
+      const [H1300S, CAFETERIA, DELIVERY] = [0, 1, 2];
+
+      if (from === CAFETERIA) {
+        switch (to) {
+          case H1300S:
+            return "Go out of the cafeteria by the left entrance to get to the 1300s";
+          case DELIVERY:
+            return "Go out of the cafeteria by the right entrance to get to the delivery hallway";
+        }
+      } else if (to === CAFETERIA) {
+        return "";
+      }
+
+      return super.getDirectionsFromIndices(from, to, options);
+    }
+  })([
     new Fork(LEFT, reverseConnection("1300s to cafeteria"), "the 1300s"),
+    new Room("Cafeteria"),
     new Fork(LEFT, "cafeteria to delivery hallway", "the delivery hallway"),
   ]),
 
