@@ -93,7 +93,9 @@ const hallways: WalnutHallway[] = [
     // There are a few stairs right here
     new (class extends Room<ConnectionNodeId> {
       onPass(forwardOrBackward: -1 | 1, prevRoom: Room<string>) {
-        return `Go ${forwardOrBackward === -1 ? "down" : "up"} the 3 steps\n`;
+        return `Go ${
+          forwardOrBackward === -1 ? "down" : "up"
+        } the small set of stairs\n`;
       }
     })(),
 
