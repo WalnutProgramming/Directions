@@ -104,7 +104,7 @@ const hallways: WalnutHallway[] = [
     new Turn(RIGHT),
     new Room("Senior High Gym", LEFT, {
       prefix: "the",
-      aliases: ["2800", "2801", "High School Gymnasium"],
+      aliases: ["2800", "2801"],
     }),
     new Stairs(RIGHT, onFloor("stair music 2 back", 2)),
     new Stairs(LEFT, onFloor("stair to 1800s", 2)),

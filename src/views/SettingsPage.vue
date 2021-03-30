@@ -11,6 +11,13 @@
       * We don't currently know a way to get to the 3500s without using stairs.
       If you know of a way, please tell us on the Feedback page.
     </div>
+    <div style="font-size: 0.5em; margin-top: 1rem">
+      The trash icon is provided by
+      <a href="https://heroicons.com/">Heroicons</a> under the
+      <a href="https://github.com/tailwindlabs/heroicons/blob/master/LICENSE"
+        >MIT License</a
+      >.
+    </div>
   </div>
 </template>
 

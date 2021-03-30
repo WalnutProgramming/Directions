@@ -35,7 +35,7 @@ const hallways: WalnutHallway[] = [
     [
       new Fork(FRONT, "2500s to alumni hall", "Alumni Hall"),
       new Room("2503", RIGHT, {
-        aliases: ["Black Box Theatre", "Black Box Theater", "Theater"],
+        aliases: ["Black Box Theater"],
       }),
       new Room("2505", RIGHT, { aliases: ["Scene Shop"] }),
       new Fork(

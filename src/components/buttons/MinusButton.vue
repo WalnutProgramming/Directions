@@ -29,10 +29,15 @@ export default Vue.extend({
 }
 
 .btn-hover-area >>> .active-button:hover {
-  background: rgba(0, 0, 0, 0);
-  color: var(--minus-button-color-hover);
-  transition: var(--long-decay-ease);
   cursor: pointer;
-  border-radius: 7.5px;
+}
+
+@media (hover: hover) {
+  .btn-hover-area >>> .active-button:hover {
+    background: rgba(0, 0, 0, 0);
+    color: var(--minus-button-color-hover);
+    transition: var(--long-decay-ease);
+    border-radius: 7.5px;
+  }
 }
 </style>
