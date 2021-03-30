@@ -109,25 +109,29 @@ const routes = [
   ["2602", "Senior High Gym"],
   ["3701", "Computer Lab"],
   ["3104", "3104"],
+  ["3104", "Multi-Purpose Room"],
+  ["Fitness Room", "1101"],
+  ["1450", "1111"],
+  ["1301", "1450"],
 ];
 
 test.each(routes)("gives correct directions from %s to %s", (from, to) => {
-  expect(
-    walnutNonAccessible.getDirections(from.toString(), to.toString())
-  ).toBeTruthy();
-  expect(
-    walnutNonAccessible.getDirections(from.toString(), to.toString())
-  ).toMatchSnapshot();
+  const directions = walnutNonAccessible.getDirections(
+    from.toString(),
+    to.toString()
+  );
+  expect(directions).toBeTruthy();
+  expect(directions).toMatchSnapshot();
 });
 
 test.each(routes)(
   "gives correct accessible directions from %s to %s",
   (from, to) => {
-    expect(
-      walnutAccessible.getDirections(from.toString(), to.toString())
-    ).toBeTruthy();
-    expect(
-      walnutAccessible.getDirections(from.toString(), to.toString())
-    ).toMatchSnapshot();
+    const directions = walnutAccessible.getDirections(
+      from.toString(),
+      to.toString()
+    );
+    expect(directions).toBeTruthy();
+    expect(directions).toMatchSnapshot();
   }
 );
