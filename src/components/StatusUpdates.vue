@@ -9,13 +9,8 @@
       <p>
         Be sure to stay distanced, walk on the right side of the hallway, and
         follow all rules given by the administration for COVID-19 safety.
-      </p>
-      <p>
-        The Walnut Hills Programming Club is currently in the process of
-        modifying this app's directions based on the COVID-19 precautions for
-        one-way stairways. We are also working on adding a few missing rooms —
-        most importantly, the cafeteria. Many of the routes given by the app
-        will change once we make these changes.
+        Walnut.Direct takes the new one-way staircases into account when
+        providing directions.
       </p>
       <p>
         Walnut.Direct does not currently include outdoor routes, but if you know
