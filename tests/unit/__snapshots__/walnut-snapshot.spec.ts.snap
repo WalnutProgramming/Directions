@@ -1385,7 +1385,7 @@ exports[`gives correct directions from 1106 to 2709 1`] = `
 Continue, then turn left into the early 1100s
 Continue, then turn left (after passing room 1105 on your left)
 Continue, then turn right into the stairs
-Go up 0.5 floor of stairs
+Go up 1 floor of stairs
 Turn left out of the stairs
 Continue, then turn right into the stairs
 Go up 0.5 floor of stairs
@@ -1402,7 +1402,7 @@ exports[`gives correct directions from 1109 to 2203 1`] = `
 Continue, then turn right into the early 1100s
 Continue, then turn left (after passing room 1105 on your left)
 Continue, then turn right into the stairs
-Go up 0.5 floor of stairs
+Go up 1 floor of stairs
 Turn left out of the stairs
 Continue, then turn right into the stairs
 Go up 0.5 floor of stairs
@@ -1420,7 +1420,7 @@ exports[`gives correct directions from 1111 to 3713 1`] = `
 Continue, then turn right into the early 1100s
 Continue, then turn left (after passing room 1105 on your left)
 Continue, then turn right into the stairs
-Go up 0.5 floor of stairs
+Go up 1 floor of stairs
 Turn left out of the stairs
 Continue, then turn right into the stairs
 Go up 0.5 floor of stairs
@@ -1442,7 +1442,7 @@ Continue, then turn left into the twisty hallway to the delivery hallway, and th
 Continue, then turn right into the 1100s, and then turn left
 Go up the small set of stairs
 Continue, then turn left into the stairs
-Go up 0.5 floor of stairs
+Go up 1 floor of stairs
 Turn left out of the stairs
 Continue, then turn right into the upper 1400s
 Continue, then turn left into room 1450"
@@ -1516,7 +1516,7 @@ exports[`gives correct directions from 1450 to 1111 1`] = `
 "Turn right out of room 1450
 Continue, then after entering the 1.5th floor landing, turn left
 Continue, then turn right into the stairs
-Go down 0.5 floor of stairs
+Go down 1 floor of stairs
 Turn left out of the stairs
 Continue, then turn right (after passing the elevator on your left)
 Continue, then after entering the latter 1100s, turn left

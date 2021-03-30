@@ -110,7 +110,7 @@ const hallways: WalnutHallway[] = [
   new Hallway([
     new Stairs(LEFT, onFloor("stair d", 1.5), "the stairs"),
     new Fork(LEFT, "1.5th floor landing to upper 1400s", "the upper 1400s"),
-    new Stairs(RIGHT, onFloor("stair 1100s to 1.5th floor", 1.5), "the stairs"),
+    new Stairs(RIGHT, onFloor("stair 1100s to 1.5th floor", 2), "the stairs"),
     new Room("1458"),
     new Stairs(LEFT, onFloor("elevator b", 1.5), "the elevator"),
   ]),
