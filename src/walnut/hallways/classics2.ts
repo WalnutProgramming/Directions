@@ -29,9 +29,9 @@ const hallways: WalnutHallway[] = [
     new Fork(LEFT, "2300s to 2600s", "the 2600s"),
     new Stairs(LEFT, onFloor("stair b", 2), "the 2025 stairs"),
     new Room("2302", RIGHT),
-    new Room("Auditorium", LEFT, {
+    new Room("Westheimer Auditorium", LEFT, {
       prefix: "the",
-      aliases: ["2500", "Westheimer Auditorium"],
+      aliases: ["2500"],
     }),
     new Room("2301", RIGHT),
     new Room("2205", RIGHT),
@@ -49,7 +49,7 @@ const hallways: WalnutHallway[] = [
     new Fork(RIGHT, "lobby to 2200s", "the 2200s"),
     new Room("2210", LEFT, { aliases: ["Conference Room"] }),
     new Room("2209", RIGHT, {
-      aliases: ["10-11 Administration Office", "10th and 11th Grade Office"],
+      aliases: ["10-11 Administration Office"],
     }),
     new Stairs(LEFT, onFloor("stair d", 2), "the 2015 stairs"),
     new Room("2101", RIGHT),
@@ -88,18 +88,18 @@ const hallways: WalnutHallway[] = [
   new Hallway([
     new Fork(FRONT, reverseConnection("lobby to 2200s"), "the lobby"),
     new Room("2207", RIGHT, {
-      aliases: ["7-9 Administration Offices", "7th, 8th, and 9th Grade Office"],
+      aliases: ["7th, 8th, and 9th Grade Office"],
     }),
     new Room("2229"),
     new Room("2212", LEFT, { aliases: ["Medical Room", "Nurse"] }),
     new Room("2214", LEFT, {
-      aliases: ["COVID Isolation Room", "Isolation Room"],
+      aliases: ["COVID Isolation Room"],
     }),
     new Room("2211", RIGHT),
     new Room("2216", LEFT, { nodeId: "enter 2216", aliases: ["Registrar"] }),
     new Room("2215", RIGHT, {
       nodeId: "enter 2215",
-      aliases: ["Alumni Foundation", "Alumni Office"],
+      aliases: ["Alumni Office"],
     }),
     new Room("2218", LEFT, { aliases: ["Counselor"] }),
   ]),
@@ -112,7 +112,7 @@ const hallways: WalnutHallway[] = [
     }),
     new Room("Junior High Gym", FRONT, {
       prefix: "the",
-      aliases: ["2402", "Junior Gymnasium"],
+      aliases: ["2402"],
     }),
   ]),
 

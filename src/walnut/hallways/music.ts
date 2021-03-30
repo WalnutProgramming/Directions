@@ -73,7 +73,7 @@ const hallways: WalnutHallway[] = [
     new Room("2851"),
     new Room("2849"),
     new Room("2852", RIGHT, {
-      aliases: ["Schott Recital Hall", "Recital Hall"],
+      aliases: ["Schott Recital Hall"],
     }),
     new Room("2847"),
     new Room("2857", RIGHT),
