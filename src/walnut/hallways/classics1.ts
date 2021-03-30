@@ -79,8 +79,12 @@ const hallways: WalnutHallway[] = [
       reverseConnection("cafeteria to delivery hallway"),
       "the cafeteria"
     ),
+    new Fork(
+      LEFT,
+      "delivery hallway to lower 1400s",
+      "the door to the lower 1400s"
+    ),
     new Fork(RIGHT, "delivery hallway to 1100s", "the 1100s"),
-    new Fork(LEFT, "delivery hallway to lower 1400s", "the lower 1400s"),
   ]),
 
   // lower 1400s
@@ -90,13 +94,12 @@ const hallways: WalnutHallway[] = [
     // to call the Multi-Purpose Room
     new Room("1412"),
     new Room("1410", LEFT, { aliases: ["Multi-Purpose Room"] }),
-    new Turn(LEFT),
+    new Turn(RIGHT),
     new Fork(
-      RIGHT,
+      LEFT,
       reverseConnection("delivery hallway to lower 1400s"),
       "the delivery hallway"
     ),
-    new Room("1411", LEFT),
   ]),
 
   // the 1.5th floor landing

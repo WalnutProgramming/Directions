@@ -112,7 +112,6 @@ const routes = [
   ["3104", "3104"],
   ["3104", "Multi-Purpose Room"],
   ["Fitness Room", "1101"],
-  ["Cafeteria", "1411"],
   ["1450", "1111"],
   ["1301", "1450"],
 ];

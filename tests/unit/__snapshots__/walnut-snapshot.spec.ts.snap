@@ -887,9 +887,9 @@ Continue, then turn left into the elevator
 Go to floor 1
 Turn right out of the elevator
 Go down the small set of stairs
-Continue, then turn right into the delivery hallway, and then turn right
-Continue, then turn left into the lower 1400s, and then turn left
-Continue, then turn right (after passing the delivery hallway on your left)
+Continue, then turn right into the delivery hallway, and then turn left
+Continue, then turn right into the door to the lower 1400s, and then turn right
+Continue, then turn left (after passing the delivery hallway on your right)
 Continue, then turn right into room 1410"
 `;
 
@@ -1242,12 +1242,6 @@ Continue, then turn right into the narrow hallway
 Continue, then turn right into room 2503"
 `;
 
-exports[`gives correct accessible directions from Cafeteria to 1411 1`] = `
-"Go out of the cafeteria by the right entrance to get to the delivery hallway, and then turn right
-Continue, then turn left into the lower 1400s, and then turn right
-Continue, then turn left into room 1411"
-`;
-
 exports[`gives correct accessible directions from Computer Lab - Engineering to 2722 1`] = `
 "Turn right out of room 3701
 Continue, then turn right into the elevator
@@ -1269,9 +1263,9 @@ Continue, then turn right into room 1303"
 
 exports[`gives correct accessible directions from Fitness Room to 1101 1`] = `
 "Go straight out of the Fitness Room
-Continue, then turn left (after passing room 1410 on your left)
-Continue, then turn right into the delivery hallway, and then turn right
-Continue, then turn left into the 1100s, and then turn left
+Continue, then turn right (after passing room 1410 on your left)
+Continue, then turn left into the delivery hallway, and then turn left
+Continue, then turn right into the 1100s, and then turn left
 Continue, then turn left into room 1101"
 `;
 
@@ -1428,15 +1422,17 @@ exports[`gives correct directions from 1111 to 3713 1`] = `
 "Turn left out of room 1111
 Continue, then turn right into the early 1100s
 Continue, then turn left (after passing room 1105 on your left)
-Go down the small set of stairs
-Continue, then turn right into the delivery hallway, and then turn left
-Continue, then turn left into the cafeteria, and then turn right
-Continue, then turn right into the 1300s, and then turn left
-Continue, then turn right into the 1600s
-Continue, then turn left
-Continue, then turn right (after passing room 1602 on your left)
+Continue, then turn right into the stairs
+Go up 0.5 floor of stairs
+Turn left out of the stairs
+Continue, then turn right into the stairs
+Go up 0.5 floor of stairs
+Turn right out of the 2015 stairs
+Continue, then turn right into the Alumni Hall
+Continue, then after entering the arcade, turn left
+Go down the ramp, go through the arcade, and turn right into the 2700s (science wing)
 Continue, then turn left into the stairs
-Go up 2 floors of stairs
+Go up 1 floor of stairs
 Turn left out of the stairs
 Continue, then turn right (after passing room 3711 on your left)
 Continue, then turn left into room 3713"
@@ -2211,20 +2207,17 @@ Continue, then go straight into the stairs
 Go down 1 floor of stairs
 Turn left out of the stairs
 Continue, then turn left (after passing the Senior High Gym on your right)
-Continue, then after entering the arcade, turn left and go down the arcade and turn right into the modern foreign languages wing
+Continue, then after entering the arcade, turn left and go to the end of the arcade
+Go up the ramp, then go through the doors on your right
 Continue straight
-Continue, then turn left (after passing room 2603 on your right)
-Continue, then turn right (after passing room 2604 on your left)
-Continue, then after entering the 2300s, turn left
-Continue, then turn left into the 2025 stairs
-Go down 1 floor of stairs
-Turn left out of the 2025 stairs
-Continue, then turn right into the cafeteria, and then turn left
-Continue, then turn left into the delivery hallway, and then turn right
-Continue, then turn right into the 1100s, and then turn left
-Go up the small set of stairs
+Continue, then after entering the 2200s, turn left
 Continue, then turn right (after passing the elevator on your left)
-Continue, then turn right into room 1105"
+Continue, then turn left (after passing room 2110 on your right)
+Continue, then turn left into the 2010 stairs
+Go down 1 floor of stairs
+Turn right out of the 2010 stairs
+Continue, then turn right into the early 1100s
+Continue, then turn left into room 1105"
 `;
 
 exports[`gives correct directions from 3101 to Language Lab 1`] = `
@@ -2290,9 +2283,9 @@ Turn right out of the 2010 stairs
 Continue, then turn right into the early 1100s
 Continue, then turn left (after passing room 1105 on your left)
 Go down the small set of stairs
-Continue, then turn right into the delivery hallway, and then turn right
-Continue, then turn left into the lower 1400s, and then turn left
-Continue, then turn right (after passing the delivery hallway on your left)
+Continue, then turn right into the delivery hallway, and then turn left
+Continue, then turn right into the door to the lower 1400s, and then turn right
+Continue, then turn left (after passing the delivery hallway on your right)
 Continue, then turn right into room 1410"
 `;
 
@@ -2622,12 +2615,6 @@ Continue, then turn right into the narrow hallway
 Continue, then turn right into room 2503"
 `;
 
-exports[`gives correct directions from Cafeteria to 1411 1`] = `
-"Go out of the cafeteria by the right entrance to get to the delivery hallway, and then turn right
-Continue, then turn left into the lower 1400s, and then turn right
-Continue, then turn left into room 1411"
-`;
-
 exports[`gives correct directions from Computer Lab - Engineering to 2722 1`] = `
 "Turn right out of room 3701
 Continue, then turn right into the stairs
@@ -2647,9 +2634,9 @@ Continue, then turn right into room 1303"
 
 exports[`gives correct directions from Fitness Room to 1101 1`] = `
 "Go straight out of the Fitness Room
-Continue, then turn left (after passing room 1410 on your left)
-Continue, then turn right into the delivery hallway, and then turn right
-Continue, then turn left into the 1100s, and then turn left
+Continue, then turn right (after passing room 1410 on your left)
+Continue, then turn left into the delivery hallway, and then turn left
+Continue, then turn right into the 1100s, and then turn left
 Continue, then turn left into room 1101"
 `;
 
