@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`gives correct accessible directions from 7-9 Administration Offices to 3205 1`] = `
+exports[`gives correct accessible directions from 7th, 8th, and 9th Grade Office to 2202 1`] = `
+"Turn left out of room 2207
+Continue, then after entering the lobby, turn left
+Continue, then turn right into room 2202"
+`;
+
+exports[`gives correct accessible directions from 7th, 8th, and 9th Grade Office to 3205 1`] = `
 "Turn left out of room 2207
 Continue, then after entering the lobby, turn left
 Continue, then turn left (after passing the 2600s on your right)
@@ -9,12 +15,6 @@ Go to floor 3
 Turn left out of the elevator
 Continue, then turn right (after passing the elevator on your left)
 Continue, then turn right into room 3205"
-`;
-
-exports[`gives correct accessible directions from 7th, 8th, and 9th Grade Office to 2202 1`] = `
-"Turn left out of room 2207
-Continue, then after entering the lobby, turn left
-Continue, then turn right into room 2202"
 `;
 
 exports[`gives correct accessible directions from 1106 to 2709 1`] = `
@@ -171,7 +171,7 @@ Continue, then turn right into the 2200s
 Continue, then turn left into room 2216"
 `;
 
-exports[`gives correct accessible directions from 1604 to 10-11 Administration Office 1`] = `
+exports[`gives correct accessible directions from 1604 to 10th and 11th Grade Office 1`] = `
 "Turn left out of room 1604 through the door closest to the desk
 Continue, then turn left (after passing room 1604 on your left)
 Continue, then turn right (after passing room 1601 on your right)
@@ -493,7 +493,7 @@ Continue, then turn right into room 1846"
 `;
 
 exports[`gives correct accessible directions from 2500 to 3711 1`] = `
-"Turn right out of the Auditorium
+"Turn right out of the Westheimer Auditorium
 Continue, then turn right into the 2600s
 Continue, then turn left
 Continue, then turn right (after passing room 2602 on your left)
@@ -515,7 +515,7 @@ Continue, then after entering the 2300s, turn left
 Continue, then turn right into room 2209"
 `;
 
-exports[`gives correct accessible directions from 2510 to Black Box Theatre 1`] = `
+exports[`gives correct accessible directions from 2510 to Black Box Theater 1`] = `
 "Turn right out of room 2510
 Continue, then turn left into the door, and then turn right
 Go up the 3 steps
@@ -526,7 +526,7 @@ Continue, then turn right into the narrow hallway
 Continue, then turn right into room 2503"
 `;
 
-exports[`gives correct accessible directions from 2602 to High School Gymnasium 1`] = `
+exports[`gives correct accessible directions from 2602 to Senior High Gym 1`] = `
 "Turn left out of room 2602
 Continue, then turn right (after passing room 2602 on your left)
 Continue, then after entering the arcade, go straight and a bit to the left to get to the long narrow hallway
@@ -957,7 +957,7 @@ Continue, then turn right (after passing room 2306 on your left)
 Continue, then turn left into room 2309"
 `;
 
-exports[`gives correct accessible directions from 3210 to Theater 1`] = `
+exports[`gives correct accessible directions from 3210 to Black Box Theater 1`] = `
 "Turn right out of room 3210
 Continue, then turn left (after passing the 2025 stairs on your right)
 Continue, then turn right into the elevator
@@ -1180,7 +1180,7 @@ Go straight out of the stairs
 Continue, then turn left into room 3505"
 `;
 
-exports[`gives correct accessible directions from Alumni Foundation to Instrumental 1`] = `
+exports[`gives correct accessible directions from Alumni Office to Strings 1`] = `
 "Turn left out of room 2215
 Continue, then after entering the lobby, turn left
 Continue, then turn right into the 2600s
@@ -1190,10 +1190,9 @@ Continue, then after entering the arcade, go straight and a bit to the left to g
 Continue straight
 Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn right
 Continue, then turn left into the elevator
-Go to floor 1
-Turn right out of the elevator
-Continue, then turn left (after passing the little corner on your right)
-Continue, then turn right into room 1840"
+Go to floor 2
+Turn left out of the elevator
+Continue, then turn right into room 2848"
 `;
 
 exports[`gives correct accessible directions from Band (1845) to Black Box Theater 1`] = `
@@ -1229,7 +1228,7 @@ Continue, then turn right (after passing the elevator on your left)
 Continue, then turn right into room 1303"
 `;
 
-exports[`gives correct accessible directions from Junior Gymnasium to 3102 1`] = `
+exports[`gives correct accessible directions from Junior High Gym to 3102 1`] = `
 "Go straight out of the Junior High Gym
 Continue, then after entering the 2100s, turn left
 Continue, then turn left into the elevator
@@ -1275,7 +1274,7 @@ Continue, then after entering the latter 1100s, turn left
 Continue, then turn right into room 1113"
 `;
 
-exports[`gives correct accessible directions from Recital Hall to 2308 1`] = `
+exports[`gives correct accessible directions from Schott Recital Hall to 2308 1`] = `
 "Turn left out of room 2852
 Continue, then turn right into the elevator
 Go to floor 1.5
@@ -1315,8 +1314,6 @@ Continue, then turn left (after passing the little corner on your right)
 Continue, then turn right into room 1840"
 `;
 
-exports[`gives correct accessible directions from Westheimer Auditorium to Auditorium 1`] = `"Bruh. You at the Auditorium"`;
-
 exports[`gives correct accessible directions from Writing Center to Registrar 1`] = `
 "Turn left out of room 3301
 Continue, then turn left (after passing the 2025 stairs on your right)
@@ -1328,19 +1325,19 @@ Continue, then turn right into the 2200s
 Continue, then turn left into room 2216"
 `;
 
-exports[`gives correct directions from 7-9 Administration Offices to 3205 1`] = `
+exports[`gives correct directions from 7th, 8th, and 9th Grade Office to 2202 1`] = `
+"Turn left out of room 2207
+Continue, then after entering the lobby, turn left
+Continue, then turn right into room 2202"
+`;
+
+exports[`gives correct directions from 7th, 8th, and 9th Grade Office to 3205 1`] = `
 "Turn left out of room 2207
 Continue, then after entering the lobby, turn right
 Continue, then turn left into the 2015 stairs
 Go up 1 floor of stairs
 Turn right out of the 2015 stairs
 Continue, then turn left into room 3205"
-`;
-
-exports[`gives correct directions from 7th, 8th, and 9th Grade Office to 2202 1`] = `
-"Turn left out of room 2207
-Continue, then after entering the lobby, turn left
-Continue, then turn right into room 2202"
 `;
 
 exports[`gives correct directions from 1106 to 2709 1`] = `
@@ -1488,7 +1485,7 @@ Continue, then turn right into the 2200s
 Continue, then turn left into room 2216"
 `;
 
-exports[`gives correct directions from 1604 to 10-11 Administration Office 1`] = `
+exports[`gives correct directions from 1604 to 10th and 11th Grade Office 1`] = `
 "Turn left out of room 1604 through the door closest to the desk
 Continue, then turn left (after passing room 1604 on your left)
 Continue, then turn right (after passing room 1601 on your right)
@@ -1834,7 +1831,7 @@ Continue, then turn right into room 1846"
 `;
 
 exports[`gives correct directions from 2500 to 3711 1`] = `
-"Turn right out of the Auditorium
+"Turn right out of the Westheimer Auditorium
 Continue, then turn right into the 2025 stairs
 Go down 1 floor of stairs
 Turn right out of the 2025 stairs
@@ -1858,7 +1855,7 @@ Continue, then after entering the 2300s, turn left
 Continue, then turn right into room 2209"
 `;
 
-exports[`gives correct directions from 2510 to Black Box Theatre 1`] = `
+exports[`gives correct directions from 2510 to Black Box Theater 1`] = `
 "Turn right out of room 2510
 Continue, then turn left into the door, and then turn right
 Go up the 3 steps
@@ -1869,7 +1866,7 @@ Continue, then turn right into the narrow hallway
 Continue, then turn right into room 2503"
 `;
 
-exports[`gives correct directions from 2602 to High School Gymnasium 1`] = `
+exports[`gives correct directions from 2602 to Senior High Gym 1`] = `
 "Turn left out of room 2602
 Continue, then turn right (after passing room 2602 on your left)
 Continue, then after entering the arcade, go straight and a bit to the left to get to the long narrow hallway
@@ -2296,7 +2293,7 @@ Continue, then turn right (after passing room 2306 on your left)
 Continue, then turn left into room 2309"
 `;
 
-exports[`gives correct directions from 3210 to Theater 1`] = `
+exports[`gives correct directions from 3210 to Black Box Theater 1`] = `
 "Turn right out of room 3210
 Continue, then turn right into the 2024 stairs
 Go down 1 floor of stairs
@@ -2494,7 +2491,7 @@ Go straight out of the stairs
 Continue, then turn left into room 3505"
 `;
 
-exports[`gives correct directions from Alumni Foundation to Instrumental 1`] = `
+exports[`gives correct directions from Alumni Office to Strings 1`] = `
 "Turn left out of room 2215
 Continue, then after entering the lobby, turn left
 Continue, then turn right into the Alumni Hall
@@ -2502,14 +2499,11 @@ Continue, then after entering the arcade, turn left
 Go down the ramp, and go all the way to the other end of the arcade
 Turn right to get to the long narrow hallway
 Continue straight
-Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn left
+Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then turn right
 Continue, then go straight into the stairs
-Go down 1 floor of stairs
-Go straight out of the stairs
-Continue, then turn left (after passing room 1852 on your right)
-Continue, then turn left
-Continue, then turn left (after passing the little corner on your right)
-Continue, then turn right into room 1840"
+Go up 1 floor of stairs
+Turn left out of the stairs
+Continue, then turn right into room 2848"
 `;
 
 exports[`gives correct directions from Band (1845) to Black Box Theater 1`] = `
@@ -2546,7 +2540,7 @@ Turn right out of the 2024 stairs
 Continue, then turn left into room 1303"
 `;
 
-exports[`gives correct directions from Junior Gymnasium to 3102 1`] = `
+exports[`gives correct directions from Junior High Gym to 3102 1`] = `
 "Go straight out of the Junior High Gym
 Continue, then after entering the 2100s, turn right
 Continue, then turn right into the 2015 stairs
@@ -2593,7 +2587,7 @@ Turn right out of the 2010 stairs
 Continue, then turn left into room 1113"
 `;
 
-exports[`gives correct directions from Recital Hall to 2308 1`] = `
+exports[`gives correct directions from Schott Recital Hall to 2308 1`] = `
 "Turn right out of room 2852
 Continue, then turn left (after passing room 2848 on your right)
 Continue, then go straight into the stairs
@@ -2641,8 +2635,6 @@ Continue, then turn left
 Continue, then turn left (after passing the little corner on your right)
 Continue, then turn right into room 1840"
 `;
-
-exports[`gives correct directions from Westheimer Auditorium to Auditorium 1`] = `"Bruh. You at the Auditorium"`;
 
 exports[`gives correct directions from Writing Center to Registrar 1`] = `
 "Turn right out of room 3301

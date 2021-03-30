@@ -43,7 +43,7 @@ const routes = [
   ["2705", "2707"],
   ["2855", "1105"],
   ["2207", "3726"],
-  ["Recital Hall", "2308"],
+  ["Schott Recital Hall", "2308"],
   ["2200", "2723"],
   ["1823", "2503"],
   ["2115", "Senior High Gym"],
@@ -56,7 +56,7 @@ const routes = [
   ["2222", "3314"],
   ["2720", "Alumni Office"],
   ["2609", "3312"],
-  ["Alumni Foundation", "Instrumental"],
+  ["Alumni Office", "Strings"],
   ["3204", "2212"],
   ["2800", "2310"],
   ["2842", "2111"],
@@ -65,7 +65,7 @@ const routes = [
   ["1608", "1108"],
   ["2218", "2715"],
   ["2103", "1305"],
-  ["7-9 Administration Offices", "3205"],
+  ["7th, 8th, and 9th Grade Office", "3205"],
   ["2101", "2113"],
   ["1842", "2714"],
   ["1309", "10th and 11th Grade Office"],
@@ -78,8 +78,8 @@ const routes = [
   ["3101", "Language Lab"],
   ["2505", "2209"],
   ["2214", "2604"],
-  ["2510", "Black Box Theatre"],
-  ["1604", "10-11 Administration Office"],
+  ["2510", "Black Box Theater"],
+  ["1604", "10th and 11th Grade Office"],
   ["2801", "1857"],
   ["1602", "2204"],
   ["1312", "3115"],
@@ -92,27 +92,29 @@ const routes = [
   ["1109", "2203"],
   ["3309", "Band (1850)"],
   ["1851", "3111"],
-  ["3210", "Theater"],
+  ["3210", "Black Box Theater"],
   ["3703", "1853"],
   ["2110", "Counseling Office"],
   ["Nurse", "Forum"],
   ["1601", "2221"],
   ["2605", "2402"],
   ["2740", "1304"],
-  ["Junior Gymnasium", "3102"],
+  ["Junior High Gym", "3102"],
   ["3104", "3504"],
   ["2229", "2716"],
   ["3707", "3113"],
   ["1840", "2846"],
   ["2703", "Scene Shop"],
   ["3208", "2309"],
-  ["2602", "High School Gymnasium"],
-  ["Westheimer Auditorium", "Auditorium"],
+  ["2602", "Senior High Gym"],
   ["3701", "Computer Lab"],
   ["3104", "3104"],
 ];
 
 test.each(routes)("gives correct directions from %s to %s", (from, to) => {
+  expect(
+    walnutNonAccessible.getDirections(from.toString(), to.toString())
+  ).toBeTruthy();
   expect(
     walnutNonAccessible.getDirections(from.toString(), to.toString())
   ).toMatchSnapshot();
@@ -121,6 +123,9 @@ test.each(routes)("gives correct directions from %s to %s", (from, to) => {
 test.each(routes)(
   "gives correct accessible directions from %s to %s",
   (from, to) => {
+    expect(
+      walnutAccessible.getDirections(from.toString(), to.toString())
+    ).toBeTruthy();
     expect(
       walnutAccessible.getDirections(from.toString(), to.toString())
     ).toMatchSnapshot();
