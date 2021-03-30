@@ -58,7 +58,7 @@ const hallways: WalnutHallway[] = [
           case H1300S:
             return "Go out of the cafeteria by the left entrance to get to the 1300s";
           case DELIVERY:
-            return "Go out of the cafeteria by the right entrance to get to the delivery hallway";
+            return "Go out of the cafeteria by the right entrance through the twisty hallway to get to the delivery hallway";
         }
       } else if (to === CAFETERIA) {
         return "";
@@ -69,7 +69,11 @@ const hallways: WalnutHallway[] = [
   })([
     new Fork(LEFT, reverseConnection("1300s to cafeteria"), "the 1300s"),
     new Room("Cafeteria", LEFT, { aliases: ["Student Dining", "1230"] }),
-    new Fork(LEFT, "cafeteria to delivery hallway", "the delivery hallway"),
+    new Fork(
+      LEFT,
+      "cafeteria to delivery hallway",
+      "the twisty hallway to the delivery hallway"
+    ),
   ]),
 
   // delivery hallway
@@ -77,7 +81,7 @@ const hallways: WalnutHallway[] = [
     new Fork(
       RIGHT,
       reverseConnection("cafeteria to delivery hallway"),
-      "the cafeteria"
+      "the twisty hallway to the cafeteria"
     ),
     new Fork(
       LEFT,
