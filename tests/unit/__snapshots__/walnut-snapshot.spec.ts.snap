@@ -68,7 +68,7 @@ Continue, then turn left into room 3713"
 exports[`gives correct accessible directions from 1301 to 1450 1`] = `
 "Turn right out of room 1301
 Continue, then turn right into the cafeteria, and then turn left
-Continue, then turn left into the delivery hallway, and then turn right
+Continue, then turn left into the twisty hallway to the delivery hallway, and then turn right
 Continue, then turn right into the 1100s, and then turn left
 Go up the small set of stairs
 Continue, then turn left into the elevator
@@ -227,7 +227,7 @@ Continue, then turn left (after passing room 1604 on your left)
 Continue, then turn right (after passing room 1601 on your right)
 Continue, then after entering the 1300s, turn left
 Continue, then turn right into the cafeteria, and then turn left
-Continue, then turn left into the delivery hallway, and then turn right
+Continue, then turn left into the twisty hallway to the delivery hallway, and then turn right
 Continue, then turn right into the 1100s, and then turn left
 Go up the small set of stairs
 Continue, then turn right (after passing the elevator on your left)
@@ -1441,7 +1441,7 @@ Continue, then turn left into room 3713"
 exports[`gives correct directions from 1301 to 1450 1`] = `
 "Turn right out of room 1301
 Continue, then turn right into the cafeteria, and then turn left
-Continue, then turn left into the delivery hallway, and then turn right
+Continue, then turn left into the twisty hallway to the delivery hallway, and then turn right
 Continue, then turn right into the 1100s, and then turn left
 Go up the small set of stairs
 Continue, then turn left into the stairs
@@ -1590,7 +1590,7 @@ Continue, then turn left (after passing room 1604 on your left)
 Continue, then turn right (after passing room 1601 on your right)
 Continue, then after entering the 1300s, turn left
 Continue, then turn right into the cafeteria, and then turn left
-Continue, then turn left into the delivery hallway, and then turn right
+Continue, then turn left into the twisty hallway to the delivery hallway, and then turn right
 Continue, then turn right into the 1100s, and then turn left
 Go up the small set of stairs
 Continue, then turn right (after passing the elevator on your left)
