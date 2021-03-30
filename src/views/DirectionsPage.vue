@@ -4,6 +4,8 @@
       &laquo; Back
     </CustomButton>
 
+    <CustomButton @click="print()">Print</CustomButton>
+
     <main>
       <div id="directions">
         <p
@@ -71,6 +73,9 @@ export default Vue.extend({
       } else {
         this.$router.push("/");
       }
+    },
+    print() {
+      window.print();
     },
   },
   metaInfo() {
