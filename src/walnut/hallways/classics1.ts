@@ -116,6 +116,8 @@ const hallways: WalnutHallway[] = [
   ]),
 
   new Hallway([
+    new Room("1457"),
+    new Room("1454", RIGHT),
     new Room("1453", RIGHT),
     new Room("1452", RIGHT),
     new Room("1451", RIGHT),
