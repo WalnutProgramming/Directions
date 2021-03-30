@@ -65,6 +65,19 @@ Continue, then turn right (after passing room 3711 on your left)
 Continue, then turn left into room 3713"
 `;
 
+exports[`gives correct accessible directions from 1301 to 1450 1`] = `
+"Turn right out of room 1301
+Continue, then turn right into the cafeteria, and then turn left
+Continue, then turn left into the delivery hallway, and then turn right
+Continue, then turn right into the 1100s, and then turn left
+Go up the small set of stairs
+Continue, then turn left into the elevator
+Go to floor 1.5
+Turn right out of the elevator
+Continue, then turn right into the upper 1400s
+Continue, then turn left into room 1450"
+`;
+
 exports[`gives correct accessible directions from 1301 to 2306 1`] = `
 "Turn left out of room 1301
 Continue, then turn left (after passing the 1600s on your right)
@@ -129,6 +142,17 @@ Continue, then turn left into the elevator
 Go to floor 3
 Turn right out of the elevator
 Continue, then turn left into room 3310"
+`;
+
+exports[`gives correct accessible directions from 1450 to 1111 1`] = `
+"Turn right out of room 1450
+Continue, then after entering the 1.5th floor landing, turn left
+Continue, then turn left into the elevator
+Go to floor 1
+Turn left out of the elevator
+Continue, then turn right (after passing the elevator on your left)
+Continue, then after entering the latter 1100s, turn left
+Continue, then turn right into room 1111"
 `;
 
 exports[`gives correct accessible directions from 1601 to 2221 1`] = `
@@ -1367,14 +1391,11 @@ Continue, then turn right into room 2202"
 
 exports[`gives correct directions from 1106 to 2709 1`] = `
 "Go straight out of room 1106
-Continue, then turn left into the early 1100s
-Continue, then turn left (after passing room 1105 on your left)
-Continue, then turn right into the stairs
-Go up 0.5 floor of stairs
-Turn left out of the stairs
-Continue, then turn right into the stairs
-Go up 0.5 floor of stairs
-Turn right out of the 2015 stairs
+Continue, then turn left into the 2010 stairs
+Go up 1 floor of stairs
+Turn right out of the 2010 stairs
+Continue, then turn right (after passing room 2111 on your left)
+Continue, then turn left (after passing room 2109 on your left)
 Continue, then turn right into the Alumni Hall
 Continue, then after entering the arcade, turn left
 Go down the ramp, go through the arcade, and turn right into the 2700s (science wing)
@@ -1383,15 +1404,12 @@ Continue, then turn left into room 2709"
 `;
 
 exports[`gives correct directions from 1109 to 2203 1`] = `
-"Turn left out of room 1109
-Continue, then turn right into the early 1100s
-Continue, then turn left (after passing room 1105 on your left)
-Continue, then turn right into the stairs
-Go up 0.5 floor of stairs
-Turn left out of the stairs
-Continue, then turn right into the stairs
-Go up 0.5 floor of stairs
-Turn right out of the 2015 stairs
+"Turn right out of room 1109
+Continue, then turn left into the 2010 stairs
+Go up 1 floor of stairs
+Turn right out of the 2010 stairs
+Continue, then turn right (after passing room 2111 on your left)
+Continue, then turn left (after passing room 2109 on your left)
 Continue, then turn left into room 2203"
 `;
 
@@ -1415,6 +1433,18 @@ Go up 1 floor of stairs
 Turn left out of the stairs
 Continue, then turn right (after passing room 3711 on your left)
 Continue, then turn left into room 3713"
+`;
+
+exports[`gives correct directions from 1301 to 1450 1`] = `
+"Turn right out of room 1301
+Continue, then turn left into the 2024 stairs
+Go up 1 floor of stairs
+Turn left out of the 2024 stairs
+Continue, then turn left into the 2015 stairs
+Go down 0.5 floor of stairs
+Turn left out of the stairs
+Continue, then turn left into the upper 1400s
+Continue, then turn left into room 1450"
 `;
 
 exports[`gives correct directions from 1301 to 2306 1`] = `
@@ -1480,6 +1510,17 @@ Go up 2 floors of stairs
 Turn left out of the 2018 stairs
 Continue, then turn left (after passing room 3311 on your right)
 Continue, then turn right into room 3310"
+`;
+
+exports[`gives correct directions from 1450 to 1111 1`] = `
+"Turn right out of room 1450
+Continue, then after entering the 1.5th floor landing, turn left
+Continue, then turn right into the stairs
+Go down 0.5 floor of stairs
+Turn left out of the stairs
+Continue, then turn right (after passing the elevator on your left)
+Continue, then after entering the latter 1100s, turn left
+Continue, then turn right into room 1111"
 `;
 
 exports[`gives correct directions from 1601 to 2221 1`] = `
