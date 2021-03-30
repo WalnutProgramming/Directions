@@ -85,8 +85,8 @@ const hallways: WalnutHallway[] = [
 
   // lower 1400s
   new Hallway([
-    new Room("Fitness Room", FRONT, { aliases: ["1418"] }),
-    new Room("Multi-Purpose Room", LEFT, { aliases: ["1410"] }),
+    new Room("Fitness Room", FRONT, { aliases: ["1418"], prefix: "the" }),
+    new Room("1410", LEFT, { aliases: ["Multi-Purpose Room"] }),
     new Turn(LEFT),
     new Fork(
       RIGHT,
