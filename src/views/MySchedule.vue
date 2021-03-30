@@ -14,7 +14,7 @@
           />
         </div>
         <div>
-          <h2>Monday/Thursday Block</h2>
+          <h2>Block Day 1</h2>
           <ScheduleList
             v-if="rooms != null"
             :all-rooms="rooms"
@@ -23,7 +23,7 @@
           />
         </div>
         <div>
-          <h2>Tuesday/Friday Block</h2>
+          <h2>Block Day 2</h2>
           <ScheduleList
             v-if="rooms != null"
             :all-rooms="rooms"
