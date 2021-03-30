@@ -12,9 +12,8 @@ const walnutAll = new Building<ConnectionNodeId, StairNodeId>(hallways, {
         // "stair a": "down",
         // "stair b": "down",
         // "stair c": "up",
+        // "stair d": "up",
 
-        // // TODO: need cafeteria to uncomment both of these next 2
-        // "stair d": "down",
         // "stair f": "down",
 
         "stair music entrance to 1": "down",
