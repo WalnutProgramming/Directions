@@ -120,11 +120,7 @@ const hallways: WalnutHallway[] = [
       }
     })(),
 
-    new Stairs(
-      RIGHT,
-      onFloor("stair 1100s to 1.5th floor", 1),
-      "the stairs on the right"
-    ),
+    new Stairs(LEFT, onFloor("stair 1100s to 1.5th floor", 1), "the stairs"),
 
     new Stairs(LEFT, onFloor("elevator b", 1), "the elevator"),
     new Turn(RIGHT),
