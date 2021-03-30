@@ -110,6 +110,7 @@ const hallways: WalnutHallway[] = [
       reverseConnection("delivery hallway to 1100s"),
       "the delivery hallway"
     ),
+    new Room("1101"),
 
     // There are a few stairs right here
     new (class extends Room<ConnectionNodeId> {
