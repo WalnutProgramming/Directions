@@ -94,6 +94,7 @@ const hallways: WalnutHallway[] = [
     new Room("2212", LEFT, { aliases: ["Medical Room", "Nurse"] }),
     new Room("2214", LEFT, {
       aliases: ["COVID Isolation Room"],
+      prefix: "the",
     }),
     new Room("2211", RIGHT),
     new Room("2216", LEFT, { nodeId: "enter 2216", aliases: ["Registrar"] }),
