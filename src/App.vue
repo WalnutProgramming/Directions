@@ -11,6 +11,12 @@
           </router-link>
           <li>
             <a
+              href="https://sites.google.com/view/walnuthillshs-video-tours/home"
+              >Virtual Tour</a
+            >
+          </li>
+          <li>
+            <a
               href="http://www.walnuthillseagles.com/news-pdfs/2013/WHHS_Floor_Maps.pdf"
               >Floor Map</a
             >
