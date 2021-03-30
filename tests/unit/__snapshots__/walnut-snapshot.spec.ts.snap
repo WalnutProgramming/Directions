@@ -857,6 +857,18 @@ Continue, then turn left into the corner with the stairs
 Continue, then go straight into room 3504"
 `;
 
+exports[`gives correct accessible directions from 3104 to Multi-Purpose Room 1`] = `
+"Turn left out of room 3104
+Continue, then turn left into the elevator
+Go to floor 1
+Turn right out of the elevator
+Go down the small set of stairs
+Continue, then turn right into the delivery hallway, and then turn right
+Continue, then turn left into the lower 1400s, and then turn left
+Continue, then turn right (after passing the delivery hallway on your left)
+Continue, then turn right into room 1410"
+`;
+
 exports[`gives correct accessible directions from 3105 to Library 1`] = `
 "Turn left out of room 3105
 Continue, then turn left into the Library"
@@ -1206,6 +1218,12 @@ Continue, then turn right into the narrow hallway
 Continue, then turn right into room 2503"
 `;
 
+exports[`gives correct accessible directions from Cafeteria to 1411 1`] = `
+"Go out of the cafeteria by the right entrance to get to the delivery hallway, and then turn right
+Continue, then turn left into the lower 1400s, and then turn right
+Continue, then turn left into room 1411"
+`;
+
 exports[`gives correct accessible directions from Computer Lab - Engineering to 2722 1`] = `
 "Turn right out of room 3701
 Continue, then turn right into the elevator
@@ -1223,6 +1241,14 @@ Go to floor 1
 Turn left out of the elevator
 Continue, then turn right (after passing the elevator on your left)
 Continue, then turn right into room 1303"
+`;
+
+exports[`gives correct accessible directions from Fitness Room to 1101 1`] = `
+"Go straight out of the Fitness Room
+Continue, then turn left (after passing room 1410 on your left)
+Continue, then turn right into the delivery hallway, and then turn right
+Continue, then turn left into the 1100s, and then turn left
+Continue, then turn left into room 1101"
 `;
 
 exports[`gives correct accessible directions from Junior Gymnasium to 3102 1`] = `
@@ -1343,7 +1369,7 @@ exports[`gives correct directions from 1106 to 2709 1`] = `
 "Go straight out of room 1106
 Continue, then turn left into the early 1100s
 Continue, then turn left (after passing room 1105 on your left)
-Continue, then turn left into the stairs on the right
+Continue, then turn right into the stairs
 Go up 0.5 floor of stairs
 Go straight out of the stairs
 Continue, then turn right into the stairs
@@ -1360,7 +1386,7 @@ exports[`gives correct directions from 1109 to 2203 1`] = `
 "Turn left out of room 1109
 Continue, then turn right into the early 1100s
 Continue, then turn left (after passing room 1105 on your left)
-Continue, then turn left into the stairs on the right
+Continue, then turn right into the stairs
 Go up 0.5 floor of stairs
 Go straight out of the stairs
 Continue, then turn right into the stairs
@@ -2148,7 +2174,7 @@ Go down 0.5 floor of stairs
 Turn left out of the stairs
 Continue, then go straight into the stairs
 Go down 0.5 floor of stairs
-Turn right out of the stairs on the right
+Turn left out of the stairs
 Continue, then turn right (after passing the elevator on your left)
 Continue, then turn right into room 1105"
 `;
@@ -2200,6 +2226,22 @@ Continue, then turn right into the stairs
 Go up 1 floor of stairs
 Turn right out of the stairs
 Continue, then go straight into room 3504"
+`;
+
+exports[`gives correct directions from 3104 to Multi-Purpose Room 1`] = `
+"Turn left out of room 3104
+Continue, then turn right (after passing room 3105 on your right)
+Continue, then turn left (after passing room 3111 on your right)
+Continue, then turn left into the 2010 stairs
+Go down 2 floors of stairs
+Turn right out of the 2010 stairs
+Continue, then turn right into the early 1100s
+Continue, then turn left (after passing room 1105 on your left)
+Go down the small set of stairs
+Continue, then turn right into the delivery hallway, and then turn right
+Continue, then turn left into the lower 1400s, and then turn left
+Continue, then turn right (after passing the delivery hallway on your left)
+Continue, then turn right into room 1410"
 `;
 
 exports[`gives correct directions from 3105 to Library 1`] = `
@@ -2528,6 +2570,12 @@ Continue, then turn right into the narrow hallway
 Continue, then turn right into room 2503"
 `;
 
+exports[`gives correct directions from Cafeteria to 1411 1`] = `
+"Go out of the cafeteria by the right entrance to get to the delivery hallway, and then turn right
+Continue, then turn left into the lower 1400s, and then turn right
+Continue, then turn left into room 1411"
+`;
+
 exports[`gives correct directions from Computer Lab - Engineering to 2722 1`] = `
 "Turn right out of room 3701
 Continue, then turn right into the stairs
@@ -2543,6 +2591,14 @@ Continue, then turn right into the 2024 stairs
 Go down 1 floor of stairs
 Turn right out of the 2024 stairs
 Continue, then turn left into room 1303"
+`;
+
+exports[`gives correct directions from Fitness Room to 1101 1`] = `
+"Go straight out of the Fitness Room
+Continue, then turn left (after passing room 1410 on your left)
+Continue, then turn right into the delivery hallway, and then turn right
+Continue, then turn left into the 1100s, and then turn left
+Continue, then turn left into room 1101"
 `;
 
 exports[`gives correct directions from Junior Gymnasium to 3102 1`] = `
