@@ -20,8 +20,10 @@
               line.toLowerCase().includes('turn left out of') ||
               line.toLowerCase().includes('turn left into')
             "
-            >. (Based on COVID precautions, you may instead need to turn right
-            and make a U-turn at the end of the hallway.)</small
+            ><small
+              >. (Based on COVID precautions, you may instead need to turn right
+              and make a U-turn at the end of the hallway.)</small
+            ></small
           >
         </p>
       </div>
