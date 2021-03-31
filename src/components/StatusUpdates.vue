@@ -9,7 +9,7 @@
       <p>
         Be sure to stay distanced, walk on the right side of the hallway, and
         follow all rules given by the administration for COVID-19 safety.
-        Walnut.Direct takes the new one-way staircases into account when
+        Walnut.Direct takes the new one-way staircase rules into account when
         providing directions.
       </p>
       <p>
