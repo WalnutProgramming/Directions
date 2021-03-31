@@ -24,8 +24,8 @@ describe("App", () => {
 
     expect(wrapper.find("p.direction-line:nth-child(1)").text())
       .toMatchInlineSnapshot(`
-      "Turn left out of room 3104. (Based on COVID precautions, you may have to turn right and make
-                a U-turn at the end of the hallway.)"
+      "Turn left out of room 3104. (Based on COVID precautions, you may instead need to turn right
+                and make a U-turn at the end of the hallway.)"
     `);
     expect(
       wrapper.find("p.direction-line:nth-child(2)").text()
