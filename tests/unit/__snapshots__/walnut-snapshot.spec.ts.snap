@@ -1450,7 +1450,7 @@ Continue, then turn left into room 1450"
 
 exports[`gives correct directions from 1301 to 2306 1`] = `
 "Turn right out of room 1301
-Continue, then turn left into the 2024 stairs
+Continue, then turn left into the stairs
 Go up 1 floor of stairs
 Turn right out of the 2024 stairs
 Continue, then turn left (after passing the 2600s on your right)
@@ -1460,7 +1460,7 @@ Continue, then turn left into room 2306"
 exports[`gives correct directions from 1309 to 10th and 11th Grade Office 1`] = `
 "Turn right out of room 1309
 Continue, then turn right (after passing the elevator on your left)
-Continue, then turn left into the 2024 stairs
+Continue, then turn left into the stairs
 Go up 1 floor of stairs
 Turn left out of the 2024 stairs
 Continue, then turn right into room 2209"
@@ -1470,7 +1470,7 @@ exports[`gives correct directions from 1311 to 2701 1`] = `
 "Turn right out of room 1311
 Continue, then turn left (after passing room 1311 on your right)
 Continue, then turn right (after passing the elevator on your left)
-Continue, then turn left into the 2024 stairs
+Continue, then turn left into the stairs
 Go up 1 floor of stairs
 Turn left out of the 2024 stairs
 Continue, then turn left into the Alumni Hall
@@ -1483,7 +1483,7 @@ exports[`gives correct directions from 1312 to 3115 1`] = `
 "Turn left out of room 1312
 Continue, then turn left (after passing room 1311 on your right)
 Continue, then turn right (after passing the elevator on your left)
-Continue, then turn left into the 2024 stairs
+Continue, then turn left into the stairs
 Go up 2 floors of stairs
 Turn left out of the 2024 stairs
 Continue, then turn right (after passing room 3105 on your right)
@@ -1495,7 +1495,7 @@ exports[`gives correct directions from 1313 to 3302 1`] = `
 "Turn right out of room 1313
 Continue, then turn left (after passing room 1311 on your right)
 Continue, then turn right (after passing the elevator on your left)
-Continue, then turn left into the 2024 stairs
+Continue, then turn left into the stairs
 Go up 2 floors of stairs
 Turn right out of the 2024 stairs
 Continue, then turn right into room 3302"
@@ -1505,7 +1505,7 @@ exports[`gives correct directions from 1315 to 3310 1`] = `
 "Turn right out of room 1315
 Continue, then turn left (after passing room 1311 on your right)
 Continue, then turn right (after passing the elevator on your left)
-Continue, then turn left into the 2024 stairs
+Continue, then turn left into the stairs
 Go up 2 floors of stairs
 Turn right out of the 2024 stairs
 Continue, then turn left (after passing the 2025 stairs on your right)
@@ -1527,7 +1527,7 @@ exports[`gives correct directions from 1601 to 2221 1`] = `
 "Turn right out of room 1601
 Continue, then turn right (after passing room 1601 on your right)
 Continue, then after entering the 1300s, turn left
-Continue, then turn left into the 2024 stairs
+Continue, then turn left into the stairs
 Go up 1 floor of stairs
 Turn left out of the 2024 stairs
 Continue, then turn right into the 2200s
@@ -1539,7 +1539,7 @@ exports[`gives correct directions from 1602 to 2204 1`] = `
 "Turn right out of room 1602
 Continue, then turn right (after passing room 1601 on your right)
 Continue, then after entering the 1300s, turn left
-Continue, then turn left into the 2024 stairs
+Continue, then turn left into the stairs
 Go up 1 floor of stairs
 Turn left out of the 2024 stairs
 Continue, then turn left into room 2204"
@@ -1550,7 +1550,7 @@ exports[`gives correct directions from 1603 to 2216 1`] = `
 Continue, then turn left (after passing room 1604 on your left)
 Continue, then turn right (after passing room 1601 on your right)
 Continue, then after entering the 1300s, turn left
-Continue, then turn left into the 2024 stairs
+Continue, then turn left into the stairs
 Go up 1 floor of stairs
 Turn left out of the 2024 stairs
 Continue, then turn right into the 2200s
@@ -1562,7 +1562,7 @@ exports[`gives correct directions from 1604 to 10th and 11th Grade Office 1`] = 
 Continue, then turn left (after passing room 1604 on your left)
 Continue, then turn right (after passing room 1601 on your right)
 Continue, then after entering the 1300s, turn left
-Continue, then turn left into the 2024 stairs
+Continue, then turn left into the stairs
 Go up 1 floor of stairs
 Turn left out of the 2024 stairs
 Continue, then turn right into room 2209"
@@ -1573,7 +1573,7 @@ exports[`gives correct directions from 1606 to 2311 1`] = `
 Continue, then turn left (after passing room 1604 on your left)
 Continue, then turn right (after passing room 1601 on your right)
 Continue, then after entering the 1300s, turn left
-Continue, then turn left into the 2024 stairs
+Continue, then turn left into the stairs
 Go up 1 floor of stairs
 Turn right out of the 2024 stairs
 Continue, then turn left (after passing the 2600s on your right)
@@ -1993,7 +1993,7 @@ Turn right out of the stairs
 Continue, then turn left (after passing room 1604 on your left)
 Continue, then turn right (after passing room 1601 on your right)
 Continue, then after entering the 1300s, turn left
-Continue, then turn left into the 2024 stairs
+Continue, then turn left into the stairs
 Go up 2 floors of stairs
 Turn left out of the 2024 stairs
 Continue, then turn left into room 3207"
@@ -2016,7 +2016,7 @@ Turn right out of the stairs
 Continue, then turn left (after passing room 1604 on your left)
 Continue, then turn right (after passing room 1601 on your right)
 Continue, then after entering the 1300s, turn left
-Continue, then turn left into the 2024 stairs
+Continue, then turn left into the stairs
 Go up 2 floors of stairs
 Turn left out of the 2024 stairs
 Continue, then turn right (after passing room 3105 on your right)
@@ -2478,7 +2478,7 @@ Turn right out of the stairs
 Continue, then turn left (after passing room 1604 on your left)
 Continue, then turn right (after passing room 1601 on your right)
 Continue, then after entering the 1300s, turn left
-Continue, then turn left into the 2024 stairs
+Continue, then turn left into the stairs
 Go up 2 floors of stairs
 Turn left out of the 2024 stairs
 Continue, then turn left into room 3104"
@@ -2550,7 +2550,7 @@ Turn right out of the stairs
 Continue, then turn left (after passing room 1604 on your left)
 Continue, then turn right (after passing room 1601 on your right)
 Continue, then after entering the 1300s, turn left
-Continue, then turn left into the 2024 stairs
+Continue, then turn left into the stairs
 Go up 2 floors of stairs
 Turn left out of the 2024 stairs
 Continue, then turn right (after passing room 3105 on your right)
