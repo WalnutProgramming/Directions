@@ -30,7 +30,7 @@ export type ConnectionNodeId =
   | "2700s to 2739"
   | "music entrance to long hallway"
   | "long hallway to arcade"
-  | "music 1 to music little corner"
+  | "early 1800s to latter 1800s"
   | "lobby to 2200s"
   | "lobby to 2240"
   | "alumni hall to 2200s"
