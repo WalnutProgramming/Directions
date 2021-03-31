@@ -33,7 +33,7 @@ const hallways: WalnutHallway[] = [
     new Room("1606"),
     new Room("1607"),
     new Room("1608"),
-    new Stairs(LEFT, onFloor("stair science a", 1), undefined, 4),
+    new Stairs(LEFT, onFloor("stair science a1", 1), undefined, 4),
   ]),
 
   // 2nd floor modern languages wing (2600s)

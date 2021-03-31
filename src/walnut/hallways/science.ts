@@ -21,7 +21,8 @@ const hallways: WalnutHallway[] = [
         return "";
       }
     })(FRONT, "2700s to arcade", "the arcade"),
-    new Stairs(LEFT, onFloor("stair science a", 2)),
+    new Stairs(LEFT, onFloor("stair science a3", 2)),
+    new Stairs(LEFT, onFloor("stair science a1", 2)),
     new Stairs(LEFT, onFloor("elevator science", 2), "the elevator"),
     new Room("2701"),
     new Room("2702", RIGHT),
@@ -41,6 +42,7 @@ const hallways: WalnutHallway[] = [
     new Room("2723"),
     new Room("2720", RIGHT),
     new Room("2722", RIGHT),
+    new Stairs(LEFT, onFloor("stair science b", 2)),
   ]),
   // 2739 (Area across the Forum)
   new Hallway([
@@ -54,7 +56,7 @@ const hallways: WalnutHallway[] = [
   ]),
   // 3rd floor science wing (3700s)
   new Hallway([
-    new Stairs(LEFT, onFloor("stair science a", 3)),
+    new Stairs(LEFT, onFloor("stair science a3", 3)),
     new Stairs(LEFT, onFloor("elevator science", 3), "the elevator"),
     new Room("3701", LEFT, { aliases: ["Computer Lab - Engineering"] }),
     new Room("3702", RIGHT),
@@ -71,6 +73,7 @@ const hallways: WalnutHallway[] = [
     new Room("3717"),
     new Room("3724", RIGHT),
     new Room("3726", RIGHT),
+    new Stairs(LEFT, onFloor("stair science b", 3)),
   ]),
 ];
 export default hallways;

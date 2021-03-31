@@ -1470,12 +1470,12 @@ exports[`gives correct directions from 1311 to 2701 1`] = `
 "Turn right out of room 1311
 Continue, then turn left (after passing room 1311 on your right)
 Continue, then turn right (after passing the elevator on your left)
-Continue, then turn left into the 1600s
-Continue, then turn left
-Continue, then turn right (after passing room 1602 on your left)
-Continue, then turn left into the stairs
+Continue, then turn left into the 2024 stairs
 Go up 1 floor of stairs
-Turn left out of the stairs
+Turn left out of the 2024 stairs
+Continue, then turn left into the Alumni Hall
+Continue, then after entering the arcade, turn left
+Go down the ramp, go through the arcade, and turn right into the 2700s (science wing)
 Continue, then turn left into room 2701"
 `;
 
@@ -1767,15 +1767,10 @@ Continue, then turn left into room 2723"
 
 exports[`gives correct directions from 2205 to 2719 1`] = `
 "Turn left out of room 2205
-Continue, then turn right into the 2025 stairs
-Go down 1 floor of stairs
-Turn right out of the 2025 stairs
-Continue, then turn right into the 1600s
+Continue, then turn right into the 2600s
 Continue, then turn left
-Continue, then turn right (after passing room 1602 on your left)
-Continue, then turn left into the stairs
-Go up 1 floor of stairs
-Turn left out of the stairs
+Continue, then turn right (after passing room 2602 on your left)
+Continue, then after entering the arcade, go straight and a bit to the right to get to the 2700s, the science wing
 Continue, then turn right (after passing room 2715 on your left)
 Continue, then turn left into room 2719"
 `;
@@ -1896,14 +1891,12 @@ Continue, then turn right into room 1846"
 
 exports[`gives correct directions from 2500 to 3711 1`] = `
 "Turn right out of the Westheimer Auditorium
-Continue, then turn right into the 2025 stairs
-Go down 1 floor of stairs
-Turn right out of the 2025 stairs
-Continue, then turn right into the 1600s
+Continue, then turn right into the 2600s
 Continue, then turn left
-Continue, then turn right (after passing room 1602 on your left)
+Continue, then turn right (after passing room 2602 on your left)
+Continue, then after entering the arcade, go straight and a bit to the right to get to the 2700s, the science wing
 Continue, then turn left into the stairs
-Go up 2 floors of stairs
+Go up 1 floor of stairs
 Turn left out of the stairs
 Continue, then turn left into room 3711"
 `;
@@ -2017,13 +2010,15 @@ Continue, then turn right into room 2505"
 
 exports[`gives correct directions from 2704 to 3114 1`] = `
 "Turn left out of room 2704
-Continue, then after entering the arcade, turn left
-Go to the end of the arcade, go up the ramp, and go through the doors on your right
-Continue straight
-Continue, then after entering the 2200s, turn left
-Continue, then turn left into the 2015 stairs
-Go up 1 floor of stairs
-Turn left out of the 2015 stairs
+Continue, then turn right into the stairs
+Go down 1 floor of stairs
+Turn right out of the stairs
+Continue, then turn left (after passing room 1604 on your left)
+Continue, then turn right (after passing room 1601 on your right)
+Continue, then after entering the 1300s, turn left
+Continue, then turn left into the 2024 stairs
+Go up 2 floors of stairs
+Turn left out of the 2024 stairs
 Continue, then turn right (after passing room 3105 on your right)
 Continue, then turn left (after passing room 3111 on your right)
 Continue, then turn left into room 3114"
@@ -2419,13 +2414,14 @@ Continue, then turn left into room 2401"
 exports[`gives correct directions from 3305 to 3716 1`] = `
 "Turn left out of room 3305
 Continue, then turn right into the 2025 stairs
-Go down 2 floors of stairs
+Go down 1 floor of stairs
 Turn right out of the 2025 stairs
-Continue, then turn right into the 1600s
+Continue, then turn right into the 2600s
 Continue, then turn left
-Continue, then turn right (after passing room 1602 on your left)
+Continue, then turn right (after passing room 2602 on your left)
+Continue, then after entering the arcade, go straight and a bit to the right to get to the 2700s, the science wing
 Continue, then turn left into the stairs
-Go up 2 floors of stairs
+Go up 1 floor of stairs
 Turn left out of the stairs
 Continue, then turn right (after passing room 3711 on your left)
 Continue, then turn right into room 3716"
@@ -2470,25 +2466,31 @@ Continue, then turn right into room 2105"
 `;
 
 exports[`gives correct directions from 3701 to Computer Lab 1`] = `
-"Turn right out of room 3701
+"Turn left out of room 3701
+Continue, then turn right (after passing room 3711 on your left)
+Continue, then turn left into the stairs
+Go down 1 floor of stairs
+Turn right out of the stairs
+Continue, then turn left (after passing room 2717 on your right)
 Continue, then turn right into the stairs
 Go down 1 floor of stairs
 Turn right out of the stairs
-Continue, then after entering the arcade, turn left
-Go to the end of the arcade, go up the ramp, and go through the doors on your right
-Continue straight
-Continue, then after entering the 2200s, turn left
-Continue, then turn left into the 2015 stairs
-Go up 1 floor of stairs
-Turn left out of the 2015 stairs
+Continue, then turn left (after passing room 1604 on your left)
+Continue, then turn right (after passing room 1601 on your right)
+Continue, then after entering the 1300s, turn left
+Continue, then turn left into the 2024 stairs
+Go up 2 floors of stairs
+Turn left out of the 2024 stairs
 Continue, then turn left into room 3104"
 `;
 
 exports[`gives correct directions from 3702 to 3503 1`] = `
-"Turn left out of room 3702
-Continue, then turn right into the stairs
+"Turn right out of room 3702
+Continue, then turn right (after passing room 3711 on your left)
+Continue, then turn left into the stairs
 Go down 1 floor of stairs
 Turn right out of the stairs
+Continue, then turn left (after passing room 2717 on your right)
 Continue, then after entering the arcade, turn left
 Go to the end of the arcade, go up the ramp, and go through the doors on your right
 Continue straight
@@ -2501,10 +2503,12 @@ Continue, then turn left into room 3503"
 `;
 
 exports[`gives correct directions from 3703 to 1853 1`] = `
-"Turn right out of room 3703
-Continue, then turn right into the stairs
+"Turn left out of room 3703
+Continue, then turn right (after passing room 3711 on your left)
+Continue, then turn left into the stairs
 Go down 1 floor of stairs
 Turn right out of the stairs
+Continue, then turn left (after passing room 2717 on your right)
 Continue, then after entering the arcade, turn right
 Go to the end of the arcade and turn right into the narrow hallway
 Continue straight
@@ -2518,9 +2522,14 @@ Continue, then turn right into room 1853"
 `;
 
 exports[`gives correct directions from 3704 to 1300 1`] = `
-"Turn left out of room 3704
+"Turn right out of room 3704
+Continue, then turn right (after passing room 3711 on your left)
+Continue, then turn left into the stairs
+Go down 1 floor of stairs
+Turn right out of the stairs
+Continue, then turn left (after passing room 2717 on your right)
 Continue, then turn right into the stairs
-Go down 2 floors of stairs
+Go down 1 floor of stairs
 Turn right out of the stairs
 Continue, then turn left (after passing room 1604 on your left)
 Continue, then turn right (after passing room 1601 on your right)
@@ -2529,27 +2538,34 @@ Continue, then turn left into room 1300"
 `;
 
 exports[`gives correct directions from 3707 to 3113 1`] = `
-"Turn right out of room 3707
+"Turn left out of room 3707
+Continue, then turn right (after passing room 3711 on your left)
+Continue, then turn left into the stairs
+Go down 1 floor of stairs
+Turn right out of the stairs
+Continue, then turn left (after passing room 2717 on your right)
 Continue, then turn right into the stairs
 Go down 1 floor of stairs
 Turn right out of the stairs
-Continue, then after entering the arcade, turn left
-Go to the end of the arcade, go up the ramp, and go through the doors on your right
-Continue straight
-Continue, then after entering the 2200s, turn left
-Continue, then turn left into the 2015 stairs
-Go up 1 floor of stairs
-Turn left out of the 2015 stairs
+Continue, then turn left (after passing room 1604 on your left)
+Continue, then turn right (after passing room 1601 on your right)
+Continue, then after entering the 1300s, turn left
+Continue, then turn left into the 2024 stairs
+Go up 2 floors of stairs
+Turn left out of the 2024 stairs
 Continue, then turn right (after passing room 3105 on your right)
 Continue, then turn left (after passing room 3111 on your right)
 Continue, then turn right into room 3113"
 `;
 
 exports[`gives correct directions from 3714 to 1310 1`] = `
-"Turn left out of room 3714
-Continue, then turn left (after passing room 3713 on your right)
+"Turn right out of room 3714
+Continue, then turn left into the stairs
+Go down 1 floor of stairs
+Turn right out of the stairs
+Continue, then turn left (after passing room 2717 on your right)
 Continue, then turn right into the stairs
-Go down 2 floors of stairs
+Go down 1 floor of stairs
 Turn right out of the stairs
 Continue, then turn left (after passing room 1604 on your left)
 Continue, then turn right (after passing room 1601 on your right)
@@ -2559,11 +2575,11 @@ Continue, then turn left into room 1310"
 `;
 
 exports[`gives correct directions from 3715 to 3505 1`] = `
-"Turn right out of room 3715
-Continue, then turn left (after passing room 3713 on your right)
-Continue, then turn right into the stairs
+"Turn left out of room 3715
+Continue, then turn left into the stairs
 Go down 1 floor of stairs
 Turn right out of the stairs
+Continue, then turn left (after passing room 2717 on your right)
 Continue, then after entering the arcade, go straight and a bit to the right to get to the 2600s, the modern languages wing
 Continue straight
 Continue, then turn left into the little hallway
@@ -2606,12 +2622,12 @@ Continue, then turn right into room 2503"
 `;
 
 exports[`gives correct directions from Computer Lab - Engineering to 2722 1`] = `
-"Turn right out of room 3701
-Continue, then turn right into the stairs
+"Turn left out of room 3701
+Continue, then turn right (after passing room 3711 on your left)
+Continue, then turn left into the stairs
 Go down 1 floor of stairs
-Turn left out of the stairs
-Continue, then turn right (after passing room 2715 on your left)
-Continue, then turn right into room 2722"
+Turn right out of the stairs
+Continue, then turn left into room 2722"
 `;
 
 exports[`gives correct directions from Conference Room to 1303 1`] = `

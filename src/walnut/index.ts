@@ -16,6 +16,10 @@ const walnutAll = new Building<ConnectionNodeId, StairNodeId>(hallways, {
 
         "stair f": "down",
 
+        "stair science a1": "down",
+        "stair science a3": "up",
+        "stair science b": "down",
+
         "stair music entrance to 1": "down",
         "stair to 1800s": "up",
 
