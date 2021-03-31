@@ -9,6 +9,11 @@
       <p>
         Be sure to stay distanced, walk on the right side of the hallway, and
         follow all rules given by the administration for COVID-19 safety.
+        <b>
+          When our directions tell you to turn left out of a classroom, you may
+          have to turn right out of the classroom, then make a U-turn at the end
+          of the hallway.
+        </b>
         Walnut.Direct takes the new one-way staircase rules into account when
         providing directions.
       </p>
