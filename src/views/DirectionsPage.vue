@@ -1,8 +1,11 @@
 <template>
   <div>
-    <CustomButton style="font-size: 0.5em; padding-left: 1vw" @click="back">
-      &laquo; Back
-    </CustomButton>
+    <div class="button-container">
+      <CustomButton class="button" @click="back"> &laquo; Back </CustomButton>
+      <CustomButton v-if="canPrint" class="button" @click="print">
+        Print
+      </CustomButton>
+    </div>
 
     <main>
       <div id="directions">
@@ -63,6 +66,9 @@ export default Vue.extend({
       }
       return ["Sorry, I couldn't find one of those rooms."];
     },
+    canPrint() {
+      return window.print;
+    },
   },
   methods: {
     back() {
@@ -71,6 +77,9 @@ export default Vue.extend({
       } else {
         this.$router.push("/");
       }
+    },
+    print() {
+      window.print();
     },
   },
   metaInfo() {
@@ -106,5 +115,16 @@ export default Vue.extend({
   padding-left: 1vw;
   background-color: var(--alt-background-color);
   transition: background-color var(--linear-ease);
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 1rem;
+}
+.button-container .button {
+  font-size: 0.5em;
+  padding-left: 1vw;
 }
 </style>
