@@ -14,7 +14,15 @@
           :key="index + ':::' + line"
           class="direction-line"
         >
-          {{ line }}
+          {{ line
+          }}<small
+            v-if="
+              line.toLowerCase().includes('turn left out of') ||
+              line.toLowerCase().includes('turn left into')
+            "
+            >. (Based on COVID precautions, you may instead need to turn right
+            and make a U-turn at the end of the hallway.)</small
+          >
         </p>
       </div>
     </main>
