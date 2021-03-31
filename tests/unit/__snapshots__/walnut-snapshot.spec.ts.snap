@@ -236,7 +236,7 @@ Continue, then turn left into room 1108"
 
 exports[`gives correct accessible directions from 1823 to 2503 1`] = `
 "Turn left out of room 1823
-Continue, then turn right (after passing room 1843 on your right)
+Continue, then turn right into the latter 1800s
 Continue, then turn left into the elevator
 Go to floor 1.5
 Turn right out of the elevator
@@ -250,7 +250,7 @@ Continue, then turn right into room 2503"
 
 exports[`gives correct accessible directions from 1840 to 2846 1`] = `
 "Turn left out of room 1840
-Continue, then turn right (after passing room 1843 on your right)
+Continue, then turn right into the latter 1800s
 Continue, then turn left into the elevator
 Go to floor 2
 Turn left out of the elevator
@@ -260,7 +260,7 @@ Continue, then turn right into room 2846"
 
 exports[`gives correct accessible directions from 1841 to 2840 1`] = `
 "Turn right out of room 1841
-Continue, then turn right (after passing room 1843 on your right)
+Continue, then turn right into the latter 1800s
 Continue, then turn left into the elevator
 Go to floor 2
 Turn left out of the elevator
@@ -270,7 +270,7 @@ Continue, then turn right into room 2840"
 
 exports[`gives correct accessible directions from 1842 to 2714 1`] = `
 "Turn right out of room 1842
-Continue, then after entering the music hallway, turn left
+Continue, then turn left into the latter 1800s
 Continue, then turn left into the elevator
 Go to floor 1.5
 Turn right out of the elevator
@@ -470,7 +470,7 @@ Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then tu
 Continue, then turn left into the elevator
 Go to floor 1
 Turn right out of the elevator
-Continue, then turn left (after passing the little corner on your right)
+Continue, then after entering the early 1800s, turn left
 Continue, then turn right into room 1824"
 `;
 
@@ -508,7 +508,7 @@ Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then tu
 Continue, then turn left into the elevator
 Go to floor 1
 Turn right out of the elevator
-Continue, then turn right into the little corner
+Continue, then after entering the early 1800s, turn right
 Continue, then turn right into room 1846"
 `;
 
@@ -748,7 +748,7 @@ Continue, then turn right (after passing room 2846 on your left)
 Continue, then turn right into the elevator
 Go to floor 1
 Turn right out of the elevator
-Continue, then turn right into the little corner
+Continue, then after entering the early 1800s, turn right
 Continue, then go straight into room 1845"
 `;
 
@@ -975,7 +975,7 @@ Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then tu
 Continue, then turn left into the elevator
 Go to floor 1
 Turn right out of the elevator
-Continue, then turn right into the little corner
+Continue, then after entering the early 1800s, turn right
 Continue, then turn right into room 1849"
 `;
 
@@ -1021,7 +1021,7 @@ Continue, then turn right into the doors labeled \\"Music Lyceum\\", and then tu
 Continue, then turn left into the elevator
 Go to floor 1
 Turn right out of the elevator
-Continue, then turn left (after passing the little corner on your right)
+Continue, then after entering the early 1800s, turn left
 Continue, then turn left into room 1843"
 `;
 
@@ -1229,7 +1229,7 @@ Continue, then turn right into room 2848"
 
 exports[`gives correct accessible directions from Band (1845) to Black Box Theater 1`] = `
 "Go straight out of room 1845
-Continue, then after entering the music hallway, turn left
+Continue, then turn left into the latter 1800s
 Continue, then turn left into the elevator
 Go to floor 1.5
 Turn right out of the elevator
@@ -1350,7 +1350,7 @@ exports[`gives correct accessible directions from Strings to Band (1840) 1`] = `
 Continue, then turn right into the elevator
 Go to floor 1
 Turn right out of the elevator
-Continue, then turn left (after passing the little corner on your right)
+Continue, then after entering the early 1800s, turn left
 Continue, then turn right into room 1840"
 `;
 
@@ -1643,8 +1643,6 @@ Continue, then turn right into room 2840"
 
 exports[`gives correct directions from 1842 to 2714 1`] = `
 "Turn right out of room 1842
-Continue, then after entering the music hallway, turn right
-Continue, then turn left (after passing the little corner on your right)
 Continue, then turn right (after passing room 1823 on your right)
 Continue, then turn right
 Continue, then go straight into the stairs
@@ -1658,7 +1656,7 @@ Continue, then turn right into room 2714"
 
 exports[`gives correct directions from 1850 to 2849 1`] = `
 "Turn right out of room 1850
-Continue, then turn left (after passing the little corner on your right)
+Continue, then after entering the early 1800s, turn left
 Continue, then turn right (after passing room 1823 on your right)
 Continue, then turn right
 Continue, then go straight into the stairs
@@ -1674,7 +1672,7 @@ Continue, then turn left into room 2849"
 
 exports[`gives correct directions from 1851 to 3111 1`] = `
 "Turn right out of room 1851
-Continue, then turn left (after passing the little corner on your right)
+Continue, then after entering the early 1800s, turn left
 Continue, then turn right (after passing room 1823 on your right)
 Continue, then turn right
 Continue, then go straight into the stairs
@@ -1696,7 +1694,7 @@ exports[`gives correct directions from 1852 to 2404 1`] = `
 "Turn right out of room 1852
 Continue, then turn left (after passing room 1852 on your right)
 Continue, then turn left
-Continue, then turn left (after passing the little corner on your right)
+Continue, then after entering the early 1800s, turn left
 Continue, then turn right (after passing room 1823 on your right)
 Continue, then turn right
 Continue, then go straight into the stairs
@@ -1853,7 +1851,7 @@ Go down 1 floor of stairs
 Go straight out of the stairs
 Continue, then turn left (after passing room 1852 on your right)
 Continue, then turn left
-Continue, then turn left (after passing the little corner on your right)
+Continue, then after entering the early 1800s, turn left
 Continue, then turn right into room 1824"
 `;
 
@@ -1892,7 +1890,7 @@ Go down 1 floor of stairs
 Go straight out of the stairs
 Continue, then turn left (after passing room 1852 on your right)
 Continue, then turn left
-Continue, then turn right into the little corner
+Continue, then after entering the early 1800s, turn right
 Continue, then turn right into room 1846"
 `;
 
@@ -2131,7 +2129,7 @@ Go down 1 floor of stairs
 Go straight out of the stairs
 Continue, then turn left (after passing room 1852 on your right)
 Continue, then turn left
-Continue, then turn right into the little corner
+Continue, then after entering the early 1800s, turn right
 Continue, then go straight into room 1845"
 `;
 
@@ -2365,7 +2363,7 @@ Go down 1 floor of stairs
 Go straight out of the stairs
 Continue, then turn left (after passing room 1852 on your right)
 Continue, then turn left
-Continue, then turn right into the little corner
+Continue, then after entering the early 1800s, turn right
 Continue, then turn right into room 1849"
 `;
 
@@ -2405,7 +2403,7 @@ Go down 1 floor of stairs
 Go straight out of the stairs
 Continue, then turn left (after passing room 1852 on your right)
 Continue, then turn left
-Continue, then turn left (after passing the little corner on your right)
+Continue, then after entering the early 1800s, turn left
 Continue, then turn left into room 1843"
 `;
 
@@ -2594,8 +2592,6 @@ Continue, then turn right into room 2848"
 
 exports[`gives correct directions from Band (1845) to Black Box Theater 1`] = `
 "Go straight out of room 1845
-Continue, then after entering the music hallway, turn right
-Continue, then turn left (after passing the little corner on your right)
 Continue, then turn right (after passing room 1823 on your right)
 Continue, then turn right
 Continue, then go straight into the stairs
@@ -2724,7 +2720,7 @@ Go down 1 floor of stairs
 Go straight out of the stairs
 Continue, then turn left (after passing room 1852 on your right)
 Continue, then turn left
-Continue, then turn left (after passing the little corner on your right)
+Continue, then after entering the early 1800s, turn left
 Continue, then turn right into room 1840"
 `;
 
