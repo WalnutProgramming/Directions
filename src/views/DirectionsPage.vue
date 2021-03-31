@@ -9,22 +9,20 @@
 
     <main>
       <div id="directions">
+        <p>
+          <small>
+            <b>Note:</b> Based on COVID precautions, when our directions tell
+            you to turn left out of a classroom, you may instead need to turn
+            right out of the classroom, then make a U-turn at the end of the
+            hallway.
+          </small>
+        </p>
         <p
           v-for="(line, index) in directions"
           :key="index + ':::' + line"
           class="direction-line"
         >
-          {{ line
-          }}<small
-            v-if="
-              line.toLowerCase().includes('turn left out of') ||
-              line.toLowerCase().includes('turn left into')
-            "
-            ><small
-              >. (Based on COVID precautions, you may instead need to turn right
-              and make a U-turn at the end of the hallway.)</small
-            ></small
-          >
+          {{ line }}
         </p>
       </div>
     </main>
@@ -66,7 +64,7 @@ export default Vue.extend({
         walnutNonAccessible.getHallwayIndexAndIndex(this.toRoom) != null
       );
     },
-    directions() {
+    directions(): string[] {
       if (this.isValid) {
         // Both have valid names, so put the directions in the HTML
         return store.getters.walnut
@@ -75,6 +73,13 @@ export default Vue.extend({
           .split("\n");
       }
       return ["Sorry, I couldn't find one of those rooms."];
+    },
+    needPrecaution(): boolean {
+      const lowercase = this.directions.join("\n").toLowerCase();
+      return (
+        lowercase.includes("turn left out of") ||
+        lowercase.includes("turn left into")
+      );
     },
     canPrint() {
       return window.print;
