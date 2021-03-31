@@ -46,7 +46,7 @@ describe("Walnut.Direct Main Functionality", () => {
     );
     cy.contains("p:nth-child(4)", "Continue, then turn right into room 3113");
     // Back button works
-    cy.get("button").should("have.length", 1).click();
+    cy.get("button").contains("Back").click();
     cy.contains("h1", "Where do you need to go?");
   });
 });
@@ -105,7 +105,7 @@ describe("My Schedule page", () => {
     cy.url().should("contain", "/directions?fromRoom=3104&toRoom=3113");
     cy.contains("Turn left out of room 3104");
     // Go back
-    cy.get("button").should("have.length", 1).click();
+    cy.get("button").contains("Back").click();
     cy.url()
       .should("contain", "/myschedule")
       .should("not.contain", "/myschedule/edit");

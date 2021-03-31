@@ -2,7 +2,7 @@
   <div>
     <div class="button-container">
       <CustomButton class="button" @click="back"> &laquo; Back </CustomButton>
-      <CustomButton v-if="canPrint" class="button" @click="print()">
+      <CustomButton v-if="canPrint" class="button" @click="print">
         Print
       </CustomButton>
     </div>
