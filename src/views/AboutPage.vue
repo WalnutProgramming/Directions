@@ -49,7 +49,7 @@
     <p class="squished-p">
       The Walnut Hills Programming Club, a chapter of
       <a href="https://interalliance.org/">INTERalliance</a>, meets every
-      Thursday in room 3104 to learn about programming and to work on projects
+      Thursday at 4:30 PM using the Google Meet code "WHProgrammingClub" to learn about programming and to work on projects
       that we will present at competitions. The club is open to everyone
       interested in computers and IT. Club members can participate in
       <a href="https://techolympics.org/">TechOlympics</a>, a weekend convention
