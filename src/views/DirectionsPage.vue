@@ -9,7 +9,7 @@
 
     <main>
       <div id="directions">
-        <p>
+        <p class="direction-line">
           <small>
             <b>Note:</b> Based on COVID precautions, when our directions tell
             you to turn left out of a classroom, you may instead need to turn
