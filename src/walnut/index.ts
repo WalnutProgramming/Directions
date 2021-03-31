@@ -9,13 +9,12 @@ import hallways from "./hallways";
 const walnutAll = new Building<ConnectionNodeId, StairNodeId>(hallways, {
   oneWayStaircases: COVID_ONE_WAY_HALLWAY_AND_STAIRS
     ? {
-        // "stair a": "down",
-        // "stair b": "down",
-        // "stair c": "up",
+        "stair a": "down",
+        "stair b": "down",
+        "stair c": "up",
+        "stair d": "up",
 
-        // // TODO: need cafeteria to uncomment both of these next 2
-        // "stair d": "down",
-        // "stair f": "down",
+        "stair f": "down",
 
         "stair music entrance to 1": "down",
         "stair to 1800s": "up",

@@ -49,7 +49,7 @@ const hallways: WalnutHallway[] = [
     new Fork(RIGHT, "lobby to 2200s", "the 2200s"),
     new Room("2210", LEFT, { aliases: ["Conference Room"] }),
     new Room("2209", RIGHT, {
-      aliases: ["10-11 Administration Office"],
+      aliases: ["10th and 11th Grade Office"],
     }),
     new Stairs(LEFT, onFloor("stair d", 2), "the 2015 stairs"),
     new Room("2101", RIGHT),
@@ -94,7 +94,6 @@ const hallways: WalnutHallway[] = [
     new Room("2212", LEFT, { aliases: ["Medical Room", "Nurse"] }),
     new Room("2214", LEFT, {
       aliases: ["COVID Isolation Room"],
-      prefix: "the",
     }),
     new Room("2211", RIGHT),
     new Room("2216", LEFT, { nodeId: "enter 2216", aliases: ["Registrar"] }),
