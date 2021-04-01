@@ -74,7 +74,7 @@
               v-model="room.value"
               :name="`room-${room.originalIndex}`"
               class="my-input"
-              style="max-width: 40vw; transition: none"
+              style="max-width: 40vw; transition: none; font-size: 1.25rem"
             />
           </SlickItem>
           <div class="list-item" style="border-radius: 15px; border: none">
