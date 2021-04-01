@@ -44,7 +44,12 @@
             v-for="(room, index) in rooms"
             :key="room.originalIndex"
             class="list-item"
-            style="border-radius: 15px; height: 9vh"
+            style="
+              border-radius: 15px;
+              height: 3rem;
+              display: flex;
+              align-items: center;
+            "
             :index="index"
             :item="room"
           >
@@ -60,7 +65,7 @@
             <MinusButton
               type="button"
               class="smallerButton"
-              style="font-size: 20px; margin-right: 10px; margin-top: 0.75vh"
+              style="font-size: 20px; margin-right: 10px"
               @click="removeIndex(index)"
             >
               —
@@ -69,7 +74,7 @@
               v-model="room.value"
               :name="`room-${room.originalIndex}`"
               class="my-input"
-              style="max-width: 40vw; font-size: 20px; transition: none"
+              style="max-width: 40vw; transition: none"
             />
           </SlickItem>
           <div class="list-item" style="border-radius: 15px; border: none">

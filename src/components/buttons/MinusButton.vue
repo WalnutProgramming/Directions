@@ -26,6 +26,10 @@ export default Vue.extend({
   border-radius: 15px;
 
   transition: var(--long-decay-ease);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-hover-area >>> .active-button:hover {

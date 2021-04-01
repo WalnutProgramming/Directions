@@ -16,7 +16,6 @@
           margin-top: 0.1em;
           margin-bottom: 0.3em;
           padding-left: 2vw;
-          padding-bottom: 2vw;
         "
         @click="go(index)"
       >

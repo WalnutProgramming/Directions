@@ -2,7 +2,6 @@
   <input
     :id="name"
     class="roomInput"
-    style="line-height: 1"
     :name="name"
     placeholder="type or select"
     autocomplete="off"
