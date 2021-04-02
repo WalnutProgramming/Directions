@@ -16,8 +16,8 @@ export default Vue.extend({
 <style scoped>
 .btn-hover-area >>> .active-button {
   color: var(--button-text-color);
-  height: 6vh;
-  width: 6vh;
+  height: 1.5em;
+  width: 1.5em;
 
   padding-left: 0px; /* for some reason ios has uneven button spacing by default, so that needs to be corrected */
   padding-right: 0px;
@@ -26,6 +26,12 @@ export default Vue.extend({
   border-radius: 7.5px;
 
   transition: var(--long-decay-ease);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /*outline: none;*/
 }
 
 .btn-hover-area >>> .active-button:hover {
