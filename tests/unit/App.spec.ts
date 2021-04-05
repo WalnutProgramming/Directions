@@ -24,14 +24,14 @@ describe("App", () => {
 
     expect(wrapper.find("p.direction-line:nth-child(1)").text())
       .toMatchInlineSnapshot(`
-      "Note: Based on COVID precautions, when our directions tell
-                you to turn left out of a classroom, you may instead need to turn
-                right out of the classroom, then make a U-turn at the end of the
-                hallway."
+      "*Note: Based on COVID precautions, when our directions tell
+                you to turn left out of or into a classroom, you may instead need to
+                turn right out of the classroom, then make a U-turn at the end of
+                the hallway."
     `);
     expect(
       wrapper.find("p.direction-line:nth-child(2)").text()
-    ).toMatchInlineSnapshot(`"Turn left out of room 3104"`);
+    ).toMatchInlineSnapshot(`"Turn left out of room 3104*"`);
     expect(
       wrapper.find("p.direction-line:nth-child(3)").text()
     ).toMatchInlineSnapshot(

@@ -9,20 +9,19 @@
 
     <main>
       <div id="directions">
-        <p v-if="needPrecaution" class="direction-line">
+        <p v-if="needsPrecaution(directionsString)" class="direction-line">
           <small>
-            <b>Note:</b> Based on COVID precautions, when our directions tell
-            you to turn left out of a classroom, you may instead need to turn
-            right out of the classroom, then make a U-turn at the end of the
-            hallway.
+            *<b>Note:</b> Based on COVID precautions, when our directions tell
+            you to turn left out of or into a room, you may instead need to turn
+            right out of the room, then make a U-turn at the end of the hallway.
           </small>
         </p>
         <p
-          v-for="(line, index) in directions"
+          v-for="(line, index) in directionsLines"
           :key="index + ':::' + line"
           class="direction-line"
         >
-          {{ line }}
+          {{ line }}{{ needsPrecaution(line) ? "*" : "" }}
         </p>
       </div>
     </main>
@@ -64,28 +63,30 @@ export default Vue.extend({
         walnutNonAccessible.getHallwayIndexAndIndex(this.toRoom) != null
       );
     },
-    directions(): string[] {
+    directionsString(): string {
       if (this.isValid) {
         // Both have valid names, so put the directions in the HTML
         return store.getters.walnut
           .getDirections(this.fromRoom, this.toRoom)!
-          .trim()
-          .split("\n");
+          .trim();
       }
-      return ["Sorry, I couldn't find one of those rooms."];
+      return "Sorry, I couldn't find one of those rooms.";
     },
-    needPrecaution(): boolean {
-      const lowercase = this.directions.join("\n").toLowerCase();
-      return (
-        lowercase.includes("turn left out of") ||
-        lowercase.includes("turn left into")
-      );
+    directionsLines(): string[] {
+      return this.directionsString.split("\n");
     },
     canPrint() {
       return window.print;
     },
   },
   methods: {
+    needsPrecaution(directions: string): boolean {
+      const lowercase = directions.toLowerCase();
+      return (
+        lowercase.includes("turn left out of") ||
+        lowercase.includes("turn left into")
+      );
+    },
     back() {
       if (this.$route.query.isFromSchedule === "true") {
         this.$router.push("/myschedule");
