@@ -12,8 +12,11 @@
         <p v-if="needsPrecaution(directionsString)" class="direction-line">
           <small>
             *<b>Note:</b> Based on COVID precautions, when our directions tell
-            you to turn left out of or into a room, you may instead need to turn
-            right out of the room, then make a U-turn at the end of the hallway.
+            you to turn left out of a room, you may instead need to turn right
+            out of the room, then make a U-turn at the end of the hallway.<br />
+            Similarly, when they tell you to turn left into a room, you may need
+            to walk to the end of the hallway and make a U-turn so that you can
+            turn right into the room.
           </small>
         </p>
         <p
