@@ -24,3 +24,5 @@ docs
 # Cypress end-to-end testing videos
 tests/e2e/videos
 tests/e2e/screenshots
+
+.vercel
