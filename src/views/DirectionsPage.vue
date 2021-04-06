@@ -9,15 +9,17 @@
 
     <main>
       <div id="directions">
-        <p v-if="needsPrecaution(directionsString)" class="direction-line">
-          <small>
-            *<b>Note:</b> Based on COVID precautions, when our directions tell
-            you to turn left out of a room, you may instead need to turn right
-            out of the room, then make a U-turn at the end of the hallway.<br />
-            Similarly, when they tell you to turn left into a room, you may need
-            to walk to the end of the hallway and make a U-turn so that you can
-            turn right into the room.
-          </small>
+        <p
+          v-if="needsPrecaution(directionsString)"
+          class="precaution direction-line"
+        >
+          *<b>Note:</b> Based on COVID precautions, when our directions tell you
+          to turn <b>left</b> out of a room, you should instead turn
+          <b>right</b> out of the room, then make a U-turn at the end of the
+          hallway.<br />
+          Similarly, when the directions tell you to turn <b>left</b> &#32;
+          <i>into</i> a room, you should walk to the end of the hallway and make
+          a U-turn so you can come back and turn <b>right</b> into the room.
         </p>
         <p
           v-for="(line, index) in directionsLines"
@@ -145,5 +147,9 @@ export default Vue.extend({
 .button-container .button {
   font-size: 0.5em;
   padding-left: 1vw;
+}
+
+.precaution {
+  font-size: 0.6em;
 }
 </style>
