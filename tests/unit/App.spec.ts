@@ -24,10 +24,13 @@ describe("App", () => {
 
     expect(wrapper.find("p.direction-line:nth-child(1)").text())
       .toMatchInlineSnapshot(`
-      "*Note: Based on COVID precautions, when our directions tell
-                you to turn left out of or into a classroom, you may instead need to
-                turn right out of the classroom, then make a U-turn at the end of
-                the hallway."
+      "*Note: Based on COVID precautions, when our directions tell you
+              to turn left out of a room, you should instead turn
+              right out of the room, then make a U-turn at the end of the
+              hallway.
+              Similarly, when the directions tell you to turn left  
+              into a room, you should walk to the end of the hallway and make
+              a U-turn so you can come back and turn right into the room."
     `);
     expect(
       wrapper.find("p.direction-line:nth-child(2)").text()
