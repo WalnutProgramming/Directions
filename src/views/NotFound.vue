@@ -2,6 +2,9 @@
   <div id="main">
     <p>404 Page Not Found</p>
     <img src="../assets/WalnutImage.jpg" />
+    <button onclick="location.href='myschedule'">
+      Go back to the schedule page
+    </button>
   </div>
 </template>
 
@@ -14,22 +17,28 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-#main {
-  width: 100%;
+div {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
 img {
-  height: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
   width: 50%;
+  height: 50%;
+}
+
+button {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  margin-top: 2em;
 }
 
 p {
   text-align: center;
+  display: inline;
 }
 </style>
