@@ -41,6 +41,7 @@ export default Vue.extend({
     }
     for (const node in graph) {
       for (const node2 in graph[node]) {
+        const isDoubled = graph[node2] && graph[node2][node];
         if (
           e.filter(
             ({ from, to }) =>
@@ -51,6 +52,8 @@ export default Vue.extend({
           e.push({
             from: Object.keys(graph).indexOf(node),
             to: Object.keys(graph).indexOf(node2),
+            arrows: isDoubled ? "from, to" : "to",
+            color: { color: isDoubled ? "green" : "red" },
           });
       }
     }
