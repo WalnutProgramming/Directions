@@ -2,7 +2,8 @@
   <div>
     <p style="font-size: 0.5em">
       This is the graph/network used to calculate directions in Walnut.Direct
-      using Dijkstra's algorithm. It'll take a minute to load. Scroll to zoom.
+      using Dijkstra's algorithm. It'll take a minute to load. Scroll to zoom if
+      you're on a computer.
     </p>
     <div id="mynetwork" ref="mynetwork">Loading...</div>
   </div>
