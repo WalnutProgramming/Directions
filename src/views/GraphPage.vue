@@ -4,8 +4,9 @@
       This is the graph/network used to calculate directions in Walnut.Direct
       using Dijkstra's algorithm. It'll take a minute to load. Scroll to zoom if
       you're on a computer.
+      <b v-if="loading"><br />Loading...</b>
     </p>
-    <div id="mynetwork" ref="mynetwork">Loading...</div>
+    <div id="mynetwork" ref="mynetwork"></div>
   </div>
 </template>
 
@@ -30,6 +31,7 @@ function nodeName(node: string) {
 }
 
 export default Vue.extend({
+  data: () => ({ loading: true }),
   mounted() {
     const { graph } = walnut;
 
@@ -68,7 +70,9 @@ export default Vue.extend({
     const options = {
       layout: { improvedLayout: false },
     };
-    new Network(container, data, options);
+    const network = new Network(container, data, options);
+
+    network.once("afterDrawing", () => (this.loading = false));
   },
 });
 </script>
