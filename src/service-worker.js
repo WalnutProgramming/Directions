@@ -56,3 +56,5 @@ workbox.routing.registerRoute(
 // taking over the page.)
 workbox.core.skipWaiting();
 workbox.core.clientsClaim();
+
+// This comment is a test change (delete this later)
