@@ -2,7 +2,7 @@
   <div id="main">
     <p>404 Page Not Found</p>
     <img src="../assets/WalnutImage.jpg" />
-    <button onclick="location.href='myschedule'">
+    <button @click="$router.push('/myschedule')">
       Go back to the schedule page
     </button>
   </div>
