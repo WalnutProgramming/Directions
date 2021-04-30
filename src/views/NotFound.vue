@@ -12,7 +12,7 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  metaInfo: { title: "NotFound" },
+  metaInfo: { title: "Not Found" },
 });
 </script>
 
