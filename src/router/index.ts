@@ -7,6 +7,7 @@ import MyScheduleEdit from "@/views/MyScheduleEdit.vue";
 import About from "@/views/AboutPage.vue";
 import Feedback from "@/views/FeedbackPage.vue";
 import Settings from "@/views/SettingsPage.vue";
+import NotFound from "@/views/NotFound.vue";
 
 Vue.use(VueRouter);
 
@@ -43,7 +44,7 @@ const routes = [
   // fallback (client-side 404)
   {
     path: "*",
-    redirect: "/",
+    component: NotFound,
   },
 ];
 
