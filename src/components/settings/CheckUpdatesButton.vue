@@ -30,10 +30,10 @@ export default defineComponent({
         this.spin = false;
         if (!(window as any).needsRefresh) {
           // @ts-ignore TODO migrate
-          this.$snack.show({
-            text: "No updates found",
-            button: "",
-          });
+          // this.$snack.show({
+          //   text: "No updates found",
+          //   button: "",
+          // });
         }
       }, 4000);
     },
