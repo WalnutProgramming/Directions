@@ -9,15 +9,17 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 
-export default Vue.extend({
+export default defineComponent({
   computed: {
     accessibilityMode: {
-      get() {
+      get(): boolean {
+        // @ts-ignore TODO migrate
         return this.$store.state.isAccessibilityMode;
       },
-      set(newVal) {
+      set(newVal: boolean) {
+        // @ts-ignore TODO migrate
         this.$store.commit("setAccessibilityMode", newVal);
       },
     },

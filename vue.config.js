@@ -33,5 +33,21 @@ module.exports = {
   // when not using yarn link.
   chainWebpack: (config) => {
     config.resolve.symlinks(false);
+
+    config.resolve.alias.set("vue", "@vue/compat");
+
+    config.module
+      .rule("vue")
+      .use("vue-loader")
+      .tap((options) => {
+        return {
+          ...options,
+          compilerOptions: {
+            compatConfig: {
+              MODE: 2,
+            },
+          },
+        };
+      });
   },
 };

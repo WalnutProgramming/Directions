@@ -22,14 +22,14 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 import AccessibilitySlider from "@/components/settings/AccessibilitySlider.vue";
 import ThemeSlider from "@/components/settings/ThemeSlider.vue";
 import RefreshButton from "@/components/settings/RefreshButton.vue";
 import CheckUpdatesButton from "@/components/settings/CheckUpdatesButton.vue";
 import DeleteDataButton from "@/components/settings/DeleteDataButton.vue";
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     AccessibilitySlider,
     RefreshButton,

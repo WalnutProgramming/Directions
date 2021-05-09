@@ -1,3 +1,6 @@
+// migrate TODO remove
+// @ts-nocheck
+
 /* eslint-disable default-case */
 import {
   Direction,

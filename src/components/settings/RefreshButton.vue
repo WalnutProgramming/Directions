@@ -10,10 +10,10 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 import { showMessageOnNextPageReload } from "@/showMessageOnNextPageReload";
 
-export default Vue.extend({
+export default defineComponent({
   methods: {
     reloadPage() {
       showMessageOnNextPageReload("Refreshed app");

@@ -12,10 +12,10 @@
 <script lang="ts">
 /// <reference path="../../vue-snack-vue-property.d.ts" />
 
-import Vue from "vue";
+import { defineComponent } from "vue";
 import { refreshToUpdate } from "@/showMessageOnNextPageReload";
 
-export default Vue.extend({
+export default defineComponent({
   data() {
     return { spin: false };
   },
@@ -28,6 +28,7 @@ export default Vue.extend({
         document.removeEventListener("needs-refresh", refreshToUpdate);
         this.spin = false;
         if (!(window as any).needsRefresh) {
+          // @ts-ignore TODO migrate
           this.$snack.show({
             text: "No updates found",
             button: "",

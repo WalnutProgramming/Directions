@@ -37,11 +37,11 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 import EditButton from "@/components/buttons/EditButton.vue";
 import ScheduleList from "@/components/ScheduleList.vue";
 
-export default Vue.extend({
+export default defineComponent({
   components: { EditButton, ScheduleList },
   data() {
     const stored = localStorage.getItem("myschedule");

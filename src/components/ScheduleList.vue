@@ -27,7 +27,7 @@
 
 <script lang="ts">
 // eslint-disable-next-line no-unused-vars
-import Vue, { PropType } from "vue";
+import { defineComponent, PropType } from "vue";
 import CustomButton from "@/components/buttons/CustomButton.vue";
 
 interface StoredRoom {
@@ -43,7 +43,7 @@ function range(len: number) {
   return [...Array(len).keys()];
 }
 
-export default Vue.extend({
+export default defineComponent({
   components: { CustomButton },
   props: {
     allRooms: { type: Array as PropType<StoredRoom[]>, required: true },
@@ -53,11 +53,12 @@ export default Vue.extend({
     },
   },
   computed: {
-    orderWithDefault() {
+    // migrate TODO: remove
+    orderWithDefault(): any {
       return this.order ?? range(this.allRooms.length);
     },
     rooms(): StoredRoomWithActualIndex[] {
-      return this.orderWithDefault.map((ind) => ({
+      return this.orderWithDefault.map((ind: number) => ({
         ...(this.allRooms[ind] ?? { value: "", originalIndex: 0 }),
         actualIndex: ind,
       }));

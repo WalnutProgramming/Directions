@@ -9,10 +9,10 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 import CustomButton from "@/components/buttons/CustomButton.vue";
 
-export default Vue.extend({
+export default defineComponent({
   metaInfo: { title: "Not Found" },
   components: { CustomButton },
 });

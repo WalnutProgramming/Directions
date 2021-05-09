@@ -9,15 +9,17 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 
-export default Vue.extend({
+export default defineComponent({
   computed: {
     darkTheme: {
       get() {
+        // @ts-ignore TODO migrate
         return this.$store.state.isDarkMode;
       },
       set(newVal) {
+        // @ts-ignore TODO migrate
         this.$store.commit("setDarkTheme", newVal);
       },
     },

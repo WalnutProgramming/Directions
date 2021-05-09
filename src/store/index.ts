@@ -1,8 +1,6 @@
-import Vue from "vue";
+import { defineComponent } from "vue";
 import Vuex from "vuex";
 import { walnutAccessible, walnutNonAccessible } from "@/walnut";
-
-Vue.use(Vuex);
 
 const SETTINGS_LOCALSTORAGE = "settings";
 

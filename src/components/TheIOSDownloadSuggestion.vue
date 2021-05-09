@@ -20,9 +20,9 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 
-export default Vue.extend({
+export default defineComponent({
   computed: {
     showiOSDownloadSuggestion() {
       // If it's an iOS device and we're not already in the PWA, unhide the #iosDownloadSuggestion

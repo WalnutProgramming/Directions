@@ -34,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 // eslint-disable-next-line no-unused-vars
 import { Room } from "room-finder";
 import CustomButton from "@/components/buttons/CustomButton.vue";
@@ -50,7 +50,7 @@ function fullNameOf(roomName: string) {
   ] as Room<string>).fullName;
 }
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     CustomButton,
   },
@@ -62,7 +62,7 @@ export default Vue.extend({
     return {};
   },
   computed: {
-    isValid() {
+    isValid(): boolean {
       return (
         walnutNonAccessible.getHallwayIndexAndIndex(this.fromRoom) != null &&
         walnutNonAccessible.getHallwayIndexAndIndex(this.toRoom) != null

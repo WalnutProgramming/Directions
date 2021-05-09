@@ -3,6 +3,7 @@
     <header>
       <nav>
         <ul>
+          <!-- migrate TODO -->
           <router-link tag="li" to="/" exact>
             <a> Home </a>
           </router-link>
@@ -43,12 +44,12 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 
 import TheRoomsDataList from "@/components/TheRoomsDataList.vue";
 import router from "@/router/index";
 
-export default Vue.extend({
+export default defineComponent({
   router,
   components: { TheRoomsDataList },
   data() {

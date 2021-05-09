@@ -1,3 +1,6 @@
+// migrate TODO remove
+// @ts-nocheck
+
 import { Building } from "room-finder";
 import {
   ConnectionNodeId,
