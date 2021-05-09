@@ -14,6 +14,7 @@ export default defineComponent({
     type: { type: String, default: "submit" },
     buttonStyle: { type: String, default: "" },
   },
+  emits: ["click"],
 });
 </script>
 

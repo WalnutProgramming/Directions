@@ -8,6 +8,7 @@ import BasicButton from "./BasicButton.vue";
 
 export default defineComponent({
   components: { BasicButton },
+  emits: ["click"],
 });
 </script>
 

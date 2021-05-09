@@ -52,6 +52,7 @@ export default defineComponent({
       default: null,
     },
   },
+  emits: ["go"],
   computed: {
     // migrate TODO: remove
     orderWithDefault(): any {

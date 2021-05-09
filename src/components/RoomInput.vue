@@ -19,6 +19,7 @@ export default defineComponent({
   props: {
     name: { type: String, required: true },
   },
+  emits: ["input", "change"],
   data() {
     return { value: "" };
   },

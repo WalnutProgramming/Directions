@@ -18,6 +18,7 @@ export default defineComponent({
     buttonStyle: { type: String, default: "" },
     typeSubmit: { type: Boolean, default: true },
   },
+  emits: ["click"],
 });
 </script>
 
