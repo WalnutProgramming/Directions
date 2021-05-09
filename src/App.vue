@@ -214,7 +214,7 @@ header li.router-link-active a {
   transition: opacity 0.5s ease;
 }
 
-.fade-enter,
+.fade-enter-active,
 .fade-leave-active {
   opacity: 0;
 }
@@ -227,13 +227,13 @@ header li.router-link-active a {
   /*padding: 1vw;*/
   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
-.slide-left-enter,
+.slide-left-enter-from,
 .slide-right-leave-active {
   opacity: 0;
   transform: translate(30px, 0);
 }
 .slide-left-leave-active,
-.slide-right-enter {
+.slide-right-enter-from {
   opacity: 0;
   transform: translate(-30px, 0);
 }
