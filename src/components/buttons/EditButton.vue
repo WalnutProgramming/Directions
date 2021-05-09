@@ -12,7 +12,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.btn-hover-area >>> .active-button {
+.btn-hover-area ::v-deep(.active-button) {
   color: var(--button-text-color);
   padding: 8px 25px;
 
@@ -33,7 +33,7 @@ export default defineComponent({
   border-radius: 100px;
 }
 
-.btn-hover-area:hover >>> .active-button {
+.btn-hover-area:hover ::v-deep(.active-button) {
   margin-top: 6px;
   margin-bottom: 0px;
   box-shadow: 0px 0px var(--edit-button-shade-color),

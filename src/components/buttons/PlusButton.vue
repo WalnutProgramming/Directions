@@ -14,7 +14,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.btn-hover-area >>> .active-button {
+.btn-hover-area ::v-deep(.active-button) {
   color: var(--button-text-color);
   height: 1.5em;
   width: 1.5em;
@@ -34,12 +34,12 @@ export default defineComponent({
   /*outline: none;*/
 }
 
-.btn-hover-area >>> .active-button:hover {
+.btn-hover-area ::v-deep(.active-button:hover) {
   cursor: pointer;
 }
 
 @media (hover: hover) {
-  .btn-hover-area >>> .active-button:hover {
+  .btn-hover-area ::v-deep(.active-button:hover) {
     background-color: var(--plus-button-hover-color);
     color: var(--button-text-color);
     transition: var(--long-decay-ease);
