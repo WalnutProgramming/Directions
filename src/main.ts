@@ -28,7 +28,7 @@ const app = createApp(App)
   // .use(VueSnackbar, { close: true })
   // migrate TODO
   .use(Meta as any)
-  .use(router as any)
+  .use(router)
   .use(store);
 
 const vm = app.mount("#app");
