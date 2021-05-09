@@ -5,9 +5,9 @@
     :name="name"
     placeholder="type or select"
     autocomplete="off"
-    :value="value"
+    :value="modelValue"
     list="roomsList"
-    @input="$emit('input', $event.target.value)"
+    @input="$emit('update:modelValue', $event.target.value)"
     @change="$emit('change', $event.target.value)"
   />
 </template>
@@ -16,10 +16,13 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
+  // TODO compat
+  compatConfig: { COMPONENT_V_MODEL: false },
   props: {
+    modelValue: { type: String, required: true },
     name: { type: String, required: true },
   },
-  emits: ["input", "change"],
+  emits: ["update:modelValue", "change"],
   data() {
     return { value: "" };
   },
