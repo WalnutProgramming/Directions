@@ -4,13 +4,31 @@
       <nav>
         <ul>
           <!-- migrate TODO -->
-          <router-link v-slot="{ navigate, href }" to="/" exact custom>
-            <li>
+          <router-link
+            v-slot="{ navigate, href, isActive, isExactActive }"
+            to="/"
+            custom
+          >
+            <li
+              :class="[
+                isActive && 'router-link-active',
+                isExactActive && 'router-link-exact-active',
+              ]"
+            >
               <a :href="href" @click="navigate"> Home </a>
             </li>
           </router-link>
-          <router-link v-slot="{ navigate, href }" to="/myschedule" custom>
-            <li>
+          <router-link
+            v-slot="{ navigate, href, isActive, isExactActive }"
+            to="/myschedule"
+            custom
+          >
+            <li
+              :class="[
+                isActive && 'router-link-active',
+                isExactActive && 'router-link-exact-active',
+              ]"
+            >
               <a :href="href" @click="navigate"> My Schedule </a>
             </li>
           </router-link>
@@ -26,18 +44,45 @@
               >Floor Map</a
             >
           </li>
-          <router-link v-slot="{ navigate, href }" to="/settings" custom>
-            <li>
+          <router-link
+            v-slot="{ navigate, href, isActive, isExactActive }"
+            to="/settings"
+            custom
+          >
+            <li
+              :class="[
+                isActive && 'router-link-active',
+                isExactActive && 'router-link-exact-active',
+              ]"
+            >
               <a :href="href" @click="navigate"> Settings </a>
             </li>
           </router-link>
-          <router-link v-slot="{ navigate, href }" to="/about" custom>
-            <li>
+          <router-link
+            v-slot="{ navigate, href, isActive, isExactActive }"
+            to="/about"
+            custom
+          >
+            <li
+              :class="[
+                isActive && 'router-link-active',
+                isExactActive && 'router-link-exact-active',
+              ]"
+            >
               <a :href="href" @click="navigate"> About </a>
             </li>
           </router-link>
-          <router-link v-slot="{ navigate, href }" to="/feedback" custom>
-            <li>
+          <router-link
+            v-slot="{ navigate, href, isActive, isExactActive }"
+            to="/feedback"
+            custom
+          >
+            <li
+              :class="[
+                isActive && 'router-link-active',
+                isExactActive && 'router-link-exact-active',
+              ]"
+            >
               <a :href="href" @click="navigate"> Feedback </a>
             </li>
           </router-link>
@@ -45,9 +90,11 @@
       </nav>
     </header>
 
-    <transition :name="transitionName">
-      <router-view id="main-stuff" class="child-view"></router-view>
-    </transition>
+    <router-view id="main-stuff" v-slot="{ Component }" class="child-view">
+      <transition :name="transitionName">
+        <component :is="Component" />
+      </transition>
+    </router-view>
 
     <TheRoomsDataList />
   </div>
@@ -84,6 +131,7 @@ export default defineComponent({
     },
   },
   mounted() {
+    // TODO migrate not working
     const currentRouteNavItem = document.querySelector(
       "header li.router-link-active a"
     );
