@@ -13,6 +13,7 @@ import { defineComponent } from "vue";
 import CustomButton from "@/components/buttons/CustomButton.vue";
 
 export default defineComponent({
+  compatConfig: { MODE: 3, INSTANCE_EVENT_HOOKS: true },
   metaInfo: { title: "Not Found" },
   components: { CustomButton },
 });

@@ -51,6 +51,7 @@ function fullNameOf(roomName: string) {
 }
 
 export default defineComponent({
+  compatConfig: { MODE: 3, INSTANCE_EVENT_HOOKS: true },
   components: {
     CustomButton,
   },

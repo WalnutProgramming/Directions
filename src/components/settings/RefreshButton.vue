@@ -14,6 +14,7 @@ import { defineComponent } from "vue";
 import { showMessageOnNextPageReload } from "@/showMessageOnNextPageReload";
 
 export default defineComponent({
+  compatConfig: { MODE: 3, INSTANCE_EVENT_HOOKS: true },
   methods: {
     reloadPage() {
       showMessageOnNextPageReload("Refreshed app");

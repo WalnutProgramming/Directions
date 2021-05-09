@@ -23,6 +23,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
+  compatConfig: { MODE: 3, INSTANCE_EVENT_HOOKS: true },
   computed: {
     showiOSDownloadSuggestion() {
       // If it's an iOS device and we're not already in the PWA, unhide the #iosDownloadSuggestion

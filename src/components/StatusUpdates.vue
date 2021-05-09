@@ -25,6 +25,14 @@
   </div>
 </template>
 
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  compatConfig: { MODE: 3, INSTANCE_EVENT_HOOKS: true },
+});
+</script>
+
 <style scoped>
 .container {
   display: flex;

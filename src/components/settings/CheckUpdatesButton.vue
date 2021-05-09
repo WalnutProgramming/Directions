@@ -16,6 +16,7 @@ import { defineComponent } from "vue";
 import { refreshToUpdate } from "@/showMessageOnNextPageReload";
 
 export default defineComponent({
+  compatConfig: { MODE: 3, INSTANCE_EVENT_HOOKS: true },
   data() {
     return { spin: false };
   },

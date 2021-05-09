@@ -12,6 +12,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
+  compatConfig: { MODE: 3, INSTANCE_EVENT_HOOKS: true },
   computed: {
     accessibilityMode: {
       get(): boolean {

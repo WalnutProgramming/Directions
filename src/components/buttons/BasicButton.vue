@@ -10,6 +10,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
+  compatConfig: { MODE: 3, INSTANCE_EVENT_HOOKS: true },
   props: {
     type: { type: String, default: "submit" },
     buttonStyle: { type: String, default: "" },
