@@ -90,9 +90,9 @@
       </nav>
     </header>
 
-    <router-view id="main-stuff" v-slot="{ Component }" class="child-view">
+    <router-view v-slot="{ Component }">
       <transition :name="transitionName">
-        <component :is="Component" />
+        <component :is="Component" id="main-stuff" class="child-view" />
       </transition>
     </router-view>
 
