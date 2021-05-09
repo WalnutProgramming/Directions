@@ -9,7 +9,7 @@ import { defineComponent } from "vue";
 import CustomButton from "./buttons/CustomButton.vue";
 
 export default defineComponent({
-  compatConfig: { MODE: 3, INSTANCE_EVENT_HOOKS: true },
+  compatConfig: { MODE: 3 },
   components: {
     CustomButton,
   },

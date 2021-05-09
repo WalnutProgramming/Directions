@@ -71,7 +71,7 @@ export default defineComponent({
   setup() {
     return { fullNameOf };
   },
-  compatConfig: { MODE: 3, INSTANCE_EVENT_HOOKS: true },
+  compatConfig: { MODE: 3 },
   data() {
     return {};
   },

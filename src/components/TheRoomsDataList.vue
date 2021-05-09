@@ -13,7 +13,7 @@ import { walnutNonAccessible } from "@/walnut";
 const { roomsList } = walnutNonAccessible;
 
 export default defineComponent({
-  compatConfig: { MODE: 3, INSTANCE_EVENT_HOOKS: true },
+  compatConfig: { MODE: 3 },
   computed: {
     roomsList: () => roomsList,
   },

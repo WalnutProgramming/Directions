@@ -29,7 +29,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  compatConfig: { MODE: 3, INSTANCE_EVENT_HOOKS: true },
+  compatConfig: { MODE: 3 },
 });
 </script>
 
