@@ -3,7 +3,8 @@
 // polyfill needed for vue-snack IE support
 import "core-js/features/array/from";
 
-import { createApp, nextTick } from "vue";
+// @ts-ignore
+import { createApp, nextTick, configureCompat } from "vue";
 import VueSnackbar from "vue-snack";
 import "vue-snack/dist/vue-snack.min.css";
 import Meta from "vue-meta";
@@ -11,11 +12,17 @@ import Meta from "vue-meta";
 import App from "@/App.vue";
 import router from "@/router";
 import "@/registerServiceWorker";
+
 import store from "./store";
 import {
   messageOnNextPageReloadKey,
   refreshToUpdate,
 } from "./showMessageOnNextPageReload";
+
+// @ts-ignore
+
+// TODO compat
+configureCompat({ RENDER_FUNCTION: false });
 
 const app = createApp(App)
   .use(VueSnackbar, { close: true })

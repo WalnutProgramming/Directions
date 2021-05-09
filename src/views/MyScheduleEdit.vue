@@ -34,7 +34,7 @@
       </p>
       <form id="scheduleForm">
         <SlickList
-          v-model="rooms"
+          v-model:list="rooms"
           class="list"
           lock-axis="y"
           :press-delay="50"
