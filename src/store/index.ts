@@ -48,7 +48,8 @@ settings.watch(
   (dark: boolean) => {
     setTheme(dark);
     document.querySelector("body")?.classList.add("enable-transition");
-  }
+  },
+  { deep: true }
 );
 
 // export default new Vuex.Store({

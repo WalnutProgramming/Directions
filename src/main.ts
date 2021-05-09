@@ -22,7 +22,7 @@ import {
 // @ts-ignore
 
 // TODO compat
-configureCompat({ RENDER_FUNCTION: false });
+configureCompat({ RENDER_FUNCTION: false, WATCH_ARRAY: false });
 
 const app = createApp(App)
   .use(VueSnackbar, { close: true })
