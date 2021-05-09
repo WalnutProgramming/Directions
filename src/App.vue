@@ -4,11 +4,15 @@
       <nav>
         <ul>
           <!-- migrate TODO -->
-          <router-link tag="li" to="/" exact>
-            <a> Home </a>
+          <router-link v-slot="{ navigate, href }" to="/" exact custom>
+            <li>
+              <a :href="href" @click="navigate"> Home </a>
+            </li>
           </router-link>
-          <router-link tag="li" to="/myschedule">
-            <a> My Schedule </a>
+          <router-link v-slot="{ navigate, href }" to="/myschedule" custom>
+            <li>
+              <a :href="href" @click="navigate"> My Schedule </a>
+            </li>
           </router-link>
           <li>
             <a
@@ -22,14 +26,20 @@
               >Floor Map</a
             >
           </li>
-          <router-link tag="li" to="/settings">
-            <a> Settings </a>
+          <router-link v-slot="{ navigate, href }" to="/settings" custom>
+            <li>
+              <a :href="href" @click="navigate"> Settings </a>
+            </li>
           </router-link>
-          <router-link tag="li" to="/about">
-            <a> About </a>
+          <router-link v-slot="{ navigate, href }" to="/about" custom>
+            <li>
+              <a :href="href" @click="navigate"> About </a>
+            </li>
           </router-link>
-          <router-link tag="li" to="/feedback">
-            <a> Feedback </a>
+          <router-link v-slot="{ navigate, href }" to="/feedback" custom>
+            <li>
+              <a :href="href" @click="navigate"> Feedback </a>
+            </li>
           </router-link>
         </ul>
       </nav>
