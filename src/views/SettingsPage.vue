@@ -18,6 +18,14 @@
         >MIT License</a
       >.
     </div>
+
+    <teleport to="head">
+      <title>Walnut.Direct - Settings</title>
+      <meta
+        name="description"
+        content="Straightforward directions between rooms in Walnut Hills High School. Created by the Walnut Hills Programming Club."
+      />
+    </teleport>
   </div>
 </template>
 

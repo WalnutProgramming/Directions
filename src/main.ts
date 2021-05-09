@@ -7,17 +7,13 @@ import "core-js/features/array/from";
 import { createApp, nextTick, configureCompat } from "vue";
 // import VueSnackbar from "vue-snack";
 // import "vue-snack/dist/vue-snack.min.css";
-import Meta from "vue-meta";
 
 import App from "@/App.vue";
 import router from "@/router";
 import "@/registerServiceWorker";
 
 import store from "./store";
-import {
-  messageOnNextPageReloadKey,
-  refreshToUpdate,
-} from "./showMessageOnNextPageReload";
+import { messageOnNextPageReloadKey } from "./showMessageOnNextPageReload";
 
 // @ts-ignore
 
@@ -26,8 +22,6 @@ configureCompat({ RENDER_FUNCTION: false, WATCH_ARRAY: false });
 
 const app = createApp(App)
   // .use(VueSnackbar, { close: true })
-  // migrate TODO
-  .use(Meta as any)
   .use(router)
   .use(store);
 

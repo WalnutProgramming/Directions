@@ -98,6 +98,8 @@
 
     <TheRoomsDataList />
   </div>
+
+  <teleport to="head"> </teleport>
 </template>
 
 <script lang="ts">
@@ -141,21 +143,6 @@ export default defineComponent({
     if (currentRouteNavItem != null) {
       currentRouteNavItem.scrollIntoView({ inline: "center" });
     }
-  },
-  metaInfo: {
-    // if no subcomponents specify a metaInfo.title, this title will be used
-    title: "Walnut Hills Directions",
-    // all titles will be injected into this template
-    titleTemplate: `Walnut.Direct - %s`,
-
-    meta: [
-      {
-        vmid: "description",
-        name: "description",
-        content:
-          "Straightforward directions between rooms in Walnut Hills High School. Created by the Walnut Hills Programming Club.",
-      },
-    ],
   },
 });
 </script>

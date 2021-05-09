@@ -5,6 +5,14 @@
     <CustomButton id="button" @click="$router.push('/')"
       >Go back to the home page</CustomButton
     >
+
+    <teleport to="head">
+      <title>Walnut.Direct - Not Found</title>
+      <meta
+        name="description"
+        content="Straightforward directions between rooms in Walnut Hills High School. Created by the Walnut Hills Programming Club."
+      />
+    </teleport>
   </div>
 </template>
 
@@ -14,7 +22,6 @@ import CustomButton from "@/components/buttons/CustomButton.vue";
 
 export default defineComponent({
   compatConfig: { MODE: 3, INSTANCE_EVENT_HOOKS: true },
-  metaInfo: { title: "Not Found" },
   components: { CustomButton },
 });
 </script>

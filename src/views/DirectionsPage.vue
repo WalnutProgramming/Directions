@@ -30,6 +30,16 @@
         </p>
       </div>
     </main>
+
+    <teleport to="head">
+      <title>Walnut.Direct - {{ fromRoom }} to {{ toRoom }}</title>
+      <meta
+        name="description"
+        :content="`Directions from ${fullNameOf(fromRoom)} to ${fullNameOf(
+          toRoom
+        )} in Walnut Hills High School.`"
+      />
+    </teleport>
   </div>
 </template>
 
@@ -51,7 +61,6 @@ function fullNameOf(roomName: string) {
 }
 
 export default defineComponent({
-  compatConfig: { MODE: 3, INSTANCE_EVENT_HOOKS: true },
   components: {
     CustomButton,
   },
@@ -59,6 +68,10 @@ export default defineComponent({
     fromRoom: { type: String, default: "" },
     toRoom: { type: String, default: "" },
   },
+  setup() {
+    return { fullNameOf };
+  },
+  compatConfig: { MODE: 3, INSTANCE_EVENT_HOOKS: true },
   data() {
     return {};
   },
@@ -103,23 +116,6 @@ export default defineComponent({
     print() {
       window.print();
     },
-  },
-  metaInfo() {
-    const { fromRoom, toRoom, isValid } = this as any;
-    return isValid
-      ? {
-          title: `${fromRoom} to ${toRoom}`,
-          meta: [
-            {
-              vmid: "description",
-              name: "description",
-              content: `Directions from ${fullNameOf(fromRoom)} to ${fullNameOf(
-                toRoom
-              )} in Walnut Hills High School.`,
-            },
-          ],
-        }
-      : {};
   },
 });
 </script>

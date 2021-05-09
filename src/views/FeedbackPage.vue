@@ -19,6 +19,14 @@
     >
       Loading Google Form…
     </iframe>
+
+    <teleport to="head">
+      <title>Walnut.Direct - Feedback</title>
+      <meta
+        name="description"
+        content="Report problems with Walnut.Direct or ask us a question."
+      />
+    </teleport>
   </div>
 </template>
 
@@ -27,16 +35,6 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   compatConfig: { MODE: 3, INSTANCE_EVENT_HOOKS: true },
-  metaInfo: {
-    title: "Feedback",
-    meta: [
-      {
-        vmid: "description",
-        name: "description",
-        content: "Report problems with Walnut.Direct or ask us a question.",
-      },
-    ],
-  },
 });
 </script>
 

@@ -18,7 +18,6 @@
     "register-service-worker": "^1.6.2",
     "room-finder": "0.3.0-beta.2",
     "vue": "^3.1.0-0",
-    "vue-meta": "^2.3.1",
     "vue-router": "4",
     "vue-slicksort": "^2.0.0-alpha.5",
     "vue-snack": "^0.1.4",
