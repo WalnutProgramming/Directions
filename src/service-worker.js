@@ -1,6 +1,12 @@
 /* eslint-disable no-undef */
 // eslint-disable-next-line no-restricted-globals, no-underscore-dangle
-workbox.precaching.precacheAndRoute(self.__precacheManifest || []);
+const precacheManifest = self.__precacheManifest || [];
+
+workbox.precaching.precacheAndRoute(
+  precacheManifest.filter(
+    (p) => !p.url.includes("graphpage") && !p.url.includes("legacy")
+  )
+);
 
 // https://developers.google.com/web/tools/workbox/guides/common-recipes#cache_css_and_javascript_files
 workbox.routing.registerRoute(

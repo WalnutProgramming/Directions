@@ -41,6 +41,11 @@ const routes = [
     path: "/settings",
     component: Settings,
   },
+  {
+    path: "/graph",
+    component: () =>
+      import(/* webpackChunkName: 'graphpage' */ "@/views/GraphPage.vue"),
+  },
   // fallback (client-side 404)
   {
     path: "*",
