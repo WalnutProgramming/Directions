@@ -204,7 +204,7 @@ header li.router-link-active a {
   transition: opacity 0.5s ease;
 }
 
-.fade-enter-active,
+.fade-enter-from,
 .fade-leave-active {
   opacity: 0;
 }
