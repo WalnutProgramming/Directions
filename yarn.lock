@@ -11042,10 +11042,10 @@ vue-slicksort@^2.0.0-alpha.5:
   resolved "https://registry.yarnpkg.com/vue-slicksort/-/vue-slicksort-2.0.0-alpha.5.tgz#b1c09ed1882105001b1ea5f7fea0e81efadf3c70"
   integrity sha512-OETVkNwC/w7nfW/5xKl5wnvuKYG7Ml+lFOxbcqo0ETpcgNv30e/+rkwaXakb6PVkpr+v+1jbKP8nbkYObtyooQ==
 
-vue-snack-notify@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/vue-snack-notify/-/vue-snack-notify-0.0.5.tgz#f673a91d6311124ce48f86e383fc8dcdf534113c"
-  integrity sha512-pLjCdDb1rSgZcXIuLg6VgTiSE9ljhEROn/9/Kdu1k0zJ4gyWUfuZntEQD2pTFlondzYfQZWrNeDBTrH3rXqY+w==
+vue-snack-notify@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/vue-snack-notify/-/vue-snack-notify-0.0.6.tgz#08e5b26e9d85f62922ed7794966a18686b1c7ffd"
+  integrity sha512-UhSoeqi99EwwR5M19bnE6w0i4RkLG6FmzrErfwk6VVvdJ56BfpCNc1Js9fCyg5+HJQ/8wKuu5bDYqSpi5+PEjg==
 
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.3:
   version "4.1.3"

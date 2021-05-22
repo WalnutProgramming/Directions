@@ -19,7 +19,7 @@
     "vue": "^3.1.0-0",
     "vue-router": "4",
     "vue-slicksort": "^2.0.0-alpha.5",
-    "vue-snack-notify": "^0.0.5",
+    "vue-snack-notify": "^0.0.6",
     "vuex": "4"
   },
   "devDependencies": {
