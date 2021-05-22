@@ -113,13 +113,16 @@ export default defineComponent({
   components: { TheRoomsDataList },
   data() {
     return {
-      transitionName: "fade",
+      transitionName: "",
     };
   },
   watch: {
     $route: {
       handler(to, from) {
-        if (
+        if (from?.matched?.length === 0) {
+          // Don't do transition on initial render
+          this.transitionName = "";
+        } else if (
           "media" in window &&
           window.matchMedia("(prefers-reduced-motion: reduce)").matches
         ) {
