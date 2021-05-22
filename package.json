@@ -87,11 +87,6 @@
     "trailingComma": "es5"
   },
   "browserslist": [
-    "last 2 versions",
-    "firefox esr",
-    "not dead",
-    "> 0.5% in US",
-    "ie 10",
-    "cover 95% in US"
+    "last 2 versions or firefox esr and not dead or > 0.5% in US or cover 95% in US and supports es6-module"
   ]
 }
