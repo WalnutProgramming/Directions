@@ -1,9 +1,5 @@
 <template>
-  <BasicButton
-    class="custom"
-    :type="typeSubmit ? 'submit' : 'button'"
-    @click="$emit('click')"
-  >
+  <BasicButton class="custom" :type="typeSubmit ? 'submit' : 'button'">
     <slot />
   </BasicButton>
 </template>
@@ -18,7 +14,7 @@ export default defineComponent({
     buttonStyle: { type: String, default: "" },
     typeSubmit: { type: Boolean, default: true },
   },
-  emits: ["click"],
+  emits: [],
 });
 </script>
 

@@ -1,6 +1,11 @@
 <template>
-  <span class="btn-hover-area" @click.stop.prevent="$emit('click')">
-    <button :type="type" class="active-button" :style="buttonStyle">
+  <span class="btn-hover-area">
+    <button
+      :type="type"
+      class="active-button"
+      :style="buttonStyle"
+      v-bind="$attrs"
+    >
       <slot></slot>
     </button>
   </span>
@@ -10,11 +15,11 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
+  inheritAttrs: false,
   props: {
     type: { type: String, default: "submit" },
     buttonStyle: { type: String, default: "" },
   },
-  emits: ["click"],
 });
 </script>
 

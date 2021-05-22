@@ -1,5 +1,5 @@
 <template>
-  <BasicButton class="edit" @click="$emit('click')"> <slot /> </BasicButton>
+  <BasicButton class="edit"> <slot /> </BasicButton>
 </template>
 
 <script lang="ts">
@@ -8,7 +8,7 @@ import BasicButton from "./BasicButton.vue";
 
 export default defineComponent({
   components: { BasicButton },
-  emits: ["click"],
+  emits: [],
 });
 </script>
 

@@ -7,7 +7,7 @@
         <StatusUpdates />
 
         <h1 class="where-question">Where do you need to go?</h1>
-        <form id="roomForm">
+        <form id="roomForm" @submit.prevent="submit">
           <label for="fromRoom" class="label"> I'm at room: </label>
           <RoomInput
             v-model="fromRoom"
@@ -24,7 +24,7 @@
           ></RoomInput>
           <br />
 
-          <CustomButton @click="submit"> Go </CustomButton>
+          <CustomButton> Go </CustomButton>
         </form>
       </main>
     </div>

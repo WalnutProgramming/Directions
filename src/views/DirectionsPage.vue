@@ -141,7 +141,7 @@ export default defineComponent({
   justify-content: space-between;
   padding-right: 1rem;
 }
-.button-container .button {
+.button-container > * {
   font-size: 0.5em;
   padding-left: 1vw;
 }
