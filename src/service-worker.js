@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 // eslint-disable-next-line no-restricted-globals, no-underscore-dangle
-workbox.precaching.precacheAndRoute(self.__precacheManifest || []);
+workbox.precaching.precacheAndRoute(self.__WB_MANIFEST || []);
 
 // https://developers.google.com/web/tools/workbox/guides/common-recipes#cache_css_and_javascript_files
 workbox.routing.registerRoute(
