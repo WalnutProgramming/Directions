@@ -71,7 +71,7 @@ export default defineComponent({
   setup() {
     return { fullNameOf };
   },
-  compatConfig: { MODE: 3 },
+
   data() {
     return {};
   },

@@ -23,7 +23,6 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  compatConfig: { MODE: 3 },
   computed: {
     showiOSDownloadSuggestion() {
       // If it's an iOS device and we're not already in the PWA, unhide the #iosDownloadSuggestion

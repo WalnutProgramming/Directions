@@ -44,7 +44,6 @@ function range(len: number) {
 }
 
 export default defineComponent({
-  compatConfig: { MODE: 3 },
   components: { CustomButton },
   props: {
     allRooms: { type: Array as PropType<StoredRoom[]>, required: true },

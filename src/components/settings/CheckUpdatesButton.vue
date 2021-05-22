@@ -10,13 +10,10 @@
 </template>
 
 <script lang="ts">
-/// <reference path="../../vue-snack-vue-property.d.ts" />
-
 import { defineComponent } from "vue";
 import { refreshToUpdate } from "@/showMessageOnNextPageReload";
 
 export default defineComponent({
-  compatConfig: { MODE: 3 },
   data() {
     return { spin: false };
   },
@@ -29,8 +26,7 @@ export default defineComponent({
         document.removeEventListener("needs-refresh", refreshToUpdate);
         this.spin = false;
         if (!(window as any).needsRefresh) {
-          // @ts-ignore TODO migrate
-          this.$snack.show({
+          this.$snack.notify({
             text: "No updates found",
             button: "",
           });

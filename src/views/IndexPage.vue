@@ -51,7 +51,6 @@ import StatusUpdates from "@/components/StatusUpdates.vue";
 import { walnutNonAccessible } from "@/walnut";
 
 export default defineComponent({
-  compatConfig: { MODE: 3 },
   components: {
     CustomButton,
     TheMaybeInstallButton,

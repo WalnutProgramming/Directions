@@ -38,7 +38,6 @@ import CheckUpdatesButton from "@/components/settings/CheckUpdatesButton.vue";
 import DeleteDataButton from "@/components/settings/DeleteDataButton.vue";
 
 export default defineComponent({
-  compatConfig: { MODE: 3 },
   components: {
     AccessibilitySlider,
     RefreshButton,

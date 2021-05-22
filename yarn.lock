@@ -1839,11 +1839,6 @@
     semver "^6.1.0"
     strip-ansi "^6.0.0"
 
-"@vue/compat@^3.1.0-0":
-  version "3.1.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@vue/compat/-/compat-3.1.0-beta.1.tgz#95c2c10b4e7116bf62046200dc25e75193ed9966"
-  integrity sha512-gl+ZNJurHB0zr5ub5GR5be63a01mwwGGnl0ZiZmvXVPgKXjzdl/X8S2GzJB1713PcFs4b7Mbr1m6Pd3xv889AQ==
-
 "@vue/compiler-core@3.1.0-beta.2":
   version "3.1.0-beta.2"
   resolved "https://registry.yarnpkg.com/@vue/compiler-core/-/compiler-core-3.1.0-beta.2.tgz#fa66626d621801676d11fd28e05ca43f88c67b2f"
@@ -11443,10 +11438,10 @@ vue-slicksort@^2.0.0-alpha.5:
   resolved "https://registry.yarnpkg.com/vue-slicksort/-/vue-slicksort-2.0.0-alpha.5.tgz#b1c09ed1882105001b1ea5f7fea0e81efadf3c70"
   integrity sha512-OETVkNwC/w7nfW/5xKl5wnvuKYG7Ml+lFOxbcqo0ETpcgNv30e/+rkwaXakb6PVkpr+v+1jbKP8nbkYObtyooQ==
 
-vue-snack@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/vue-snack/-/vue-snack-0.1.4.tgz#4ad6da17d0f9b2cbc43de1a6a1d681eddcd602d4"
-  integrity sha512-Ex4tb8rpegyED+eCi43a+Xi8xDlTDnQYIROxgKErJ32RxprkacxF7aubDY5WE55kfSBUwyLsqRjbIhAnn+pGzw==
+vue-snack-notify@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/vue-snack-notify/-/vue-snack-notify-0.0.3.tgz#1521bc6f79457efec3653a0d0a64a8ec73de1526"
+  integrity sha512-lzSrWUz77yFnNgTL8/1TfxAVkx+tZTroOB+RJnnNiu+sm6OvS2LakpX/zdwZKR/9q685OvAtedPZDeb3clxPoQ==
 
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.3"

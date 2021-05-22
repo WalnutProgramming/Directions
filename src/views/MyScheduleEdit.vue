@@ -140,7 +140,6 @@ function roomsListsEqual(a: Room[], b: Room[]) {
 }
 
 export default defineComponent({
-  compatConfig: { MODE: 3 },
   components: {
     RoomInput,
     CustomButton,

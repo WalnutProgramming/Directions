@@ -50,7 +50,6 @@ import EditButton from "@/components/buttons/EditButton.vue";
 import ScheduleList from "@/components/ScheduleList.vue";
 
 export default defineComponent({
-  compatConfig: { MODE: 3 },
   components: { EditButton, ScheduleList },
   data() {
     const stored = localStorage.getItem("myschedule");

@@ -1,1 +1,1 @@
-declare module "vue-snack";
+// declare module "vue-snack";

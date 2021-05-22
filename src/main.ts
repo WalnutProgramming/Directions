@@ -1,12 +1,11 @@
-/// <reference path="./vue-snack-vue-property.d.ts" />
-
 // polyfill needed for vue-snack IE support
 import "core-js/features/array/from";
 
-// @ts-ignore
-import { createApp, nextTick, configureCompat } from "vue";
-import VueSnackbar from "vue-snack";
-import "vue-snack/dist/vue-snack.min.css";
+import { createApp, nextTick } from "vue";
+// import VueSnackbar from "vue-snack";
+// import "vue-snack/dist/vue-snack.min.css";
+import { createSnack } from "vue-snack-notify";
+import "vue-snack-notify/dist/assets/styles.css";
 
 import App from "@/App.vue";
 import router from "@/router";
@@ -18,36 +17,24 @@ import {
   refreshToUpdate,
 } from "./showMessageOnNextPageReload";
 
-// @ts-ignore
+const snack = createSnack({ closable: true });
 
-// TODO compat
-configureCompat({ RENDER_FUNCTION: false, WATCH_ARRAY: false });
+createApp(App).use(router).use(store).use(snack).mount("#app");
 
-const app = createApp(App)
-  .use(VueSnackbar, { close: true })
-  .use(router)
-  .use(store);
-
-const vm = app.mount("#app");
-
-document.addEventListener("DOMContentLoaded", () => {
-  const text = sessionStorage.getItem(messageOnNextPageReloadKey);
-  if (text != null) {
-    nextTick(() => {
-      (vm as any).$snack.show({
-        text,
-        button: "",
-      });
-      sessionStorage.removeItem(messageOnNextPageReloadKey);
-    });
-  }
-});
+const text = sessionStorage.getItem(messageOnNextPageReloadKey);
+if (text != null) {
+  snack.notify({
+    text,
+    button: null,
+  });
+  sessionStorage.removeItem(messageOnNextPageReloadKey);
+}
 
 document.addEventListener("needs-refresh", () => {
   // @ts-ignore migrate TODo
-  vm.$snack.show({
+  snack.notify({
     text: "New update for site is available",
     button: "refresh to update",
-    action: refreshToUpdate,
+    onAction: refreshToUpdate,
   });
 });

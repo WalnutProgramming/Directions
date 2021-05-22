@@ -33,9 +33,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-export default defineComponent({
-  compatConfig: { MODE: 3 },
-});
+export default defineComponent({});
 </script>
 
 <style scoped>

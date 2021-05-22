@@ -21,7 +21,6 @@ import { defineComponent } from "vue";
 import CustomButton from "@/components/buttons/CustomButton.vue";
 
 export default defineComponent({
-  compatConfig: { MODE: 3 },
   components: { CustomButton },
 });
 </script>

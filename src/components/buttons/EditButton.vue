@@ -7,7 +7,6 @@ import { defineComponent } from "vue";
 import BasicButton from "./BasicButton.vue";
 
 export default defineComponent({
-  compatConfig: { MODE: 3 },
   components: { BasicButton },
   emits: ["click"],
 });

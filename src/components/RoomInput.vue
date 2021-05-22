@@ -16,8 +16,6 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  // TODO compat
-  compatConfig: { MODE: 3 },
   props: {
     modelValue: { type: String, required: true },
     name: { type: String, required: true },
