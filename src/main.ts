@@ -5,7 +5,6 @@ import { createApp, nextTick } from "vue";
 // import VueSnackbar from "vue-snack";
 // import "vue-snack/dist/vue-snack.min.css";
 import { createSnack } from "vue-snack-notify";
-// TODO migrate: this CSS import isn't working
 import "vue-snack-notify/dist/assets/styles.css";
 
 import App from "@/App.vue";
