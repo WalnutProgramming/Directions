@@ -34,7 +34,6 @@ if (text != null) {
 }
 
 document.addEventListener("needs-refresh", () => {
-  // @ts-ignore migrate TODo
   snack.notify({
     text: "New update for site is available",
     button: "refresh to update",
