@@ -15,11 +15,9 @@ export default defineComponent({
   computed: {
     accessibilityMode: {
       get(): boolean {
-        // @ts-ignore TODO migrate
         return this.$store.state.isAccessibilityMode;
       },
       set(newVal: boolean) {
-        // @ts-ignore TODO migrate
         this.$store.commit("setAccessibilityMode", newVal);
       },
     },

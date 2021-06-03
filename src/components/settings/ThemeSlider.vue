@@ -15,11 +15,9 @@ export default defineComponent({
   computed: {
     darkTheme: {
       get() {
-        // @ts-ignore TODO migrate
         return this.$store.state.isDarkMode;
       },
       set(newVal) {
-        // @ts-ignore TODO migrate
         this.$store.commit("setDarkTheme", newVal);
       },
     },

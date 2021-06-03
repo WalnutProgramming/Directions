@@ -5,7 +5,8 @@ import { Store } from "vuex";
 declare module "@vue/runtime-core" {
   // Declare your own store states.
   interface State {
-    [key: string]: any;
+    isDarkMode: boolean;
+    isAccessibilityMode: boolean;
   }
 
   interface ComponentCustomProperties {
