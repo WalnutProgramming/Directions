@@ -15,7 +15,7 @@ const { LEFT, RIGHT, FRONT } = Direction;
 
 const hallways: WalnutHallway[] = [
   // 2nd floor main building (2100s, 2200s, 2300s)
-  new Hallway([
+  new WalnutHallway([
     new Stairs(LEFT, onFloor("stair a", 2), "the 2018 stairs"),
     new Room("2310"),
     new Room("2311", RIGHT),
@@ -79,13 +79,13 @@ const hallways: WalnutHallway[] = [
   ]),
 
   // entrance area
-  new Hallway<ConnectionNodeId, StairNodeId>([
+  new WalnutHallway([
     new Fork(FRONT, reverseConnection("lobby to 2240"), "the lobby"),
     new Room("2200", LEFT, { aliases: ["Main Office"] }),
   ]),
 
   // administrative center
-  new Hallway<ConnectionNodeId, StairNodeId>([
+  new WalnutHallway([
     new Fork(FRONT, reverseConnection("lobby to 2200s"), "the lobby"),
     new Room("2207", RIGHT, {
       aliases: ["7th, 8th, and 9th Grade Office"],
@@ -105,7 +105,7 @@ const hallways: WalnutHallway[] = [
   ]),
 
   // hallway 2401
-  new Hallway<ConnectionNodeId, StairNodeId>([
+  new WalnutHallway([
     new Fork(FRONT, reverseConnection("2100s to 2401"), "the 2100s"),
     new Room("2401", LEFT, {
       aliases: ["Athletic Director's Office"],
@@ -117,7 +117,7 @@ const hallways: WalnutHallway[] = [
   ]),
 
   // 2404 hallway
-  new Hallway<ConnectionNodeId, StairNodeId>([
+  new WalnutHallway([
     new Fork(FRONT, "2404 to 2100s", "the 2100s"),
     new Room("2404", RIGHT),
     new Room("2403", LEFT),

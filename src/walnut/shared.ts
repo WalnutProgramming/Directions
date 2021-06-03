@@ -52,4 +52,4 @@ export type ConnectionNodeId =
   | "delivery hallway to lower 1400s"
   | "1.5th floor landing to upper 1400s";
 
-export type WalnutHallway = Hallway<ConnectionNodeId, StairNodeId>;
+export class WalnutHallway extends Hallway<ConnectionNodeId, StairNodeId> {}

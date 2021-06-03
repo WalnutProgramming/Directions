@@ -16,7 +16,7 @@ const { LEFT, RIGHT, FRONT } = Direction;
 
 const hallways: WalnutHallway[] = [
   // 1300s
-  new Hallway([
+  new WalnutHallway([
     new Stairs(LEFT, onFloor("stair a", 1), "the 2018 stairs"),
     new Room("1314"),
     new Room("1315", RIGHT),
@@ -77,7 +77,7 @@ const hallways: WalnutHallway[] = [
   ]),
 
   // delivery hallway
-  new Hallway<ConnectionNodeId, StairNodeId>([
+  new WalnutHallway([
     new Fork(
       RIGHT,
       reverseConnection("cafeteria to delivery hallway"),
@@ -92,7 +92,7 @@ const hallways: WalnutHallway[] = [
   ]),
 
   // lower 1400s
-  new Hallway<ConnectionNodeId, StairNodeId>([
+  new WalnutHallway([
     new Room("Fitness Room", FRONT, { aliases: ["1418"], prefix: "the" }),
     // 1410 and 1412 are both the Multi-Purpose Room, so we choose one
     // to call the Multi-Purpose Room
@@ -107,7 +107,7 @@ const hallways: WalnutHallway[] = [
   ]),
 
   // the 1.5th floor landing
-  new Hallway([
+  new WalnutHallway([
     new Stairs(LEFT, onFloor("stair d", 1.5), "the stairs"),
     new Fork(LEFT, "1.5th floor landing to upper 1400s", "the upper 1400s"),
     new Stairs(RIGHT, onFloor("stair 1100s to 1.5th floor", 2), "the stairs"),
@@ -115,7 +115,7 @@ const hallways: WalnutHallway[] = [
     new Stairs(LEFT, onFloor("elevator b", 1.5), "the elevator"),
   ]),
 
-  new Hallway<ConnectionNodeId, StairNodeId>([
+  new WalnutHallway([
     new Room("1457"),
     new Room("1454", RIGHT),
     new Room("1453", RIGHT),
@@ -130,7 +130,7 @@ const hallways: WalnutHallway[] = [
   ]),
 
   // early 1100s
-  new Hallway([
+  new WalnutHallway([
     new Fork(
       LEFT,
       reverseConnection("delivery hallway to 1100s"),
@@ -157,7 +157,7 @@ const hallways: WalnutHallway[] = [
   ]),
 
   // latter 1100s
-  new Hallway([
+  new WalnutHallway([
     // these 2 rooms are in the corner
     new Room("1106", FRONT),
     new Room("1107", RIGHT),

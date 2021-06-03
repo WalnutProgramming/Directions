@@ -16,7 +16,7 @@ const { LEFT, RIGHT, FRONT } = Direction;
 const hallways: WalnutHallway[] = [
   // entrance to music wing
   // (go up to get the 2nd floor, down to get the 1st floor science wing)
-  new Hallway([
+  new WalnutHallway([
     new Stairs(FRONT, onFloor("stair music entrance to 1", 2)),
     new Fork(
       RIGHT,
@@ -29,7 +29,7 @@ const hallways: WalnutHallway[] = [
   ]),
 
   // latter 1800s (music lyceum 1st floor)
-  new Hallway<ConnectionNodeId, StairNodeId>([
+  new WalnutHallway([
     new Stairs(FRONT, onFloor("stair music entrance to 1", 1)),
     new Room("1852", RIGHT),
     new Turn(LEFT),
@@ -47,7 +47,7 @@ const hallways: WalnutHallway[] = [
   ]),
 
   // early 1800s
-  new Hallway([
+  new WalnutHallway([
     new Room("1845", FRONT, { aliases: ["Band (1845)"] }),
     new Room("1846"),
     new Room("1849"),
@@ -64,7 +64,7 @@ const hallways: WalnutHallway[] = [
   ]),
 
   // 2nd floor music wing (2800s)
-  new Hallway([
+  new WalnutHallway([
     new Stairs(LEFT, onFloor("stair music entrance to 2", 2)),
     new Stairs(LEFT, onFloor("elevator music", 2), "the elevator"),
     new Room("2855"),
