@@ -12,7 +12,6 @@ import App from "@/App.vue";
 import router from "@/router";
 import "@/registerServiceWorker";
 
-import store from "./store";
 import {
   messageOnNextPageReloadKey,
   refreshToUpdate,
@@ -20,7 +19,7 @@ import {
 
 const snack = createSnack({ closable: true });
 
-createApp(App).use(router).use(store).use(snack).mount("#app");
+createApp(App).use(router).use(snack).mount("#app");
 // @ts-ignore
 window.snack = snack;
 
