@@ -3,7 +3,6 @@
     <header>
       <nav>
         <ul>
-          <!-- migrate TODO -->
           <router-link
             v-slot="{ navigate, href, isActive, isExactActive }"
             to="/"
