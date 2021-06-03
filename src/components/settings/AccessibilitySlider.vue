@@ -1,7 +1,7 @@
 <template>
   <label style="display: flex; flex-direction: row; align-items: center">
     <span class="switch" style="min-width: 24vh">
-      <input v-model="accessibilityMode" type="checkbox" />
+      <input v-model="settings.isAccessibilityMode" type="checkbox" />
       <span class="slider" />
     </span>
     <span style="margin-left: 1vw"> Elevators Only* </span>
@@ -10,17 +10,11 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import settings from "@/settings";
 
 export default defineComponent({
-  computed: {
-    accessibilityMode: {
-      get(): boolean {
-        return this.$store.state.isAccessibilityMode;
-      },
-      set(newVal: boolean) {
-        this.$store.commit("setAccessibilityMode", newVal);
-      },
-    },
+  setup() {
+    return { settings };
   },
 });
 </script>

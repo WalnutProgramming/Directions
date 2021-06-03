@@ -48,8 +48,8 @@ import { defineComponent } from "vue";
 // eslint-disable-next-line no-unused-vars
 import { Room } from "room-finder";
 import CustomButton from "@/components/buttons/CustomButton.vue";
-import { walnutNonAccessible } from "@/walnut";
-import store from "@/store";
+import { walnutAccessible, walnutNonAccessible } from "@/walnut";
+import settings from "@/settings";
 
 function fullNameOf(roomName: string) {
   const [hallwayInd, ind] =
@@ -83,10 +83,11 @@ export default defineComponent({
     },
     directionsString(): string {
       if (this.isValid) {
+        const walnut = settings.isAccessibilityMode
+          ? walnutAccessible
+          : walnutNonAccessible;
         // Both have valid names, so put the directions in the HTML
-        return store.getters.walnut
-          .getDirections(this.fromRoom, this.toRoom)!
-          .trim();
+        return walnut.getDirections(this.fromRoom, this.toRoom)!.trim();
       }
       return "Sorry, I couldn't find one of those rooms.";
     },
