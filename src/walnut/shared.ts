@@ -1,6 +1,3 @@
-// migrate TODO remove
-// @ts-nocheck
-
 import { Hallway } from "room-finder";
 
 export const COVID_ONE_WAY_HALLWAY_AND_STAIRS = true;

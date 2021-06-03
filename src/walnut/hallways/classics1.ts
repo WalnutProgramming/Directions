@@ -1,6 +1,3 @@
-// migrate TODO remove
-// @ts-nocheck
-
 /* eslint-disable default-case */
 import {
   Direction,
@@ -80,7 +77,7 @@ const hallways: WalnutHallway[] = [
   ]),
 
   // delivery hallway
-  new Hallway([
+  new Hallway<ConnectionNodeId, StairNodeId>([
     new Fork(
       RIGHT,
       reverseConnection("cafeteria to delivery hallway"),
@@ -95,7 +92,7 @@ const hallways: WalnutHallway[] = [
   ]),
 
   // lower 1400s
-  new Hallway([
+  new Hallway<ConnectionNodeId, StairNodeId>([
     new Room("Fitness Room", FRONT, { aliases: ["1418"], prefix: "the" }),
     // 1410 and 1412 are both the Multi-Purpose Room, so we choose one
     // to call the Multi-Purpose Room
@@ -118,7 +115,7 @@ const hallways: WalnutHallway[] = [
     new Stairs(LEFT, onFloor("elevator b", 1.5), "the elevator"),
   ]),
 
-  new Hallway([
+  new Hallway<ConnectionNodeId, StairNodeId>([
     new Room("1457"),
     new Room("1454", RIGHT),
     new Room("1453", RIGHT),

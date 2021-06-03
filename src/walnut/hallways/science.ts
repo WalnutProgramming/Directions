@@ -1,6 +1,3 @@
-// migrate TODO remove
-// @ts-nocheck
-
 import {
   Direction,
   Room,
@@ -48,7 +45,7 @@ const hallways: WalnutHallway[] = [
     new Stairs(LEFT, onFloor("stair science b", 2)),
   ]),
   // 2739 (Area across the Forum)
-  new Hallway([
+  new Hallway<ConnectionNodeId, StairNodeId>([
     new Fork(
       FRONT,
       reverseConnection("2700s to 2739"),

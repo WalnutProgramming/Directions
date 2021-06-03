@@ -1,6 +1,3 @@
-// migrate TODO remove
-// @ts-nocheck
-
 import {
   Direction,
   Room,
@@ -12,7 +9,7 @@ import {
   onFloor,
   reverseConnection,
 } from "room-finder";
-import { ConnectionNodeId, WalnutHallway } from "../shared";
+import { ConnectionNodeId, StairNodeId, WalnutHallway } from "../shared";
 
 const { LEFT, RIGHT, FRONT } = Direction;
 
@@ -40,7 +37,7 @@ const hallways: WalnutHallway[] = [
   ]),
 
   // 2nd floor modern languages wing (2600s)
-  new Hallway([
+  new Hallway<ConnectionNodeId, StairNodeId>([
     new Fork(FRONT, reverseConnection("2300s to 2600s"), "the 2300s"),
     new Turn(LEFT),
     new Room("2604", RIGHT),
@@ -57,7 +54,7 @@ const hallways: WalnutHallway[] = [
   ]),
 
   // little corner in the 2600s (go through here to get to the 2500s behind the auditorium)
-  new Hallway([
+  new Hallway<ConnectionNodeId, StairNodeId>([
     new Fork(
       FRONT,
       reverseConnection("2600s to 2600s little hallway"),

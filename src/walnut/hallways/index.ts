@@ -1,6 +1,3 @@
-// migrate TODO remove
-// @ts-nocheck
-
 import arcade from "./arcade";
 import classics1 from "./classics1";
 import classics2 from "./classics2";
