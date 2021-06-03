@@ -138,8 +138,11 @@ export default defineComponent({
       deep: true,
     },
   },
-  mounted() {
-    // TODO migrate not working
+  async mounted() {
+    // TODO: very hacky. Wait 20 milliseconds before scrolling to the
+    // active link because for some reason, it isn't marked as active
+    // for a while.
+    await new Promise((resolve) => setTimeout(resolve, 20));
     const currentRouteNavItem = document.querySelector(
       "header li.router-link-active a"
     );
