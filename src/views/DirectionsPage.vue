@@ -52,12 +52,11 @@ import { walnutNonAccessible } from "@/walnut";
 import store from "@/store";
 
 function fullNameOf(roomName: string) {
-  const [hallwayInd, ind] = walnutNonAccessible.getHallwayIndexAndIndex(
-    roomName
-  )!;
-  return (walnutNonAccessible.hallways[hallwayInd].partList[
-    ind
-  ] as Room<string>).fullName;
+  const [hallwayInd, ind] =
+    walnutNonAccessible.getHallwayIndexAndIndex(roomName)!;
+  return (
+    walnutNonAccessible.hallways[hallwayInd].partList[ind] as Room<string>
+  ).fullName;
 }
 
 export default defineComponent({
