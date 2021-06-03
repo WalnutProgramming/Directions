@@ -54,8 +54,7 @@ export default defineComponent({
   },
   emits: ["go"],
   computed: {
-    // migrate TODO: remove
-    orderWithDefault(): any {
+    orderWithDefault(): number[] {
       return this.order ?? range(this.allRooms.length);
     },
     rooms(): StoredRoomWithActualIndex[] {
