@@ -8981,10 +8981,10 @@ rollup@^2.43.1:
   optionalDependencies:
     fsevents "~2.3.1"
 
-room-finder@0.3.0-beta.2:
-  version "0.3.0-beta.2"
-  resolved "https://registry.yarnpkg.com/room-finder/-/room-finder-0.3.0-beta.2.tgz#ed3356880e7ccfd5232ded5b22d09f05f7aa69c3"
-  integrity sha512-Go0AIU1QPAXR4fIA5KFNVQaPLsyhoaY5zy0GoypPUZa91JoV1QKPF1zpvrn1bYnPTE27MLnU0J0lg1HbGZt9oA==
+room-finder@0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/room-finder/-/room-finder-0.4.0.tgz#c8ac4648f4edd581cfc202d99729d436449fd1c1"
+  integrity sha512-8489g5D9DBc04wNqkwlmCFpp/lzIXH+z3Qh4YR9dPCXboxqg2JeegwginarYo2xQKy63E/O+LfpNIe1EVBcffA==
   dependencies:
     core-js "3"
     dijkstrajs "^1.0.1"
