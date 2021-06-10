@@ -94,7 +94,7 @@ export default defineComponent({
       return this.directionsString.split("\n");
     },
     canPrint() {
-      return window.print;
+      return window.print != null;
     },
   },
   methods: {
