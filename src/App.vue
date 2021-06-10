@@ -3,31 +3,17 @@
     <header>
       <nav>
         <ul>
-          <router-link
-            v-slot="{ navigate, href, isActive, isExactActive }"
-            to="/"
-            custom
-          >
-            <li
-              :class="[
-                isActive && 'router-link-active',
-                isExactActive && 'router-link-exact-active',
-              ]"
-            >
+          <router-link v-slot="{ navigate, href, isActive }" to="/" custom>
+            <li :class="isActive && 'router-link-active'">
               <a :href="href" @click="navigate"> Home </a>
             </li>
           </router-link>
           <router-link
-            v-slot="{ navigate, href, isActive, isExactActive }"
+            v-slot="{ navigate, href, isActive }"
             to="/myschedule"
             custom
           >
-            <li
-              :class="[
-                isActive && 'router-link-active',
-                isExactActive && 'router-link-exact-active',
-              ]"
-            >
+            <li :class="isActive && 'router-link-active'">
               <a :href="href" @click="navigate"> My Schedule </a>
             </li>
           </router-link>
@@ -44,44 +30,25 @@
             >
           </li>
           <router-link
-            v-slot="{ navigate, href, isActive, isExactActive }"
+            v-slot="{ navigate, href, isActive }"
             to="/settings"
             custom
           >
-            <li
-              :class="[
-                isActive && 'router-link-active',
-                isExactActive && 'router-link-exact-active',
-              ]"
-            >
+            <li :class="isActive && 'router-link-active'">
               <a :href="href" @click="navigate"> Settings </a>
             </li>
           </router-link>
-          <router-link
-            v-slot="{ navigate, href, isActive, isExactActive }"
-            to="/about"
-            custom
-          >
-            <li
-              :class="[
-                isActive && 'router-link-active',
-                isExactActive && 'router-link-exact-active',
-              ]"
-            >
+          <router-link v-slot="{ navigate, href, isActive }" to="/about" custom>
+            <li :class="isActive && 'router-link-active'">
               <a :href="href" @click="navigate"> About </a>
             </li>
           </router-link>
           <router-link
-            v-slot="{ navigate, href, isActive, isExactActive }"
+            v-slot="{ navigate, href, isActive }"
             to="/feedback"
             custom
           >
-            <li
-              :class="[
-                isActive && 'router-link-active',
-                isExactActive && 'router-link-exact-active',
-              ]"
-            >
+            <li :class="isActive && 'router-link-active'">
               <a :href="href" @click="navigate"> Feedback </a>
             </li>
           </router-link>
