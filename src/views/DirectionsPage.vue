@@ -45,7 +45,6 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-// eslint-disable-next-line no-unused-vars
 import { Room } from "room-finder";
 import CustomButton from "@/components/buttons/CustomButton.vue";
 import { walnutAccessible, walnutNonAccessible } from "@/walnut";

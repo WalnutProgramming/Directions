@@ -26,7 +26,6 @@
 </template>
 
 <script lang="ts">
-// eslint-disable-next-line no-unused-vars
 import { defineComponent, PropType } from "vue";
 import CustomButton from "@/components/buttons/CustomButton.vue";
 
