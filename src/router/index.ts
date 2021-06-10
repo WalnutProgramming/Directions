@@ -1,5 +1,5 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import { defineComponent } from "vue";
+import { createRouter, createWebHistory } from "vue-router";
 import Index from "@/views/IndexPage.vue";
 import Directions from "@/views/DirectionsPage.vue";
 import MySchedule from "@/views/MySchedule.vue";
@@ -8,8 +8,6 @@ import About from "@/views/AboutPage.vue";
 import Feedback from "@/views/FeedbackPage.vue";
 import Settings from "@/views/SettingsPage.vue";
 import NotFound from "@/views/NotFound.vue";
-
-Vue.use(VueRouter);
 
 const routes = [
   { path: "/", component: Index },
@@ -43,16 +41,16 @@ const routes = [
   },
   // fallback (client-side 404)
   {
-    path: "*",
+    path: "/:pathMatch(.*)*",
     component: NotFound,
   },
 ];
 
-const router = new VueRouter({
+const router = createRouter({
   routes,
-  mode: "history",
+  history: createWebHistory(),
   scrollBehavior(to, from, savedPosition) {
-    return { x: 0, y: 0 };
+    return { left: 0, top: 0 };
   },
 });
 

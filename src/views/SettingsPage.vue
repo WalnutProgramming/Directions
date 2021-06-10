@@ -18,18 +18,26 @@
         >MIT License</a
       >.
     </div>
+
+    <teleport to="head">
+      <title>Walnut.Direct - Settings</title>
+      <meta
+        name="description"
+        content="Straightforward directions between rooms in Walnut Hills High School. Created by the Walnut Hills Programming Club."
+      />
+    </teleport>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 import AccessibilitySlider from "@/components/settings/AccessibilitySlider.vue";
 import ThemeSlider from "@/components/settings/ThemeSlider.vue";
 import RefreshButton from "@/components/settings/RefreshButton.vue";
 import CheckUpdatesButton from "@/components/settings/CheckUpdatesButton.vue";
 import DeleteDataButton from "@/components/settings/DeleteDataButton.vue";
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     AccessibilitySlider,
     RefreshButton,

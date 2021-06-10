@@ -7,7 +7,7 @@
         <StatusUpdates />
 
         <h1 class="where-question">Where do you need to go?</h1>
-        <form id="roomForm">
+        <form id="roomForm" @submit.prevent="submit">
           <label for="fromRoom" class="label"> I'm at room: </label>
           <RoomInput
             v-model="fromRoom"
@@ -24,17 +24,25 @@
           ></RoomInput>
           <br />
 
-          <CustomButton @click="submit"> Go </CustomButton>
+          <CustomButton> Go </CustomButton>
         </form>
       </main>
     </div>
 
     <TheIOSDownloadSuggestion />
+
+    <teleport to="head">
+      <title>Walnut.Direct - Walnut Hills Directions</title>
+      <meta
+        name="description"
+        content="Straightforward directions between rooms in Walnut Hills High School. Created by the Walnut Hills Programming Club."
+      />
+    </teleport>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 import CustomButton from "@/components/buttons/CustomButton.vue";
 import TheMaybeInstallButton from "@/components/TheMaybeInstallButton.vue";
 import RoomInput from "@/components/RoomInput.vue";
@@ -42,7 +50,7 @@ import TheIOSDownloadSuggestion from "@/components/TheIOSDownloadSuggestion.vue"
 import StatusUpdates from "@/components/StatusUpdates.vue";
 import { walnutNonAccessible } from "@/walnut";
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     CustomButton,
     TheMaybeInstallButton,

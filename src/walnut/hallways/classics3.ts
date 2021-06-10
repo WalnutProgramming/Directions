@@ -15,7 +15,7 @@ const { LEFT, RIGHT, FRONT } = Direction;
 
 const hallways: WalnutHallway[] = [
   // 3rd floor main building (3100s, 3200s, 3300s)
-  new Hallway([
+  new WalnutHallway([
     new Stairs(LEFT, onFloor("stair a", 3), "the 2018 stairs"),
     new Room("3314", LEFT),
     new Room("3315", RIGHT),

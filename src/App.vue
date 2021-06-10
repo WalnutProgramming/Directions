@@ -3,11 +3,19 @@
     <header>
       <nav>
         <ul>
-          <router-link tag="li" to="/" exact>
-            <a> Home </a>
+          <router-link v-slot="{ navigate, href, isActive }" to="/" custom>
+            <li :class="isActive && 'router-link-active'">
+              <a :href="href" @click="navigate"> Home </a>
+            </li>
           </router-link>
-          <router-link tag="li" to="/myschedule">
-            <a> My Schedule </a>
+          <router-link
+            v-slot="{ navigate, href, isActive }"
+            to="/myschedule"
+            custom
+          >
+            <li :class="isActive && 'router-link-active'">
+              <a :href="href" @click="navigate"> My Schedule </a>
+            </li>
           </router-link>
           <li>
             <a
@@ -21,79 +29,92 @@
               >Floor Map</a
             >
           </li>
-          <router-link tag="li" to="/settings">
-            <a> Settings </a>
+          <router-link
+            v-slot="{ navigate, href, isActive }"
+            to="/settings"
+            custom
+          >
+            <li :class="isActive && 'router-link-active'">
+              <a :href="href" @click="navigate"> Settings </a>
+            </li>
           </router-link>
-          <router-link tag="li" to="/about">
-            <a> About </a>
+          <router-link v-slot="{ navigate, href, isActive }" to="/about" custom>
+            <li :class="isActive && 'router-link-active'">
+              <a :href="href" @click="navigate"> About </a>
+            </li>
           </router-link>
-          <router-link tag="li" to="/feedback">
-            <a> Feedback </a>
+          <router-link
+            v-slot="{ navigate, href, isActive }"
+            to="/feedback"
+            custom
+          >
+            <li :class="isActive && 'router-link-active'">
+              <a :href="href" @click="navigate"> Feedback </a>
+            </li>
           </router-link>
         </ul>
       </nav>
     </header>
 
-    <transition :name="transitionName">
-      <router-view id="main-stuff" class="child-view"></router-view>
-    </transition>
+    <router-view v-slot="{ Component }">
+      <transition :name="transitionName">
+        <component :is="Component" id="main-stuff" class="child-view" />
+      </transition>
+    </router-view>
 
     <TheRoomsDataList />
   </div>
+
+  <teleport to="head"> </teleport>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 
 import TheRoomsDataList from "@/components/TheRoomsDataList.vue";
 import router from "@/router/index";
 
-export default Vue.extend({
+export default defineComponent({
   router,
   components: { TheRoomsDataList },
   data() {
     return {
-      transitionName: "fade",
+      transitionName: "",
     };
   },
   watch: {
-    $route(to, from) {
-      if (
-        "media" in window &&
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      ) {
-        this.transitionName = "fade";
-      } else if (from.path === "/" && to.path === "/directions") {
-        this.transitionName = "slide-left";
-      } else if (from.path === "/directions" && to.path === "/") {
-        this.transitionName = "slide-right";
-      } else {
-        this.transitionName = "fade";
-      }
+    $route: {
+      handler(to, from) {
+        if (from?.matched?.length === 0) {
+          // Don't do transition on initial render
+          this.transitionName = "";
+        } else if (
+          "media" in window &&
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ) {
+          this.transitionName = "fade";
+        } else if (from.path === "/" && to.path === "/directions") {
+          this.transitionName = "slide-left";
+        } else if (from.path === "/directions" && to.path === "/") {
+          this.transitionName = "slide-right";
+        } else {
+          this.transitionName = "fade";
+        }
+      },
+      deep: true,
     },
   },
-  mounted() {
+  async mounted() {
+    // TODO: very hacky. Wait 20 milliseconds before scrolling to the
+    // active link because for some reason, it isn't marked as active
+    // for a while.
+    await new Promise((resolve) => setTimeout(resolve, 20));
     const currentRouteNavItem = document.querySelector(
       "header li.router-link-active a"
     );
     if (currentRouteNavItem != null) {
       currentRouteNavItem.scrollIntoView({ inline: "center" });
     }
-  },
-  metaInfo: {
-    // if no subcomponents specify a metaInfo.title, this title will be used
-    title: "Walnut Hills Directions",
-    // all titles will be injected into this template
-    titleTemplate: `Walnut.Direct - %s`,
-
-    meta: [
-      {
-        vmid: "description",
-        name: "description",
-        content:
-          "Straightforward directions between rooms in Walnut Hills High School. Created by the Walnut Hills Programming Club.",
-      },
-    ],
   },
 });
 </script>
@@ -155,7 +176,7 @@ header li.router-link-active a {
   transition: opacity 0.5s ease;
 }
 
-.fade-enter,
+.fade-enter-from,
 .fade-leave-active {
   opacity: 0;
 }
@@ -168,13 +189,13 @@ header li.router-link-active a {
   /*padding: 1vw;*/
   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
-.slide-left-enter,
+.slide-left-enter-from,
 .slide-right-leave-active {
   opacity: 0;
   transform: translate(30px, 0);
 }
 .slide-left-leave-active,
-.slide-right-enter {
+.slide-right-enter-from {
   opacity: 0;
   transform: translate(-30px, 0);
 }

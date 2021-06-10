@@ -34,7 +34,7 @@
       </p>
       <form id="scheduleForm">
         <SlickList
-          v-model="rooms"
+          v-model:list="rooms"
           class="list"
           lock-axis="y"
           :press-delay="50"
@@ -90,11 +90,19 @@
         </SlickList>
       </form>
     </div>
+
+    <teleport to="head">
+      <title>Walnut.Direct - My Schedule - Edit</title>
+      <meta
+        name="description"
+        content="Input your schedule into Walnut.Direct so we can give you directions between your classes in Walnut Hills High School."
+      />
+    </teleport>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 import { SlickList, SlickItem } from "vue-slicksort";
 import RoomInput from "@/components/RoomInput.vue";
 import CustomButton from "@/components/buttons/CustomButton.vue";
@@ -131,7 +139,7 @@ function roomsListsEqual(a: Room[], b: Room[]) {
   return true;
 }
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     RoomInput,
     CustomButton,
@@ -140,7 +148,7 @@ export default Vue.extend({
     MinusButton,
     PlusButton,
   },
-  beforeRouteLeave(to, from, next) {
+  beforeRouteLeave(to: any, from: any, next: any) {
     const stored = getStoredRooms();
     if (
       (stored == null && roomsListsEqual(this.rooms, getDefaultRooms())) ||
@@ -193,7 +201,7 @@ export default Vue.extend({
       if ("reportValidity" in form /* browser support */) form.reportValidity();
       if (
         this.rooms.every(
-          ({ value }) =>
+          ({ value }: { value: string }) =>
             value.trim() === "" || walnutNonAccessible.isValidRoomName(value)
         )
       ) {
@@ -211,17 +219,6 @@ export default Vue.extend({
     removeIndex(index: number) {
       this.rooms.splice(index, 1);
     },
-  },
-  metaInfo: {
-    title: "My Schedule - Edit",
-    meta: [
-      {
-        vmid: "description",
-        name: "description",
-        content:
-          "Input your schedule into Walnut.Direct so we can give you directions between your classes in Walnut Hills High School.",
-      },
-    ],
   },
 });
 </script>

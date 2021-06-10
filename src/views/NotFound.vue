@@ -5,15 +5,22 @@
     <CustomButton id="button" @click="$router.push('/')"
       >Go back to the home page</CustomButton
     >
+
+    <teleport to="head">
+      <title>Walnut.Direct - Not Found</title>
+      <meta
+        name="description"
+        content="Straightforward directions between rooms in Walnut Hills High School. Created by the Walnut Hills Programming Club."
+      />
+    </teleport>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 import CustomButton from "@/components/buttons/CustomButton.vue";
 
-export default Vue.extend({
-  metaInfo: { title: "Not Found" },
+export default defineComponent({
   components: { CustomButton },
 });
 </script>

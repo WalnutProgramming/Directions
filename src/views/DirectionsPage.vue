@@ -30,27 +30,35 @@
         </p>
       </div>
     </main>
+
+    <teleport to="head">
+      <title>Walnut.Direct - {{ fromRoom }} to {{ toRoom }}</title>
+      <meta
+        name="description"
+        :content="`Directions from ${fullNameOf(fromRoom)} to ${fullNameOf(
+          toRoom
+        )} in Walnut Hills High School.`"
+      />
+    </teleport>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-// eslint-disable-next-line no-unused-vars
+import { defineComponent } from "vue";
 import { Room } from "room-finder";
 import CustomButton from "@/components/buttons/CustomButton.vue";
-import { walnutNonAccessible } from "@/walnut";
-import store from "@/store";
+import { walnutAccessible, walnutNonAccessible } from "@/walnut";
+import settings from "@/settings";
 
 function fullNameOf(roomName: string) {
-  const [hallwayInd, ind] = walnutNonAccessible.getHallwayIndexAndIndex(
-    roomName
-  )!;
-  return (walnutNonAccessible.hallways[hallwayInd].partList[
-    ind
-  ] as Room<string>).fullName;
+  const [hallwayInd, ind] =
+    walnutNonAccessible.getHallwayIndexAndIndex(roomName)!;
+  return (
+    walnutNonAccessible.hallways[hallwayInd].partList[ind] as Room<string>
+  ).fullName;
 }
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     CustomButton,
   },
@@ -58,11 +66,15 @@ export default Vue.extend({
     fromRoom: { type: String, default: "" },
     toRoom: { type: String, default: "" },
   },
+  setup() {
+    return { fullNameOf };
+  },
+
   data() {
     return {};
   },
   computed: {
-    isValid() {
+    isValid(): boolean {
       return (
         walnutNonAccessible.getHallwayIndexAndIndex(this.fromRoom) != null &&
         walnutNonAccessible.getHallwayIndexAndIndex(this.toRoom) != null
@@ -70,10 +82,11 @@ export default Vue.extend({
     },
     directionsString(): string {
       if (this.isValid) {
+        const walnut = settings.isAccessibilityMode
+          ? walnutAccessible
+          : walnutNonAccessible;
         // Both have valid names, so put the directions in the HTML
-        return store.getters.walnut
-          .getDirections(this.fromRoom, this.toRoom)!
-          .trim();
+        return walnut.getDirections(this.fromRoom, this.toRoom)!.trim();
       }
       return "Sorry, I couldn't find one of those rooms.";
     },
@@ -81,7 +94,7 @@ export default Vue.extend({
       return this.directionsString.split("\n");
     },
     canPrint() {
-      return window.print;
+      return window.print != null;
     },
   },
   methods: {
@@ -102,23 +115,6 @@ export default Vue.extend({
     print() {
       window.print();
     },
-  },
-  metaInfo() {
-    const { fromRoom, toRoom, isValid } = this as any;
-    return isValid
-      ? {
-          title: `${fromRoom} to ${toRoom}`,
-          meta: [
-            {
-              vmid: "description",
-              name: "description",
-              content: `Directions from ${fullNameOf(fromRoom)} to ${fullNameOf(
-                toRoom
-              )} in Walnut Hills High School.`,
-            },
-          ],
-        }
-      : {};
   },
 });
 </script>
@@ -144,7 +140,7 @@ export default Vue.extend({
   justify-content: space-between;
   padding-right: 1rem;
 }
-.button-container .button {
+.button-container > * {
   font-size: 0.5em;
   padding-left: 1vw;
 }

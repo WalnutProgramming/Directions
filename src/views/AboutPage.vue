@@ -120,16 +120,16 @@
       >. Make your changes, then type a short description of your change at the
       bottom of the page and click "Propose file change".
     </p>
+
+    <teleport to="head">
+      <title>Walnut.Direct - About</title>
+      <meta
+        name="description"
+        content="Straightforward directions between rooms in Walnut Hills High School. Created by the Walnut Hills Programming Club."
+      />
+    </teleport>
   </div>
 </template>
-
-<script lang="ts">
-import Vue from "vue";
-
-export default Vue.extend({
-  metaInfo: { title: "About" },
-});
-</script>
 
 <style scoped>
 .title {

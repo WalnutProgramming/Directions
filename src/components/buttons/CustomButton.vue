@@ -1,28 +1,25 @@
 <template>
-  <BasicButton
-    class="custom"
-    :type="typeSubmit ? 'submit' : 'button'"
-    @click="$emit('click')"
-  >
+  <BasicButton class="custom" :type="typeSubmit ? 'submit' : 'button'">
     <slot />
   </BasicButton>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 import BasicButton from "./BasicButton.vue";
 
-export default Vue.extend({
+export default defineComponent({
   components: { BasicButton },
   props: {
     buttonStyle: { type: String, default: "" },
     typeSubmit: { type: Boolean, default: true },
   },
+  emits: [],
 });
 </script>
 
 <style scoped>
-.btn-hover-area >>> .active-button {
+.btn-hover-area ::v-deep(.active-button) {
   color: var(--button-text-color);
   padding: 12px 40px;
 
@@ -43,7 +40,7 @@ export default Vue.extend({
   border-radius: 100px;
 }
 
-.btn-hover-area:hover >>> .active-button {
+.btn-hover-area:hover ::v-deep(.active-button) {
   margin-top: 6px;
   margin-bottom: 0px;
   box-shadow: 0px 0px var(--button-shade-color),

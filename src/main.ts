@@ -1,50 +1,35 @@
-/// <reference path="./vue-snack-vue-property.d.ts" />
-
-// polyfill needed for vue-snack IE support
-import "core-js/features/array/from";
-
-import Vue from "vue";
-import VueSnackbar from "vue-snack";
-import "vue-snack/dist/vue-snack.min.css";
-import Meta from "vue-meta";
+import { createApp } from "vue";
+import { createSnack } from "vue-snack-notify";
+import "vue-snack-notify/dist/assets/styles.css";
 
 import App from "@/App.vue";
 import router from "@/router";
 import "@/registerServiceWorker";
-import store from "./store";
+
 import {
   messageOnNextPageReloadKey,
   refreshToUpdate,
 } from "./showMessageOnNextPageReload";
 
-Vue.use(VueSnackbar, { close: true });
-Vue.use(Meta);
+const snack = createSnack({ closable: true });
 
-Vue.config.productionTip = false;
+createApp(App).use(router).use(snack).mount("#app");
+// @ts-ignore
+window.snack = snack;
 
-const vm = new Vue({
-  router,
-  store,
-  render: (h) => h(App),
-}).$mount("#app");
-
-document.addEventListener("DOMContentLoaded", () => {
-  const text = sessionStorage.getItem(messageOnNextPageReloadKey);
-  if (text != null) {
-    Vue.nextTick(() => {
-      (vm as any).$snack.show({
-        text,
-        button: "",
-      });
-      sessionStorage.removeItem(messageOnNextPageReloadKey);
-    });
-  }
-});
+const text = sessionStorage.getItem(messageOnNextPageReloadKey);
+if (text != null) {
+  snack.notify({
+    text,
+    button: null,
+  });
+  sessionStorage.removeItem(messageOnNextPageReloadKey);
+}
 
 document.addEventListener("needs-refresh", () => {
-  vm.$snack.show({
+  snack.notify({
     text: "New update for site is available",
     button: "refresh to update",
-    action: refreshToUpdate,
+    onAction: refreshToUpdate,
   });
 });

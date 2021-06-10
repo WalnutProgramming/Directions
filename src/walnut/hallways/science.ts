@@ -15,7 +15,7 @@ const { LEFT, RIGHT, FRONT } = Direction;
 
 const hallways: WalnutHallway[] = [
   // 2nd floor science wing (2700s)
-  new Hallway([
+  new WalnutHallway([
     new (class extends Fork<ConnectionNodeId> {
       onLeave() {
         return "";
@@ -45,7 +45,7 @@ const hallways: WalnutHallway[] = [
     new Stairs(LEFT, onFloor("stair science b", 2)),
   ]),
   // 2739 (Area across the Forum)
-  new Hallway([
+  new WalnutHallway([
     new Fork(
       FRONT,
       reverseConnection("2700s to 2739"),
@@ -55,7 +55,7 @@ const hallways: WalnutHallway[] = [
     new Room("2711", RIGHT),
   ]),
   // 3rd floor science wing (3700s)
-  new Hallway([
+  new WalnutHallway([
     new Stairs(LEFT, onFloor("stair science a3", 3)),
     new Stairs(LEFT, onFloor("elevator science", 3), "the elevator"),
     new Room("3701", LEFT, { aliases: ["Computer Lab - Engineering"] }),

@@ -1,7 +1,7 @@
 <template>
   <label style="display: flex; flex-direction: row; align-items: center">
     <span class="switch" style="min-width: 24vh">
-      <input id="dark-setting" v-model="darkTheme" type="checkbox" />
+      <input id="dark-setting" v-model="settings.isDarkMode" type="checkbox" />
       <span class="slider" />
     </span>
     <span style="margin-left: 1vw"> Dark Theme </span>
@@ -9,18 +9,12 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
+import settings from "@/settings";
 
-export default Vue.extend({
-  computed: {
-    darkTheme: {
-      get() {
-        return this.$store.state.isDarkMode;
-      },
-      set(newVal) {
-        this.$store.commit("setDarkTheme", newVal);
-      },
-    },
+export default defineComponent({
+  setup() {
+    return { settings };
   },
 });
 </script>

@@ -1,20 +1,21 @@
 <template>
-  <BasicButton type="button" class="minus" @click="$emit('click')">
+  <BasicButton type="button" class="minus">
     <slot />
   </BasicButton>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 import BasicButton from "./BasicButton.vue";
 
-export default Vue.extend({
+export default defineComponent({
   components: { BasicButton },
+  emits: [],
 });
 </script>
 
 <style scoped>
-.btn-hover-area >>> .active-button {
+.btn-hover-area ::v-deep(.active-button) {
   color: var(--button-text-color);
   height: 1.5em;
   width: 1.5em;
@@ -34,12 +35,12 @@ export default Vue.extend({
   /*outline: none;*/
 }
 
-.btn-hover-area >>> .active-button:hover {
+.btn-hover-area ::v-deep(.active-button:hover) {
   cursor: pointer;
 }
 
 @media (hover: hover) {
-  .btn-hover-area >>> .active-button:hover {
+  .btn-hover-area ::v-deep(.active-button:hover) {
     background: rgba(0, 0, 0, 0);
     color: var(--minus-button-color-hover);
     transition: var(--long-decay-ease);

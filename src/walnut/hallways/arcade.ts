@@ -94,7 +94,7 @@ const hallways: WalnutHallway[] = [
   ),
 
   // long hallway between arcade and music wing
-  new Hallway([
+  new WalnutHallway([
     new Fork(FRONT, "long hallway to arcade", "the arcade"),
     new Fork(
       RIGHT,

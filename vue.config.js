@@ -4,6 +4,8 @@ module.exports = {
   },
   pwa: {
     iconPaths: {
+      // I'm not sure whether this next one is the right one
+      faviconSVG: null,
       favicon32: "img/icons/favicon-32x32.png",
       favicon16: "img/icons/favicon-16x16.png",
       appleTouchIcon: "img/icons/apple-touch-icon.png",
@@ -16,7 +18,7 @@ module.exports = {
     workboxPluginMode: "InjectManifest",
     workboxOptions: {
       // swSrc is required in InjectManifest mode.
-      swSrc: "src/service-worker.js",
+      swSrc: "./src/service-worker.js",
       exclude: [/_redirects/, /robots.txt/, /google/, /\.map$/],
     },
 
@@ -25,8 +27,8 @@ module.exports = {
       short_name: "Walnut.Direct",
     },
   },
-  // IE10 support for vue-snack
-  transpileDependencies: process.env.VUE_CLI_MODERN_BUILD ? [] : ["vue-snack"],
+
+  transpileDependencies: ["room-finder"],
 
   // https://cli.vuejs.org/guide/troubleshooting.html#symbolic-links-in-node-modules
   // This is for when using yarn link, because that messes up eslint. Safe to delete

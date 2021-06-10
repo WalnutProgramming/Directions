@@ -5,20 +5,22 @@
     :name="name"
     placeholder="type or select"
     autocomplete="off"
-    :value="value"
+    :value="modelValue"
     list="roomsList"
-    @input="$emit('input', $event.target.value)"
+    @input="$emit('update:modelValue', $event.target.value)"
     @change="$emit('change', $event.target.value)"
   />
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 
-export default Vue.extend({
+export default defineComponent({
   props: {
+    modelValue: { type: String, required: true },
     name: { type: String, required: true },
   },
+  emits: ["update:modelValue", "change"],
   data() {
     return { value: "" };
   },

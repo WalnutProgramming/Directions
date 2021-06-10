@@ -19,25 +19,16 @@
     >
       Loading Google Form…
     </iframe>
+
+    <teleport to="head">
+      <title>Walnut.Direct - Feedback</title>
+      <meta
+        name="description"
+        content="Report problems with Walnut.Direct or ask us a question."
+      />
+    </teleport>
   </div>
 </template>
-
-<script lang="ts">
-import Vue from "vue";
-
-export default Vue.extend({
-  metaInfo: {
-    title: "Feedback",
-    meta: [
-      {
-        vmid: "description",
-        name: "description",
-        content: "Report problems with Walnut.Direct or ask us a question.",
-      },
-    ],
-  },
-});
-</script>
 
 <style scoped>
 .small-p {

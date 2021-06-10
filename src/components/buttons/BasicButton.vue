@@ -1,15 +1,21 @@
 <template>
-  <span class="btn-hover-area" @click.stop.prevent="$emit('click')">
-    <button :type="type" class="active-button" :style="buttonStyle">
+  <span class="btn-hover-area">
+    <button
+      :type="type"
+      class="active-button"
+      :style="buttonStyle"
+      v-bind="$attrs"
+    >
       <slot></slot>
     </button>
   </span>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from "vue";
 
-export default Vue.extend({
+export default defineComponent({
+  inheritAttrs: false,
   props: {
     type: { type: String, default: "submit" },
     buttonStyle: { type: String, default: "" },

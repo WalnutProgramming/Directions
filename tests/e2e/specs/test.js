@@ -62,8 +62,8 @@ describe("My Schedule page", () => {
     );
     function shouldHaveNInputs(/** @type {number} */ n) {
       cy.get(".roomInput").should("have.length", n);
-      cy.get(".minus button").should("have.length", n);
-      cy.get(".plus button").should("have.length", 1);
+      cy.get("button.minus").should("have.length", n);
+      cy.get("button.plus").should("have.length", 1);
     }
     function nthRoomInput(/** @type {number} */ n) {
       return cy.get(`#scheduleForm .list-item:nth-child(${n}) input`);
@@ -79,14 +79,14 @@ describe("My Schedule page", () => {
     nthRoomInput(3).type("3113");
     shouldHaveNInputs(7);
     // Add another room to schedule
-    cy.get(".plus button").click();
+    cy.get("button.plus").click();
     shouldHaveNInputs(8);
     // Add more rooms
     nthRoomInput(4).type("2715");
     nthRoomInput(5).type("1309");
     nthRoomInput(4).should("have.value", "2715");
     // Remove the 3rd room
-    cy.get("#scheduleForm .list-item:nth-child(4) .minus button").click();
+    cy.get("#scheduleForm .list-item:nth-child(4) .minus").click();
     shouldHaveNInputs(7);
     nthRoomInput(4).should("have.value", "1309");
     // Save
@@ -110,7 +110,7 @@ describe("My Schedule page", () => {
       .should("contain", "/myschedule")
       .should("not.contain", "/myschedule/edit");
     // Edit
-    cy.get(".edit button").should("have.length", 1).click();
+    cy.get("button.edit").should("have.length", 1).click();
     cy.url()
       .should("contain", "/myschedule/edit")
       .should("not.contain", "/myschedule/edit?new=true");
