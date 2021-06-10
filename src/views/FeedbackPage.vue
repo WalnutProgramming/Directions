@@ -30,12 +30,6 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({});
-</script>
-
 <style scoped>
 .small-p {
   margin: 0.1em;
