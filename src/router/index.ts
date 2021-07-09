@@ -1,19 +1,13 @@
-import { defineComponent } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
 import Index from "@/views/IndexPage.vue";
-import Directions from "@/views/DirectionsPage.vue";
-import MySchedule from "@/views/MySchedule.vue";
-import MyScheduleEdit from "@/views/MyScheduleEdit.vue";
-import About from "@/views/AboutPage.vue";
-import Feedback from "@/views/FeedbackPage.vue";
-import Settings from "@/views/SettingsPage.vue";
 import NotFound from "@/views/NotFound.vue";
 
 const routes = [
   { path: "/", component: Index },
   {
     path: "/directions",
-    component: Directions,
+    component: () =>
+      import(/* webpackChunkName: "directions" */ "@/views/DirectionsPage.vue"),
     props: ({ query }: { query: { fromRoom?: string; toRoom?: string } }) => ({
       fromRoom: query.fromRoom,
       toRoom: query.toRoom,
@@ -21,23 +15,30 @@ const routes = [
   },
   {
     path: "/myschedule",
-    component: MySchedule,
+    component: () =>
+      import(/* webpackChunkName: "myschedule" */ "@/views/MySchedule.vue"),
   },
   {
     path: "/myschedule/edit",
-    component: MyScheduleEdit,
+    component: () =>
+      import(
+        /* webpackChunkName: "myscheduleedit" */ "@/views/MyScheduleEdit.vue"
+      ),
   },
   {
     path: "/about",
-    component: About,
+    component: () =>
+      import(/* webpackChunkName: "about" */ "@/views/AboutPage.vue"),
   },
   {
     path: "/feedback",
-    component: Feedback,
+    component: () =>
+      import(/* webpackChunkName: "feedback" */ "@/views/FeedbackPage.vue"),
   },
   {
     path: "/settings",
-    component: Settings,
+    component: () =>
+      import(/* webpackChunkName: "settings" */ "@/views/SettingsPage.vue"),
   },
   // fallback (client-side 404)
   {

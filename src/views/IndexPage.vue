@@ -48,7 +48,13 @@ import TheMaybeInstallButton from "@/components/TheMaybeInstallButton.vue";
 import RoomInput from "@/components/RoomInput.vue";
 import TheIOSDownloadSuggestion from "@/components/TheIOSDownloadSuggestion.vue";
 import StatusUpdates from "@/components/StatusUpdates.vue";
-import { walnutNonAccessible } from "@/walnut";
+
+let walnutNonAccessible: import("room-finder").Building | undefined;
+import(
+  /* webpackPreload: true */ /* webpackChunkName: "walnut" */ "@/walnut"
+).then(({ walnutNonAccessible: w }) => {
+  walnutNonAccessible = w;
+});
 
 export default defineComponent({
   components: {
@@ -69,8 +75,9 @@ export default defineComponent({
       this.validateInput("fromRoom", false);
       this.validateInput("toRoom", false);
       if (
-        walnutNonAccessible.isValidRoomName(this.fromRoom) &&
-        walnutNonAccessible.isValidRoomName(this.toRoom)
+        walnutNonAccessible == null ||
+        (walnutNonAccessible.isValidRoomName(this.fromRoom) &&
+          walnutNonAccessible.isValidRoomName(this.toRoom))
       ) {
         this.$router.push({
           path: "/directions",
@@ -83,7 +90,10 @@ export default defineComponent({
       const val: string = (this as any)[inputName];
       if (val === "") {
         if (!allowBlank) message = "Please type a room number";
-      } else if (!walnutNonAccessible.isValidRoomName(val)) {
+      } else if (
+        walnutNonAccessible != null &&
+        !walnutNonAccessible.isValidRoomName(val)
+      ) {
         message = `I can't find a room with the name "${val}"`;
       }
       const inp = document.getElementById(inputName);

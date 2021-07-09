@@ -69,14 +69,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineAsyncComponent, defineComponent } from "vue";
 
-import TheRoomsDataList from "@/components/TheRoomsDataList.vue";
 import router from "@/router/index";
 
 export default defineComponent({
   router,
-  components: { TheRoomsDataList },
+  components: {
+    TheRoomsDataList: defineAsyncComponent(
+      () => import("@/components/TheRoomsDataList.vue")
+    ),
+  },
   data() {
     return {
       transitionName: "",

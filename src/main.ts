@@ -4,12 +4,15 @@ import "vue-snack-notify/dist/assets/styles.css";
 
 import App from "@/App.vue";
 import router from "@/router";
-import "@/registerServiceWorker";
 
 import {
   messageOnNextPageReloadKey,
   refreshToUpdate,
 } from "./showMessageOnNextPageReload";
+
+import(
+  /* webpackChunkName: "registerServiceWorker" */ "@/registerServiceWorker"
+);
 
 const snack = createSnack({ closable: true });
 
