@@ -10,6 +10,9 @@ import {
   refreshToUpdate,
 } from "./showMessageOnNextPageReload";
 
+// so that light/dark theme loads
+import "./settings";
+
 import(
   /* webpackChunkName: "registerServiceWorker" */ "@/registerServiceWorker"
 );
