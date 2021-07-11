@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-globals, no-underscore-dangle, import/no-extraneous-dependencies */
 
-import { precacheAndRoute } from "workbox-precaching";
-import { registerRoute } from "workbox-routing";
+import { precacheAndRoute, createHandlerBoundToURL } from "workbox-precaching";
+import { registerRoute, NavigationRoute } from "workbox-routing";
 import { StaleWhileRevalidate, CacheFirst } from "workbox-strategies";
 import { CacheableResponsePlugin } from "workbox-cacheable-response";
 import { ExpirationPlugin } from "workbox-expiration";
@@ -55,6 +55,16 @@ registerRoute(
     ],
   })
 );
+
+// https://developers.google.com/web/tools/workbox/modules/workbox-routing#how_to_register_a_navigation_route
+// Navigate all other navigation routes to index.html
+// This assumes /index.html has been precached.
+const handler = createHandlerBoundToURL("/index.html");
+// Navigation routes only apply when the user is explicitly navigating
+// to the route (i.e., resource requests like JS and CSS and AJAX don't
+// count)
+const navigationRoute = new NavigationRoute(handler);
+registerRoute(navigationRoute);
 
 // https://developers.google.com/web/tools/workbox/modules/workbox-core#skip_waiting_and_clients_claim
 // This allows the new service worker to immediately take over the page if it's updated.
