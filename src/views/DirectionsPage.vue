@@ -40,6 +40,7 @@ import { Room } from "room-finder";
 import CustomButton from "@/components/buttons/CustomButton.vue";
 import { walnutNonAccessible } from "@/walnut";
 import store from "@/store";
+import { COVID_ONE_WAY_HALLWAY_AND_STAIRS } from "@/walnut/shared";
 
 function fullNameOf(roomName: string) {
   const [hallwayInd, ind] = walnutNonAccessible.getHallwayIndexAndIndex(
@@ -86,6 +87,7 @@ export default Vue.extend({
   },
   methods: {
     needsPrecaution(directions: string): boolean {
+      if (!COVID_ONE_WAY_HALLWAY_AND_STAIRS) return false;
       const lowercase = directions.toLowerCase();
       return (
         lowercase.includes("turn left out of") ||
