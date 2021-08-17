@@ -22,28 +22,21 @@ describe("App", () => {
 
     await wrapper.vm.$nextTick();
 
-    expect(wrapper.find("p.direction-line:nth-child(1)").text())
-      .toMatchInlineSnapshot(`
-      "*Note: Based on COVID precautions, when our directions tell you
-              to turn left out of a room, you should instead turn
-              right out of the room, then make a U-turn at the end of the
-              hallway.
-              Similarly, when the directions tell you to turn left  
-              into a room, you should walk to the end of the hallway and make
-              a U-turn so you can come back and turn right into the room."
-    `);
+    expect(
+      wrapper.find("p.direction-line:nth-child(1)").text()
+    ).toMatchInlineSnapshot(`"Turn left out of room 3104"`);
     expect(
       wrapper.find("p.direction-line:nth-child(2)").text()
-    ).toMatchInlineSnapshot(`"Turn left out of room 3104*"`);
-    expect(
-      wrapper.find("p.direction-line:nth-child(3)").text()
     ).toMatchInlineSnapshot(
       `"Continue, then turn right (after passing room 3105 on your right)"`
     );
     expect(
-      wrapper.find("p.direction-line:nth-child(4)").text()
+      wrapper.find("p.direction-line:nth-child(3)").text()
     ).toMatchInlineSnapshot(
       `"Continue, then turn left (after passing room 3111 on your right)"`
     );
+    expect(
+      wrapper.find("p.direction-line:nth-child(4)").text()
+    ).toMatchInlineSnapshot(`"Continue, then turn right into room 3113"`);
   });
 });

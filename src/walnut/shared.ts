@@ -1,6 +1,6 @@
 import { Hallway } from "room-finder";
 
-export const COVID_ONE_WAY_HALLWAY_AND_STAIRS = true;
+export const COVID_ONE_WAY_HALLWAY_AND_STAIRS = false;
 
 export type StairNodeId =
   | "stair a"
