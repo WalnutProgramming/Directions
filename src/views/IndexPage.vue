@@ -4,7 +4,7 @@
       <TheMaybeInstallButton></TheMaybeInstallButton>
 
       <main>
-        <StatusUpdates />
+        <!-- <StatusUpdates /> -->
 
         <h1 class="where-question">Where do you need to go?</h1>
         <form id="roomForm">
@@ -39,7 +39,6 @@ import CustomButton from "@/components/buttons/CustomButton.vue";
 import TheMaybeInstallButton from "@/components/TheMaybeInstallButton.vue";
 import RoomInput from "@/components/RoomInput.vue";
 import TheIOSDownloadSuggestion from "@/components/TheIOSDownloadSuggestion.vue";
-import StatusUpdates from "@/components/StatusUpdates.vue";
 import { walnutNonAccessible } from "@/walnut";
 
 export default Vue.extend({
@@ -48,7 +47,7 @@ export default Vue.extend({
     TheMaybeInstallButton,
     RoomInput,
     TheIOSDownloadSuggestion,
-    StatusUpdates,
+    // StatusUpdates,
   },
   data() {
     return {
