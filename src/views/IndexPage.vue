@@ -4,7 +4,7 @@
       <TheMaybeInstallButton></TheMaybeInstallButton>
 
       <main>
-        <StatusUpdates />
+        <!-- <StatusUpdates /> -->
 
         <h1 class="where-question">Where do you need to go?</h1>
         <form id="roomForm">
@@ -48,7 +48,7 @@ export default Vue.extend({
     TheMaybeInstallButton,
     RoomInput,
     TheIOSDownloadSuggestion,
-    StatusUpdates,
+    // StatusUpdates,
   },
   data() {
     return {
