@@ -35,16 +35,16 @@ describe("Walnut.Direct Main Functionality", () => {
     cy.get("button").contains("Go").click();
     // We're in the directions page
     cy.url().should("contain", "/directions?fromRoom=3104&toRoom=3113");
-    cy.contains("p:nth-child(2)", "Turn left out of room 3104");
+    cy.contains("p:nth-child(1)", "Turn left out of room 3104");
     cy.contains(
-      "p:nth-child(3)",
+      "p:nth-child(2)",
       "Continue, then turn right (after passing room 3105 on your right)"
     );
     cy.contains(
-      "p:nth-child(4)",
+      "p:nth-child(3)",
       "Continue, then turn left (after passing room 3111 on your right)"
     );
-    cy.contains("p:nth-child(5)", "Continue, then turn right into room 3113");
+    cy.contains("p:nth-child(4)", "Continue, then turn right into room 3113");
     // Back button works
     cy.get("button").contains("Back").click();
     cy.contains("h1", "Where do you need to go?");
