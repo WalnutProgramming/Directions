@@ -13,24 +13,6 @@
             @go="go"
           />
         </div>
-        <div>
-          <h2>Block Day 1</h2>
-          <ScheduleList
-            v-if="rooms != null"
-            :all-rooms="rooms"
-            :order="mondayThursdayOrder"
-            @go="go"
-          />
-        </div>
-        <div>
-          <h2>Block Day 2</h2>
-          <ScheduleList
-            v-if="rooms != null"
-            :all-rooms="rooms"
-            :order="tuesdayFridayOrder"
-            @go="go"
-          />
-        </div>
       </div>
     </div>
   </div>
@@ -48,14 +30,6 @@ export default Vue.extend({
     return {
       rooms: stored == null ? null : JSON.parse(stored).rooms,
     };
-  },
-  computed: {
-    mondayThursdayOrder() {
-      return [1, 3, 4, 6].map((n) => n - 1);
-    },
-    tuesdayFridayOrder() {
-      return [2, 3, 5, 7].map((n) => n - 1);
-    },
   },
   created() {
     if (localStorage.getItem("myschedule") == null) {
