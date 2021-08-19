@@ -17,7 +17,7 @@
           </li>
           <li>
             <a
-              href="http://www.walnuthillseagles.com/news-pdfs/2013/WHHS_Floor_Maps.pdf"
+              href="https://docs.google.com/gview?embedded=true&url=http://www.walnuthillseagles.com/news-pdfs/2013/WHHS_Floor_Maps.pdf"
               >Floor Map</a
             >
           </li>
