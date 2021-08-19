@@ -68,26 +68,26 @@ describe("My Schedule page", () => {
     function nthRoomInput(/** @type {number} */ n) {
       return cy.get(`#scheduleForm .list-item:nth-child(${n}) input`);
     }
-    shouldHaveNInputs(7);
+    shouldHaveNInputs(8);
     // Change 2nd input
     nthRoomInput(2)
       .should("have.value", "")
       .type("3104")
       .should("have.value", "3104");
-    shouldHaveNInputs(7);
+    shouldHaveNInputs(8);
     // Change 3rd input
     nthRoomInput(3).type("3113");
-    shouldHaveNInputs(7);
+    shouldHaveNInputs(8);
     // Add another room to schedule
     cy.get(".plus button").click();
-    shouldHaveNInputs(8);
+    shouldHaveNInputs(9);
     // Add more rooms
     nthRoomInput(4).type("2715");
     nthRoomInput(5).type("1309");
     nthRoomInput(4).should("have.value", "2715");
     // Remove the 3rd room
     cy.get("#scheduleForm .list-item:nth-child(4) .minus button").click();
-    shouldHaveNInputs(7);
+    shouldHaveNInputs(8);
     nthRoomInput(4).should("have.value", "1309");
     // Save
     cy.get("button.active-button[type='submit']")
