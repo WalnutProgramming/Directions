@@ -4,30 +4,11 @@
       <EditButton @click="edit()"> Edit Schedule </EditButton>
 
       <div class="lists">
-        <div>
-          <h2>Regular Schedule</h2>
+        <div style="padding-top: 1rem">
           <ScheduleList
             v-if="rooms != null"
             data-testid="regular-schedule"
             :all-rooms="rooms"
-            @go="go"
-          />
-        </div>
-        <div>
-          <h2>Block Day 1</h2>
-          <ScheduleList
-            v-if="rooms != null"
-            :all-rooms="rooms"
-            :order="mondayThursdayOrder"
-            @go="go"
-          />
-        </div>
-        <div>
-          <h2>Block Day 2</h2>
-          <ScheduleList
-            v-if="rooms != null"
-            :all-rooms="rooms"
-            :order="tuesdayFridayOrder"
             @go="go"
           />
         </div>
@@ -48,14 +29,6 @@ export default Vue.extend({
     return {
       rooms: stored == null ? null : JSON.parse(stored).rooms,
     };
-  },
-  computed: {
-    mondayThursdayOrder() {
-      return [1, 3, 4, 6].map((n) => n - 1);
-    },
-    tuesdayFridayOrder() {
-      return [2, 3, 5, 7].map((n) => n - 1);
-    },
   },
   created() {
     if (localStorage.getItem("myschedule") == null) {
