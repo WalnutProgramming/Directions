@@ -109,7 +109,7 @@ interface Room {
 
 function getDefaultRooms() {
   const ret: Room[] = [];
-  for (let i = 0; i < 7; i += 1) {
+  for (let i = 0; i < 8; i += 1) {
     ret.push({ value: "", originalIndex: i });
   }
   return ret;
