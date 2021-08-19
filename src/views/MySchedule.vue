@@ -4,8 +4,7 @@
       <EditButton @click="edit()"> Edit Schedule </EditButton>
 
       <div class="lists">
-        <div>
-          <h2>Regular Schedule</h2>
+        <div style="padding-top: 1rem">
           <ScheduleList
             v-if="rooms != null"
             data-testid="regular-schedule"
