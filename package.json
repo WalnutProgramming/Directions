@@ -8,7 +8,7 @@
     "build": "vite build",
     "test:unit": "vite-jest",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "yarn lint:eslint && yarn lint:prettier",
+    "lint": "yarn lint:eslint --fix && yarn lint:prettier",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --write .",
     "test": "yarn test:unit && yarn test:e2e --headless",
