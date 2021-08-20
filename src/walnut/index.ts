@@ -1,9 +1,6 @@
 import { Building } from "room-finder";
-import {
-  ConnectionNodeId,
-  StairNodeId,
-  COVID_ONE_WAY_HALLWAY_AND_STAIRS,
-} from "./shared";
+import type { ConnectionNodeId, StairNodeId } from "./shared";
+import { COVID_ONE_WAY_HALLWAY_AND_STAIRS } from "./shared";
 import hallways from "./hallways";
 
 const walnutAll = new Building<ConnectionNodeId, StairNodeId>(hallways, {

@@ -2,14 +2,13 @@ import {
   Direction,
   Room,
   Turn,
-  Hallway,
   Stairs,
   Fork,
-  SimpleHallway,
   onFloor,
   reverseConnection,
 } from "room-finder";
-import { ConnectionNodeId, StairNodeId, WalnutHallway } from "../shared";
+import type { ConnectionNodeId} from "../shared";
+import { WalnutHallway } from "../shared";
 
 const { LEFT, RIGHT, FRONT } = Direction;
 
@@ -62,7 +61,7 @@ const hallways: WalnutHallway[] = [
     ),
     // There are a few stairs right here
     new (class extends Room<ConnectionNodeId> {
-      onPass(forwardOrBackward: -1 | 1, prevRoom: Room<string>) {
+      onPass(forwardOrBackward: -1 | 1) {
         return `Go ${forwardOrBackward === -1 ? "up" : "down"} the 3 steps\n`;
       }
     })(),

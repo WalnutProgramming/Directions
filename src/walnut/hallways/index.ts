@@ -6,7 +6,7 @@ import modernLanguages from "./modern-languages";
 import music from "./music";
 import performingArts from "./performing-arts-center";
 import science from "./science";
-import { WalnutHallway } from "../shared";
+import type { WalnutHallway } from "../shared";
 
 const hallways: WalnutHallway[] = [
   ...arcade,

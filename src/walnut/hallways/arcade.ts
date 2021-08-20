@@ -5,11 +5,11 @@ import {
   Hallway,
   Stairs,
   Fork,
-  SimpleHallway,
   onFloor,
   reverseConnection,
 } from "room-finder";
-import { ConnectionNodeId, WalnutHallway, StairNodeId } from "../shared";
+import type { ConnectionNodeId, StairNodeId } from "../shared";
+import { WalnutHallway } from "../shared";
 
 const { LEFT, RIGHT, FRONT } = Direction;
 

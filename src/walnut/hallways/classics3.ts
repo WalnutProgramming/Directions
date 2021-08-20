@@ -1,17 +1,7 @@
-import {
-  Direction,
-  Room,
-  Turn,
-  Hallway,
-  Stairs,
-  Fork,
-  SimpleHallway,
-  onFloor,
-  reverseConnection,
-} from "room-finder";
+import { Direction, Room, Turn, Stairs, onFloor } from "room-finder";
 import { WalnutHallway } from "../shared";
 
-const { LEFT, RIGHT, FRONT } = Direction;
+const { LEFT, RIGHT } = Direction;
 
 const hallways: WalnutHallway[] = [
   // 3rd floor main building (3100s, 3200s, 3300s)
