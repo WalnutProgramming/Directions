@@ -12,7 +12,7 @@ export default defineConfig({
       filename: "service-worker.js",
       injectManifest: {
         globIgnores: ["google*.html"],
-        globPatterns: ["assets/*"],
+        globPatterns: ["*.html", "*.js", "assets/*"],
       },
       manifest: {
         name: "Walnut Hills Directions",
