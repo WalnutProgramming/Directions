@@ -11,7 +11,7 @@ export default defineConfig({
       srcDir: "src",
       filename: "service-worker.js",
       injectManifest: {
-        globIgnores: ["google*.html"],
+        globIgnores: ["google*.html", "*.map", "assets/*.map"],
         globPatterns: ["*.html", "*.js", "assets/*"],
       },
       manifest: {
@@ -52,5 +52,8 @@ export default defineConfig({
     alias: {
       "@/": "/src/",
     },
+  },
+  build: {
+    sourcemap: true,
   },
 });
