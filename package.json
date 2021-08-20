@@ -9,6 +9,7 @@
     "test:unit": "vite-jest",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "yarn eslint . --fix && yarn prettier --write .",
+    "lint-ci": "yarn eslint . && yarn prettier --check .",
     "test": "yarn test:unit && yarn test:e2e --headless",
     "test-ci": "yarn test:unit --ci && yarn test:e2e --headless",
     "tests": "yarn test"
