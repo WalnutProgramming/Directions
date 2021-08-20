@@ -12,6 +12,7 @@
     "lint-ci": "yarn eslint . && yarn prettier --check .",
     "test": "yarn test:unit && yarn test:e2e --headless",
     "test-ci": "yarn test:unit --ci && yarn test:e2e --headless",
+    "ci-check": "yarn lint-ci && yarn test-ci",
     "tests": "yarn test"
   },
   "dependencies": {
