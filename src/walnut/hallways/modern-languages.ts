@@ -7,7 +7,7 @@ import {
   onFloor,
   reverseConnection,
 } from "room-finder";
-import type { ConnectionNodeId} from "../shared";
+import type { ConnectionNodeId } from "../shared";
 import { WalnutHallway } from "../shared";
 
 const { LEFT, RIGHT, FRONT } = Direction;
