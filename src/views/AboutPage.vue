@@ -20,7 +20,7 @@
       ></iframe>
     </div>
 
-    <h1 class="subtitle">How to Use It</h1>
+    <h2 class="subtitle">How to Use It</h2>
     <p class="squished-p">
       On the <router-link to="/">main page</router-link>, type (or choose from
       the dropdown) the name of the classroom you're starting at or a nearby
@@ -30,7 +30,7 @@
       You can use the My Schedule page to input your bell schedule so that you
       don't have to remember and re-type the room numbers.
     </p>
-    <h1 class="subtitle">The Project:</h1>
+    <h2 class="subtitle">The Project:</h2>
     <p class="squished-p">
       Our goal is that any new student can
       <router-link to="/myschedule">type in their schedule</router-link> and use
@@ -45,7 +45,7 @@
       <a href="https://room-finder.walnut.direct/"> room-finder package </a>
       on npm so that anyone can use it for another building.
     </p>
-    <h1 class="subtitle">Our Club:</h1>
+    <h2 class="subtitle">Our Club:</h2>
     <p class="squished-p">
       The Walnut Hills Programming Club, a chapter of
       <a href="https://interalliance.org/">INTERalliance</a>, is open to
@@ -58,7 +58,7 @@
       in working on projects like this one, you should come, regardless of how
       much or little programming experience you have!
     </p>
-    <h1 class="subtitle">How it works:</h1>
+    <h2 class="subtitle">How it works:</h2>
     <p class="squished-p">
       All of the code for this site is available
       <a href="https://github.com/WalnutProgramming/Directions">on GitHub</a>.
@@ -67,7 +67,7 @@
         also on GitHub </a
       >. (Note that GitHub isn't accessible on the school Wi-Fi.) <br /><br />
     </p>
-    <h1 class="subtitle">Feedback</h1>
+    <h2 class="subtitle">Feedback</h2>
     <p class="squished-p">
       You can go to the
       <router-link to="/feedback"> Feedback </router-link>
@@ -77,7 +77,7 @@
       rooms in the science wing. However, if you notice any problems, we would
       really appreciate it if you report them in the Feedback form.
     </p>
-    <h1 class="subtitle">Special Thanks to</h1>
+    <h2 class="subtitle">Special Thanks to</h2>
     <p class="squished-p">
       <a href="https://vuejs.org/">Vue.js</a>, the Javascript framework this
       site was made with <br />
@@ -93,7 +93,7 @@
         All of the other packages that our site depends on
       </a>
     </p>
-    <h1 class="subtitle">Our School:</h1>
+    <h2 class="subtitle">Our School:</h2>
     <p class="squished-p">
       Walnut Hills High School is a college preparatory school for students in
       grades 7-12. It is one of the top public high schools in the nation.
@@ -107,7 +107,7 @@
       <br />
       <br />
     </p>
-    <h1 class="subtitle">Improving this page</h1>
+    <h2 class="subtitle">Improving this page</h2>
     <p class="squished-p">
       If you want to improve this page,
       <a href="https://github.com/">make a GitHub account</a>, then click the
@@ -134,11 +134,15 @@ export default Vue.extend({
 .title {
   font-size: 6vh;
   color: var(--heading-text-color);
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
 }
 
 .subtitle {
   font-size: 5.5vh;
   color: var(--subheading-text-color);
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
 }
 
 .squished-p {
