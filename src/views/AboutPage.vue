@@ -48,7 +48,7 @@
     <h2 class="subtitle">Our Club:</h2>
     <p class="squished-p">
       The Walnut Hills Programming Club, a chapter of
-      <a href="https://interalliance.org/">INTERalliance</a>, is open to
+      <a href="https://interalliance.org/">INTERalliance</a>, which meets Thursdays after school from 3pm to 4pm in room 3104, is open to
       everyone interested in computers and IT who want to learn about
       programming and work on projects that we will present at competitions.
       Club members can participate in
