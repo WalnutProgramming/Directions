@@ -2,6 +2,8 @@
 
 [Walnut.Direct](https://walnut.direct/) is an app created by the Walnut Hills Programming Club to give students straightforward directions between rooms in our large, confusing school. It uses [room-finder](https://github.com/WalnutProgramming/room-finder), a library we created for using Dijkstra's algorithm to generate directions between rooms in a building.
 
+If you want help making changes to Walnut.Direct, feel free to contact Ajai (the former Programming Club president who wrote the majority of this code).
+
 ## Reporting issues
 
 If you find a problem with the generated directions (including missing rooms and unclear directions) or with the site itself, or you have a suggestion, you can create an issue by clicking on the [Issues](https://github.com/WalnutProgramming/Directions/issues) tab at the top of this page.
