@@ -94,6 +94,6 @@
     "trailingComma": "es5"
   },
   "browserslist": [
-    "last 2 versions or firefox esr and not dead or > 0.5% in US or cover 95% in US and supports es6-module"
+    ">0.5% in US, >1%, last 2 versions, Firefox ESR, last 4 iOS major versions, cover 85% in US, not dead"
   ]
 }
