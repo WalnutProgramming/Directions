@@ -23,7 +23,7 @@
         </p>
         <p
           v-for="(line, index) in directionsLines"
-          :key="index + ':::' + line"
+          :key="`${index}:::${line}`"
           class="direction-line"
         >
           {{ line }}{{ needsPrecaution(line) ? "*" : "" }}

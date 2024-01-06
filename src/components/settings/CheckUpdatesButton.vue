@@ -1,11 +1,15 @@
 <template>
   <span @click="checkForUpdates">
     <button
+      id="updates-button"
+      name="updates-button"
       :class="{ 'updates-button': true, spin }"
       aria-labelledby="updates-button-label"
       @click="checkForUpdates"
     ></button>
-    <label id="updates-button-label"> Check For Updates </label>
+    <label id="updates-button-label" for="updates-button">
+      Check For Updates
+    </label>
   </span>
 </template>
 

@@ -108,7 +108,9 @@ export default defineComponent({
     // TODO: very hacky. Wait 20 milliseconds before scrolling to the
     // active link because for some reason, it isn't marked as active
     // for a while.
-    await new Promise((resolve) => setTimeout(resolve, 20));
+    await new Promise((resolve) => {
+      setTimeout(() => resolve, 20);
+    });
     const currentRouteNavItem = document.querySelector(
       "header li.router-link-active a"
     );
@@ -124,7 +126,8 @@ export default defineComponent({
 <style scoped>
 header {
   background-color: var(--background-color);
-  transition: background-color var(--fast-middle-ease),
+  transition:
+    background-color var(--fast-middle-ease),
     color var(--fast-middle-ease);
   position: fixed;
   top: 0;

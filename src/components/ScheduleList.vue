@@ -6,7 +6,7 @@
       </li>
       <CustomButton
         v-if="
-          index != rooms.length - 1 &&
+          index !== rooms.length - 1 &&
           room.value.trim() !== '' &&
           rooms[index + 1].value.trim() !== ''
         "

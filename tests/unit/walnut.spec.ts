@@ -1,5 +1,5 @@
-import { walnutNonAccessible, walnutAccessible } from "@/walnut";
 import { assertValidBuilding, isValidBuilding } from "room-finder";
+import { walnutNonAccessible, walnutAccessible } from "@/walnut";
 
 test("non-accessible walnut is a valid Building", () => {
   expect(isValidBuilding(walnutNonAccessible).connectedSections).toHaveLength(

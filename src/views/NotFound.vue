@@ -1,7 +1,7 @@
 <template>
   <div id="main">
     <p>404 Page Not Found</p>
-    <img src="../assets/WalnutImage.jpg" />
+    <img src="../assets/WalnutImage.jpg" alt="" />
     <CustomButton id="button" @click="$router.push('/')"
       >Go back to the home page</CustomButton
     >

@@ -1,11 +1,13 @@
 <template>
   <span @click="clearStorage">
     <button
+      id="delete-data-button"
+      name="delete-data-button"
       class="delete-data-button"
       aria-labelledby="delete-data-button-label"
       @click="clearStorage"
     ></button>
-    <label id="delete-data-button-label">
+    <label id="delete-data-button-label" for="delete-data-button">
       Delete Walnut.Direct Local Storage
     </label>
   </span>

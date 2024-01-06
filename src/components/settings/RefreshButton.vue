@@ -1,11 +1,13 @@
 <template>
   <span @click="reloadPage">
     <button
+      id="refresh-button"
+      name="refresh-button"
       class="refresh-button"
       aria-labelledby="refresh-button-label"
       @click="reloadPage"
     ></button>
-    <label id="refresh-button-label"> Refresh App </label>
+    <label id="refresh-button-label" for="refresh-button"> Refresh App </label>
   </span>
 </template>
 

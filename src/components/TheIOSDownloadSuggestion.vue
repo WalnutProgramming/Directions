@@ -27,6 +27,7 @@ export default defineComponent({
     showiOSDownloadSuggestion() {
       // If it's an iOS device and we're not already in the PWA, unhide the #iosDownloadSuggestion
       const iOS =
+        // @ts-ignore
         /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
       const isInstalledPWA =
         "matchMedia" in window &&
