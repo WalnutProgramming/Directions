@@ -126,8 +126,7 @@ export default defineComponent({
 <style scoped>
 header {
   background-color: var(--background-color);
-  transition:
-    background-color var(--fast-middle-ease),
+  transition: background-color var(--fast-middle-ease),
     color var(--fast-middle-ease);
   position: fixed;
   top: 0;

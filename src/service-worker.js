@@ -1,4 +1,4 @@
-/* eslint-disable no-restricted-globals, no-underscore-dangle, import/no-extraneous-dependencies */
+/* eslint-disable no-restricted-globals, no-underscore-dangle */
 
 import { precacheAndRoute } from "workbox-precaching";
 import { registerRoute } from "workbox-routing";

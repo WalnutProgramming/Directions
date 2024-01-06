@@ -28,8 +28,7 @@ export default defineComponent({
 
   margin-top: 0;
   margin-bottom: 6px;
-  box-shadow:
-    0px 6px var(--button-shade-color),
+  box-shadow: 0px 6px var(--button-shade-color),
     0px 6px 0 6px var(--button-hold-color);
   /*** these 6px values need to be the same (see below with ***) */
 
@@ -44,8 +43,7 @@ export default defineComponent({
 .btn-hover-area:hover ::v-deep(.active-button) {
   margin-top: 6px;
   margin-bottom: 0px;
-  box-shadow:
-    0px 0px var(--button-shade-color),
+  box-shadow: 0px 0px var(--button-shade-color),
     0px 0px 0 6px var(--button-hold-color);
   /*** these 6px values need to be the same (see above with ***) */
 
